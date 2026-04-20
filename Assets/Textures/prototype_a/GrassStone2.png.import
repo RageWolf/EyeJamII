@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o8ppoikajo7b"
-path.s3tc="res://.godot/imported/GrassStone2.png-293c7d73f6e5643edbdf585cb6c4d0f8.s3tc.ctex"
+path.s3tc="res://.godot/imported/GrassStone2.png-5829e994a80d8c75125476c98465a90e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/prototype_a/GrassStone2.png"
-dest_files=["res://.godot/imported/GrassStone2.png-293c7d73f6e5643edbdf585cb6c4d0f8.s3tc.ctex"]
+source_file="res://Assets/Textures/prototype_a/GrassStone2.png"
+dest_files=["res://.godot/imported/GrassStone2.png-5829e994a80d8c75125476c98465a90e.s3tc.ctex"]
 
 [params]
 

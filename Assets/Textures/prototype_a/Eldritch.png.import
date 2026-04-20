@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5njx34cm4xk2"
-path.s3tc="res://.godot/imported/Eldritch.png-c6f8f43d0f242b1037b0bb2b5eeb7e1a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Eldritch.png-f24751eb57549cb4c936d4f35fb6288c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/prototype_a/Eldritch.png"
-dest_files=["res://.godot/imported/Eldritch.png-c6f8f43d0f242b1037b0bb2b5eeb7e1a.s3tc.ctex"]
+source_file="res://Assets/Textures/prototype_a/Eldritch.png"
+dest_files=["res://.godot/imported/Eldritch.png-f24751eb57549cb4c936d4f35fb6288c.s3tc.ctex"]
 
 [params]
 
