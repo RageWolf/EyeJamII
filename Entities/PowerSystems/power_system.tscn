@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://gwul7osjfe"]
+
+[ext_resource type="Script" uid="uid://cc5o257dquwde" path="res://Entities/PowerSystems/power_system.gd" id="1_twkmc"]
+[ext_resource type="Texture2D" uid="uid://ng3lhunn328a" path="res://Assets/Sprites/ProtoWall1.png" id="2_q51ab"]
+[ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="3_g63cs"]
+[ext_resource type="Texture2D" uid="uid://balrbwlhegmd" path="res://Assets/Ui/Circle bar.png" id="4_q51ab"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g63cs"]
+albedo_texture = ExtResource("2_q51ab")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_upsvp"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_g63cs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uivnw"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j2a3l"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="PowerSystem" type="StaticBody3D" unique_id=1985336906 groups=["power_system"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_twkmc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1527650625]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_upsvp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2134718985]
+shape = SubResource("BoxShape3D_uivnw")
+
+[node name="InteractUi" type="Label3D" parent="." unique_id=24013900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0779946, 0)
+visible = false
+layers = 2
+pixel_size = 0.01
+billboard = 2
+render_priority = 1
+outline_render_priority = 0
+text = "Press E to feed"
+font = ExtResource("3_g63cs")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=904539922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67559004, 0)
+pixel_size = 0.001
+billboard = 1
+texture = SubResource("ViewportTexture_j2a3l")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=173602045]
+transparent_bg = true
+size = Vector2i(432, 432)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Sprite3D/SubViewport" unique_id=630207427]
+unique_name_in_owner = true
+visible = false
+offset_right = 432.0
+offset_bottom = 432.0
+fill_mode = 4
+texture_under = ExtResource("4_q51ab")
+texture_progress = ExtResource("4_q51ab")
+tint_under = Color(0, 0, 0, 0.19607843)
+tint_progress = Color(1, 1, 1, 0.78431374)
+metadata/_edit_use_anchors_ = true
