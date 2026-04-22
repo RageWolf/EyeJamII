@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bb25hy8rfbvd2"
-path="res://.godot/imported/Monstera.blend-14727f78a5a37ac8f67e54242163f820.scn"
+uid="uid://b0mbedt7m23ij"
+path="res://.godot/imported/WallConvex.blend-39a4e303a24e54d1491c9c7720d6c5c8.scn"
 
 [deps]
 
-source_file="res://Assets/Models and Textures/Monster/Monstera.blend"
-dest_files=["res://.godot/imported/Monstera.blend-14727f78a5a37ac8f67e54242163f820.scn"]
+source_file="res://Assets/Models and Textures/WallConvex.blend"
+dest_files=["res://.godot/imported/WallConvex.blend-39a4e303a24e54d1491c9c7720d6c5c8.scn"]
 
 [params]
 
