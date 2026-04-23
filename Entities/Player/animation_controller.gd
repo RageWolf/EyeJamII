@@ -47,3 +47,8 @@ func update(delta: float, velocity: Vector3, direction: Vector3):
 			state_machine.travel(idle_anims.pick_random())
 	else:
 		idle_timer = 0.0
+
+func play_feeding():
+	state_machine.travel("Drain")
+func stop_feeding():
+	state_machine.travel("Idle1")

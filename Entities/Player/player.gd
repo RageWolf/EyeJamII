@@ -13,7 +13,7 @@ var interact_ui_visible := false
 
 var is_feeding := false
 var feed_timer := 0.0
-var feed_duration := 2.5  # seconds to fully drain
+var feed_duration := 2.0  # seconds to fully drain
 var feed_cooldown := 1.0
 var can_feed := true
 var current_target = null
@@ -176,7 +176,7 @@ func try_start_feeding(target):
 	attach_position = global_position
 	
 	current_target.set_feeding_active(true, can_feed)
-
+	anim_controller.play_feeding()
 
 func update_feeding(delta):
 	if not is_feeding:
@@ -250,6 +250,7 @@ func finish_feeding():
 
 
 func cleanup_feed_ui():
+	anim_controller.stop_feeding()
 	if current_target:
 		current_target.set_feeding_active(false, can_feed)
 
