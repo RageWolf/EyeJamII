@@ -6,6 +6,36 @@
 [ext_resource type="Script" uid="uid://dtl8xlm4jhee7" path="res://Entities/Player/interaction_area.gd" id="4_y660y"]
 [ext_resource type="Script" uid="uid://c52oj03kb5t71" path="res://Entities/Player/animation_controller.gd" id="5_5c2io"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lu8i8"]
+radius = 0.3
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y660y"]
+radius = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_q6ntu"]
+radius = 1.0668373
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q6ntu"]
+size = Vector2(1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y660y"]
+top_radius = 0.0
+bottom_radius = 0.45
+height = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_q6ntu"]
+radius = 0.2
+height = 0.6
+radial_segments = 4
+rings = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y660y"]
+load_path = "res://.godot/imported/eye_bar.png-3057362ed60872675226c942d252c930.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nqdw5"]
+load_path = "res://.godot/imported/eye_bar.png-3057362ed60872675226c942d252c930.ctex"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5c2io"]
 animation = &"Drain"
 
@@ -148,6 +178,26 @@ xfade_curve = SubResource("Curve_4wf4l")
 advance_mode = 2
 advance_condition = &"is_running"
 
+[sub_resource type="Curve" id="Curve_01a4e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ap3xn"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_01a4e")
+advance_mode = 2
+advance_condition = &"is_moving"
+
+[sub_resource type="Curve" id="Curve_7a1se"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iplt1"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_7a1se")
+advance_mode = 2
+advance_condition = &"is_moving"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_v27kq"]
 states/Drain/node = SubResource("AnimationNodeAnimation_5c2io")
 states/Drain/position = Vector2(536.31934, 184.71281)
@@ -155,7 +205,7 @@ states/End/position = Vector2(695.2001, 227.99997)
 states/Hide/node = SubResource("AnimationNodeAnimation_4wf4l")
 states/Hide/position = Vector2(544.11847, 287.16803)
 states/Idle1/node = SubResource("AnimationNodeAnimation_01a4e")
-states/Idle1/position = Vector2(270.0794, 236.45436)
+states/Idle1/position = Vector2(186.87941, 135.65436)
 states/Idle2/node = SubResource("AnimationNodeAnimation_7a1se")
 states/Idle2/position = Vector2(291.48767, 347.0041)
 states/Idle3/node = SubResource("AnimationNodeAnimation_lub02")
@@ -163,42 +213,12 @@ states/Idle3/position = Vector2(105.73569, 300.74573)
 states/Neutral/node = SubResource("AnimationNodeAnimation_x1y6q")
 states/Neutral/position = Vector2(701.08795, 358.40002)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_0poeq")
-states/Run/position = Vector2(381.28604, 110.30399)
+states/Run/position = Vector2(364.48605, 47.90399)
 states/Start/position = Vector2(57.600006, 175.68)
 states/StartHide/node = SubResource("AnimationNodeAnimation_ppdlg")
 states/StartHide/position = Vector2(432.47937, 358.81918)
-transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_01ng6"), "Idle1", "Idle2", SubResource("AnimationNodeStateMachineTransition_5c2io"), "Idle2", "Idle3", SubResource("AnimationNodeStateMachineTransition_4wf4l"), "Idle3", "Idle1", SubResource("AnimationNodeStateMachineTransition_01a4e"), "Idle2", "Idle1", SubResource("AnimationNodeStateMachineTransition_7a1se"), "Idle1", "Idle3", SubResource("AnimationNodeStateMachineTransition_lub02"), "Run", "Idle1", SubResource("AnimationNodeStateMachineTransition_xr8lj"), "Idle1", "StartHide", SubResource("AnimationNodeStateMachineTransition_r8fok"), "StartHide", "Hide", SubResource("AnimationNodeStateMachineTransition_nhbkt"), "Idle1", "Drain", SubResource("AnimationNodeStateMachineTransition_vskfa"), "Hide", "Idle1", SubResource("AnimationNodeStateMachineTransition_pjcup"), "Drain", "Idle1", SubResource("AnimationNodeStateMachineTransition_0poeq"), "Run", "Drain", SubResource("AnimationNodeStateMachineTransition_ppdlg"), "Idle1", "Run", SubResource("AnimationNodeStateMachineTransition_x1y6q")]
-graph_offset = Vector2(-58.153854, 91.74129)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lu8i8"]
-radius = 0.3
-height = 1.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_y660y"]
-radius = 0.2
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_q6ntu"]
-radius = 1.0668373
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_q6ntu"]
-size = Vector2(1, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_y660y"]
-top_radius = 0.0
-bottom_radius = 0.45
-height = 0.5
-
-[sub_resource type="SphereMesh" id="SphereMesh_q6ntu"]
-radius = 0.2
-height = 0.6
-radial_segments = 4
-rings = 1
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y660y"]
-load_path = "res://.godot/imported/eye_bar.png-3057362ed60872675226c942d252c930.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nqdw5"]
-load_path = "res://.godot/imported/eye_bar.png-3057362ed60872675226c942d252c930.ctex"
+transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_01ng6"), "Idle1", "Idle2", SubResource("AnimationNodeStateMachineTransition_5c2io"), "Idle2", "Idle3", SubResource("AnimationNodeStateMachineTransition_4wf4l"), "Idle3", "Idle1", SubResource("AnimationNodeStateMachineTransition_01a4e"), "Idle2", "Idle1", SubResource("AnimationNodeStateMachineTransition_7a1se"), "Idle1", "Idle3", SubResource("AnimationNodeStateMachineTransition_lub02"), "Run", "Idle1", SubResource("AnimationNodeStateMachineTransition_xr8lj"), "Idle1", "StartHide", SubResource("AnimationNodeStateMachineTransition_r8fok"), "StartHide", "Hide", SubResource("AnimationNodeStateMachineTransition_nhbkt"), "Idle1", "Drain", SubResource("AnimationNodeStateMachineTransition_vskfa"), "Hide", "Idle1", SubResource("AnimationNodeStateMachineTransition_pjcup"), "Drain", "Idle1", SubResource("AnimationNodeStateMachineTransition_0poeq"), "Run", "Drain", SubResource("AnimationNodeStateMachineTransition_ppdlg"), "Idle1", "Run", SubResource("AnimationNodeStateMachineTransition_x1y6q"), "Idle3", "Run", SubResource("AnimationNodeStateMachineTransition_ap3xn"), "Idle2", "Run", SubResource("AnimationNodeStateMachineTransition_iplt1")]
+graph_offset = Vector2(-58.153854, 72.09539)
 
 [node name="Player" type="CharacterBody3D" unique_id=1944527734 groups=["player"]]
 collision_layer = 2
@@ -208,26 +228,26 @@ camera = NodePath("SpringArmPivot/SpringArm3D/Camera3D")
 
 [node name="Monster" parent="." unique_id=1507682787 instance=ExtResource("2_tekja")]
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(1507682787, 2087151852) index="0" unique_id=582001088]
-bones/0/position = Vector3(0, 0.30376437, 0)
-bones/1/rotation = Quaternion(0.026520412, -7.910635e-09, -2.0378401e-08, 0.9996483)
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(1507682787, 1296627241) index="0" unique_id=1522746423]
+bones/0/position = Vector3(0, 0.32646653, 0)
+bones/1/rotation = Quaternion(-0.012979616, -7.638186e-09, -2.0482105e-08, 0.99991584)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8626248, 6.4165573e-16, 2.1508799e-16, 0.50584435)
-bones/2/scale = Vector3(1.0047569, 1.0047568, 1.004757)
-bones/4/rotation = Quaternion(0.0075996397, 0.005823405, 0.498043, 0.8670996)
-bones/6/rotation = Quaternion(0.0075997454, -0.005823503, -0.49804315, 0.86709946)
-bones/7/rotation = Quaternion(0.18658687, -0.08395554, -0.5542235, 0.80682915)
-bones/8/rotation = Quaternion(-0.72738, -1.9133557e-05, -0.11742371, 0.67611396)
-bones/9/rotation = Quaternion(0.13640092, -0.12687592, -0.64321136, 0.7426819)
-bones/10/rotation = Quaternion(-0.7025328, -1.9982459e-05, -0.1134133, 0.70255613)
-bones/11/rotation = Quaternion(0.11671901, 0.2667245, 0.76407146, -0.57569927)
-bones/12/rotation = Quaternion(-0.63184935, 3.0859374e-05, 0.11381614, 0.7666892)
-bones/13/rotation = Quaternion(0.20028941, 0.070250526, 0.52897143, 0.821668)
-bones/14/rotation = Quaternion(-0.7378301, 1.874054e-05, 0.1191107, 0.6643941)
-bones/15/rotation = Quaternion(0.10236527, 0.10050615, 0.6558438, 0.7411402)
-bones/16/rotation = Quaternion(-0.6084446, 2.2396445e-05, 0.09822413, 0.7874943)
-bones/17/rotation = Quaternion(-0.024278637, 0.15196817, 0.84095895, 0.5187526)
-bones/18/rotation = Quaternion(-0.6288492, -3.0969735e-05, -0.11327577, 0.7692317)
+bones/2/rotation = Quaternion(0.8822343, 9.060823e-16, 5.871712e-16, 0.47081074)
+bones/2/scale = Vector3(1.0043776, 1.0043776, 1.0043777)
+bones/4/rotation = Quaternion(0.0071003656, 0.005440799, 0.49786177, 0.8672103)
+bones/6/rotation = Quaternion(0.007100367, -0.0054408433, -0.4978619, 0.8672102)
+bones/7/rotation = Quaternion(0.16179454, -0.062197007, -0.56097645, 0.8094811)
+bones/8/rotation = Quaternion(-0.7123423, -1.9545694e-05, -0.1149961, 0.692347)
+bones/9/rotation = Quaternion(0.11380315, -0.103672534, -0.6483971, 0.7455751)
+bones/10/rotation = Quaternion(-0.686955, -2.0432315e-05, -0.11089848, 0.7181883)
+bones/11/rotation = Quaternion(0.14453867, 0.24679092, 0.75722814, -0.58720386)
+bones/12/rotation = Quaternion(-0.61364645, 3.1461524e-05, 0.11053726, 0.7818054)
+bones/13/rotation = Quaternion(0.17477985, 0.04886042, 0.5362686, 0.8243063)
+bones/14/rotation = Quaternion(-0.72302973, 1.9216444e-05, 0.11672141, 0.6808848)
+bones/15/rotation = Quaternion(0.08020902, 0.07853762, 0.6598296, 0.7429827)
+bones/16/rotation = Quaternion(-0.5903219, 2.2799266e-05, 0.09529853, 0.80152243)
+bones/17/rotation = Quaternion(-0.047275767, 0.1264796, 0.8393508, 0.526553)
+bones/18/rotation = Quaternion(-0.60736084, -3.168732e-05, -0.10940498, 0.7868567)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -256,19 +276,6 @@ bones/39/position = Vector3(0.6345073, 0.086959206, 0.33494675)
 bones/40/position = Vector3(0.060377706, 0.97284025, -0.17231596)
 bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
-
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=34989488]
-root_node = NodePath("../Monster")
-tree_root = SubResource("AnimationNodeStateMachine_v27kq")
-advance_expression_base_node = NodePath("..")
-anim_player = NodePath("../Monster/AnimationPlayer")
-parameters/conditions/is_draining = false
-parameters/conditions/is_hiding = false
-parameters/conditions/is_idle = false
-parameters/conditions/is_not_hiding = false
-parameters/conditions/is_running = false
-parameters/conditions/stop_draining = false
-parameters/Run/blend_position = Vector2(0.6350844, 0.6885246)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=676041675]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5032407, 0)
@@ -382,5 +389,19 @@ grow_vertical = 0
 
 [node name="AnimationController" type="Node" parent="." unique_id=1433920750]
 script = ExtResource("5_5c2io")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=34989488]
+root_node = NodePath("../Monster")
+tree_root = SubResource("AnimationNodeStateMachine_v27kq")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../Monster/AnimationPlayer")
+parameters/conditions/is_draining = false
+parameters/conditions/is_hiding = false
+parameters/conditions/is_idle = false
+parameters/conditions/is_moving = false
+parameters/conditions/is_not_hiding = false
+parameters/conditions/is_running = false
+parameters/conditions/stop_draining = false
+parameters/Run/blend_position = Vector2(0.6350844, 0.6885246)
 
 [editable path="Monster"]
