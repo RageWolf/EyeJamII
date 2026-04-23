@@ -18,7 +18,7 @@ func _ready():
 func set_player_in_range(value: bool):
 	player_in_range = value
 	interact_ui.visible = value
-	print(value)
+	# print(value)
 
 func set_feeding_active(value: bool, can_feed: bool):
 	interact_ui.visible = false if value else (player_in_range and can_feed)
