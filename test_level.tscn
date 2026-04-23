@@ -10,17 +10,18 @@
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gbhdq"]
 panorama = ExtResource("1_gbhdq")
 
-[sub_resource type="Sky" id="Sky_y646j"]
+[sub_resource type="Sky" id="Sky_gbhdq"]
 sky_material = SubResource("PanoramaSkyMaterial_gbhdq")
 radiance_size = 1
 
 [sub_resource type="Environment" id="Environment_gbhdq"]
 background_mode = 2
-sky = SubResource("Sky_y646j")
+sky = SubResource("Sky_gbhdq")
 ambient_light_source = 2
 ambient_light_color = Color(0.27314225, 0.27314225, 0.27314222, 1)
 tonemap_mode = 2
 glow_enabled = true
+glow_bloom = 0.3
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4ptq8"]
 vertices = PackedVector3Array(-9.6774, -0.75516284, -12.143064, -9.6774, -0.75516284, 16.856937, 19.322601, -0.75516284, 16.856937, 19.322601, -0.75516284, -12.143064)
@@ -89,3 +90,4 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.448936, 0, 0)
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_4ptq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9387183, 0)
