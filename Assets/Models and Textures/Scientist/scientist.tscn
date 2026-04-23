@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://1icinhlpc7l"]
+
+[ext_resource type="PackedScene" uid="uid://co7lu7rvhdawp" path="res://Assets/Models and Textures/Scientist/Scientist.blend" id="1_jteoy"]
+
+[node name="Scientist" unique_id=1354796236 instance=ExtResource("1_jteoy")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(460283762) index="0" unique_id=965705822]
+bones/0/rotation = Quaternion(-0.029146763, 4.370021e-17, -1.3128483e-17, 0.99957514)
+bones/1/rotation = Quaternion(0.070077546, -3.8939995e-19, 2.1597194e-17, 0.99754155)
+bones/2/rotation = Quaternion(0.07411849, -4.2848044e-19, 1.4603111e-17, 0.9972495)
+bones/4/rotation = Quaternion(3.7252903e-09, -1.0339758e-24, 4.135903e-25, 1)
+bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999988, -0.4996897)
+bones/6/rotation = Quaternion(-0.5572248, -0.10621896, -0.062192608, 0.8211883)
+bones/7/rotation = Quaternion(-1.369907e-08, -1.253282e-08, -0.5456001, 0.8380457)
+bones/8/rotation = Quaternion(6.274321e-10, -9.48868e-09, -0.25565976, 0.96676683)
+bones/9/rotation = Quaternion(2.028224e-08, 0.541228, 1.1629407e-08, 0.84087586)
+bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999988, -0.4996897)
+bones/11/rotation = Quaternion(-0.4199623, -0.3793031, 0.10577452, 0.8176629)
+bones/12/rotation = Quaternion(-9.969836e-09, 5.5803837e-09, 0.3303823, 0.94384724)
+bones/13/rotation = Quaternion(-4.7876334e-09, 9.468648e-09, 0.11255492, 0.99364555)
+bones/15/rotation = Quaternion(0.9999643, -6.33536e-09, -1.4027655e-08, -0.008458438)
+bones/16/rotation = Quaternion(0.06010586, -5.889551e-17, 1.093268e-16, 0.998192)
+bones/18/rotation = Quaternion(0.9999643, 8.52952e-09, -2.9638436e-08, -0.008458438)
+bones/19/rotation = Quaternion(0.06010586, 1.8434958e-15, 5.8405013e-16, 0.998192)
+bones/23/position = Vector3(3.2440777, 0.64677, -1.7105824)
+bones/24/position = Vector3(2.7857077, 2.0469372, 2.6481519)
+bones/28/position = Vector3(-3.3517249, 0.5269706, -6.1690366e-07)
+bones/29/position = Vector3(-1.2082355e-17, 5.064019, 0.43531272)
+
+[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=269286146]
+transform = Transform3D(-0.9986593, -0.020882409, 0.047362685, 0.04480043, 0.10961281, 0.992964, -0.025926998, 0.99375474, -0.10853026, 2.785783, 2.046766, 2.6484203)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=1273304828]
+autoplay = &"Idle1"
