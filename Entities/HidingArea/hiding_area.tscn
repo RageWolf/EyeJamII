@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cuqh4gnqtwngi"]
+
+[ext_resource type="Script" uid="uid://buxvr680i8s7h" path="res://Entities/HidingArea/hiding_area.gd" id="1_5ws2y"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jmi1f"]
+
+[node name="HidingArea" type="Area3D" unique_id=1475583265]
+script = ExtResource("1_5ws2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1400862485]
+shape = SubResource("SphereShape3D_jmi1f")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1692982980]

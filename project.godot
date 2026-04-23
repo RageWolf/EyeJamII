@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="2.5D gamejam"
+config/name="EyeJamII"
 run/main_scene="uid://pexximum6rf2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
@@ -78,6 +78,10 @@ esc={
 
 [layer_names]
 
+3d_render/layer_1="World"
+3d_render/layer_2="Light Detection"
+3d_render/layer_3="Player"
+3d_render/layer_20="Layer 20"
 3d_physics/layer_1="World"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Power"

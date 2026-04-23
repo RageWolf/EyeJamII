@@ -7,3 +7,5 @@ signal system_broken(position: Vector3)
 signal feed_started
 @warning_ignore("unused_signal")
 signal feed_cancelled
+@warning_ignore("unused_signal")
+signal screen_shake(intensity: float)
