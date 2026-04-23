@@ -1,6 +1,8 @@
 class_name Player extends CharacterBody3D
 
 #region CAMERA VARIABLES
+@onready var monster: Node3D = $Monster
+@onready var spring_arm_pivot: Node3D = $SpringArmPivot
 @export var camera: NodePath
 var cam: Camera3D
 #endregion 
@@ -11,7 +13,7 @@ var interact_ui_visible := false
 
 var is_feeding := false
 var feed_timer := 0.0
-var feed_duration := 2.5  # seconds to fully drain
+var feed_duration := 2.0  # seconds to fully drain
 var feed_cooldown := 1.0
 var can_feed := true
 var current_target = null
@@ -34,8 +36,13 @@ var current_light_level : float = 0.0
 @export var FRICTION = 12.0
 #endregion
 
-#region EFFECT VARIABLES
+#region HIDING VARIABLES
+var is_hiding : bool
 #endregion
+
+#animation
+@onready var anim_controller = $AnimationController
+
 
 func _ready():
 	if camera:
@@ -53,18 +60,14 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	apply_movement(direction, delta)
 	update_feeding(delta)
-	
+
+	anim_controller.update(delta, velocity, direction)
+
 	move_and_slide()
-	#rotate_camera()
+	var cam_y = spring_arm_pivot.rotation.y
+	monster.rotation.y = lerp_angle(monster.rotation.y, cam_y , 10.0 * delta)
 
 
-#func rotate_camera():
-	#if cam and not cam.is_rotating:
-		#var cam_forward = -cam.global_transform.basis.z
-		#cam_forward.y = 0
-		#cam_forward = cam_forward.normalized()
-		#
-		#look_at(global_position + cam_forward, Vector3.UP)
 
 #region INPUT & MOVEMENT :=========================================================================
 func get_input_direction() -> Vector3:
@@ -144,7 +147,6 @@ func update_light():
 	var luminance := color.get_luminance()
 	
 	current_light_level = luminance 
-	print(luminance)
 	light_level.value = luminance * 100
 	light_level.tint_progress.a = luminance
 
@@ -174,13 +176,14 @@ func try_start_feeding(target):
 	attach_position = global_position
 	
 	current_target.set_feeding_active(true, can_feed)
-
+	anim_controller.play_feeding()
 
 func update_feeding(delta):
 	if not is_feeding:
 		return
 	
 	feed_timer += delta
+	
 	
 	var progress = feed_timer / feed_duration
 	on_feed_progress(progress)
@@ -241,12 +244,13 @@ func finish_feeding():
 	cleanup_feed_ui()
 	
 	if current_target:
-		current_target.break_system() # TODO
+		current_target.break_system()
 	
 	current_target = null
 
 
 func cleanup_feed_ui():
+	anim_controller.stop_feeding()
 	if current_target:
 		current_target.set_feeding_active(false, can_feed)
 
@@ -254,6 +258,6 @@ func cleanup_feed_ui():
 
 
 
-#region EFFECTS :=========================================================================
+#region HIDING MECHANISM :=========================================================================
 
 #endregion
