@@ -5,6 +5,7 @@ var is_broken := false
 var player_in_range := false
 
 
+@onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var sparks: CPUParticles3D = $CPUParticles3D
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var interact_ui: Label3D = $InteractUi
@@ -18,6 +19,8 @@ func _ready():
 func set_player_in_range(value: bool):
 	player_in_range = value
 	interact_ui.visible = value
+	#shader
+	mesh.material_overlay.set_shader_parameter("outline_width", 5.0 if value else 0.0)
 	# print(value)
 
 func set_feeding_active(value: bool, can_feed: bool):
