@@ -6,8 +6,8 @@
 [ext_resource type="Script" uid="uid://clwtukj8xvbou" path="res://Entities/EnemyCrew/animation_controller.gd" id="4_c5e76"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6wp80"]
-radius = 1.2768555
-height = 6.3620605
+radius = 0.5629883
+height = 3.831482
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tsq5w"]
 height = 10.0
@@ -30,7 +30,7 @@ collision_mask = 13
 script = ExtResource("1_j7mom")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=403976829]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0592976, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9194355, 0)
 shape = SubResource("CapsuleShape3D_6wp80")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1070251394]
@@ -45,7 +45,7 @@ text = "PatrolState"
 font = ExtResource("2_tsq5w")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=546376362]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 4.704673, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 2.7028093, 0)
 collision_layer = 3
 collision_mask = 3
 
@@ -67,6 +67,32 @@ debug_shape_custom_color = Color(1, 1, 1, 1)
 
 [node name="Scientist" parent="." unique_id=1354796236 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(1354796236, 1070500299) index="0" unique_id=1613618958]
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/4/rotation = Quaternion(0, 0, 0, 1)
+bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999994, -0.49968964)
+bones/6/rotation = Quaternion(0.00031390926, 0.00030672774, 0.011601208, 0.9999326)
+bones/7/rotation = Quaternion(-2.815785e-11, 3.4249666e-11, -0.026701896, 0.99964345)
+bones/8/rotation = Quaternion(-9.789493e-13, -5.2596083e-12, 0.015102911, 0.999886)
+bones/9/rotation = Quaternion(5.4210105e-20, 1.3010426e-18, 8.881836e-16, 1)
+bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999994, -0.49968964)
+bones/11/rotation = Quaternion(0.00031390926, -0.00030672774, -0.011601208, 0.9999326)
+bones/12/rotation = Quaternion(-2.815785e-11, -3.4249666e-11, 0.026701896, 0.99964345)
+bones/13/rotation = Quaternion(-9.789493e-13, 5.2596083e-12, -0.015102911, 0.999886)
+bones/15/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
+bones/16/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
+bones/18/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
+bones/19/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
+bones/23/position = Vector3(3.8303065, 4.4447837, -1.3309567)
+bones/24/position = Vector3(6.3118515, 4.4447837, -9.051077e-08)
+bones/28/position = Vector3(-6.3118515, 4.4447837, -9.051077e-08)
+bones/29/position = Vector3(0, 5.1184335, 0)
+
+[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=826279548]
+transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08, -1.8251797e-07, 1, 0.9999998, 3.72529e-08, 9.42382e-08, 6.3118525, 4.444783, 1.9051036e-07)
 
 [node name="AnimationController" type="Node" parent="." unique_id=2034868810]
 script = ExtResource("4_c5e76")
