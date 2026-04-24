@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="EyeJamII"
-run/main_scene="uid://pexximum6rf2"
+run/main_scene="uid://bserwdkx5wuwc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
+boot_splash/stretch_mode=4
+boot_splash/image="uid://fp5rat22af"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 
@@ -30,6 +33,8 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://Assets/": "orange",
+"res://Assets/Models and Textures/": "orange",
 "res://Entities/": "green"
 }
 
