@@ -1,6 +1,7 @@
 extends StaticBody3D
 
-
+@export var energy_value: float = 20.0
+@export var decay_value: float = 5.0
 var is_broken := false
 var player_in_range := false
 
@@ -18,12 +19,17 @@ func _ready():
 
 func set_player_in_range(value: bool):
 	player_in_range = value
-	interact_ui.visible = value
+	if is_broken:
+		interact_ui.visible = false
+	else:
+		interact_ui.visible = value
 	#shader
 	mesh.material_overlay.set_shader_parameter("outline_width", 5.0 if value else 0.0)
 	# print(value)
 
 func set_feeding_active(value: bool, can_feed: bool):
+	if is_broken:
+		return
 	interact_ui.visible = false if value else (player_in_range and can_feed)
 	progress_bar.visible = value
 	if not value:
@@ -34,7 +40,8 @@ func break_system():
 		return
 	
 	is_broken = true
-	
+	GameManager.add_energy(energy_value)
+	GameManager.add_decay(decay_value)
 	interact_ui.visible = true 
 	interact_ui.text = "[ BROKEN ]"
 	

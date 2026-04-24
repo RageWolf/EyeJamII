@@ -165,6 +165,8 @@ func get_average_color(texture: ViewportTexture) -> Color:
 
 #region FEEDING MECHANISM:=========================================================================
 func try_start_feeding(target):
+	if target.is_broken:
+		return
 	if is_feeding or not can_feed:
 		return
 	
@@ -247,6 +249,9 @@ func finish_feeding():
 		current_target.break_system()
 	
 	current_target = null
+	
+	await get_tree().create_timer(feed_cooldown).timeout
+	can_feed = true
 
 
 func cleanup_feed_ui():

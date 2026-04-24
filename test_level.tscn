@@ -2,10 +2,11 @@
 
 [ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="1_4ptq8"]
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_4ptq8"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
 [ext_resource type="PackedScene" uid="uid://gwul7osjfe" path="res://Entities/PowerSystems/power_system.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="6_gbhdq"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="6_y646j"]
+[ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="7_lnbra"]
 [ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="8_6emce"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gbhdq"]
@@ -81,7 +82,19 @@ omni_range = 8.091701
 metadata/_edit_lock_ = true
 
 [node name="PowerSystem" parent="World/PowerSystems" unique_id=1985336906 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7212152, -0.69589484, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47646, -0.61567914, -0.18867254)
+
+[node name="PowerSystem2" parent="World/PowerSystems" unique_id=1025333880 instance=ExtResource("5_gbhdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8419824, -0.53546345, -1.1085663)
+
+[node name="PowerSystem3" parent="World/PowerSystems" unique_id=309561354 instance=ExtResource("5_gbhdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5259075, -0.55455375, -1.0679313)
+
+[node name="PowerSystem4" parent="World/PowerSystems" unique_id=2038983926 instance=ExtResource("5_gbhdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.091208, -0.6527698, -4.377482)
+
+[node name="PowerSystem5" parent="World/PowerSystems" unique_id=157458999 instance=ExtResource("5_gbhdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6293616, -0.6715262, -3.087397)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=488627294]
 navigation_mesh = SubResource("NavigationMesh_4ptq8")
@@ -104,10 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.60
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_4ptq8")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1498198509]
-
-[node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
-
 [node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1143372000]
 collision_layer = 3
 collision_mask = 3
@@ -121,3 +130,9 @@ debug_color = Color(0.8292853, 0.388263, 0.17439839, 0.5764706)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.015491486)
 mesh = SubResource("BoxMesh_lowby")
 surface_material_override/0 = SubResource("StandardMaterial3D_58smv")
+
+[node name="Hud" parent="." unique_id=798686351 instance=ExtResource("7_lnbra")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1498198509]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
