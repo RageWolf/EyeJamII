@@ -18,10 +18,7 @@ func _ready():
 
 func set_player_in_range(value: bool):
 	player_in_range = value
-	if is_broken:
-		interact_ui.visible = false
-	else:
-		interact_ui.visible = value
+	interact_ui.visible = value
 	#shader
 	mesh.material_overlay.set_shader_parameter("outline_width", 5.0 if value else 0.0)
 	# print(value)
