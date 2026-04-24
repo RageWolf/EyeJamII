@@ -67,7 +67,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		player_in_area = true
 
 
-func _on_area_3d_body_exited(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player_in_area = false
 	
@@ -116,7 +116,3 @@ func check_can_see_player() -> bool:
 		print("false")
 		print()
 		return false
-
-	
-	
-	

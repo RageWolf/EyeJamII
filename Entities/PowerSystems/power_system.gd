@@ -6,7 +6,6 @@ var player_in_range := false
 
 
 @onready var mesh: MeshInstance3D = $MeshInstance3D
-@onready var sparks: CPUParticles3D = $CPUParticles3D
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var interact_ui: Label3D = $InteractUi
 @onready var progress_bar: TextureProgressBar = %ProgressBar
@@ -39,14 +38,13 @@ func break_system():
 	interact_ui.text = "[ BROKEN ]"
 	
 	# trigger visuals
-	sparks.emitting = true
+	VfxManager.emit_zap(position)
 	blink_and_turn_off()
 	
 	# screen shake
 	SignalBus.screen_shake.emit(0.1)
 	
 	await blink_and_turn_off()
-	sparks.emitting = false
 	
 	alert_crew()
 

@@ -37,7 +37,8 @@ var current_light_level : float = 0.0
 #endregion
 
 #region HIDING VARIABLES
-var is_hiding : bool
+var is_hidden: bool = false
+var player_inside_stealth_zone : bool = false
 #endregion
 
 #animation
@@ -60,6 +61,8 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	apply_movement(direction, delta)
 	update_feeding(delta)
+	update_stealth()
+
 
 	anim_controller.update(delta, velocity, direction)
 
@@ -123,8 +126,6 @@ func apply_movement(direction: Vector3, delta):
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-
-
 #endregion
 
 
@@ -259,5 +260,25 @@ func cleanup_feed_ui():
 
 
 #region HIDING MECHANISM :=========================================================================
+func update_stealth():
+	var is_moving = velocity.length() > 0.1
+	
+	if player_inside_stealth_zone and not is_moving:
+		set_hidden(true)
+	else:
+		set_hidden(false)
+
+func set_hidden(state: bool):
+	if is_hidden == state:
+		return
+	
+	is_hidden = state
+	if is_hidden:
+		# Disable collision
+		
+		collision_layer = 3
+	else:
+		# Restore collision
+		collision_layer = 2
 
 #endregion

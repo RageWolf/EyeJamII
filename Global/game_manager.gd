@@ -19,4 +19,3 @@ func game_start():
 	while time_limit > 0:
 		time_limit -= 1 
 		await get_tree().create_timer(1.0).timeout
-		print(time_limit)
