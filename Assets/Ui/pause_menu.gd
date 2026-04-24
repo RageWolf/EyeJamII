@@ -27,5 +27,6 @@ func testEsc():
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	testEsc()
