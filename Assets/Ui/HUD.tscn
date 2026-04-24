@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://beifm2ytfdcmt"]
+
+[ext_resource type="Script" uid="uid://db08kow5k4r65" path="res://Assets/Ui/hud.gd" id="1_m7eov"]
+
+[node name="Hud" type="CanvasLayer" unique_id=798686351]
+script = ExtResource("1_m7eov")
+
+[node name="Control" type="Control" parent="." unique_id=138891501]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnergyBar" type="ProgressBar" parent="Control" unique_id=1414888401]
+layout_mode = 1
+offset_left = 56.0
+offset_top = 24.0
+offset_right = 356.0
+offset_bottom = 54.0
+
+[node name="Icon" type="TextureRect" parent="Control/EnergyBar" unique_id=1847088323]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -5.0
+offset_right = 3.0
+offset_bottom = 35.0
+
+[node name="DecayBar" type="ProgressBar" parent="Control" unique_id=353804969]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.0
+offset_top = 24.0
+offset_right = 148.0
+offset_bottom = 54.0
+grow_horizontal = 2
+
+[node name="Icon" type="TextureRect" parent="Control/DecayBar" unique_id=1875404257]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -5.0
+offset_right = 3.0
+offset_bottom = 35.0
+
+[node name="TimerLabel" type="Label" parent="Control" unique_id=776130957]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -264.0
+offset_top = 24.0
+offset_right = -64.0
+offset_bottom = 47.0
+grow_horizontal = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Control/TimerLabel" unique_id=282838746]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -11.0
+offset_right = 10.0
+offset_bottom = 29.0
