@@ -2,9 +2,9 @@
 
 [ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="1_4ptq8"]
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_4ptq8"]
 [ext_resource type="PackedScene" uid="uid://gwul7osjfe" path="res://Entities/PowerSystems/power_system.tscn" id="5_gbhdq"]
-[ext_resource type="PackedScene" uid="uid://c1de71pi0yqwb" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
+[ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="6_gbhdq"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="6_y646j"]
 [ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="8_6emce"]
 
@@ -25,9 +25,10 @@ glow_enabled = true
 glow_bloom = 0.3
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4ptq8"]
-vertices = PackedVector3Array(-9.9274, -0.75516284, -0.64306355, -8.6774, -0.75516284, -0.14306355, -8.4274, -0.75516284, -0.89306355, -9.9274, -0.75516284, -12.643064, -7.1773996, -0.75516284, -0.89306355, -6.9273996, -0.75516284, 0.35693645, 0.32260036, -0.75516284, 3.3569365, 2.5726004, -0.75516284, 3.3569365, 2.8226004, -0.75516284, -12.643064, 3.0726004, -0.75516284, 3.6069365, 19.822601, -0.75516284, 4.8569365, 19.822601, -0.75516284, -12.393064, 3.0726004, -0.75516284, 4.8569365, -8.4274, -0.75516284, 0.85693645, -9.9274, -0.75516284, 5.8569365, -0.17739964, -0.75516284, 3.6069365, -7.1773996, -0.75516284, 0.85693645, -0.17739964, -0.75516284, 4.8569365, 0.82260036, 1.2448373, 4.3569365, 0.82260036, 1.2448373, 5.6069365, 2.0726004, 1.2448373, 5.6069365, 2.0726004, 1.2448373, 4.3569365, 1.0726004, -0.75516284, 4.6069365, 1.0726004, -0.75516284, 5.3569365, 1.8226004, -0.75516284, 5.3569365, 1.8226004, -0.75516284, 4.6069365, -0.17739964, -0.75516284, 6.3569365, 1.5726004, -0.75516284, 17.356937, 1.5726004, -0.75516284, 6.6069365, -10.1774, -0.75516284, 17.356937, 3.0726004, -0.75516284, 6.3569365, 19.822601, -0.75516284, 17.356937)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(4, 6, 5), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 3), PackedInt32Array(4, 2, 3), PackedInt32Array(7, 8, 9), PackedInt32Array(9, 8, 11), PackedInt32Array(9, 11, 10), PackedInt32Array(10, 12, 9), PackedInt32Array(1, 13, 0), PackedInt32Array(0, 13, 14), PackedInt32Array(16, 5, 15), PackedInt32Array(15, 5, 6), PackedInt32Array(13, 16, 14), PackedInt32Array(14, 16, 15), PackedInt32Array(14, 15, 17), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(14, 17, 26), PackedInt32Array(26, 28, 14), PackedInt32Array(14, 28, 27), PackedInt32Array(14, 27, 29), PackedInt32Array(28, 30, 27), PackedInt32Array(27, 30, 31), PackedInt32Array(31, 30, 10), PackedInt32Array(30, 12, 10)]
+vertices = PackedVector3Array(-9.6774, -0.75516284, -12.143064, -9.6774, -0.75516284, 16.856937, 19.322601, -0.75516284, 16.856937, 19.322601, -0.75516284, -12.143064)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 cell_height = 0.1
+agent_radius = 1.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1bvp3"]
 
@@ -76,6 +77,12 @@ layers = 3
 light_energy = 16.0
 omni_range = 8.091701
 
+[node name="PowerSystems" type="Node3D" parent="World" unique_id=80075407]
+metadata/_edit_lock_ = true
+
+[node name="PowerSystem" parent="World/PowerSystems" unique_id=1985336906 instance=ExtResource("5_gbhdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7212152, -0.69589484, 0)
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=488627294]
 navigation_mesh = SubResource("NavigationMesh_4ptq8")
 
@@ -93,7 +100,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="Enemies" type="Node3D" parent="." unique_id=119893751]
 
 [node name="EnemyCrew" parent="Enemies" unique_id=1420940884 instance=ExtResource("6_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.603893)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, 0, 17.603893)
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_4ptq8")]
 
@@ -101,34 +108,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.60
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="NavigationRegion3D" unique_id=1143372000]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3963797, 0.044837236, 4.93565)
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1143372000]
 collision_layer = 3
 collision_mask = 3
-metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/RigidBody3D" unique_id=1268098250]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1268098250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2898626, 0.6503296, 7.077299)
 shape = SubResource("BoxShape3D_6emce")
 debug_color = Color(0.8292853, 0.388263, 0.17439839, 0.5764706)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/RigidBody3D/CollisionShape3D" unique_id=1816305740]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D" unique_id=1816305740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.015491486)
 mesh = SubResource("BoxMesh_lowby")
 surface_material_override/0 = SubResource("StandardMaterial3D_58smv")
-
-[node name="PowerSystems" type="Node3D" parent="NavigationRegion3D" unique_id=80075407]
-metadata/_edit_lock_ = true
-
-[node name="PowerSystem" parent="NavigationRegion3D/PowerSystems" unique_id=1985336906 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7212152, -0.69589484, 0)
-
-[node name="Enemies" type="Node3D" parent="." unique_id=119893751]
-
-[node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_4ptq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2593226, -0.87309825, -1.4763737)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1498198509]
-
-[node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
-
-[node name="StealthZone" parent="." unique_id=676040015 instance=ExtResource("5_lnbra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.118346, 0.115543544, -7.272958)

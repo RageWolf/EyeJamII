@@ -10,6 +10,7 @@ var player = null
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var vision_area: Area3D = $Area3D
 @onready var ray: RayCast3D = $RayCast3D
+@onready var anim_controller = $AnimationController
 
 
 const SPEED = 3.0
@@ -23,7 +24,8 @@ var ray_check: bool = false
 
 #endregion
 
-
+enum State {PATROLLING, CHASING, REPAIRING, SEARCHING, IDLE}
+var state: State = State.IDLE
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	SignalBus.connect("system_broken", _on_system_broken)
