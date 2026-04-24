@@ -19,6 +19,7 @@ run/max_fps=60
 
 SignalBus="*uid://c5yy67oum68yf"
 GameManager="*uid://dop3s3kpcfm8t"
+VfxManager="*uid://bffq5co48ltws"
 
 [display]
 

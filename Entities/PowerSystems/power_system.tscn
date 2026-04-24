@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://gwul7osjfe"]
 
 [ext_resource type="Script" uid="uid://cc5o257dquwde" path="res://Entities/PowerSystems/power_system.gd" id="1_twkmc"]
+[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://Shaders/outline.gdshader" id="2_j2a3l"]
 [ext_resource type="Texture2D" uid="uid://ng3lhunn328a" path="res://Assets/Sprites/ProtoWall1.png" id="2_q51ab"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="3_g63cs"]
-[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://outline.gdshader" id="3_j2a3l"]
 [ext_resource type="Texture2D" uid="uid://balrbwlhegmd" path="res://Assets/Ui/Circle bar.png" id="4_q51ab"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2a3l"]
 render_priority = 0
-shader = ExtResource("3_j2a3l")
+shader = ExtResource("2_j2a3l")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 0.0
 
@@ -74,9 +74,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=727378122]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.712603, 0)
-visible = false
 layers = 3
 light_energy = 16.0
 spot_range = 8.0
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1336320587]

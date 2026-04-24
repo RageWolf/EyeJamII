@@ -4,6 +4,8 @@ extends Node
 @onready var state_machine = anim_tree.get("parameters/playback")
 @onready var player: Player = $".."
 
+var was_hidden : bool = false
+
 var idle_anims = ["Idle1", "Idle2", "Idle3"]
 var idle_timer := 0.0
 var idle_duration := randf_range(3.0, 8.0)
@@ -13,6 +15,19 @@ func update(delta: float, velocity: Vector3, direction: Vector3):
 	var is_moving = velocity.length() > 0.1
 	
 	#print("is_moving: ", is_moving, " | current: ", state_machine.get_current_node())
+	
+	# HIDE TRANSITION
+	if player.is_hidden and not was_hidden:
+		state_machine.travel("Hide")
+	
+	elif not player.is_hidden and was_hidden:
+		state_machine.travel("Idle1")
+
+	was_hidden = player.is_hidden
+
+	# hidden : stop everything else
+	if player.is_hidden:
+		return
 	
 	# conditions
 	anim_tree.set("parameters/conditions/is_running", is_moving and not player.is_feeding)
