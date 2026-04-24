@@ -101,11 +101,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.60
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="NavigationRegion3D" unique_id=1143372000]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3963797, 0.044837236, 4.93565)
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1143372000]
 collision_layer = 3
 collision_mask = 3
-metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/RigidBody3D" unique_id=1268098250]
 shape = SubResource("BoxShape3D_6emce")
