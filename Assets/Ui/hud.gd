@@ -23,7 +23,7 @@ func update_decay(value):
 func update_time(value):
 	var total_seconds = int(value)
 	
-	var minutes = total_seconds / 60
+	var minutes = total_seconds / 60.0
 	var seconds = total_seconds % 60
 	
 	timer_label.text = "%02d:%02d" % [minutes, seconds]
