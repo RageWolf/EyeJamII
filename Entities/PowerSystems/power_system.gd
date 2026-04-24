@@ -21,6 +21,7 @@ func set_player_in_range(value: bool):
 	interact_ui.visible = value
 	#shader
 	mesh.material_overlay.set_shader_parameter("outline_width", 5.0 if value else 0.0)
+	# print(value)
 
 func set_feeding_active(value: bool, can_feed: bool):
 	interact_ui.visible = false if value else (player_in_range and can_feed)
