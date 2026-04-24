@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cnisafhte5caj" path="res://Entities/EnemyCrew/enemy_crew.gd" id="1_j7mom"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="2_tsq5w"]
+[ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_l5xqq"]
+[ext_resource type="Script" uid="uid://clwtukj8xvbou" path="res://Entities/EnemyCrew/animation_controller.gd" id="4_c5e76"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6wp80"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_j7mom"]
+radius = 1.2768555
+height = 6.3620605
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tsq5w"]
 height = 10.0
@@ -20,20 +22,18 @@ height = 10.219
 transparency = 1
 albedo_color = Color(1, 1, 0.6627451, 0.6039216)
 
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c5e76"]
+
 [node name="EnemyCrew" type="CharacterBody3D" unique_id=1420940884]
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_j7mom")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=403976829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0592976, 0)
 shape = SubResource("CapsuleShape3D_6wp80")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1070251394]
-
-[node name="Armature" type="Node3D" parent="." unique_id=1719658425]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Armature" unique_id=398997371]
-mesh = SubResource("CapsuleMesh_j7mom")
 
 [node name="StateLabel" type="Label3D" parent="." unique_id=1880972450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0779946, 0)
@@ -45,27 +45,40 @@ text = "PatrolState"
 font = ExtResource("2_tsq5w")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=546376362]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 4.704673, 0)
 collision_layer = 3
 collision_mask = 3
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1447121644]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.6775629, -5.003233)
 visible = false
 shape = SubResource("CylinderShape3D_tsq5w")
 debug_color = Color(0.6573322, 0.5201367, 1.92523e-07, 0.95686275)
-metadata/_edit_lock_ = true
 
 [node name="debug" type="MeshInstance3D" parent="Area3D" unique_id=504735111]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.01437521, 0.6879339, -4.8897862)
 mesh = SubResource("CylinderMesh_l5xqq")
 surface_material_override/0 = SubResource("StandardMaterial3D_c5e76")
-metadata/_edit_lock_ = true
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1745231899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.069319, 0)
 collision_mask = 2
 debug_shape_custom_color = Color(1, 1, 1, 1)
+
+[node name="Scientist" parent="." unique_id=1354796236 instance=ExtResource("3_l5xqq")]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+
+[node name="AnimationController" type="Node" parent="." unique_id=2034868810]
+script = ExtResource("4_c5e76")
+
+[node name="AnimationTree" type="AnimationTree" parent="AnimationController" unique_id=418665226]
+root_node = NodePath("../../Scientist")
+tree_root = SubResource("AnimationNodeStateMachine_c5e76")
+advance_expression_base_node = NodePath("../..")
+anim_player = NodePath("../../Scientist/AnimationPlayer")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+
+[editable path="Scientist"]

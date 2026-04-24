@@ -100,7 +100,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="Enemies" type="Node3D" parent="." unique_id=119893751]
 
 [node name="EnemyCrew" parent="Enemies" unique_id=1420940884 instance=ExtResource("6_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.603893)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, 0, 17.603893)
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_4ptq8")]
 

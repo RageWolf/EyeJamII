@@ -4,11 +4,11 @@
 
 [node name="Scientist" unique_id=1354796236 instance=ExtResource("1_jteoy")]
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(460283762) index="0" unique_id=965705822]
-bones/0/rotation = Quaternion(-0.029146763, 4.370021e-17, -1.3128483e-17, 0.99957514)
-bones/1/rotation = Quaternion(0.070077546, -3.8939995e-19, 2.1597194e-17, 0.99754155)
-bones/2/rotation = Quaternion(0.07411849, -4.2848044e-19, 1.4603111e-17, 0.9972495)
-bones/4/rotation = Quaternion(3.7252903e-09, -1.0339758e-24, 4.135903e-25, 1)
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(423547870) index="0" unique_id=819520453]
+bones/0/rotation = Quaternion(-0.029146763, 5.3222908e-17, -1.143522e-17, 0.99957514)
+bones/1/rotation = Quaternion(0.070077546, -3.9621034e-19, 2.0693834e-17, 0.99754155)
+bones/2/rotation = Quaternion(0.07411849, -3.1312876e-19, 1.4576117e-17, 0.9972495)
+bones/4/rotation = Quaternion(3.7252903e-09, -8.271806e-25, 0, 1)
 bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999988, -0.4996897)
 bones/6/rotation = Quaternion(-0.5572248, -0.10621896, -0.062192608, 0.8211883)
 bones/7/rotation = Quaternion(-1.369907e-08, -1.253282e-08, -0.5456001, 0.8380457)
@@ -27,8 +27,14 @@ bones/24/position = Vector3(2.7857077, 2.0469372, 2.6481519)
 bones/28/position = Vector3(-3.3517249, 0.5269706, -6.1690366e-07)
 bones/29/position = Vector3(-1.2082355e-17, 5.064019, 0.43531272)
 
-[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=269286146]
+[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=1106768109]
 transform = Transform3D(-0.9986593, -0.020882409, 0.047362685, 0.04480043, 0.10961281, 0.992964, -0.025926998, 0.99375474, -0.10853026, 2.785783, 2.046766, 2.6484203)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1273304828]
+[node name="SpotLight3D" type="SpotLight3D" parent="Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(1187520570) index="0" unique_id=1816640182]
+transform = Transform3D(-0.9375435, -1.1152594e-05, 0.34786895, 2.3795663e-05, 0.9999999, 9.591594e-05, -0.3478688, 9.814341e-05, -0.937543, -0.015816689, 0.002682209, -0.73840237)
+layers = 3
+spot_range = 10.308962
+spot_angle = 19.687498
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=58299374]
 autoplay = &"Idle1"
