@@ -24,9 +24,9 @@ var attach_position: Vector3
 var current_light_level : float = 0.0
 @onready var sub_viewport: SubViewport = $SubViewport
 @onready var light_detection: Node3D = $SubViewport/LightDetection
-@onready var texture_rect: TextureRect = $Control/TextureRect
-@onready var light_level: TextureProgressBar = $Control/LightLevel
-@onready var color_rect: ColorRect = $Control/ColorRect
+@onready var texture_rect: TextureRect = $CanvasLayer/Control/TextureRect
+@onready var light_level: TextureProgressBar = $CanvasLayer/Control/LightLevel
+@onready var color_rect: ColorRect = $CanvasLayer/Control/ColorRect
 #endregion
 
 #region MOVEMENT VARIABLES

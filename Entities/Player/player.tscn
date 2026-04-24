@@ -245,26 +245,26 @@ camera = NodePath("SpringArmPivot/SpringArm3D/Camera3D")
 
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 925666946) index="0" unique_id=1896851120]
-bones/0/position = Vector3(0, 0.30535987, 0)
-bones/1/rotation = Quaternion(0.02381419, -7.890575e-09, -2.0386187e-08, 0.99971646)
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 1136167756) index="0" unique_id=386205293]
+bones/0/position = Vector3(0, 0.3385254, 0)
+bones/1/rotation = Quaternion(-0.0347172, -7.510142e-09, -2.0529384e-08, 0.9993973)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8640652, 9.443369e-16, -9.334125e-16, 0.50337994)
-bones/2/scale = Vector3(1.0047958, 1.0047958, 1.0047958)
-bones/4/rotation = Quaternion(0.008050025, 0.0061685382, 0.4980028, 0.86711615)
-bones/6/rotation = Quaternion(0.008050021, -0.0061685583, -0.49800277, 0.8671162)
-bones/7/rotation = Quaternion(0.1848536, -0.08243329, -0.55471224, 0.8070491)
-bones/8/rotation = Quaternion(-0.7263552, -1.9134039e-05, -0.11725827, 0.6772435)
-bones/9/rotation = Quaternion(0.13482882, -0.12525037, -0.6435958, 0.7429118)
-bones/10/rotation = Quaternion(-0.7014989, -2.0006208e-05, -0.113246374, 0.7036153)
-bones/11/rotation = Quaternion(0.11863245, 0.2653205, 0.76364887, -0.5765169)
-bones/12/rotation = Quaternion(-0.63064504, 3.0872416e-05, 0.1135992, 0.76771235)
-bones/13/rotation = Quaternion(0.1985034, 0.06875443, 0.5294971, 0.8218894)
-bones/14/rotation = Quaternion(-0.73684543, 1.8764287e-05, 0.11895172, 0.66551435)
-bones/15/rotation = Quaternion(0.10077358, 0.09891757, 0.6561546, 0.74129707)
-bones/16/rotation = Quaternion(-0.60719, 2.2434166e-05, 0.09802162, 0.7884872)
-bones/17/rotation = Quaternion(-0.02586904, 0.15018636, 0.8408894, 0.5193071)
-bones/18/rotation = Quaternion(-0.627421, -3.0999076e-05, -0.113018505, 0.77043486)
+bones/2/rotation = Quaternion(0.8918415, -2.7941867e-16, -6.7363625e-16, 0.45234835)
+bones/2/scale = Vector3(1.0042558, 1.0042558, 1.0042558)
+bones/4/rotation = Quaternion(0.007680101, 0.0058850464, 0.4977972, 0.86723953)
+bones/6/rotation = Quaternion(0.0076800743, -0.0058850655, -0.49779722, 0.8672396)
+bones/7/rotation = Quaternion(0.14851972, -0.050555054, -0.5643828, 0.81046784)
+bones/8/rotation = Quaternion(-0.7035975, -1.9829726e-05, -0.11358441, 0.7014622)
+bones/9/rotation = Quaternion(0.10160118, -0.09128841, -0.65089726, 0.7467773)
+bones/10/rotation = Quaternion(-0.677885, -2.0681882e-05, -0.10943426, 0.7269773)
+bones/11/rotation = Quaternion(0.15984745, 0.23625527, 0.75284487, -0.5931753)
+bones/12/rotation = Quaternion(-0.6029903, 3.179675e-05, 0.10861775, 0.79031944)
+bones/13/rotation = Quaternion(0.16115424, 0.03740981, 0.5399823, 0.8252569)
+bones/14/rotation = Quaternion(-0.71439326, 1.9480476e-05, 0.115327194, 0.69017535)
+bones/15/rotation = Quaternion(0.06813954, 0.06672769, 0.66172284, 0.743658)
+bones/16/rotation = Quaternion(-0.57973874, 2.3026023e-05, 0.09359002, 0.8094097)
+bones/17/rotation = Quaternion(-0.059835404, 0.11282277, 0.8379382, 0.53061324)
+bones/18/rotation = Quaternion(-0.59485555, -3.2064974e-05, -0.10715242, 0.79665893)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -294,7 +294,7 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1994518764]
+[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1165575813]
 material_overlay = SubResource("ShaderMaterial_5c2io")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=676041675]
@@ -351,15 +351,18 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.533636, 0)
 layers = 2
 mesh = SubResource("SphereMesh_q6ntu")
 
-[node name="Control" type="Control" parent="." unique_id=1183374556]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1720999190]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1183374556]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1965075733]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1965075733]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -374,20 +377,22 @@ offset_bottom = -24.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="LightLevel" type="TextureProgressBar" parent="Control" unique_id=742550558]
+[node name="LightLevel" type="TextureProgressBar" parent="CanvasLayer/Control" unique_id=742550558]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -72.0
-offset_top = -144.0
-offset_right = 426.0
-offset_bottom = 56.0
+offset_left = -249.0
+offset_top = -168.0
+offset_right = 249.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
 max_value = 1.0
 step = 0.001
 fill_mode = 7
@@ -395,7 +400,7 @@ texture_under = SubResource("CompressedTexture2D_y660y")
 texture_progress = SubResource("CompressedTexture2D_nqdw5")
 tint_under = Color(0, 0, 0, 0.19607843)
 
-[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2054157167]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=2054157167]
 visible = false
 layout_mode = 1
 anchors_preset = 2
