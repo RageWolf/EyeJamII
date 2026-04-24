@@ -68,6 +68,7 @@ func fix_system():
 	
 	light.visible = true
 	is_broken = false
+	SignalBus.system_fixed.emit(self)
 
 func alert_crew():
-	SignalBus.system_broken.emit(global_position)
+	SignalBus.system_broken.emit(global_position, self)
