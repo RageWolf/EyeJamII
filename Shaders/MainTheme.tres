@@ -1,0 +1,88 @@
+[gd_resource type="Theme" format=3 uid="uid://kgkrtpvr80cq"]
+
+[ext_resource type="FontFile" uid="uid://dher4x2xyaefu" path="res://Assets/Fonts/AICON-Bold.otf" id="1_naqgp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naqgp"]
+bg_color = Color(0.36862746, 0.08627451, 0.05490196, 1)
+border_width_bottom = 12
+border_color = Color(0.25882354, 0.0627451, 0.039215688, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rschs"]
+bg_color = Color(0.20392157, 0.20784314, 0.19215687, 1)
+border_width_bottom = 12
+border_color = Color(0.1471372, 0.14713785, 0.13709739, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a8nx"]
+bg_color = Color(0.13869333, 0.14, 0.1302, 1)
+border_width_bottom = 12
+border_color = Color(0.10072256, 0.10391382, 0.094338916, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twhdh"]
+bg_color = Color(0.25781652, 0.0631403, 0.04048767, 1)
+border_width_bottom = 5
+border_color = Color(0.1841361, 0.034866527, 0.020424211, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jl35j"]
+bg_color = Color(0.66148114, 0.45202118, 0.46442556, 1)
+skew = Vector2(0.72, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix1ab"]
+bg_color = Color(0.4509804, 0, 0.11764706, 1)
+skew = Vector2(0.7, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41ji2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc7tx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qim2k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3t35"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 20
+border_color = Color(1, 1, 1, 1)
+
+[resource]
+default_font = ExtResource("1_naqgp")
+default_font_size = 20
+Button/styles/focus = SubResource("StyleBoxFlat_naqgp")
+Button/styles/hover = SubResource("StyleBoxFlat_rschs")
+Button/styles/normal = SubResource("StyleBoxFlat_0a8nx")
+Button/styles/pressed = SubResource("StyleBoxFlat_twhdh")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_jl35j")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_ix1ab")
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/styles/normal = null
+VBoxContainer/constants/separation = 2
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_41ji2")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_fc7tx")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_qim2k")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_a3t35")

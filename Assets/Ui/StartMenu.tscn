@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bfdsqjr15giwt"]
 
+[ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="1_7ksrw"]
 [ext_resource type="Script" uid="uid://c15x010a5th5a" path="res://Assets/Ui/start_menu.gd" id="1_bleff"]
+[ext_resource type="FontFile" uid="uid://c6wq1qhg8bd15" path="res://Assets/Fonts/Metal Lord.otf" id="2_7ksrw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12n2q"]
 
@@ -11,27 +13,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7ksrw")
 script = ExtResource("1_bleff")
 
 [node name="BG" type="Panel" parent="." unique_id=1402879495]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 0
+offset_right = 1280.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_12n2q")
 
+[node name="Title" type="Label" parent="." unique_id=555464939]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 28.0
+offset_right = 1051.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("2_7ksrw")
+theme_override_font_sizes/font_size = 120
+text = "Thermal Runaway"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300817257]
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 50.0
-offset_top = 73.0
-offset_right = 331.0
-offset_bottom = 305.0
-grow_vertical = 2
+offset_top = -287.0
+offset_right = 350.0
+offset_bottom = -87.0
+grow_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=1773023380]
@@ -57,20 +69,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
 text = "QUIT"
-
-[node name="Title" type="Label" parent="." unique_id=555464939]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 28.0
-offset_right = 486.0
-offset_bottom = 138.0
-theme_override_font_sizes/font_size = 80
-text = "GAME TITLE"
-
-[node name="LoadingBar" type="ProgressBar" parent="." unique_id=1202554762]
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]

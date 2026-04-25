@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@onready var energy_bar = $Control/EnergyBar
-@onready var decay_bar = $Control/DecayBar
-@onready var timer_label = $Control/TimerLabel
+@onready var energy_bar: ProgressBar = $HBoxContainer/EnergyBar
+@onready var decay_bar: ProgressBar = $HBoxContainer/DecayBar
+@onready var timer_label: Label = $TimerLabel
 
 func _ready():
 	GameManager.energy_changed.connect(update_energy)
@@ -26,7 +26,7 @@ func update_time(value):
 	var minutes = total_seconds / 60.0
 	var seconds = total_seconds % 60
 	
-	timer_label.text = "%02d:%02d" % [minutes, seconds]
+	timer_label.text = "Time left: %02d:%02d" % [minutes, seconds]
 	
 	# turn red when low
 	if total_seconds <= 20:

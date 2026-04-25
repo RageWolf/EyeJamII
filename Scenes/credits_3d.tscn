@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dwul3lfw5ycly"]
+
+[ext_resource type="Script" uid="uid://j2ul76dps6gt" path="res://Assets/Ui/credits.gd" id="1_rg2as"]
+[ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="2_meo2p"]
+[ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_meo2p"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_anspf"]
+panorama = ExtResource("2_meo2p")
+
+[sub_resource type="Sky" id="Sky_eeugp"]
+sky_material = SubResource("PanoramaSkyMaterial_anspf")
+radiance_size = 1
+
+[sub_resource type="Environment" id="Environment_4gpbn"]
+background_mode = 2
+sky = SubResource("Sky_eeugp")
+ambient_light_source = 2
+tonemap_mode = 3
+
+[sub_resource type="Animation" id="Animation_meo2p"]
+resource_name = "Credits"
+length = 30.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5235988, 0.34906584)]
+}
+
+[sub_resource type="Animation" id="Animation_anspf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eeugp"]
+_data = {
+&"Credits": SubResource("Animation_meo2p"),
+&"RESET": SubResource("Animation_anspf")
+}
+
+[node name="Credits" type="Node3D" unique_id=412557589]
+script = ExtResource("1_rg2as")
+
+[node name="BackLight" type="DirectionalLight3D" parent="." unique_id=457436477]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, -41.369682)
+light_color = Color(0.24560198, 0.35109198, 0.39057523, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="FrontLight" type="DirectionalLight3D" parent="." unique_id=1273612020]
+transform = Transform3D(0.9659259, -0.22414386, 0.12940946, 2.7805948e-08, 0.49999994, 0.86602545, -0.258819, -0.8365164, 0.48296285, -3.5922852, 23.711842, 94.54695)
+light_energy = 4.266
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=310869527]
+environment = SubResource("Environment_4gpbn")
+
+[node name="Boudicca" parent="." unique_id=76047387 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.219635)
+
+[node name="Muntz" parent="." unique_id=1354796236 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.1074)
+
+[node name="Tanmay" parent="." unique_id=1017362349 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41.74061)
+
+[node name="Edward" parent="." unique_id=1364989209 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.994431, 0, -28.546736)
+
+[node name="Nikki" parent="." unique_id=2109260781 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.069748, 0, -20.630417)
+
+[node name="Dominic" parent="." unique_id=2036565269 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.832642, 0, -18.951193)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1697375017]
+libraries/ = SubResource("AnimationLibrary_eeugp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=369160359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.290531, -0.29076052)
+cull_mask = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1638980342]

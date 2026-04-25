@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cemt2w5w6nykr" path="res://Shaders/PauseMenu.gdshader" id="1_6hcmb"]
 [ext_resource type="Script" uid="uid://cf6qthp0sokqt" path="res://Assets/Ui/pause_menu.gd" id="1_h1s6b"]
+[ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="1_pwdr2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h1s6b"]
 shader = ExtResource("1_6hcmb")
@@ -100,6 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pwdr2")
 script = ExtResource("1_h1s6b")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=833196598]
@@ -137,9 +139,11 @@ offset_right = -30.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_constants/separation = 70
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=1078191254]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.6862745, 0.7019608, 0.65882355, 1)
@@ -147,6 +151,7 @@ theme_override_font_sizes/font_size = 20
 text = "RESUME"
 
 [node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=927593215]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.6862745, 0.7019608, 0.65882355, 1)
@@ -154,6 +159,7 @@ theme_override_font_sizes/font_size = 20
 text = "RESTART"
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=156344410]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.6862745, 0.7019608, 0.65882355, 1)

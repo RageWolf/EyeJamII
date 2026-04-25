@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://bsa58cakafxkk" path="res://Audio/jump/JUMP 2.mp3" id="7_ap3xn"]
 [ext_resource type="AudioStream" uid="uid://dfaolw12qerh5" path="res://Audio/jump/JUMP 3.mp3" id="8_iplt1"]
 [ext_resource type="Script" uid="uid://bffhknagp4x7j" path="res://Entities/Player/audio_controller.gd" id="10_ap3xn"]
-[ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="10_x1y6q"]
 [ext_resource type="AudioStream" uid="uid://cnyb52h5dhtdj" path="res://Audio/jump/JUMP 5.mp3" id="10_xr8lj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
@@ -303,26 +302,26 @@ SPEED = 15.0
 
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 489243547) index="0" unique_id=594212113]
-bones/0/position = Vector3(0, 0.30540046, 0)
-bones/1/rotation = Quaternion(0.023745349, -7.8900655e-09, -2.0386386e-08, 0.9997181)
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
+bones/0/position = Vector3(0, 0.30508667, 0)
+bones/1/rotation = Quaternion(0.02427795, -7.894005e-09, -2.038486e-08, 0.9997053)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8641017, -7.8485184e-16, 6.1175414e-16, 0.5033173)
-bones/2/scale = Vector3(1.0047213, 1.0047212, 1.0047214)
-bones/4/rotation = Quaternion(0.00748016, 0.0057318467, 0.49803472, 0.8671059)
-bones/6/rotation = Quaternion(0.007480279, -0.0057319566, -0.4980349, 0.8671059)
-bones/7/rotation = Quaternion(0.18480949, -0.082394555, -0.55472463, 0.80705464)
-bones/8/rotation = Quaternion(-0.72635585, -1.9130768e-05, -0.11725841, 0.6772428)
-bones/9/rotation = Quaternion(0.13478878, -0.12520899, -0.6436056, 0.74291766)
-bones/10/rotation = Quaternion(-0.70147264, -2.001133e-05, -0.11324212, 0.7036422)
-bones/11/rotation = Quaternion(0.118681125, 0.26528475, 0.7636381, -0.5765378)
-bones/12/rotation = Quaternion(-0.6306144, 3.0918516e-05, 0.11359371, 0.7677383)
-bones/13/rotation = Quaternion(0.19845799, 0.06871636, 0.52951044, 0.821895)
-bones/14/rotation = Quaternion(-0.7368205, 1.8786643e-05, 0.11894769, 0.6655427)
-bones/15/rotation = Quaternion(0.10075131, 0.09889631, 0.6561612, 0.741297)
-bones/16/rotation = Quaternion(-0.6071435, 2.2429975e-05, 0.09801411, 0.7885239)
-bones/17/rotation = Quaternion(-0.0259095, 0.15014103, 0.8408876, 0.51932114)
-bones/18/rotation = Quaternion(-0.6273846, -3.101631e-05, -0.11301194, 0.7704655)
+bones/2/rotation = Quaternion(0.8638192, 4.7047603e-16, -1.1988785e-15, 0.503802)
+bones/2/scale = Vector3(1.0048013, 1.0048013, 1.0048013)
+bones/4/rotation = Quaternion(0.008057092, 0.0061739534, 0.49800506, 0.8671148)
+bones/6/rotation = Quaternion(0.008057086, -0.0061739725, -0.4980051, 0.86711466)
+bones/7/rotation = Quaternion(0.18515044, -0.082694, -0.5546288, 0.80701184)
+bones/8/rotation = Quaternion(-0.72653437, -1.9123789e-05, -0.11728719, 0.6770462)
+bones/9/rotation = Quaternion(0.1350981, -0.12552875, -0.64353025, 0.74287266)
+bones/10/rotation = Quaternion(-0.7016763, -2.0001085e-05, -0.113275014, 0.70343375)
+bones/11/rotation = Quaternion(0.118304566, 0.26556095, 0.76372176, -0.5763771)
+bones/12/rotation = Quaternion(-0.63085175, 3.086962e-05, 0.11363644, 0.76753694)
+bones/13/rotation = Quaternion(0.19880931, 0.069010645, 0.52940726, 0.8218518)
+bones/14/rotation = Quaternion(-0.7370145, 1.8761495e-05, 0.11897903, 0.66532224)
+bones/15/rotation = Quaternion(0.10104953, 0.09919298, 0.6561011, 0.74126995)
+bones/16/rotation = Quaternion(-0.6074053, 2.242718e-05, 0.09805635, 0.788317)
+bones/17/rotation = Quaternion(-0.025596557, 0.15049157, 0.8409018, 0.51921225)
+bones/18/rotation = Quaternion(-0.6276661, -3.099628e-05, -0.11306265, 0.77022856)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -510,7 +509,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.724354, 0)
 light_color = Color(0.88691235, 0.8879253, 0.77049017, 1)
 light_energy = 9.0
 omni_range = 10.0
-
-[node name="Hud" parent="." unique_id=798686351 instance=ExtResource("10_x1y6q")]
 
 [editable path="Monster"]

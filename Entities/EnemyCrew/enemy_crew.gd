@@ -200,6 +200,7 @@ func patrol(delta):
 			patrol_timer = 2.0
 			index = (index + 1) % patrol_points.size()
 		#start_search(2.0)
+#endregion 
 
 func search(delta):
 	search_timer -= delta
