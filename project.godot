@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="EyeJamII"
-run/main_scene="uid://pexximum6rf2"
+run/main_scene="uid://bbcnr3piagp1t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 boot_splash/stretch_mode=4

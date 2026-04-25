@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwul3lfw5ycly"]
 
 [ext_resource type="Script" uid="uid://j2ul76dps6gt" path="res://Assets/Ui/credits.gd" id="1_rg2as"]
-[ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="2_meo2p"]
+[ext_resource type="Texture2D" uid="uid://wwq7b5eq73dq" path="res://Assets/Sprites/qwantani_moonrise_puresky_2k.hdr" id="2_meo2p"]
 [ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_meo2p"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_anspf"]
@@ -19,7 +19,7 @@ tonemap_mode = 3
 
 [sub_resource type="Animation" id="Animation_meo2p"]
 resource_name = "Credits"
-length = 30.0
+length = 35.0
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -31,7 +31,33 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 30),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.5235988, 0.34906584)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5235988, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 15, 20, 25, 30, 35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-21.40762, 6.290531, -13.771945), Vector3(-7.498995, 6.290531, -20.846191), Vector3(-7.498995, 6.290531, -9.744322), Vector3(1.951067, 6.290531, -9.744322), Vector3(13.8698845, 6.290531, -13.693502), Vector3(1.8187733, 6.290531, -38.44394), Vector3(-2.8538008, 6.290531, -39.72061)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"credits_finished"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_anspf"]
@@ -47,6 +73,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-21.40762, 6.290531, -13.771945)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eeugp"]
@@ -94,9 +132,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.832642, 0, -18.951193)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1697375017]
 libraries/ = SubResource("AnimationLibrary_eeugp")
+autoplay = &"Credits"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=369160359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.290531, -0.29076052)
+transform = Transform3D(0.65619075, 0, -0.75459504, 0, 1, 0, 0.75459504, 0, 0.65619075, -21.40762, 6.290531, -13.771945)
 cull_mask = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1638980342]
