@@ -43,13 +43,13 @@ var at_target_patrol = false
 
 var search_timer = 0.0
 var fix_timer = 2.0
-var patrol_timer = 2.0
 
 var index = 1
 
 var player_caught = false
 var player_spotted = false
 var detection = false
+var turn = false
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -59,11 +59,12 @@ func _ready() -> void:
 		state = State.PATROLLING
 	else:
 		state = State.IDLE
+	
+	
 
 func _physics_process(_delta: float) -> void:
 	if player == null:
 		return
-	velocity = Vector3.ZERO
 	
 	can_see_player = check_can_see_player()
 	# print(can_see_player)
@@ -143,10 +144,8 @@ func _physics_process(_delta: float) -> void:
 	match state:
 		State.PATROLLING:
 			patrol(_delta)
-			# move_and_slide()
 		State.CHASING:
 			chase_player()
-			move_and_slide()
 		State.IDLE:
 			velocity = Vector3.ZERO
 			nav_agent.target_position = global_position
@@ -156,7 +155,7 @@ func _physics_process(_delta: float) -> void:
 			search(_delta)
 		State.REPAIRING:
 			fix_system(_delta)
-			move_and_slide()
+	move_and_slide()
 
 
 func _on_system_broken(_target: Vector3, power_system):
@@ -182,25 +181,18 @@ func chase_player():
 func patrol(delta):
 	speed = 1.5
 	var waypoint =  patrol_points[index]
-	#print(nav_agent.is_navigation_finished())
-	#print(nav_agent.get_next_path_position())
-	if at_target_patrol == false:
-		move_to_waypoint(waypoint.global_position)
-		look_at_target(waypoint)
-	if (waypoint.global_position - global_position).length() <= 0.5:
-		at_target_patrol = true
-		SignalBus.emit_signal("update_anim")
-		print("target reached")
-		patrol_timer -= delta
-		if patrol_timer <= 0:
-			velocity = Vector3.ZERO
-			nav_agent.target_position = global_position
-			at_target_patrol = false
-			SignalBus.emit_signal("update_anim")
-			patrol_timer = 2.0
-			index = (index + 1) % patrol_points.size()
-		#start_search(2.0)
-#endregion 
+	if turn == false:
+		var direction = waypoint.global_position
+		direction.y = 0
+		look_at(global_position + direction, Vector3.UP)
+		turn = true
+	move_to_waypoint(waypoint.global_position)
+	if nav_agent.is_navigation_finished():
+		start_search(5.0)
+		index = (index + 1) % patrol_points.size()
+		turn = false
+
+	
 
 func search(delta):
 	search_timer -= delta
@@ -214,7 +206,7 @@ func start_search(time):
 func fix_system(delta):
 	speed = 1.5
 	move_to_waypoint(current_target.global_position)
-	look_at_target(current_target)
+	#look_at_target(current_target)
 	if current_target.global_position - global_position <= 0.5:
 		at_target_fix = true
 		SignalBus.emit_signal("update_anim")
@@ -305,7 +297,9 @@ func look_at_target(target):
 	else:
 		direction = target.global_position - global_position
 	direction.y = 0
-	look_at(global_position + direction, Vector3.UP)
+	if direction.length() < 0.05:
+		return
+	look_at(global_position + direction.normalized(), Vector3.UP)
 	
 func move_to_waypoint(waypoint):
 	var target_position = null
@@ -315,11 +309,12 @@ func move_to_waypoint(waypoint):
 		nav_agent.target_position = waypoint.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	velocity = (next_nav_point - global_position).normalized() * speed
-	velocity.y = 0
 
 
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		print("Player caught!")
 		player_caught = true
+	
+
 	
