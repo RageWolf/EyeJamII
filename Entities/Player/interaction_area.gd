@@ -8,6 +8,7 @@ func _ready():
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
+	print("ENTERED:", body.name)
 	if body.is_in_group("power_system"):
 		nearby_targets.append(body)
 		body.set_player_in_range(true)

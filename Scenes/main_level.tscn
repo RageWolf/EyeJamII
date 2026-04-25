@@ -3,17 +3,36 @@
 [ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="2_5erdv"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
+[ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="4_a2ia3"]
+[ext_resource type="PackedScene" uid="uid://s6q33parw8mj" path="res://Assets/Models and Textures/Drainables/fridge_drainable.tscn" id="4_f3gli"]
+[ext_resource type="PackedScene" uid="uid://bg5favivvppvq" path="res://Assets/Models and Textures/Drainables/reactor_drainable.tscn" id="5_2jcip"]
+[ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="5_a2ia3"]
+[ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="6_236hc"]
+[ext_resource type="PackedScene" uid="uid://skimmd2bcho0" path="res://Assets/Models and Textures/Drainables/generic_drainable.tscn" id="7_lwkuy"]
+[ext_resource type="PackedScene" uid="uid://d2qmlbel1r3uj" path="res://Assets/Models and Textures/Props/cafeteria_table.tscn" id="8_jf8f8"]
+[ext_resource type="PackedScene" uid="uid://dc8ac3m2tkidh" path="res://Assets/Models and Textures/Props/metal_table.tscn" id="9_qx7ya"]
+[ext_resource type="PackedScene" uid="uid://cxyx1sria225j" path="res://Assets/Models and Textures/Drainables/server_drainable.tscn" id="10_6l6h0"]
+[ext_resource type="PackedScene" uid="uid://bxq2gn7m381sn" path="res://Assets/Models and Textures/Props/lab_table.tscn" id="10_d4dc6"]
+[ext_resource type="PackedScene" uid="uid://dca7t7cwdkvgt" path="res://Assets/Models and Textures/Drainables/sat_dish_drainable.tscn" id="11_2jcip"]
+[ext_resource type="PackedScene" uid="uid://b81jth6xp3d0t" path="res://Assets/Models and Textures/Props/lab_chair.tscn" id="11_7wxy1"]
+[ext_resource type="PackedScene" uid="uid://dtaf3lwurigxn" path="res://Assets/Models and Textures/Props/fabricator.tscn" id="12_8ce4n"]
+[ext_resource type="PackedScene" uid="uid://cs0nqj3x48uy7" path="res://Assets/Models and Textures/Props/shelves.tscn" id="13_o0i6v"]
+[ext_resource type="PackedScene" uid="uid://b1sjb1xfh8ypx" path="res://Assets/Models and Textures/Props/weird_storage_shelf.tscn" id="14_1ubp3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbrl8"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_5erdv"]
 sky_material = SubResource("ProceduralSkyMaterial_qbrl8")
 
 [sub_resource type="Environment" id="Environment_qbrl8"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_5erdv")
 tonemap_mode = 2
+glow_enabled = true
+adjustment_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ikcpc"]
 vertices = PackedVector3Array(5, 0.5999999, -44.752968, 5.25, 0.5999999, -44.252968, 7.25, 0.5999999, -44.252968, 7.5, 0.5999999, -45.002968, 20.25, 0.5999999, -48.252968, 20.5, 0.5999999, -46.002968, 31, 0.5999999, -46.002968, 31, 0.5999999, -56.252968, 32.25, 0.5999999, -56.502968, 32.25, 0.5999999, -58.752968, 31.5, 0.5999999, -59.002968, 7.75, 0.5999999, -82.75297, 7.5, 0.5999999, -83.50297, 5.25, 0.5999999, -83.50297, 5, 0.5999999, -82.75297, 15.75, 0.5999999, -48.252968, 31.5, 0.5999999, -60.252968, 33.25, 0.5999999, -60.502968, 32.5, 0.5999999, -82.75297, 15.5, 0.5999999, -45.002968, 47.5, 0.5999999, -83.50297, 44.75, 0.5999999, -83.50297, 44.5, 0.5999999, -82.75297, 47, 0.5999999, -80.25297, 47.5, 0.5999999, -80.50297, 43.75, 0.5999999, -60.502968, 47, 0.5999999, -60.502968, 36.5, 0.5999999, -60.502968, 36.75, 0.5999999, -59.752968, 43.5, 0.5999999, -59.752968, 47, 0.5999999, -56.252968, 47.5, 0.5999999, -56.502968, 47.5, 0.5999999, -58.752968, 43.75, 0.5999999, -58.752968, 33.25, 0.5999999, -56.252968, 36.5, 0.5999999, -58.752968, 33.25, 0.5999999, -44.502968, 47, 0.5999999, -45.002968, 112.25, 0.5999999, -39.252968, 111.75, 0.5999999, -37.002968, 112.75, 0.5999999, -36.752968, 113.25, 0.5999999, -39.502968, 131, 0.5999999, -59.502968, 128.75, 0.5999999, -59.502968, 128.5, 0.5999999, -58.752968, 115.75, 0.5999999, -58.752968, 115.5, 0.5999999, -59.502968, 113.25, 0.5999999, -59.502968, 128.5, 0.5999999, -32.502968, 128.75, 0.5999999, -31.502968, 131, 0.5999999, -31.502968, 112.75, 0.5999999, -32.502968, 112.5, 0.5999999, -34.752968, 112.5, 0.5999999, -33.002968, 105.25, 0.5999999, -35.002968, 105.5, 0.5999999, -33.002968, 31.75, 5.35, -55.502968, 31.75, 5.35, -4.252968, 32.25, 5.35, -4.252968, 32.25, 5.35, -55.502968, 60.75, 0.5999999, -55.002968, 60.5, 0.5999999, -52.502968, 61.25, 0.5999999, -52.252968, 83, 0.5999999, -54.752968, 61.25, 0.5999999, -43.752968, 72, 0.5999999, -24.502968, 82.75, 0.5999999, -24.502968, 103.75, 0.5999999, -34.752968, 103.75, 0.5999999, -33.002968, 103.25, 0.5999999, -36.752968, 111.5, 0.5999999, -39.502968, 111.5, 0.5999999, -54.752968, 103.5, 0.5999999, -31.252968, 84.25, 0.5999999, -24.502968, 20.25, 0.5999999, -43.502968, 17.25, 0.5999999, -43.502968, 17, 0.5999999, -42.752968, 17.25, 0.5999999, -20.502968, 31, 0.5999999, -20.252968, 48.5, 0.5999999, -25.002968, 48.75, 0.5999999, -24.502968, 51, 0.5999999, -24.502968, 51, 0.5999999, -43.502968, 47.25, 0.5999999, -43.252968, 33.25, 0.5999999, -24.252968, 43.25, 0.5999999, -24.252968, 43.5, 0.5999999, -25.002968, 55.75, 0.5999999, -42.752968, 55.5, 0.5999999, -43.502968, 53.25, 0.5999999, -43.502968, 53, 0.5999999, -42.752968, 53, 0.5999999, -24.752968, 60.5, 0.5999999, -25.002968, 60.5, 0.5999999, -42.752968, 60.75, 0.5999999, -23.752968, 71.5, 0.5999999, -23.502968, 71.5, 0.5999999, -24.252968, 51.75, 5.35, -43.502968, 51.75, 5.35, -23.752968, 52.25, 5.35, -23.752968, 52.25, 5.35, -43.502968, 104.5, 5.35, -35.752968, 111.75, 5.35, -35.752968, 111.5, 5.35, -36.252968, 104.25, 5.35, -36.252968, 104.5, 5.35, -32.252968, 104.5, 5.35, -31.752968, 111.75, 5.35, -31.752968, 111.75, 5.35, -32.252968, 84.75, 0.5999999, -23.002968, 83.75, 0.5999999, -22.752968, 84, 0.5999999, -20.502968, 128.5, 0.5999999, -30.752968, 128.5, 0.5999999, 14.997032, 128.75, 0.5999999, 15.747032, 131, 0.5999999, 15.747032, 84.75, 0.5999999, 3.7470322, 95.25, 0.5999999, 15.497032, 100.5, 0.5999999, 15.497032, 84.75, 0.5999999, -20.252968, 104, 0.5999999, -30.752968, 84.75, 0.5999999, -3.5029678, 84, 0.5999999, -3.2529678, 84, 0.5999999, 3.4970322, 111.75, 0.5999999, 15.497032, 123.5, 0.5999999, 14.997032, 84.75, 0.5999999, 16.997032, 95, 0.5999999, 17.247032, 100.75, 0.5999999, 16.247032, 111.5, 0.5999999, 16.247032, 123.25, 0.5999999, 15.497032, 84.75, 0.5999999, -24.002968, 44.25, 0.5999999, -20.502968, 44.25, 0.5999999, -22.752968, 43.5, 0.5999999, -23.002968, 43, 0.5999999, -20.252968, 33.25, 0.5999999, -19.002968, 43, 0.5999999, -18.502968, 44.5, 5.35, -23.752968, 47.75, 5.35, -23.752968, 47.5, 5.35, -24.252968, 44.25, 5.35, -24.252968, 56.25, 5.35, -23.752968, 59.75, 5.35, -23.752968, 59.5, 5.35, -24.252968, 56.25, 5.35, -24.252968, 83, 0.5999999, -20.252968, 71.75, 0.5999999, -22.752968, 45.25, 0.5999999, -20.252968, 60.5, 0.5999999, -22.752968, 83, 0.5999999, -5.252968, 45.25, 0.5999999, -4.502968, 31, 0.5999999, 3.7470322, 32, 0.5999999, 3.4970322, 32, 0.5999999, -3.2529678, 31, 0.5999999, -3.5029678, 17, 0.5999999, -18.752968, -19, 0.5999999, -18.752968, -19, 0.5999999, 22.997032, 16.5, 0.5999999, 22.997032, 17.25, 0.5999999, 23.747032, 17.25, 0.5999999, 24.997032, 31, 0.5999999, 24.997032, 43.75, 5.35, -19.502968, 43.75, 5.35, -4.252968, 44.25, 5.35, -4.252968, 44.25, 5.35, -19.502968, 43, 0.5999999, -5.252968, 33.25, 0.5999999, -4.502968, 33, 0.5999999, -3.2529678, 33.25, 0.5999999, 3.7470322, 43, 0.5999999, -3.5029678, 43, 0.5999999, 3.7470322, 44.25, 0.5999999, 3.4970322, 44.25, 0.5999999, -3.2529678, 33.25, 0.5999999, 4.997032, 43, 0.5999999, 5.497032, 45.25, 0.5999999, 19.747032, 47.25, 0.5999999, 19.747032, 47.5, 0.5999999, 18.997032, 45.25, 0.5999999, 3.7470322, 80.5, 0.5999999, 18.997032, 80.75, 0.5999999, 19.997032, 83, 0.5999999, 19.497032, 83, 0.5999999, 3.7470322, 60.5, 0.5999999, 18.997032, 60.75, 0.5999999, 19.747032, 67.25, 0.5999999, 19.747032, 67.5, 0.5999999, 18.997032, 45.25, 0.5999999, -3.5029678, 83, 0.5999999, -3.5029678, 31.75, 5.35, 4.497032, 31.75, 5.35, 31.747032, 32.25, 5.35, 31.747032, 32.25, 5.35, 4.497032, 43.75, 5.35, 4.497032, 43.75, 5.35, 19.747032, 44.25, 5.35, 19.747032, 44.25, 5.35, 4.497032, 33.25, 0.5999999, 19.497032, 43, 0.5999999, 18.997032, 123, 0.5999999, 19.747032, 123.5, 0.5999999, 19.497032, 123.5, 0.5999999, 17.247032, 111.75, 0.5999999, 17.247032, 100.5, 0.5999999, 17.247032, 123, 0.5999999, 31.747032, 96.75, 0.5999999, 31.497032, 96.75, 0.5999999, 16.997032, 92.5, 0.5999999, 30.997032, 92.75, 0.5999999, 31.497032, 95, 0.5999999, 31.497032, 84.75, 0.5999999, 20.247032, 85, 0.5999999, 30.997032, 43, 0.5999999, 20.247032, 33, 0.5999999, 31.247032, 42.75, 0.5999999, 30.997032, 83.25, 0.5999999, 20.747032, 80.75, 0.5999999, 20.747032, 81, 0.5999999, 30.997032, 84.5, 0.5999999, 20.747032, 45, 0.5999999, 20.747032, 47.5, 0.5999999, 20.997032, 43.25, 0.5999999, 20.747032, 48.25, 0.5999999, 21.247032, 48, 0.5999999, 30.997032, 48.5, 5.35, 20.247032, 59.75, 5.35, 20.247032, 59.5, 5.35, 19.747032, 48.5, 5.35, 19.747032, 60.5, 0.5999999, 21.247032, 67.75, 0.5999999, 20.747032, 59, 0.5999999, 21.247032, 59.25, 0.5999999, 30.997032, 69.25, 0.5999999, 20.747032, 69, 0.5999999, 30.997032, 72.5, 5.35, 20.247032, 79.75, 5.35, 20.247032, 79.5, 5.35, 19.747032, 72.25, 5.35, 19.747032, 71.75, 0.5999999, 21.247032, 71.5, 0.5999999, 20.747032, 80.5, 0.5999999, 21.247032, 48.5, 0.5999999, 30.997032, 48.75, 0.5999999, 31.747032, 55.25, 0.5999999, 31.747032, 55.5, 0.5999999, 30.997032, 31, 0.5999999, 30.747032, 17.25, 0.5999999, 31.497032, 31.25, 0.5999999, 35.497032, 32.25, 0.5999999, 35.497032, 32.25, 0.5999999, 33.247032, 31, 0.5999999, 32.497032, 17.25, 0.5999999, 32.497032, 16.25, 0.5999999, 33.247032, 31, 0.5999999, 35.997032, 120.5, 0.5999999, 62.997032, 120.75, 0.5999999, 63.747032, 123, 0.5999999, 63.747032, 96.5, 0.5999999, 33.247032, 95.25, 0.5999999, 62.997032, 95, 0.5999999, 33.247032, 36.25, 5.35, 32.247032, 47.75, 5.35, 32.247032, 47.5, 5.35, 31.747032, 36.25, 5.35, 31.747032, 33.25, 0.5999999, 64.49703, 32.75, 0.5999999, 64.74703, 32.75, 0.5999999, 66.99703, 57, 0.5999999, 66.99703, 33.25, 0.5999999, 35.747032, 48.5, 0.5999999, 33.247032, 55.5, 0.5999999, 32.997032, 56.5, 0.5999999, 33.247032, 56.5, 5.35, 32.247032, 91.75, 5.35, 32.247032, 91.5, 5.35, 31.747032, 56.5, 5.35, 31.747032, 28.5, 0.5999999, 70.99703, 28.75, 0.5999999, 71.49703, 31, 0.5999999, 71.49703, -15.5, 0.5999999, 33.247032, -15.5, 0.5999999, 70.99703, 72.5, 0.5999999, 66.99703, 72.75, 0.5999999, 67.74703, 75, 0.5999999, 67.74703, 75, 0.5999999, 51.747032, 75, 0.5999999, 35.747032, 75.75, 0.5999999, 35.497032, 75.75, 0.5999999, 33.247032, 75.75, 0.5999999, 51.497032, 75.75, 0.5999999, 44.747032, 75, 0.5999999, 44.497032, 76.75, 0.5999999, 35.747032, 76.75, 0.5999999, 44.497032, 76.75, 0.5999999, 51.747032, 76.75, 0.5999999, 62.997032, 31.75, 5.35, 36.497032, 31.75, 5.35, 63.997032, 32.25, 5.35, 63.747032, 32.25, 5.35, 36.497032)
@@ -26,6 +45,7 @@ environment = SubResource("Environment_qbrl8")
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_ikcpc")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+SPEED = 8.0
 
 [node name="World" type="Node3D" parent="." unique_id=1038799262]
 metadata/_edit_lock_ = true
@@ -39,29 +59,396 @@ metadata/_edit_lock_ = true
 [node name="OmniLight3D" type="OmniLight3D" parent="World/Lights" unique_id=1054648184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2767, 5.9955993, 0)
 light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
-light_energy = 9.0
-omni_range = 20.0
-omni_attenuation = 2.0
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="World/Lights" unique_id=292148811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2767, 5.9955993, 28.239128)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="World/Lights" unique_id=877653262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2767, 5.9955993, 51.934486)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="World/Lights" unique_id=912062870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5524864, 5.9955993, 61.148453)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="World/Lights" unique_id=1005432676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.24407, 5.9955993, 38.14215)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="World/Lights" unique_id=138550285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.64044, 5.9955993, 48.12562)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="World/Lights" unique_id=827848830]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.669205, 5.9955993, 48.12562)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="World/Lights" unique_id=2143527357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.31999, 5.9955993, 19.850588)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="World/Lights" unique_id=563919684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.144485, 5.9955993, -4.0599213)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="World/Lights" unique_id=625662214]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.458984, 5.9955993, 2.7422047)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="World/Lights" unique_id=1397024189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.39948, 5.9955993, -20.098097)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="World/Lights" unique_id=2030968715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.57771, 5.9955993, -28.275465)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="World/Lights" unique_id=498919951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.55056, 5.9955993, -28.275465)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="World/Lights" unique_id=1225800555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.901566, 5.9955993, 26.347677)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="World/Lights" unique_id=109522416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.196075, 5.9955993, 26.5538)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="World/Lights" unique_id=1569782065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.22431, 5.9955993, -0.6547146)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="World/Lights" unique_id=117606375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.77079, 5.9955993, -49.506355)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="World/Lights" unique_id=1017386208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.03579, 5.9955993, -57.358425)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="World/Lights" unique_id=1849087094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2767, 5.9955993, -19.205526)
 light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
-light_energy = 9.0
-omni_range = 20.0
-omni_attenuation = 2.0
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="World/Lights" unique_id=2006167088]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9274864, 5.9955993, -16.89325)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7868423, 5.9955993, -17.065372)
 light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
-light_energy = 9.0
-omni_range = 20.0
-omni_attenuation = 2.0
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="World/Lights" unique_id=1835333048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.191044, 5.6520767, 20.812996)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="World/Lights" unique_id=27642870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.150551, 4.895938, 16.974464)
+light_color = Color(0.8833865, 0.61597097, 0.5482498, 1)
+light_energy = 12.0
+omni_range = 60.0
+omni_attenuation = 1.7
 
 [node name="PowerSystems" type="Node3D" parent="World" unique_id=1632395577]
 metadata/_edit_lock_ = true
 
+[node name="GenericDrainable" parent="World/PowerSystems" unique_id=1324652657 instance=ExtResource("7_lwkuy")]
+transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 11.233702, 0.20000076, -14.550716)
+collision_layer = 4
+collision_mask = 0
+
+[node name="GenericDrainable3" parent="World/PowerSystems" unique_id=874322887 instance=ExtResource("7_lwkuy")]
+transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 84.26735, 0.20000076, -50.958553)
+collision_layer = 4
+collision_mask = 0
+
+[node name="GenericDrainable4" parent="World/PowerSystems" unique_id=179652614 instance=ExtResource("7_lwkuy")]
+transform = Transform3D(0.008789454, 0, 0.27285847, 0, 0.273, 0, -0.27285847, 0, 0.008789454, 49.821625, 0.20000076, -16.730839)
+collision_layer = 4
+collision_mask = 0
+
+[node name="GenericDrainable5" parent="World/PowerSystems" unique_id=2100043000 instance=ExtResource("7_lwkuy")]
+transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 103.63684, 0.20000076, -25.050138)
+collision_layer = 4
+collision_mask = 0
+
+[node name="GenericDrainable6" parent="World/PowerSystems" unique_id=1808474926 instance=ExtResource("7_lwkuy")]
+transform = Transform3D(-0.27099115, 0, -0.0330575, 0, 0.273, 0, 0.0330575, 0, -0.27099115, 1.012703, 0.20000076, 42.57502)
+collision_layer = 4
+collision_mask = 0
+
+[node name="EKGDrainable" parent="World/PowerSystems" unique_id=553580125 groups=["power_system"] instance=ExtResource("3_tqiex")]
+transform = Transform3D(0.262, 0, 0, 0, 0.262, 0, 0, 0, 0.262, 9.412286, 0.2, -62.3756)
+collision_layer = 4
+collision_mask = 0
+
+[node name="EKGDrainable2" parent="World/PowerSystems" unique_id=1131541146 groups=["power_system"] instance=ExtResource("3_tqiex")]
+transform = Transform3D(0.02227899, 0, -0.26105103, 0, 0.26199996, 0, 0.26105103, 0, 0.02227899, 43.98043, 0.2, -39.819115)
+collision_layer = 4
+collision_mask = 0
+
+[node name="FridgeDrainable" parent="World/PowerSystems" unique_id=229899834 instance=ExtResource("4_f3gli")]
+transform = Transform3D(-0.39999855, 0, -0.0010820925, 0, 0.4, 0, 0.0010820925, 0, -0.39999855, 29.134327, 0.2, 69.491135)
+collision_layer = 4
+collision_mask = 0
+
+[node name="FridgeDrainable2" parent="World/PowerSystems" unique_id=261137678 instance=ExtResource("4_f3gli")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 38.539642, 0.2, 36.789482)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ReactorDrainable" parent="World/PowerSystems" unique_id=658268384 instance=ExtResource("5_2jcip")]
+transform = Transform3D(-0.0067710667, 0, -0.60996246, 0, 0.6100001, 0, 0.60996246, 0, -0.0067710667, 131.37549, 0.2, 11.851143)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ReactorDrainable2" parent="World/PowerSystems" unique_id=1549707300 instance=ExtResource("5_2jcip")]
+transform = Transform3D(0.60987806, 0, 0.012200089, 0, 0.61000013, 0, -0.012200089, 0, 0.60987806, 127.57453, 0.2, -7.2295547)
+collision_layer = 4
+collision_mask = 0
+
+[node name="SatDishDrainable" parent="World/PowerSystems" unique_id=160848368 instance=ExtResource("11_2jcip")]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 107.80466, 0.2, 59.563736)
+collision_layer = 4
+collision_mask = 0
+
+[node name="SatDishDrainable2" parent="World/PowerSystems" unique_id=857684018 instance=ExtResource("11_2jcip")]
+transform = Transform3D(-0.3144357, 0, -0.1753003, 0, 0.36, 0, 0.1753003, 0, -0.3144357, 120.59992, 0.2, 36.532257)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ServerDrainable2" parent="World/PowerSystems" unique_id=851727678 instance=ExtResource("10_6l6h0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 47.449886, 0.2, 65.350365)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ServerDrainable3" parent="World/PowerSystems" unique_id=158192217 instance=ExtResource("10_6l6h0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 72.31828, 0.2, 64.97733)
+collision_layer = 4
+collision_mask = 0
+
 [node name="Props" type="Node3D" parent="World" unique_id=809312263]
 metadata/_edit_lock_ = true
+
+[node name="Cafeteria Table" parent="World/Props" unique_id=1092162125 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 8.415588, 0.20000076, 60.65449)
+
+[node name="Cafeteria Table2" parent="World/Props" unique_id=1088490814 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 14.154245, 0.20000076, 60.65449)
+
+[node name="Cafeteria Table3" parent="World/Props" unique_id=895431685 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 19.877924, 0.20000076, 60.65449)
+
+[node name="Cafeteria Table4" parent="World/Props" unique_id=1857921920 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 25.574411, 0.20000076, 60.65449)
+
+[node name="Cafeteria Table5" parent="World/Props" unique_id=1696860826 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 8.415588, 0.20000076, 52.241207)
+
+[node name="Cafeteria Table6" parent="World/Props" unique_id=1408788724 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 14.154245, 0.20000076, 52.241207)
+
+[node name="Cafeteria Table7" parent="World/Props" unique_id=832353181 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 19.877924, 0.20000076, 52.241207)
+
+[node name="Cafeteria Table8" parent="World/Props" unique_id=1584883785 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 25.574411, 0.20000076, 52.241207)
+
+[node name="Cafeteria Table9" parent="World/Props" unique_id=1994740042 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 8.415588, 0.20000076, 44.134617)
+
+[node name="Cafeteria Table10" parent="World/Props" unique_id=372774826 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 14.154245, 0.20000076, 44.134617)
+
+[node name="Cafeteria Table11" parent="World/Props" unique_id=1055955670 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 19.877924, 0.20000076, 44.134617)
+
+[node name="Cafeteria Table12" parent="World/Props" unique_id=255412792 instance=ExtResource("8_jf8f8")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 25.574411, 0.20000076, 44.134617)
+
+[node name="Metal Table" parent="World/Props" unique_id=915881851 instance=ExtResource("9_qx7ya")]
+transform = Transform3D(0.473, 0, 0, 0, 0.473, 0, 0, 0, 0.473, 76.69145, 0.20007324, 12.209746)
+
+[node name="Metal Table2" parent="World/Props" unique_id=1577980927 instance=ExtResource("9_qx7ya")]
+transform = Transform3D(0.473, 0, 0, 0, 0.473, 0, 0, 0, 0.473, 75.37233, 0.20007324, -11.026153)
+
+[node name="Metal Table4" parent="World/Props" unique_id=856075442 instance=ExtResource("9_qx7ya")]
+transform = Transform3D(0.473, 0, 0, 0, 0.473, 0, 0, 0, 0.473, 90.94655, 0.20007324, -39.22369)
+
+[node name="Metal Table3" parent="World/Props" unique_id=42626462 instance=ExtResource("9_qx7ya")]
+transform = Transform3D(0.473, 0, 0, 0, 0.473, 0, 0, 0, 0.473, 50.352047, 0.20007324, -11.026153)
+
+[node name="Lab Table2" parent="World/Props" unique_id=364425692 instance=ExtResource("10_d4dc6")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 41.882954, 0.20000005, -62.289318)
+
+[node name="Lab Table3" parent="World/Props" unique_id=14980440 instance=ExtResource("10_d4dc6")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 41.882954, 0.20000005, -57.638565)
+
+[node name="Lab Table4" parent="World/Props" unique_id=29195443 instance=ExtResource("10_d4dc6")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 9.93433, 0.20000005, -57.638565)
+
+[node name="Lab Table6" parent="World/Props" unique_id=415934371 instance=ExtResource("10_d4dc6")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 69.101425, 0.20000005, 37.22982)
+
+[node name="Lab Table5" parent="World/Props" unique_id=1191010470 instance=ExtResource("10_d4dc6")]
+transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 9.93433, 0.20000005, -52.638565)
+
+[node name="Lab Chair" parent="World/Props" unique_id=46661426 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 49.213078, 0.20000029, -8.832094)
+
+[node name="Lab Chair2" parent="World/Props" unique_id=1210367964 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 51.53209, 0.20000029, -8.832094)
+
+[node name="Lab Chair7" parent="World/Props" unique_id=1525153743 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 74.40013, 0.20000029, -8.832094)
+
+[node name="Lab Chair11" parent="World/Props" unique_id=1345886119 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 75.80234, 0.20000029, 14.234852)
+
+[node name="Lab Chair12" parent="World/Props" unique_id=1983830096 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 78.05693, 0.20000029, 14.234852)
+
+[node name="Lab Chair13" parent="World/Props" unique_id=254793643 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 70.69184, 0.20000029, 39.925724)
+
+[node name="Lab Chair15" parent="World/Props" unique_id=2050354332 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 67.61231, 0.20000029, 39.925724)
+
+[node name="Lab Chair8" parent="World/Props" unique_id=601901994 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(0.596, 0, 0, 0, 0.596, 0, 0, 0, 0.596, 76.9124, 0.20000029, -8.832094)
+
+[node name="Lab Chair3" parent="World/Props" unique_id=1802011110 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 51.53209, 0.20000029, -13.019199)
+
+[node name="Lab Chair9" parent="World/Props" unique_id=1251069484 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 75.64137, 0.20000029, 10.487047)
+
+[node name="Lab Chair10" parent="World/Props" unique_id=294058047 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 77.77206, 0.20000029, 10.487047)
+
+[node name="Lab Chair4" parent="World/Props" unique_id=2041857872 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 49.01983, 0.20000029, -13.019199)
+
+[node name="Lab Chair5" parent="World/Props" unique_id=1159179574 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 74.206894, 0.20000029, -13.019199)
+
+[node name="Lab Chair6" parent="World/Props" unique_id=542872415 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 76.65474, 0.20000029, -13.019199)
+
+[node name="Lab Chair16" parent="World/Props" unique_id=1895938455 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 92.45072, 0.20000029, -40.957993)
+
+[node name="Lab Chair17" parent="World/Props" unique_id=523400740 instance=ExtResource("11_7wxy1")]
+transform = Transform3D(-0.596, 0, 5.2103974e-08, 0, 0.596, 0, -5.2103974e-08, 0, -0.596, 89.74241, 0.20000029, -40.957993)
+
+[node name="Fabricator" parent="World/Props" unique_id=1325950877 instance=ExtResource("12_8ce4n")]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 26.846867, 0.19999886, -64.424194)
+
+[node name="Fabricator2" parent="World/Props" unique_id=512373508 instance=ExtResource("12_8ce4n")]
+transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 99.910675, 0.19999886, -4.4397125)
+
+[node name="Shelves" parent="World/Props" unique_id=946257221 instance=ExtResource("13_o0i6v")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 17.483067, 0.19999933, 69.645485)
+
+[node name="Shelves5" parent="World/Props" unique_id=1751778540 instance=ExtResource("13_o0i6v")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 126.61922, 0.19999933, -27.912651)
+
+[node name="Shelves6" parent="World/Props" unique_id=1924537096 instance=ExtResource("13_o0i6v")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 71.76372, 0.19999933, -53.542114)
+
+[node name="Shelves2" parent="World/Props" unique_id=607111721 instance=ExtResource("13_o0i6v")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 12.412033, 0.19999933, 69.645485)
+
+[node name="Shelves4" parent="World/Props" unique_id=326717678 instance=ExtResource("13_o0i6v")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 7.4994698, 0.19999933, 69.645485)
+
+[node name="Weird Storage Shelf" parent="World/Props" unique_id=1343106788 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 47.64948, 0.19999933, 17.88059)
+
+[node name="Weird Storage Shelf2" parent="World/Props" unique_id=1026571428 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 53.284676, 0.19999933, 17.88059)
+
+[node name="Weird Storage Shelf6" parent="World/Props" unique_id=883037148 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(-1.7877959e-08, 0, 0.409, 0, 0.409, 0, -0.409, 0, -1.7877959e-08, 46.154, 0.19999933, 37.778572)
+
+[node name="Weird Storage Shelf7" parent="World/Props" unique_id=1424991934 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(-1.7877959e-08, 0, 0.409, 0, 0.409, 0, -0.409, 0, -1.7877959e-08, 46.154, 0.19999933, 43.37937)
+
+[node name="Weird Storage Shelf8" parent="World/Props" unique_id=262291336 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(-1.7877959e-08, 0, 0.409, 0, 0.409, 0, -0.409, 0, -1.7877959e-08, 121.286804, 0.19999933, 45.725525)
+
+[node name="Weird Storage Shelf9" parent="World/Props" unique_id=1976636500 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(-1.7877959e-08, 0, 0.409, 0, 0.409, 0, -0.409, 0, -1.7877959e-08, 121.286804, 0.19999933, 52.222565)
+
+[node name="Weird Storage Shelf4" parent="World/Props" unique_id=2028422077 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 37.320675, 0.19999933, -38.735107)
+
+[node name="Weird Storage Shelf5" parent="World/Props" unique_id=991950053 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 20.204395, 0.19999933, -46.13282)
+
+[node name="Weird Storage Shelf3" parent="World/Props" unique_id=2123962142 instance=ExtResource("14_1ubp3")]
+transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 77.69215, 0.19999933, -19.960451)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="World" unique_id=800796902]
 navigation_mesh = SubResource("NavigationMesh_ikcpc")
@@ -71,14 +458,14 @@ mesh_library = ExtResource("2_5erdv")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65532, 65533, 1441794, 65532, 65534, 1441795, 65532, 65535, 655361, 65532, 0, 655361, 65532, 1, 655361, 65532, 2, 3, 65532, 3, 2, 65533, 65533, 1441795, 65533, 65534, 655361, 65533, 65535, 655361, 65533, 0, 655361, 65533, 1, 655361, 65533, 2, 655361, 65533, 3, 3, 65533, 4, 2, 65534, 65533, 655361, 65534, 65534, 655361, 65534, 65535, 655361, 65534, 0, 655361, 65534, 1, 655361, 65534, 2, 655361, 65534, 3, 655361, 65534, 4, 3, 65535, 65533, 655361, 65535, 65534, 655361, 65535, 65535, 655361, 65535, 0, 655361, 65535, 1, 655361, 65535, 2, 655361, 65535, 3, 655361, 65535, 4, 655361, 0, 65533, 655361, 0, 65534, 655361, 0, 65535, 655361, 0, 0, 655361, 0, 1, 655361, 0, 2, 655361, 0, 3, 655361, 0, 4, 655361, 1, 65533, 655361, 1, 65534, 655361, 1, 65535, 655361, 1, 0, 655361, 1, 1, 655361, 1, 2, 655361, 1, 3, 655361, 1, 4, 655361, 2, 65533, 655361, 2, 65534, 655361, 2, 65535, 655361, 2, 0, 655361, 2, 1, 655361, 2, 2, 655361, 2, 3, 655361, 2, 4, 655361, 3, 65533, 1048576, 3, 65534, 1048576, 3, 65535, 655363, 3, 0, 1441793, 3, 1, 1048579, 3, 2, 1048576, 3, 3, 1048576, 3, 4, 1048576, 4, 65533, 1441792, 4, 65534, 2, 4, 65535, 655360, 4, 0, 1441793, 4, 1, 0, 4, 2, 1441794, 4, 3, 1441792, 4, 4, 1441792, 65533, 65532, 1441794, 65534, 65532, 1441795, 65535, 65532, 655361, 0, 65532, 655361, 1, 65532, 655361, 2, 65532, 655361, 3, 65532, 1048576, 4, 65532, 1441792, 5, 65523, 1048576, 5, 65524, 1048578, 5, 65525, 655360, 5, 65526, 1048579, 5, 65527, 1048576, 5, 65528, 1048576, 5, 65529, 1048576, 5, 65530, 1048576, 5, 65531, 655363, 5, 65532, 655361, 5, 65533, 655361, 5, 65534, 3, 5, 65535, 1441795, 5, 0, 655361, 5, 1, 3, 5, 2, 1441795, 5, 3, 655361, 5, 4, 655361, 5, 5, 655361, 5, 6, 655361, 5, 7, 655361, 5, 8, 655361, 6, 65523, 1441792, 6, 65524, 1441792, 6, 65525, 1441795, 6, 65526, 3, 6, 65527, 1441792, 6, 65528, 1441792, 6, 65529, 1441792, 6, 65530, 2, 6, 65531, 655360, 6, 65532, 655361, 6, 65533, 655361, 6, 65534, 655361, 6, 65535, 655361, 6, 0, 655361, 6, 1, 655361, 6, 2, 655361, 6, 3, 655361, 6, 4, 655361, 6, 5, 655361, 6, 6, 655361, 6, 7, 655361, 6, 8, 655361, 7, 65523, 1048576, 7, 65524, 1048576, 7, 65525, 1048576, 7, 65526, 1048576, 7, 65527, 1048576, 7, 65528, 1048576, 7, 65529, 1048576, 7, 65530, 1048578, 7, 65531, 655362, 7, 65532, 1048576, 7, 65533, 1048576, 7, 65534, 1048576, 7, 65535, 1048576, 7, 0, 1048576, 7, 1, 1048576, 7, 2, 1048576, 7, 3, 1048576, 7, 4, 1048576, 7, 5, 1048576, 7, 6, 1048576, 7, 7, 1048576, 7, 8, 655363, 8, 65523, 1441792, 8, 65524, 1441792, 8, 65525, 1441792, 8, 65526, 2, 8, 65527, 1441794, 8, 65528, 1441792, 8, 65529, 1441792, 8, 65530, 2, 8, 65531, 1441794, 8, 65532, 1441792, 8, 65533, 1441792, 8, 65534, 1441792, 8, 65535, 1441792, 8, 0, 1441792, 8, 1, 1441792, 8, 2, 1441792, 8, 3, 1441792, 8, 4, 1441792, 8, 5, 1441792, 8, 6, 1441792, 8, 7, 2, 8, 8, 655360, 65535, 9, 1441792, 65535, 10, 1441792, 65535, 11, 1441792, 65535, 12, 1441792, 65535, 13, 1441792, 65535, 14, 1441792, 65535, 15, 2, 0, 9, 655361, 0, 10, 655361, 0, 11, 655361, 0, 12, 655361, 0, 13, 655361, 0, 14, 655361, 0, 15, 3, 0, 16, 2, 1, 9, 1048579, 1, 10, 1048576, 1, 11, 1048576, 1, 12, 1048576, 1, 13, 1048576, 1, 14, 1048576, 1, 15, 655363, 1, 16, 3, 1, 17, 2, 2, 9, 0, 2, 10, 1441794, 2, 11, 1441792, 2, 12, 1441792, 2, 13, 1441792, 2, 14, 2, 2, 15, 655360, 2, 16, 655361, 2, 17, 0, 3, 9, 0, 3, 10, 655360, 3, 11, 655361, 3, 12, 655361, 3, 13, 655361, 3, 14, 0, 3, 15, 655360, 3, 16, 655361, 3, 17, 0, 4, 9, 0, 4, 10, 655360, 4, 11, 655361, 4, 12, 655361, 4, 13, 655361, 4, 14, 0, 4, 15, 655360, 4, 16, 655361, 4, 17, 0, 5, 9, 0, 5, 10, 655360, 5, 11, 655361, 5, 12, 655361, 5, 13, 655361, 5, 14, 0, 5, 15, 655360, 5, 16, 655361, 5, 17, 0, 6, 9, 0, 6, 10, 655360, 6, 11, 655361, 6, 12, 655361, 6, 13, 655361, 6, 14, 3, 6, 15, 1441795, 6, 16, 655361, 6, 17, 0, 7, 9, 0, 7, 10, 655362, 7, 11, 1048576, 7, 12, 1048576, 7, 13, 1048576, 7, 14, 1048576, 7, 15, 1048576, 7, 16, 1048576, 7, 17, 1048578, 8, 9, 0, 8, 10, 655362, 8, 11, 1048576, 8, 12, 1048576, 8, 13, 1048576, 8, 14, 1048576, 8, 15, 1048576, 8, 16, 2, 10, 65515, 655360, 10, 65516, 655361, 10, 65517, 655361, 10, 65518, 655361, 10, 65519, 655361, 10, 65520, 3, 10, 65521, 1441792, 10, 65522, 1441792, 10, 65523, 1441795, 10, 65524, 655361, 10, 65525, 655361, 10, 65526, 0, 10, 65527, 655360, 10, 65528, 655361, 10, 65529, 1048579, 10, 65530, 1048576, 10, 65531, 1048576, 10, 65532, 1048576, 10, 65533, 1048576, 10, 65534, 1048576, 10, 65535, 655363, 10, 0, 1048579, 10, 1, 1048576, 10, 2, 1048576, 10, 3, 1048576, 10, 4, 1048576, 10, 5, 655363, 10, 6, 655361, 10, 7, 0, 10, 8, 655362, 10, 9, 1048576, 10, 10, 1048576, 10, 11, 1048576, 10, 12, 1048576, 10, 13, 1048576, 10, 14, 1048576, 10, 15, 655363, 10, 16, 0, 11, 65515, 655362, 11, 65516, 1048576, 11, 65517, 1048576, 11, 65518, 1048576, 11, 65519, 1048576, 11, 65520, 1048576, 11, 65521, 1048576, 11, 65522, 1048576, 11, 65523, 1048576, 11, 65524, 1048576, 11, 65525, 655363, 11, 65526, 3, 11, 65527, 1441795, 11, 65528, 655361, 11, 65529, 0, 11, 65530, 1441794, 11, 65531, 1441792, 11, 65532, 1441792, 11, 65533, 1441792, 11, 65534, 2, 11, 65535, 655360, 11, 0, 0, 11, 1, 1441794, 11, 2, 1441792, 11, 3, 1441792, 11, 4, 2, 11, 5, 655360, 11, 6, 655361, 11, 7, 0, 11, 8, 1441794, 11, 9, 1441792, 11, 10, 1441792, 11, 11, 1441792, 11, 12, 1441792, 11, 13, 1441792, 11, 14, 2, 11, 15, 655360, 11, 16, 0, 12, 65526, 655363, 12, 65528, 1048576, 12, 65529, 1048578, 12, 65530, 655362, 12, 65531, 1048576, 12, 65532, 1048576, 12, 65533, 1048576, 12, 65534, 1048578, 12, 65535, 655360, 12, 0, 3, 12, 1, 1441795, 12, 2, 655361, 12, 3, 655361, 12, 4, 0, 12, 5, 655360, 12, 6, 1048577, 12, 7, 3, 12, 8, 1441795, 12, 9, 655361, 12, 10, 655361, 12, 11, 655361, 12, 12, 655361, 12, 13, 655361, 12, 14, 0, 12, 15, 655360, 12, 16, 0, 13, 65526, 1441795, 13, 65528, 2, 13, 65529, 2, 13, 65530, 1441794, 13, 65531, 1441792, 13, 65532, 1441792, 13, 65533, 1441792, 13, 65534, 1441792, 13, 65535, 1441795, 13, 0, 1048577, 13, 1, 1048577, 13, 2, 1048577, 13, 3, 1048577, 13, 4, 0, 13, 5, 655360, 13, 6, 1048577, 13, 7, 1048579, 13, 8, 1048576, 13, 9, 655363, 13, 10, 655361, 13, 11, 655361, 13, 12, 655361, 13, 13, 655361, 13, 14, 0, 13, 15, 655360, 13, 16, 0, 14, 65526, 1048576, 14, 65527, 655363, 14, 65528, 0, 14, 65529, 0, 14, 65530, 655360, 14, 65531, 655361, 14, 65532, 655361, 14, 65533, 655361, 14, 65534, 655361, 14, 65535, 655361, 14, 0, 655361, 14, 1, 655361, 14, 2, 655361, 14, 3, 1048579, 14, 4, 1048578, 14, 5, 655360, 14, 6, 655361, 14, 7, 0, 14, 8, 1441794, 14, 9, 655360, 14, 10, 655361, 14, 11, 655361, 14, 12, 655361, 14, 13, 655361, 14, 14, 0, 14, 15, 655360, 14, 16, 0, 15, 65524, 1441794, 15, 65525, 1441792, 15, 65526, 2, 15, 65527, 655360, 15, 65528, 0, 15, 65529, 655361, 15, 65530, 655360, 15, 65531, 655361, 15, 65532, 655361, 15, 65533, 655361, 15, 65534, 655361, 15, 65535, 655361, 15, 0, 655361, 15, 1, 655361, 15, 2, 655361, 15, 3, 3, 15, 4, 1441792, 15, 5, 1441795, 15, 6, 655361, 15, 7, 0, 15, 8, 655364, 15, 9, 655360, 15, 10, 655361, 15, 11, 655361, 15, 12, 655361, 15, 13, 655361, 15, 14, 0, 15, 15, 655360, 15, 16, 0, 16, 65524, 1, 16, 65525, 655361, 16, 65526, 0, 16, 65527, 655360, 16, 65528, 0, 16, 65529, 655361, 16, 65530, 655360, 16, 65531, 655361, 16, 65532, 655361, 16, 65533, 655361, 16, 65534, 655361, 16, 65535, 655361, 16, 0, 655361, 16, 1, 655361, 16, 2, 655361, 16, 3, 1048579, 16, 4, 1048576, 16, 5, 655363, 16, 6, 655361, 16, 7, 0, 16, 8, 655364, 16, 9, 655362, 16, 10, 1048576, 16, 11, 1048576, 16, 12, 1048576, 16, 13, 1048576, 16, 14, 1048578, 16, 15, 655360, 16, 16, 0, 17, 65524, 655360, 17, 65525, 655361, 17, 65526, 0, 17, 65527, 655360, 17, 65528, 0, 17, 65529, 0, 17, 65530, 655360, 17, 65531, 655361, 17, 65532, 655361, 17, 65533, 655361, 17, 65534, 655361, 17, 65535, 655361, 17, 0, 655361, 17, 1, 655361, 17, 2, 655361, 17, 3, 3, 17, 4, 2, 17, 5, 655360, 17, 6, 655361, 17, 7, 0, 17, 8, 1441794, 17, 9, 1441792, 17, 10, 1441792, 17, 11, 1441792, 17, 12, 1441792, 17, 13, 1441792, 17, 14, 1441792, 17, 15, 1441795, 17, 16, 0, 18, 65524, 655360, 18, 65525, 655361, 18, 65526, 0, 18, 65527, 655360, 18, 65528, 0, 18, 65529, 0, 18, 65530, 655360, 18, 65531, 655361, 18, 65532, 655361, 18, 65533, 655361, 18, 65534, 655361, 18, 65535, 655361, 18, 0, 655361, 18, 1, 655361, 18, 2, 655361, 18, 3, 655361, 18, 4, 0, 18, 5, 655360, 18, 6, 655361, 18, 7, 0, 18, 8, 655362, 18, 9, 1048576, 18, 10, 1048576, 18, 11, 655363, 18, 12, 1048579, 18, 13, 1048576, 18, 14, 1048576, 18, 15, 1048576, 18, 16, 1048578, 19, 65524, 655360, 19, 65525, 655361, 19, 65526, 0, 19, 65527, 655360, 19, 65528, 0, 19, 65529, 0, 19, 65530, 655360, 19, 65531, 655361, 19, 65532, 655361, 19, 65533, 655361, 19, 65534, 655361, 19, 65535, 655361, 19, 0, 655361, 19, 1, 655361, 19, 2, 655361, 19, 3, 655361, 19, 4, 0, 19, 5, 655360, 19, 6, 655361, 19, 7, 0, 19, 8, 1441794, 19, 9, 1441792, 19, 10, 2, 19, 11, 655360, 19, 12, 0, 19, 13, 1441794, 19, 14, 1441792, 19, 15, 2, 20, 65524, 655360, 20, 65525, 1048577, 20, 65526, 0, 20, 65527, 655360, 20, 65528, 0, 20, 65529, 0, 20, 65530, 655362, 20, 65531, 1048576, 20, 65532, 1048576, 20, 65533, 1048576, 20, 65534, 1048576, 20, 65535, 1048576, 20, 0, 1048576, 20, 1, 1048576, 20, 2, 1048576, 20, 3, 1048576, 20, 4, 1048578, 20, 5, 655360, 20, 6, 655361, 20, 7, 0, 20, 8, 655360, 20, 9, 655361, 20, 10, 0, 20, 11, 655360, 20, 12, 0, 20, 13, 655360, 20, 14, 655361, 20, 15, 0, 21, 65524, 655360, 21, 65525, 1048577, 21, 65526, 0, 21, 65527, 655360, 21, 65528, 0, 21, 65529, 0, 21, 65530, 1441794, 21, 65531, 1441792, 21, 65532, 1441792, 21, 65533, 1441792, 21, 65534, 1441792, 21, 65535, 1441792, 21, 0, 1441792, 21, 1, 1441792, 21, 2, 1441792, 21, 3, 1441792, 21, 4, 1441792, 21, 5, 1441795, 21, 6, 655361, 21, 7, 0, 21, 8, 655360, 21, 9, 655361, 21, 10, 0, 21, 11, 655360, 21, 12, 0, 21, 13, 655360, 21, 14, 655361, 21, 15, 0, 22, 65524, 655360, 22, 65525, 655361, 22, 65526, 0, 22, 65527, 655360, 22, 65528, 0, 22, 65529, 3, 22, 65530, 655360, 22, 65531, 655361, 22, 65532, 655361, 22, 65533, 655361, 22, 65534, 655361, 22, 65535, 655361, 22, 0, 655361, 22, 1, 655361, 22, 2, 655361, 22, 3, 655361, 22, 4, 655361, 22, 5, 655361, 22, 6, 655361, 22, 7, 0, 22, 8, 655360, 22, 9, 655361, 22, 10, 0, 22, 11, 655360, 22, 12, 0, 22, 13, 655360, 22, 14, 655361, 22, 15, 0, 23, 65524, 655362, 23, 65525, 1048576, 23, 65526, 1048578, 23, 65527, 655360, 23, 65528, 0, 23, 65529, 1048576, 23, 65530, 655362, 23, 65531, 1048576, 23, 65532, 655363, 23, 65533, 1048579, 23, 65534, 1048576, 23, 65535, 1048576, 23, 0, 1048576, 23, 1, 1048576, 23, 2, 655363, 23, 3, 1048579, 23, 4, 1048576, 23, 5, 1048576, 23, 6, 1048576, 23, 7, 1048578, 23, 8, 655360, 23, 9, 655361, 23, 10, 0, 23, 11, 655360, 23, 12, 0, 23, 13, 655360, 23, 14, 655361, 23, 15, 0, 24, 65522, 1441794, 24, 65523, 1441792, 24, 65524, 1441792, 24, 65525, 1441792, 24, 65526, 1441792, 24, 65527, 1441795, 24, 65528, 3, 24, 65529, 1441792, 24, 65530, 1441792, 24, 65531, 1441792, 24, 65532, 1441795, 24, 65533, 0, 24, 65534, 1441794, 24, 65535, 1441792, 24, 0, 1441792, 24, 1, 1441792, 24, 2, 1441795, 24, 3, 0, 24, 4, 1441794, 24, 5, 1441792, 24, 6, 1441792, 24, 7, 1441792, 24, 8, 1441795, 24, 9, 655361, 24, 10, 0, 24, 11, 655360, 24, 12, 0, 24, 13, 655360, 24, 14, 655361, 24, 15, 0, 25, 65522, 655360, 25, 65523, 655361, 25, 65524, 655361, 25, 65525, 1048579, 25, 65526, 1048576, 25, 65527, 1048576, 25, 65528, 1048576, 25, 65529, 1048576, 25, 65530, 1048576, 25, 65531, 655363, 25, 65532, 655361, 25, 65533, 0, 25, 65534, 655360, 25, 65535, 655361, 25, 0, 655361, 25, 1, 655361, 25, 2, 655361, 25, 3, 0, 25, 4, 655360, 25, 5, 655361, 25, 6, 655361, 25, 7, 1048579, 25, 8, 1048576, 25, 9, 1048576, 25, 10, 1048578, 25, 11, 655360, 25, 12, 0, 25, 13, 655360, 25, 14, 655361, 25, 15, 0, 26, 65522, 655360, 26, 65523, 655361, 26, 65524, 655361, 26, 65525, 0, 26, 65528, 1441792, 26, 65529, 1441792, 26, 65530, 1441792, 26, 65531, 1441795, 26, 65532, 655361, 26, 65533, 0, 26, 65534, 655360, 26, 65535, 655361, 26, 0, 655361, 26, 1, 655361, 26, 2, 655361, 26, 3, 3, 26, 4, 1441795, 26, 5, 655361, 26, 6, 655361, 26, 7, 3, 26, 8, 1441792, 26, 9, 1441792, 26, 10, 1441792, 26, 11, 1441795, 26, 12, 3, 26, 13, 1441795, 26, 14, 655361, 26, 15, 0, 27, 65522, 655362, 27, 65523, 1048576, 27, 65524, 1048576, 27, 65525, 1048578, 27, 65528, 655363, 27, 65529, 655361, 27, 65530, 655361, 27, 65531, 655361, 27, 65532, 655361, 27, 65533, 0, 27, 65534, 655360, 27, 65535, 655361, 27, 0, 655361, 27, 1, 655361, 27, 2, 1, 27, 3, 1048579, 27, 4, 655363, 27, 5, 655361, 27, 6, 655361, 27, 7, 1048579, 27, 8, 655363, 27, 9, 655361, 27, 10, 655361, 27, 11, 655361, 27, 12, 655361, 27, 13, 655361, 27, 14, 655361, 27, 15, 0, 28, 65522, 1441792, 28, 65523, 1441792, 28, 65524, 1441792, 28, 65525, 1441792, 28, 65526, 1441795, 28, 65527, 0, 28, 65528, 655360, 28, 65529, 655361, 28, 65530, 655361, 28, 65531, 655361, 28, 65532, 655361, 28, 65533, 0, 28, 65534, 655360, 28, 65535, 655361, 28, 0, 655361, 28, 1, 655361, 28, 2, 655361, 28, 3, 0, 28, 4, 655360, 28, 5, 655361, 28, 6, 655361, 28, 7, 0, 28, 8, 655360, 28, 9, 655361, 28, 10, 655361, 28, 11, 655361, 28, 12, 655361, 28, 13, 655361, 28, 14, 655361, 28, 15, 0, 29, 65522, 655361, 29, 65523, 655361, 29, 65524, 655361, 29, 65525, 655361, 29, 65526, 655361, 29, 65527, 0, 29, 65528, 655360, 29, 65529, 655361, 29, 65530, 655361, 29, 65531, 655361, 29, 65532, 655361, 29, 65533, 0, 29, 65534, 655360, 29, 65535, 655361, 29, 0, 655361, 29, 1, 655361, 29, 2, 1048577, 29, 3, 0, 29, 4, 655360, 29, 5, 655361, 29, 6, 655361, 29, 7, 0, 29, 8, 655360, 29, 9, 655361, 29, 10, 655361, 29, 11, 655361, 29, 12, 655361, 29, 13, 655361, 29, 14, 1048579, 29, 15, 1048578, 30, 65522, 655361, 30, 65523, 655361, 30, 65524, 655361, 30, 65525, 655361, 30, 65526, 655361, 30, 65527, 0, 30, 65528, 655360, 30, 65529, 655361, 30, 65530, 655361, 30, 65531, 655361, 30, 65532, 655361, 30, 65533, 0, 30, 65534, 655360, 30, 65535, 655361, 30, 0, 655361, 30, 1, 655361, 30, 2, 655361, 30, 3, 0, 30, 4, 655362, 30, 5, 1048576, 30, 6, 1048576, 30, 7, 1048578, 30, 8, 655362, 30, 9, 1048576, 30, 10, 1048576, 30, 11, 1048576, 30, 12, 1048576, 30, 13, 1048576, 31, 65522, 655361, 31, 65523, 655361, 31, 65524, 655361, 31, 65525, 655361, 31, 65526, 655361, 31, 65527, 0, 31, 65528, 655360, 31, 65529, 655361, 31, 65530, 655361, 31, 65531, 655361, 31, 65532, 655361, 31, 65533, 0, 31, 65534, 655360, 31, 65535, 655361, 31, 0, 655361, 31, 1, 1, 31, 2, 655361, 31, 3, 0, 32, 65522, 1048576, 32, 65523, 1048576, 32, 65524, 1048576, 32, 65525, 1048576, 32, 65526, 1048576, 32, 65527, 1048578, 32, 65528, 655362, 32, 65529, 1048576, 32, 65530, 1048576, 32, 65531, 1048576, 32, 65532, 1048576, 32, 65533, 1048578, 32, 65534, 655362, 32, 65535, 1048576, 32, 0, 1048576, 32, 1, 1048576, 32, 2, 1048576, 32, 3, 1048578, 7, 65519, 655361, 7, 65520, 0, 7, 65521, 655362, 7, 65522, 1048576, 8, 65519, 655361, 8, 65520, 0, 8, 65521, 1441794, 8, 65522, 1441792, 9, 65519, 655361, 9, 65520, 0, 9, 65521, 655362, 9, 65522, 1048576, 9, 65523, 655363, 9, 65524, 655361, 9, 65525, 655361, 9, 65526, 0, 9, 65527, 655360, 9, 65528, 655361, 9, 65529, 655361, 9, 65530, 3, 9, 65531, 1441795, 9, 65532, 655361, 9, 65533, 655361, 9, 65534, 655361, 9, 65535, 655361, 9, 0, 655361, 9, 1, 655361, 9, 2, 655361, 9, 3, 655361, 9, 4, 655361, 9, 5, 655361, 9, 6, 655361, 9, 7, 0, 9, 8, 655360, 9, 9, 3, 9, 10, 1441792, 9, 11, 1441792, 9, 12, 1441792, 9, 13, 1441792, 9, 14, 1441792, 9, 16, 2, 1, 65519, 1441794, 1, 65520, 1441792, 1, 65521, 1441792, 1, 65522, 1441792, 1, 65523, 1441792, 2, 65519, 655360, 2, 65520, 655361, 2, 65521, 655361, 2, 65522, 655361, 2, 65523, 655361, 3, 65519, 655360, 3, 65520, 655361, 3, 65521, 655361, 3, 65522, 655361, 3, 65523, 655361, 4, 65518, 1441794, 4, 65519, 1441795, 4, 65520, 655361, 4, 65521, 655361, 4, 65522, 655361, 4, 65523, 655361, 5, 65515, 1441794, 5, 65516, 1441792, 5, 65517, 1441792, 5, 65518, 1441795, 5, 65519, 655361, 5, 65520, 1048579, 5, 65521, 655363, 5, 65522, 1048579, 6, 65515, 655360, 6, 65516, 655361, 6, 65517, 655361, 6, 65518, 655361, 6, 65519, 655361, 6, 65520, 0, 6, 65521, 655360, 6, 65522, 3, 7, 65515, 655360, 7, 65516, 655361, 7, 65517, 655361, 7, 65518, 655361, 8, 65515, 655360, 8, 65516, 655361, 8, 65517, 655361, 8, 65518, 655361, 9, 65515, 655360, 9, 65516, 655361, 9, 65517, 655361, 9, 65518, 655361, 65534, 5, 2, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 65531, 2, 2, 65531, 1, 1441792, 65531, 0, 1441792, 65531, 65535, 1441792, 65531, 65534, 1441794, 65534, 65531, 1441794, 65535, 65531, 655360, 0, 65531, 655360, 1, 65531, 655360, 2, 65531, 655360, 3, 65531, 655362, 4, 65531, 1441792, 4, 65529, 1441792, 4, 65528, 1441792, 4, 65527, 1441792, 4, 65526, 1441792, 4, 65525, 1441794, 2, 65524, 0, 1, 65524, 2, 3, 65524, 0, 3, 5, 1048578, 4, 6, 1441792, 4, 7, 1441792, 3, 8, 655360, 2, 8, 655360, 1, 8, 655360, 0, 8, 655360, 65535, 8, 1441794, 32, 65521, 655362, 31, 65521, 655360, 30, 65521, 655360, 29, 65521, 655360, 4, 5, 1441792, 4, 8, 1441795, 12, 65525, 655362, 13, 65525, 1441794, 14, 65525, 655362, 28, 65521, 1441794, 4, 65530, 1441792, 9, 15, 1441792, 4, 65524, 0, 26, 65526, 1441794, 27, 65526, 655360, 27, 65527, 1048579, 26, 65527, 1441792, 12, 65527, 1048579, 13, 65527, 3, 30, 14, 1048578, 17, 65523, 1048576, 17, 65522, 1048576, 17, 65521, 1048576, 16, 65520, 655360, 15, 65520, 655360, 14, 65520, 655360, 13, 65520, 655360, 12, 65521, 1441792, 12, 65522, 1441792, 12, 65523, 1441792, 12, 65524, 2, 12, 65520, 1441794, 17, 65520, 655362, 13, 65524, 0, 15, 65523, 0, 16, 65523, 1, 14, 65524, 1048578, 14, 65523, 1048577, 13, 65523, 1048577, 13, 65522, 1048577, 13, 65521, 1048577, 14, 65521, 1048577, 15, 65521, 1048577, 16, 65521, 1048577, 16, 65522, 1048577, 15, 65522, 1048577, 14, 65522, 1048577)
+"cells": PackedInt32Array(65532, 65533, 1441794, 65532, 65534, 1441795, 65532, 65535, 655361, 65532, 0, 655361, 65532, 1, 655361, 65532, 2, 3, 65532, 3, 2, 65533, 65533, 1441795, 65533, 65534, 655361, 65533, 65535, 655361, 65533, 0, 655361, 65533, 1, 655361, 65533, 2, 655361, 65533, 3, 3, 65533, 4, 2, 65534, 65533, 655361, 65534, 65534, 655361, 65534, 65535, 655361, 65534, 0, 655361, 65534, 1, 655361, 65534, 2, 655361, 65534, 3, 655361, 65534, 4, 3, 65535, 65533, 655361, 65535, 65534, 655361, 65535, 65535, 655361, 65535, 0, 655361, 65535, 1, 655361, 65535, 2, 655361, 65535, 3, 655361, 65535, 4, 655361, 0, 65533, 655361, 0, 65534, 655361, 0, 65535, 655361, 0, 0, 655361, 0, 1, 655361, 0, 2, 655361, 0, 3, 655361, 0, 4, 655361, 1, 65533, 655361, 1, 65534, 655361, 1, 65535, 655361, 1, 0, 655361, 1, 1, 655361, 1, 2, 655361, 1, 3, 655361, 1, 4, 655361, 2, 65533, 655361, 2, 65534, 655361, 2, 65535, 655361, 2, 0, 655361, 2, 1, 655361, 2, 2, 655361, 2, 3, 655361, 2, 4, 655361, 3, 65533, 1048576, 3, 65534, 1048576, 3, 65535, 655363, 3, 0, 1441793, 3, 1, 1048579, 3, 2, 1048576, 3, 3, 1048576, 3, 4, 1048576, 4, 65533, 1441792, 4, 65534, 2, 4, 65535, 655360, 4, 0, 1441793, 4, 1, 0, 4, 2, 1441794, 4, 3, 1441792, 4, 4, 1441792, 65533, 65532, 1441794, 65534, 65532, 1441795, 65535, 65532, 655361, 0, 65532, 655361, 1, 65532, 655361, 2, 65532, 655361, 3, 65532, 1048576, 4, 65532, 1441792, 5, 65523, 1048579, 5, 65524, 1048578, 5, 65525, 655360, 5, 65526, 1, 5, 65527, 1, 5, 65528, 1, 5, 65529, 1, 5, 65530, 1, 5, 65531, 1, 5, 65532, 655361, 5, 65533, 655361, 5, 65534, 3, 5, 65535, 1441795, 5, 0, 655361, 5, 1, 3, 5, 2, 1441795, 5, 3, 655361, 5, 4, 655361, 5, 5, 655361, 5, 6, 655361, 5, 7, 655361, 5, 8, 655361, 6, 65523, 3, 6, 65524, 1441792, 6, 65525, 1441795, 6, 65526, 1, 6, 65527, 1, 6, 65528, 1, 6, 65529, 1, 6, 65530, 1, 6, 65531, 1, 6, 65532, 655361, 6, 65533, 655361, 6, 65534, 1048579, 6, 65535, 655363, 6, 0, 655361, 6, 1, 1048579, 6, 2, 655363, 6, 3, 655361, 6, 4, 655361, 6, 5, 655361, 6, 6, 655361, 6, 7, 655361, 6, 8, 655361, 7, 65523, 1048579, 7, 65524, 1048576, 7, 65525, 1048576, 7, 65526, 1048576, 7, 65527, 1048576, 7, 65528, 1048576, 7, 65529, 1048576, 7, 65530, 1048576, 7, 65531, 1048576, 7, 65532, 1048576, 7, 65533, 1048576, 7, 65534, 1048578, 7, 65535, 655360, 7, 0, 1048577, 7, 1, 0, 7, 2, 655362, 7, 3, 1048576, 7, 4, 1048576, 7, 5, 1048576, 7, 6, 1048576, 7, 7, 1048576, 7, 8, 655363, 8, 65523, 3, 8, 65524, 1441792, 8, 65525, 1441792, 8, 65526, 2, 8, 65527, 1441794, 8, 65528, 1441792, 8, 65529, 1441792, 8, 65530, 2, 8, 65531, 1441794, 8, 65532, 1441792, 8, 65533, 1441792, 8, 65534, 1441792, 8, 65535, 1441795, 8, 0, 1048577, 8, 1, 3, 8, 2, 1441792, 8, 3, 1441792, 8, 4, 1441792, 8, 5, 1441792, 8, 6, 1441792, 8, 7, 2, 8, 8, 655360, 65535, 9, 1441792, 65535, 10, 1441792, 65535, 11, 1441792, 65535, 12, 1441792, 65535, 13, 1441792, 65535, 14, 1441792, 65535, 15, 2, 0, 9, 655361, 0, 10, 655361, 0, 11, 655361, 0, 12, 655361, 0, 13, 655361, 0, 14, 655361, 0, 15, 3, 0, 16, 2, 1, 9, 655361, 1, 10, 1, 1, 11, 1, 1, 12, 1, 1, 13, 1, 1, 14, 1, 1, 15, 1, 1, 16, 3, 1, 17, 2, 2, 9, 655361, 2, 10, 1, 2, 11, 1, 2, 12, 1, 2, 13, 1, 2, 14, 1, 2, 15, 1, 2, 16, 655361, 2, 17, 0, 3, 9, 1, 3, 10, 1, 3, 11, 655361, 3, 12, 655361, 3, 13, 655361, 3, 14, 1, 3, 15, 1, 3, 16, 655361, 3, 17, 0, 4, 9, 1, 4, 10, 1, 4, 11, 1, 4, 12, 655361, 4, 13, 655361, 4, 14, 1, 4, 15, 1, 4, 16, 655361, 4, 17, 0, 5, 9, 1, 5, 10, 1, 5, 11, 1, 5, 12, 655361, 5, 13, 655361, 5, 14, 1048577, 5, 15, 1048577, 5, 16, 655361, 5, 17, 0, 6, 9, 1, 6, 10, 1, 6, 11, 655361, 6, 12, 655361, 6, 13, 655361, 6, 14, 1048577, 6, 15, 1048577, 6, 16, 655361, 6, 17, 0, 7, 9, 1, 7, 10, 1, 7, 11, 1, 7, 12, 1, 7, 13, 1, 7, 14, 1, 7, 15, 1, 7, 16, 1048579, 7, 17, 1048578, 8, 9, 1048577, 8, 10, 1048577, 8, 11, 1048577, 8, 12, 1048577, 8, 13, 1048577, 8, 14, 1048577, 8, 15, 1048577, 8, 16, 0, 10, 65519, 655360, 10, 65520, 655361, 10, 65523, 655361, 10, 65524, 655361, 10, 65525, 655361, 10, 65526, 0, 10, 65527, 655360, 10, 65528, 655361, 10, 65529, 1048579, 10, 65530, 1048576, 10, 65531, 1048576, 10, 65532, 1048576, 10, 65533, 1048576, 10, 65534, 1048576, 10, 65535, 655363, 10, 0, 1048579, 10, 1, 1048576, 10, 2, 1048576, 10, 3, 1048576, 10, 4, 1048576, 10, 5, 655363, 10, 6, 655361, 10, 7, 0, 10, 8, 655362, 10, 9, 1048576, 10, 10, 1048576, 10, 11, 1048576, 10, 12, 1048576, 10, 13, 1048576, 10, 14, 1048576, 10, 15, 1048576, 10, 16, 1048578, 11, 65519, 655362, 11, 65520, 1048576, 11, 65521, 1048576, 11, 65522, 1048576, 11, 65523, 1048576, 11, 65524, 1048576, 11, 65525, 1048576, 11, 65526, 1048578, 11, 65527, 655360, 11, 65528, 655361, 11, 65529, 0, 11, 65530, 1441794, 11, 65531, 1441792, 11, 65532, 1441792, 11, 65533, 1441792, 11, 65534, 2, 11, 65535, 655360, 11, 0, 0, 11, 1, 1441794, 11, 2, 1441792, 11, 3, 1441792, 11, 4, 2, 11, 5, 655360, 11, 6, 655361, 11, 7, 0, 11, 8, 1441794, 11, 9, 1441792, 11, 10, 1441792, 11, 11, 1441792, 11, 12, 1441792, 11, 13, 1441792, 11, 14, 1441792, 11, 15, 1441792, 11, 16, 2, 12, 65528, 655361, 12, 65529, 0, 12, 65530, 655360, 12, 65531, 655361, 12, 65532, 655361, 12, 65533, 655361, 12, 65534, 3, 12, 65535, 1441795, 12, 0, 3, 12, 1, 1441795, 12, 2, 655361, 12, 3, 655361, 12, 4, 0, 12, 5, 655360, 12, 6, 1048577, 12, 7, 3, 12, 8, 1441795, 12, 9, 655361, 12, 10, 655361, 12, 11, 655361, 12, 12, 655361, 12, 13, 655361, 12, 14, 1, 12, 15, 1, 12, 16, 0, 13, 65528, 655361, 13, 65529, 0, 13, 65530, 655360, 13, 65531, 655361, 13, 65532, 655361, 13, 65533, 655361, 13, 65534, 655361, 13, 65535, 655361, 13, 0, 1048577, 13, 1, 1048577, 13, 2, 1048577, 13, 3, 1048577, 13, 4, 0, 13, 5, 655360, 13, 6, 1048577, 13, 7, 1048579, 13, 8, 1048576, 13, 9, 655363, 13, 10, 655361, 13, 11, 655361, 13, 12, 655361, 13, 13, 655361, 13, 14, 1, 13, 15, 1, 13, 16, 0, 14, 65527, 655360, 14, 65528, 655361, 14, 65529, 0, 14, 65530, 655360, 14, 65531, 655361, 14, 65532, 655361, 14, 65533, 655361, 14, 65534, 655361, 14, 65535, 655361, 14, 0, 655361, 14, 1, 655361, 14, 2, 655361, 14, 3, 1048579, 14, 4, 1048578, 14, 5, 655360, 14, 6, 655361, 14, 7, 0, 14, 8, 1441794, 14, 9, 1441795, 14, 10, 655361, 14, 11, 655361, 14, 12, 655361, 14, 13, 655361, 14, 14, 1, 14, 15, 1, 14, 16, 0, 15, 65524, 1441794, 15, 65525, 1441792, 15, 65526, 2, 15, 65527, 655360, 15, 65528, 655361, 15, 65529, 0, 15, 65530, 655362, 15, 65531, 655363, 15, 65532, 655361, 15, 65533, 655361, 15, 65534, 655361, 15, 65535, 655361, 15, 0, 655361, 15, 1, 655361, 15, 2, 655361, 15, 3, 3, 15, 4, 1441792, 15, 5, 1441795, 15, 6, 655361, 15, 7, 0, 15, 8, 655360, 15, 9, 1441793, 15, 10, 655361, 15, 11, 655361, 15, 12, 655361, 15, 13, 655361, 15, 14, 1, 15, 15, 1, 15, 16, 0, 16, 65524, 1441795, 16, 65525, 655361, 16, 65526, 3, 16, 65527, 1441795, 16, 65528, 655361, 16, 65529, 3, 16, 65530, 1441792, 16, 65531, 1441795, 16, 65532, 655361, 16, 65533, 655361, 16, 65534, 655361, 16, 65535, 655361, 16, 0, 655361, 16, 1, 655361, 16, 2, 655361, 16, 3, 1048579, 16, 4, 1048576, 16, 5, 655363, 16, 6, 655361, 16, 7, 0, 16, 8, 655360, 16, 9, 1441793, 16, 10, 1441793, 16, 11, 1441793, 16, 12, 1441793, 16, 13, 1441793, 16, 14, 655361, 16, 15, 1, 16, 16, 0, 17, 65524, 1048577, 17, 65525, 655361, 17, 65526, 1048579, 17, 65527, 655363, 17, 65528, 655361, 17, 65529, 1048579, 17, 65530, 1048576, 17, 65531, 655363, 17, 65532, 655361, 17, 65533, 655361, 17, 65534, 655361, 17, 65535, 655361, 17, 0, 655361, 17, 1, 655361, 17, 2, 655361, 17, 3, 3, 17, 4, 2, 17, 5, 655360, 17, 6, 655361, 17, 7, 0, 17, 8, 655360, 17, 9, 1441793, 17, 10, 1441793, 17, 11, 1441793, 17, 12, 1441793, 17, 13, 1441793, 17, 14, 655361, 17, 15, 655361, 17, 16, 0, 18, 65524, 1048577, 18, 65525, 655361, 18, 65526, 0, 18, 65527, 655360, 18, 65528, 655361, 18, 65529, 0, 18, 65530, 1441794, 18, 65531, 1441795, 18, 65532, 655361, 18, 65533, 655361, 18, 65534, 655361, 18, 65535, 655361, 18, 0, 655361, 18, 1, 655361, 18, 2, 655361, 18, 3, 655361, 18, 4, 0, 18, 5, 655360, 18, 6, 655361, 18, 7, 0, 18, 8, 655362, 18, 9, 1048576, 18, 10, 1048576, 18, 11, 655363, 18, 12, 1048579, 18, 13, 1048576, 18, 14, 1048576, 18, 15, 1048576, 18, 16, 1048578, 19, 65524, 1048577, 19, 65525, 655361, 19, 65526, 0, 19, 65527, 655360, 19, 65528, 655361, 19, 65529, 0, 19, 65530, 655360, 19, 65531, 655361, 19, 65532, 655361, 19, 65533, 655361, 19, 65534, 1048579, 19, 65535, 655363, 19, 0, 1048579, 19, 1, 655363, 19, 2, 655361, 19, 3, 655361, 19, 4, 0, 19, 5, 655360, 19, 6, 655361, 19, 7, 0, 19, 11, 655360, 19, 12, 0, 20, 65524, 1048577, 20, 65525, 1048577, 20, 65526, 0, 20, 65527, 655360, 20, 65528, 655361, 20, 65529, 0, 20, 65530, 655362, 20, 65531, 1048576, 20, 65532, 1048576, 20, 65533, 1048576, 20, 65534, 1048578, 20, 65535, 655360, 20, 0, 0, 20, 1, 655362, 20, 2, 1048576, 20, 3, 1048576, 20, 4, 1048578, 20, 5, 655360, 20, 6, 655361, 20, 7, 0, 20, 11, 655360, 20, 12, 0, 21, 65524, 1048577, 21, 65525, 1048577, 21, 65526, 0, 21, 65527, 655360, 21, 65528, 655361, 21, 65529, 3, 21, 65530, 1441792, 21, 65531, 1441792, 21, 65532, 1441792, 21, 65533, 1441792, 21, 65534, 1441792, 21, 65535, 1441795, 21, 0, 3, 21, 1, 1441792, 21, 2, 1441792, 21, 3, 1441792, 21, 4, 1441792, 21, 5, 1441795, 21, 6, 655361, 21, 7, 0, 21, 11, 655360, 21, 12, 0, 22, 65524, 655363, 22, 65525, 655361, 22, 65526, 0, 22, 65527, 655360, 22, 65528, 655361, 22, 65529, 1048577, 22, 65530, 1048577, 22, 65531, 655361, 22, 65532, 655361, 22, 65533, 655361, 22, 65534, 1441793, 22, 65535, 655361, 22, 0, 655361, 22, 1, 655361, 22, 2, 655361, 22, 3, 655361, 22, 4, 655361, 22, 5, 655361, 22, 6, 655361, 22, 7, 0, 22, 11, 655360, 22, 12, 0, 23, 65524, 655362, 23, 65525, 1048576, 23, 65526, 1048578, 23, 65527, 655362, 23, 65528, 1048576, 23, 65529, 1048576, 23, 65530, 1048576, 23, 65531, 1048576, 23, 65532, 1048576, 23, 65533, 1048576, 23, 65534, 1048576, 23, 65535, 1048576, 23, 0, 1048576, 23, 1, 1048576, 23, 2, 655363, 23, 3, 1048579, 23, 4, 1048576, 23, 5, 1048576, 23, 6, 1048576, 23, 7, 1048578, 23, 11, 655360, 23, 12, 0, 24, 65528, 1441794, 24, 65529, 1441792, 24, 65530, 1441792, 24, 65531, 1441792, 24, 65532, 1441792, 24, 65533, 2, 24, 65534, 1441794, 24, 65535, 1441792, 24, 0, 1441792, 24, 1, 1441792, 24, 2, 1441795, 24, 3, 0, 24, 4, 1441794, 24, 5, 1441792, 24, 6, 1441792, 24, 7, 2, 24, 11, 655360, 24, 12, 0, 25, 65528, 655360, 25, 65529, 1, 25, 65530, 1, 25, 65531, 1, 25, 65532, 1, 25, 65533, 0, 25, 65534, 655360, 25, 65535, 655361, 25, 0, 655361, 25, 1, 655361, 25, 2, 655361, 25, 3, 0, 25, 4, 655360, 25, 5, 655361, 25, 6, 655361, 25, 7, 0, 25, 11, 655360, 25, 12, 0, 26, 65528, 655360, 26, 65529, 1, 26, 65530, 1, 26, 65531, 1, 26, 65532, 655361, 26, 65533, 3, 26, 65534, 1441795, 26, 65535, 655361, 26, 0, 655361, 26, 1, 655361, 26, 2, 655361, 26, 3, 3, 26, 4, 1441795, 26, 5, 655361, 26, 6, 655361, 26, 7, 3, 26, 8, 1441792, 26, 9, 1441792, 26, 10, 1441792, 26, 11, 1441795, 26, 12, 3, 26, 13, 1441792, 26, 14, 1441792, 26, 15, 2, 27, 65528, 655360, 27, 65529, 655361, 27, 65530, 655361, 27, 65531, 655361, 27, 65532, 655361, 27, 65533, 1048579, 27, 65534, 655363, 27, 65535, 655361, 27, 0, 655361, 27, 1, 655361, 27, 2, 1, 27, 3, 1048579, 27, 4, 655363, 27, 5, 655361, 27, 6, 655361, 27, 7, 1048579, 27, 8, 655363, 27, 9, 655361, 27, 10, 655361, 27, 11, 655361, 27, 12, 655361, 27, 13, 655361, 27, 14, 655361, 27, 15, 0, 28, 65528, 655360, 28, 65529, 655361, 28, 65530, 655361, 28, 65531, 655361, 28, 65532, 655361, 28, 65533, 0, 28, 65534, 655360, 28, 65535, 655361, 28, 0, 655361, 28, 1, 655361, 28, 2, 655361, 28, 3, 0, 28, 4, 655360, 28, 5, 655361, 28, 6, 655361, 28, 7, 0, 28, 8, 655360, 28, 9, 655361, 28, 10, 655361, 28, 11, 655361, 28, 12, 655361, 28, 13, 655361, 28, 14, 655361, 28, 15, 0, 29, 65528, 655360, 29, 65529, 655361, 29, 65530, 655361, 29, 65531, 655361, 29, 65532, 655361, 29, 65533, 0, 29, 65534, 655360, 29, 65535, 655361, 29, 0, 655361, 29, 1, 655361, 29, 2, 1048577, 29, 3, 0, 29, 4, 655360, 29, 5, 655361, 29, 6, 655361, 29, 7, 0, 29, 8, 655360, 29, 9, 655361, 29, 10, 655361, 29, 11, 655361, 29, 12, 655361, 29, 13, 655361, 29, 14, 1048579, 29, 15, 1048578, 30, 65528, 655360, 30, 65529, 655361, 30, 65530, 655361, 30, 65531, 655361, 30, 65532, 655361, 30, 65533, 0, 30, 65534, 655360, 30, 65535, 655361, 30, 0, 655361, 30, 1, 655361, 30, 2, 655361, 30, 3, 0, 30, 4, 655362, 30, 5, 1048576, 30, 6, 1048576, 30, 7, 1048578, 30, 8, 655362, 30, 9, 1048576, 30, 10, 1048576, 30, 11, 1048576, 30, 12, 1048576, 30, 13, 1048576, 31, 65528, 655360, 31, 65529, 655361, 31, 65530, 655361, 31, 65531, 655361, 31, 65532, 655361, 31, 65533, 0, 31, 65534, 655360, 31, 65535, 655361, 31, 0, 655361, 31, 1, 1, 31, 2, 655361, 31, 3, 0, 32, 65528, 655362, 32, 65529, 1048576, 32, 65530, 1048576, 32, 65531, 1048576, 32, 65532, 1048576, 32, 65533, 1048578, 32, 65534, 655362, 32, 65535, 1048576, 32, 0, 1048576, 32, 1, 1048576, 32, 2, 1048576, 32, 3, 1048578, 7, 65519, 655360, 7, 65520, 655361, 7, 65521, 655361, 7, 65522, 1048577, 8, 65519, 655360, 8, 65520, 1048577, 8, 65522, 1048577, 9, 65519, 655360, 9, 65520, 655361, 9, 65523, 655361, 9, 65524, 655361, 9, 65525, 655361, 9, 65526, 0, 9, 65527, 655360, 9, 65528, 655361, 9, 65529, 655361, 9, 65530, 3, 9, 65531, 1441795, 9, 65532, 655361, 9, 65533, 655361, 9, 65534, 655361, 9, 65535, 655361, 9, 0, 655361, 9, 1, 655361, 9, 2, 655361, 9, 3, 655361, 9, 4, 655361, 9, 5, 655361, 9, 6, 655361, 9, 7, 0, 9, 8, 655360, 9, 9, 1048577, 9, 10, 1048577, 9, 11, 1048577, 9, 12, 1048577, 9, 13, 1048577, 9, 14, 1048577, 9, 16, 0, 1, 65519, 1441794, 1, 65520, 1441792, 1, 65521, 1441792, 1, 65522, 1441792, 1, 65523, 1441792, 2, 65519, 655360, 2, 65520, 655361, 2, 65521, 655361, 2, 65522, 655361, 2, 65523, 655361, 3, 65519, 655360, 3, 65520, 655361, 3, 65521, 655361, 3, 65522, 655361, 3, 65523, 655361, 4, 65519, 655360, 4, 65520, 655361, 4, 65521, 655361, 4, 65522, 655361, 4, 65523, 655361, 5, 65519, 655360, 5, 65520, 1441793, 5, 65521, 655361, 5, 65522, 1048577, 6, 65519, 655360, 6, 65520, 655361, 6, 65521, 655361, 6, 65522, 1048577, 65534, 5, 2, 65535, 5, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 65531, 2, 2, 65531, 1, 1441792, 65531, 0, 1441792, 65531, 65535, 1441792, 65531, 65534, 1441794, 65534, 65531, 1441794, 65535, 65531, 655360, 0, 65531, 655360, 1, 65531, 655360, 2, 65531, 655360, 3, 65531, 655362, 4, 65531, 1441792, 4, 65529, 1441792, 4, 65528, 1441792, 4, 65527, 1441792, 4, 65526, 1441792, 4, 65525, 1441794, 2, 65524, 0, 1, 65524, 2, 3, 65524, 0, 3, 5, 1048578, 4, 6, 1441792, 4, 7, 1441792, 3, 8, 655360, 2, 8, 655360, 1, 8, 655360, 0, 8, 655360, 65535, 8, 1441794, 4, 5, 1441792, 4, 8, 1441795, 4, 65530, 1441792, 9, 15, 1048577, 4, 65524, 0, 12, 65527, 655360, 13, 65527, 655360, 30, 14, 1048578, 8, 65521, 655361, 9, 65521, 655361, 10, 65521, 1048577, 10, 65522, 655361, 9, 65522, 655361, 16, 65523, 1441794, 17, 65523, 1441795, 18, 65523, 1048577, 19, 65523, 1048577, 20, 65523, 1048577, 21, 65523, 655363, 22, 65523, 655362, 17, 65522, 1441794, 18, 65522, 655360, 19, 65522, 655360, 20, 65522, 655360, 21, 65522, 655362)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="HideSpaces" type="Node3D" parent="World" unique_id=315832570]
 
 [node name="Crate" parent="World/HideSpaces" unique_id=976390297 instance=ExtResource("3_qbrl8")]
-transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 7.1955233, 0.21063158, 5.250413)
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 10.189082, 0.21063158, 13.617067)
 
 [node name="StaticBody3D" parent="World/HideSpaces/Crate/Crate1" parent_id_path=PackedInt32Array(976390297, 1818172614) index="0" unique_id=2040265983]
 visible = false
@@ -87,10 +474,120 @@ visible = false
 visible = false
 disabled = true
 
-[node name="StaticBody3D" parent="World/HideSpaces/Crate/Crate2" parent_id_path=PackedInt32Array(976390297, 1603963891) index="0" unique_id=542084547]
+[node name="Crate2" parent="World/HideSpaces/Crate" index="1" unique_id=1603963891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077322006)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate/Crate2" index="0" unique_id=542084547]
+collision_layer = 4
+
+[node name="Crate2" parent="World/HideSpaces" unique_id=723848770 instance=ExtResource("3_qbrl8")]
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 40.184288, 0.21063158, 63.00225)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate2/Crate1" parent_id_path=PackedInt32Array(723848770, 1818172614) index="0" unique_id=2040265983]
+visible = false
+
+[node name="CollisionShape3D" parent="World/HideSpaces/Crate2/Crate1/StaticBody3D" index="0" unique_id=1882026017]
+visible = false
+disabled = true
+
+[node name="Crate2" parent="World/HideSpaces/Crate2" index="1" unique_id=1603963891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077322006)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate2/Crate2" index="0" unique_id=542084547]
+collision_layer = 4
+
+[node name="Crate3" parent="World/HideSpaces" unique_id=378272373 instance=ExtResource("3_qbrl8")]
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 99.45391, 0.21063158, 20.026688)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate3/Crate1" parent_id_path=PackedInt32Array(378272373, 1818172614) index="0" unique_id=2040265983]
+visible = false
+
+[node name="CollisionShape3D" parent="World/HideSpaces/Crate3/Crate1/StaticBody3D" index="0" unique_id=1882026017]
+visible = false
+disabled = true
+
+[node name="Crate2" parent="World/HideSpaces/Crate3" index="1" unique_id=1603963891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077322006)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate3/Crate2" index="0" unique_id=542084547]
+collision_layer = 4
+
+[node name="Crate4" parent="World/HideSpaces" unique_id=1141199498 instance=ExtResource("3_qbrl8")]
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 46.58085, 0.21063158, 7.430914)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate4/Crate1" parent_id_path=PackedInt32Array(1141199498, 1818172614) index="0" unique_id=2040265983]
+visible = false
+
+[node name="CollisionShape3D" parent="World/HideSpaces/Crate4/Crate1/StaticBody3D" index="0" unique_id=1882026017]
+visible = false
+disabled = true
+
+[node name="Crate2" parent="World/HideSpaces/Crate4" index="1" unique_id=1603963891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077322006)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate4/Crate2" index="0" unique_id=542084547]
+collision_layer = 4
+
+[node name="Crate5" parent="World/HideSpaces" unique_id=1932545949 instance=ExtResource("3_qbrl8")]
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 128.54196, 0.21063158, -10.904295)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate5/Crate1" parent_id_path=PackedInt32Array(1932545949, 1818172614) index="0" unique_id=2040265983]
+visible = false
+
+[node name="CollisionShape3D" parent="World/HideSpaces/Crate5/Crate1/StaticBody3D" index="0" unique_id=1882026017]
+visible = false
+disabled = true
+
+[node name="Crate2" parent="World/HideSpaces/Crate5" index="1" unique_id=1603963891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077322006)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate5/Crate2" index="0" unique_id=542084547]
+collision_layer = 4
+
+[node name="Crate6" parent="World/HideSpaces" unique_id=1087613991 instance=ExtResource("3_qbrl8")]
+transform = Transform3D(0.43, 0, 0, 0, 0.43, 0, 0, 0, 0.43, 114.01099, 0.21063158, 13.313995)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate6/Crate1" parent_id_path=PackedInt32Array(1087613991, 1818172614) index="0" unique_id=2040265983]
+visible = false
+
+[node name="CollisionShape3D" parent="World/HideSpaces/Crate6/Crate1/StaticBody3D" index="0" unique_id=1882026017]
+visible = false
+disabled = true
+
+[node name="Crate2" parent="World/HideSpaces/Crate6" index="1" unique_id=1603963891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.077322006)
+
+[node name="StaticBody3D" parent="World/HideSpaces/Crate6/Crate2" index="0" unique_id=542084547]
 collision_layer = 4
 
 [node name="StealthZone" parent="World/HideSpaces" unique_id=1559430008 instance=ExtResource("4_a2ia3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0711555, 2.2805123, -6.4499226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.532415, 0, -7.6405897)
+
+[node name="StealthZone2" parent="World/HideSpaces" unique_id=1659874335 instance=ExtResource("4_a2ia3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.00294, 0, 28.149307)
+
+[node name="StealthZone3" parent="World/HideSpaces" unique_id=1459990850 instance=ExtResource("4_a2ia3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.93566, 0, -28.96725)
+
+[node name="StealthZone4" parent="World/HideSpaces" unique_id=487036916 instance=ExtResource("4_a2ia3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.278404, 0, -10.998259)
+
+[node name="StealthZone6" parent="World/HideSpaces" unique_id=786134044 instance=ExtResource("4_a2ia3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.12108, 0, 28.626814)
+
+[node name="StealthZone7" parent="World/HideSpaces" unique_id=1243897100 instance=ExtResource("4_a2ia3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.05513, 0, 64.88108)
+
+[node name="StealthZone5" parent="World/HideSpaces" unique_id=350371074 instance=ExtResource("4_a2ia3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.57183, 0, -63.262993)
+
+[node name="Hud" parent="World" unique_id=798686351 instance=ExtResource("5_a2ia3")]
+
+[node name="PauseMenu" parent="World/Hud" unique_id=940368734 instance=ExtResource("6_236hc")]
 
 [editable path="World/HideSpaces/Crate"]
+[editable path="World/HideSpaces/Crate2"]
+[editable path="World/HideSpaces/Crate3"]
+[editable path="World/HideSpaces/Crate4"]
+[editable path="World/HideSpaces/Crate5"]
+[editable path="World/HideSpaces/Crate6"]

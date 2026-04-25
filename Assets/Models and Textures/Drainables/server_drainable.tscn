@@ -1,4 +1,15 @@
-[gd_scene format=4 uid="uid://cvl7ivxwuwcic"]
+[gd_scene format=4 uid="uid://cxyx1sria225j"]
+
+[ext_resource type="Script" uid="uid://cc5o257dquwde" path="res://Entities/PowerSystems/power_system.gd" id="1_rk5h6"]
+[ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="2_mok57"]
+[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://Shaders/outline.gdshader" id="2_vwhnh"]
+[ext_resource type="Texture2D" uid="uid://balrbwlhegmd" path="res://Assets/Ui/Circle bar.png" id="3_vwhnh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_42wml"]
+render_priority = 0
+shader = ExtResource("2_vwhnh")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5scu7"]
 resource_name = "Metal1"
@@ -19,6 +30,7 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
 emission = Color(1, 0.91443056, 0, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ar10g"]
 _surfaces = [{
@@ -189,18 +201,58 @@ shadow_mesh = SubResource("ArrayMesh_ymm4e")
 [sub_resource type="BoxShape3D" id="BoxShape3D_i3hpu"]
 size = Vector3(5.9974213, 8.918243, 4.055176)
 
-[node name="ServerDrainable" type="Node3D" unique_id=2084591099]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+[sub_resource type="ViewportTexture" id="ViewportTexture_42wml"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
-[node name="ServerDrainable" type="MeshInstance3D" parent="." unique_id=1475697824]
+[node name="ServerDrainable" type="StaticBody3D" unique_id=851727678 groups=["power_system"]]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+script = ExtResource("1_rk5h6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1475697824]
+material_overlay = SubResource("ShaderMaterial_42wml")
 mesh = SubResource("ArrayMesh_u5sde")
 
 [node name="ServerDrainableOff" type="MeshInstance3D" parent="." unique_id=1790229287]
 visible = false
 mesh = SubResource("ArrayMesh_6bfdc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=986493153]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1136795909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0046463013, 4.4408417, -0.00024414063)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1136795909]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.0046463013, 4.440841, -0.00024414061)
 shape = SubResource("BoxShape3D_i3hpu")
+
+[node name="InteractUi" type="Label3D" parent="." unique_id=1834630883]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -3.3780894, 4.034347, 3.5988872)
+visible = false
+pixel_size = 0.03
+billboard = 2
+render_priority = 1
+outline_render_priority = 0
+text = "Press E to feed"
+font = ExtResource("2_mok57")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1119702025]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, -1.5128028, 2.9918787, 3.7573617)
+billboard = 1
+texture = SubResource("ViewportTexture_42wml")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1650609277]
+transparent_bg = true
+size = Vector2i(432, 432)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Sprite3D/SubViewport" unique_id=552669597]
+unique_name_in_owner = true
+visible = false
+offset_right = 432.0
+offset_bottom = 432.0
+fill_mode = 4
+texture_under = ExtResource("3_vwhnh")
+texture_progress = ExtResource("3_vwhnh")
+tint_under = Color(0, 0, 0, 0.19607843)
+tint_progress = Color(1, 1, 1, 0.78431374)
+metadata/_edit_use_anchors_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1043815866]
+transform = Transform3D(3.333333, 0, 0, 0, -1.4570463e-07, 3.333333, 0, -3.333333, -1.4570463e-07, 0, 19.699516, 0)
+layers = 3
+light_energy = 16.0
+spot_range = 8.0

@@ -1,4 +1,15 @@
-[gd_scene format=4 uid="uid://dl80uoi6qcf3i"]
+[gd_scene format=4 uid="uid://b74tpd0slyld7"]
+
+[ext_resource type="Script" uid="uid://cc5o257dquwde" path="res://Entities/PowerSystems/power_system.gd" id="1_ux7gq"]
+[ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="2_6bdd7"]
+[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://Shaders/outline.gdshader" id="2_ktfyn"]
+[ext_resource type="Texture2D" uid="uid://balrbwlhegmd" path="res://Assets/Ui/Circle bar.png" id="3_ktfyn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_biwj7"]
+render_priority = 0
+shader = ExtResource("2_ktfyn")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5scu7"]
 resource_name = "Metal1"
@@ -25,6 +36,7 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
 emission = Color(1, 0.06673633, 0, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2n6r"]
 resource_name = "YellowLight"
@@ -33,6 +45,7 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
 emission = Color(1, 0.91443056, 0, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6vq12"]
 _surfaces = [{
@@ -245,18 +258,58 @@ shadow_mesh = SubResource("ArrayMesh_52q7p")
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rylj"]
 size = Vector3(3.5532227, 7.871277, 2.6173096)
 
-[node name="EKGDrainable" type="Node3D" unique_id=80853541]
-transform = Transform3D(0.262, 0, 0, 0, 0.262, 0, 0, 0, 0.262, 0, 0, 0)
+[sub_resource type="ViewportTexture" id="ViewportTexture_biwj7"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
-[node name="EKGDrainable" type="MeshInstance3D" parent="." unique_id=876049316]
+[node name="EKGDrainable" type="StaticBody3D" unique_id=553580125]
+transform = Transform3D(0.262, 0, 0, 0, 0.262, 0, 0, 0, 0.262, 0, 0, 0)
+script = ExtResource("1_ux7gq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=876049316]
+material_overlay = SubResource("ShaderMaterial_biwj7")
 mesh = SubResource("ArrayMesh_susf5")
 
 [node name="EKGDrainableOff" type="MeshInstance3D" parent="." unique_id=784155975]
 visible = false
 mesh = SubResource("ArrayMesh_0lkp5")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1126969358]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=834341189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04711914, 3.9250793, -0.010192871)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=834341189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04711914, 3.925079, -0.010192871)
 shape = SubResource("BoxShape3D_0rylj")
+
+[node name="InteractUi" type="Label3D" parent="." unique_id=71088783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1488006, 3.3466947)
+visible = false
+pixel_size = 0.05
+billboard = 2
+render_priority = 1
+outline_render_priority = 0
+text = "Press E to feed"
+font = ExtResource("2_6bdd7")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=329829203 groups=["power_system"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6404828, 2.7603502)
+billboard = 1
+texture = SubResource("ViewportTexture_biwj7")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=1849196855]
+transparent_bg = true
+size = Vector2i(432, 432)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Sprite3D/SubViewport" unique_id=865543906]
+unique_name_in_owner = true
+visible = false
+offset_right = 432.0
+offset_bottom = 432.0
+fill_mode = 4
+texture_under = ExtResource("3_ktfyn")
+texture_progress = ExtResource("3_ktfyn")
+tint_under = Color(0, 0, 0, 0.19607843)
+tint_progress = Color(1, 1, 1, 0.78431374)
+metadata/_edit_use_anchors_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=241020638 groups=["power_system"]]
+transform = Transform3D(3.816794, 0, 0, 0, -1.6683737e-07, 3.816794, 0, -3.816794, -1.6683737e-07, 0.04190343, 24.338966, 0)
+layers = 3
+light_energy = 16.0
+spot_range = 8.0

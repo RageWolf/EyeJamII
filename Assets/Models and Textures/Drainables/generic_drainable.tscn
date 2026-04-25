@@ -1,4 +1,19 @@
-[gd_scene format=4 uid="uid://dg3spgtdc2pb"]
+[gd_scene format=4 uid="uid://skimmd2bcho0"]
+
+[ext_resource type="Script" uid="uid://cc5o257dquwde" path="res://Entities/PowerSystems/power_system.gd" id="1_t642s"]
+[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://Shaders/outline.gdshader" id="2_4xgv8"]
+[ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="2_o1m2p"]
+[ext_resource type="Texture2D" uid="uid://balrbwlhegmd" path="res://Assets/Ui/Circle bar.png" id="3_4xgv8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cw4it"]
+height = 6.071411
+radius = 1.1279297
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsotb"]
+render_priority = 0
+shader = ExtResource("2_4xgv8")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5scu7"]
 resource_name = "Metal1"
@@ -32,6 +47,7 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
 emission = Color(1, 0.06673633, 0, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2n6r"]
 resource_name = "YellowLight"
@@ -40,6 +56,7 @@ albedo_color = Color(0, 0, 0, 1)
 metallic = 1.0
 emission_enabled = true
 emission = Color(1, 0.91443056, 0, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_motjf"]
 _surfaces = [{
@@ -320,22 +337,60 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c7bd4")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_cw4it"]
-height = 6.071411
-radius = 1.1279297
+[sub_resource type="ViewportTexture" id="ViewportTexture_jsotb"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
-[node name="GenericDrainable" type="Node3D" unique_id=1809046626]
+[node name="GenericDrainable" type="StaticBody3D" unique_id=1324652657 groups=["power_system"]]
 transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 0, 0, 0)
+script = ExtResource("1_t642s")
+energy_value = 5.0
+decay_value = 2.0
 
-[node name="GenericDrainable" type="MeshInstance3D" parent="." unique_id=483753508]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2101760369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.034851, 0)
+shape = SubResource("CylinderShape3D_cw4it")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=483753508]
+material_overlay = SubResource("ShaderMaterial_jsotb")
 mesh = SubResource("ArrayMesh_fx5lk")
 
 [node name="GenericDrainableOff" type="MeshInstance3D" parent="." unique_id=412620976]
 visible = false
 mesh = SubResource("ArrayMesh_qdyrv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1792233967]
+[node name="InteractUi" type="Label3D" parent="." unique_id=1414099218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9421406, 0)
+visible = false
+pixel_size = 0.05
+billboard = 2
+render_priority = 1
+outline_render_priority = 0
+text = "Press E to feed"
+font = ExtResource("2_o1m2p")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2101760369]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.034851, 0)
-shape = SubResource("CylinderShape3D_cw4it")
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=782317697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.53561, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_jsotb")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=2123648797]
+transparent_bg = true
+size = Vector2i(432, 432)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Sprite3D/SubViewport" unique_id=791182500]
+unique_name_in_owner = true
+visible = false
+offset_right = 432.0
+offset_bottom = 432.0
+fill_mode = 4
+texture_under = ExtResource("3_4xgv8")
+texture_progress = ExtResource("3_4xgv8")
+tint_under = Color(0, 0, 0, 0.19607843)
+tint_progress = Color(1, 1, 1, 0.78431374)
+metadata/_edit_use_anchors_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1455240078]
+transform = Transform3D(3.6630037, 0, 0, 0, -1.6011498e-07, 3.6630037, 0, -3.6630037, -1.6011498e-07, 0, 22.166126, 0)
+layers = 3
+light_energy = 8.0
+spot_range = 8.0

@@ -3,22 +3,48 @@
 [ext_resource type="Script" uid="uid://cfta5cp6r6u88" path="res://Entities/StealthZone/stealth_zone.gd" id="1_mc10i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oey48"]
-size = Vector3(5, 5, 5)
+size = Vector3(4, 4, 4)
 
 [node name="StealthZone" type="Area3D" unique_id=1559430008]
 collision_layer = 0
 collision_mask = 18
 monitorable = false
 script = ExtResource("1_mc10i")
+zone_size = Vector3(4, 4, 4)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=843807678]
 shape = SubResource("BoxShape3D_oey48")
-debug_color = Color(7.7920156, 0.059815057, 7.3546996, 1)
+debug_color = Color(0.00020795701, 5.8090367, 3.0328135, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1768240245]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 20.415634, 0)
-light_color = Color(0.27849364, 0.86025584, 0, 1)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 21.825123, 0)
 light_energy = 16.0
 light_indirect_energy = 16.0
-spot_range = 25.0
-spot_angle = 25.3
+light_negative = true
+spot_range = 24.422052
+spot_attenuation = 0.65
+spot_angle = 7.26098
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1013882606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.617159, 5.9767613, 0)
+light_energy = 8.0
+omni_range = 8.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=68650382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011346817, 5.9767613, -4.825587)
+light_energy = 8.0
+omni_range = 8.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1845010714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011346817, 5.9767613, 4.324067)
+light_energy = 8.0
+omni_range = 8.0
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1947416465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7158527, 5.9767613, 0)
+light_energy = 8.0
+omni_range = 8.0
+omni_attenuation = 2.0
