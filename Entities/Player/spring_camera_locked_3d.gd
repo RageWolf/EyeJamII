@@ -7,13 +7,14 @@ extends Node3D
 
 @onready var spring_arm: SpringArm3D = $SpringArm3D
 
-@onready var player: Player = get_tree().get_first_node_in_group("player")
+@onready var player: Player
 
 var orbit_angle: float = 0.0
 var shake_strength := 0.0
 var shake_fade := 6.0
 
 func _ready():
+	player = get_tree().get_first_node_in_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	SignalBus.screen_shake.connect(_on_screen_shake)
 
