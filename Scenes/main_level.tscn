@@ -11,7 +11,7 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_ikcpc")
 
 [sub_resource type="Environment" id="Environment_qbrl8"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_5erdv")
 tonemap_mode = 2
 
@@ -25,6 +25,11 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 environment = SubResource("Environment_qbrl8")
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_ikcpc")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=2102600492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.125, 2.425)
+light_energy = 9.153
+omni_range = 11.427735
 
 [node name="World" type="Node3D" parent="." unique_id=1038799262]
 metadata/_edit_lock_ = true
