@@ -34,6 +34,10 @@ var current_light_level : float = 0.0
 @export var GRAVITY = -9.8
 @export var ACCELERATION = 15.0
 @export var FRICTION = 12.0
+@export var JUMP_HOLD_FORCE = 2.5
+@export var JUMP_MAX_TIME = 0.3 
+@export var JUMP_VELOCITY = 4.5 
+var jump_hold_timer := 0.0
 #endregion
 
 #region HIDING VARIABLES
@@ -41,8 +45,9 @@ var is_hidden: bool = false
 var player_inside_stealth_zone : bool = false
 #endregion
 
-#animation
+# Animation and audio
 @onready var anim_controller = $AnimationController
+@onready var audio_controller: Node = $AudioController
 
 
 func _ready():
@@ -63,12 +68,18 @@ func _physics_process(delta):
 	update_feeding(delta)
 	update_stealth()
 
-
 	anim_controller.update(delta, velocity, direction)
 
 	move_and_slide()
 	var cam_y = spring_arm_pivot.rotation.y
 	monster.rotation.y = lerp_angle(monster.rotation.y, cam_y , 10.0 * delta)
+
+func _process(_delta: float) -> void:
+	if OS.is_debug_build():
+		if Input.is_action_pressed("hide"):
+			is_hidden = true
+		else:
+			is_hidden = false
 
 
 
@@ -109,12 +120,11 @@ func get_input_direction() -> Vector3:
 	return (right * input_dir.x + forward * input_dir.y).normalized()
 
 
-
 func apply_movement(direction: Vector3, delta):
 	if is_feeding:
 		velocity = Vector3.ZERO
-		return 
-	
+		return
+
 	if direction != Vector3.ZERO:
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION * delta)
 		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCELERATION * delta)
@@ -125,7 +135,21 @@ func apply_movement(direction: Vector3, delta):
 
 func apply_gravity(delta):
 	if not is_on_floor():
-		velocity.y += GRAVITY * delta
+		if Input.is_action_pressed("jump") and jump_hold_timer > 0:
+			velocity.y += JUMP_HOLD_FORCE * delta
+			jump_hold_timer -= delta
+		else:
+			jump_hold_timer = 0.0  
+			velocity.y += GRAVITY * delta
+	elif Input.is_action_just_pressed("jump") and not is_feeding:
+		jump()
+
+func jump():
+	anim_controller.is_jumping = true
+	velocity.y = JUMP_VELOCITY
+	jump_hold_timer = JUMP_MAX_TIME
+	audio_controller.play_jump()
+
 #endregion
 
 
@@ -267,8 +291,9 @@ func cleanup_feed_ui():
 #region HIDING MECHANISM :=========================================================================
 func update_stealth():
 	var is_moving = velocity.length() > 0.1
+	var is_airborne = not is_on_floor()
 	
-	if player_inside_stealth_zone and not is_moving:
+	if player_inside_stealth_zone and not is_moving and not is_airborne:
 		set_hidden(true)
 	else:
 		set_hidden(false)
@@ -276,14 +301,5 @@ func update_stealth():
 func set_hidden(state: bool):
 	if is_hidden == state:
 		return
-	
 	is_hidden = state
-	if is_hidden:
-		# Disable collision
-		
-		collision_layer = 3
-	else:
-		# Restore collision
-		collision_layer = 2
-
 #endregion
