@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://qyw0pu6jky8d"]
 
-[ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="2_5erdv"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
@@ -19,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dtaf3lwurigxn" path="res://Assets/Models and Textures/Props/fabricator.tscn" id="12_8ce4n"]
 [ext_resource type="PackedScene" uid="uid://cs0nqj3x48uy7" path="res://Assets/Models and Textures/Props/shelves.tscn" id="13_o0i6v"]
 [ext_resource type="PackedScene" uid="uid://b1sjb1xfh8ypx" path="res://Assets/Models and Textures/Props/weird_storage_shelf.tscn" id="14_1ubp3"]
+[ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="15_jf8f8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbrl8"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -412,6 +412,15 @@ transform = Transform3D(0.48, 0, 0, 0, 0.48, 0, 0, 0, 0.48, 99.910675, 0.1999988
 [node name="Shelves" parent="World/Props" unique_id=946257221 instance=ExtResource("13_o0i6v")]
 transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 17.483067, 0.19999933, 69.645485)
 
+[node name="Plain Metal Shelf Less Shelves" parent="World/Props/Shelves" index="1" unique_id=693883450]
+visible = false
+
+[node name="Filled Plain Metal Shelf 1" parent="World/Props/Shelves" index="2" unique_id=924028326]
+visible = false
+
+[node name="Filled Plain Metal Shelf 2" parent="World/Props/Shelves" index="3" unique_id=37934197]
+visible = false
+
 [node name="Shelves5" parent="World/Props" unique_id=1751778540 instance=ExtResource("13_o0i6v")]
 transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 126.61922, 0.19999933, -27.912651)
 
@@ -421,8 +430,26 @@ transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 71.76372, 0.19999
 [node name="Shelves2" parent="World/Props" unique_id=607111721 instance=ExtResource("13_o0i6v")]
 transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 12.412033, 0.19999933, 69.645485)
 
+[node name="Plain Metal Shelf" parent="World/Props/Shelves2" index="0" unique_id=558505084]
+visible = false
+
+[node name="Plain Metal Shelf Less Shelves" parent="World/Props/Shelves2" index="1" unique_id=693883450]
+visible = false
+
+[node name="Filled Plain Metal Shelf 1" parent="World/Props/Shelves2" index="2" unique_id=924028326]
+visible = false
+
 [node name="Shelves4" parent="World/Props" unique_id=326717678 instance=ExtResource("13_o0i6v")]
 transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 7.4994698, 0.19999933, 69.645485)
+
+[node name="Plain Metal Shelf" parent="World/Props/Shelves4" index="0" unique_id=558505084]
+visible = false
+
+[node name="Plain Metal Shelf Less Shelves" parent="World/Props/Shelves4" index="1" unique_id=693883450]
+visible = false
+
+[node name="Filled Plain Metal Shelf 2" parent="World/Props/Shelves4" index="3" unique_id=37934197]
+visible = false
 
 [node name="Weird Storage Shelf" parent="World/Props" unique_id=1343106788 instance=ExtResource("14_1ubp3")]
 transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 47.64948, 0.19999933, 17.88059)
@@ -455,7 +482,7 @@ transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 77.69215, 0.19999
 navigation_mesh = SubResource("NavigationMesh_ikcpc")
 
 [node name="GridMap" type="GridMap" parent="World/NavigationRegion3D" unique_id=2045210557]
-mesh_library = ExtResource("2_5erdv")
+mesh_library = ExtResource("15_jf8f8")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
@@ -586,6 +613,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.57183, 0, -63.262993)
 
 [node name="PauseMenu" parent="World/Hud" unique_id=940368734 instance=ExtResource("6_236hc")]
 
+[editable path="World/Props/Shelves"]
+[editable path="World/Props/Shelves2"]
+[editable path="World/Props/Shelves4"]
 [editable path="World/HideSpaces/Crate"]
 [editable path="World/HideSpaces/Crate2"]
 [editable path="World/HideSpaces/Crate3"]
