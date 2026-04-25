@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bsa58cakafxkk" path="res://Audio/jump/JUMP 2.mp3" id="7_ap3xn"]
 [ext_resource type="AudioStream" uid="uid://dfaolw12qerh5" path="res://Audio/jump/JUMP 3.mp3" id="8_iplt1"]
 [ext_resource type="Script" uid="uid://bffhknagp4x7j" path="res://Entities/Player/audio_controller.gd" id="10_ap3xn"]
+[ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="10_x1y6q"]
 [ext_resource type="AudioStream" uid="uid://cnyb52h5dhtdj" path="res://Audio/jump/JUMP 5.mp3" id="10_xr8lj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
@@ -503,5 +504,13 @@ script = ExtResource("5_5c2io")
 
 [node name="Jump" type="AudioStreamPlayer3D" parent="." unique_id=2076209090]
 stream = SubResource("AudioStreamRandomizer_5c2io")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1692337420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.724354, 0)
+light_color = Color(0.88691235, 0.8879253, 0.77049017, 1)
+light_energy = 9.0
+omni_range = 10.0
+
+[node name="Hud" parent="." unique_id=798686351 instance=ExtResource("10_x1y6q")]
 
 [editable path="Monster"]

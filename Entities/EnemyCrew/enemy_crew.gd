@@ -28,8 +28,9 @@ var ray_check: bool = false
 
 #endregion
 
-enum State {PATROLLING, CHASING, REPAIRING, SEARCHING, IDLE}
+enum State {PATROLLING, CHASING, REPAIRING, SEARCHING, IDLE, ALERT, LUNGING}
 var state: State = State.IDLE
+var prev_state = null
 
 @export var patrolling: bool = true
 @export var stationary: bool = false
@@ -37,14 +38,18 @@ var state: State = State.IDLE
 var broken_power_systems = []
 var current_target = null
 
-var at_target = false
+var at_target_fix = false
+var at_target_patrol = false
 
 var search_timer = 0.0
 var fix_timer = 2.0
+var patrol_timer = 2.0
 
 var index = 1
 
-
+var player_caught = false
+var player_spotted = false
+var detection = false
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -61,37 +66,84 @@ func _physics_process(_delta: float) -> void:
 	velocity = Vector3.ZERO
 	
 	can_see_player = check_can_see_player()
-	
+	# print(can_see_player)
+	# print(state)
 	match state:
 		State.PATROLLING:
 			if can_see_player:
-				state = State.CHASING
+				if detection:
+					prev_state = state
+					state = State.ALERT
+				else:
+					prev_state = state
+					state = State.CHASING
 			elif current_target != null:
+				prev_state = state
 				state = State.REPAIRING
+			else:
+				prev_state = state
+				state = State.PATROLLING
 		State.CHASING:
 			if !can_see_player:
-				state = State.SEARCHING
+				start_search(5.0)
+			else:
+				prev_state = state
+				state = State.CHASING
 		State.IDLE:
 			if can_see_player:
-				state = State.CHASING
+				if detection:
+					prev_state = state
+					state = State.ALERT
+				else:
+					prev_state = state
+					state = State.CHASING
 		State.SEARCHING:
 			if can_see_player:
-				state = State.CHASING
+				if detection:
+					prev_state = state
+					state = State.ALERT
+				else:
+					prev_state = state
+					state = State.CHASING
 			elif search_timer <= 0:
 				if current_target != null:
+					prev_state = state
 					state = State.REPAIRING
 				else:
+					prev_state = state
 					state = State.PATROLLING
 		State.REPAIRING:
 			if can_see_player:
-				state = State.CHASING
+				if detection:
+					prev_state = state
+					state = State.ALERT
+				else:
+					prev_state = state
+					state = State.CHASING
 			elif current_target == null:
+				prev_state = state
 				state = State.PATROLLING
+		State.LUNGING:
+			if player_caught:
+				pass
+				# death screen
+			else:
+				prev_state = state
+				state = State.CHASING
+			
+		State.ALERT:
+			detection = false
+			if can_see_player:
+				prev_state = state
+				state = State.CHASING
+			else:
+				start_search(5.0)
+			
 
 	match state:
 		State.PATROLLING:
-			#patrol(_delta)
-			move_and_slide()
+			patrol(_delta)
+			# move_and_slide()
 		State.CHASING:
 			chase_player()
 			move_and_slide()
@@ -99,45 +151,62 @@ func _physics_process(_delta: float) -> void:
 			velocity = Vector3.ZERO
 			nav_agent.target_position = global_position
 		State.SEARCHING:
+			velocity = Vector3.ZERO
+			nav_agent.target_position = global_position
 			search(_delta)
 		State.REPAIRING:
-			search(_delta)
+			fix_system(_delta)
 			move_and_slide()
 
 
 func _on_system_broken(_target: Vector3, power_system):
 	if (_target - global_position).length() <= DETECTION_RANGE:
 		current_target = power_system
+		prev_state = state
 		state = State.REPAIRING
 	else:
 		broken_power_systems.append(power_system)
+	
 func _on_system_fixed(_power_system):
 	broken_power_systems.erase(_power_system)
 
 func chase_player():
-	speed = 3.0
+	speed = 2.5
 	move_to_waypoint(player.global_position)
 	look_at_target(player)
 	if (player.global_position - global_position).length() < 2.0:
-		SignalBus.emit_signal("in_capture_range")
+		prev_state = state
+		state = State.LUNGING
 	
 
-#func patrol(delta):
-	#speed = 1.5
-	#var waypoint =  patrol_points[index]
-	#move_to_waypoint(waypoint)
-	#look_at_target(waypoint)
-	#if nav_agent.is_navigation_finished():
-		#index = (index + 1) % patrol_points.size()
+func patrol(delta):
+	speed = 1.5
+	var waypoint =  patrol_points[index]
+	#print(nav_agent.is_navigation_finished())
+	#print(nav_agent.get_next_path_position())
+	if at_target_patrol == false:
+		move_to_waypoint(waypoint.global_position)
+		look_at_target(waypoint)
+	if (waypoint.global_position - global_position).length() <= 0.5:
+		at_target_patrol = true
+		SignalBus.emit_signal("update_anim")
+		print("target reached")
+		patrol_timer -= delta
+		if patrol_timer <= 0:
+			velocity = Vector3.ZERO
+			nav_agent.target_position = global_position
+			at_target_patrol = false
+			SignalBus.emit_signal("update_anim")
+			patrol_timer = 2.0
+			index = (index + 1) % patrol_points.size()
 		#start_search(2.0)
 
 func search(delta):
-	velocity = Vector3.ZERO
-	nav_agent.target_position = global_position
 	search_timer -= delta
 		
 func start_search(time):
 	search_timer = time
+	prev_state = state
 	state = State.SEARCHING
 	
 
@@ -145,14 +214,16 @@ func fix_system(delta):
 	speed = 1.5
 	move_to_waypoint(current_target.global_position)
 	look_at_target(current_target)
-	if nav_agent.is_navigation_finished():
-		at_target = true
+	if current_target.global_position - global_position <= 0.5:
+		at_target_fix = true
+		SignalBus.emit_signal("update_anim")
 		fix_timer -= delta
 		if fix_timer <= 0:
-			fix_timer -= delta
-		current_target.fix_system()
-		at_target = false
-		broken_power_systems.erase(current_target)
+			current_target.fix_system()
+			at_target_fix = false
+			SignalBus.emit_signal("update_anim")
+			# broken_power_systems.erase(current_target)
+			fix_timer = 2.0
 		for power_system in broken_power_systems:
 			if (power_system - global_position).length() <= DETECTION_RANGE:
 				current_target = power_system
@@ -206,20 +277,20 @@ func check_can_see_player() -> bool:
 	else:
 		ray_check = false
 	
-	if can_see_player:
+	if player_spotted:
 		if player.is_hidden:
-			state = State.SEARCHING
+			player_spotted = false
 			return false
 		elif ray_check:
-			state = State.CHASING
 			return true
 		else:
-			state = State.SEARCHING
+			player_spotted = false
 			return false
-	elif vision_cone_check and lighting_check and ray_check:
+	elif vision_cone_check and lighting_check and ray_check and player_in_range:
 		# print("true")
 		# print()
-		SignalBus.emit_signal("player_spotted")
+		player_spotted = true
+		detection = true
 		return true
 	else:
 		# print("false")
@@ -236,6 +307,7 @@ func look_at_target(target):
 	look_at(global_position + direction, Vector3.UP)
 	
 func move_to_waypoint(waypoint):
+	var target_position = null
 	if waypoint is Vector3:
 		nav_agent.target_position = waypoint
 	else:
@@ -248,4 +320,5 @@ func move_to_waypoint(waypoint):
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		print("Player caught!")
+		player_caught = true
 	

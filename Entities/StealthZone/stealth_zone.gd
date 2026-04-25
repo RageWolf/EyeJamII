@@ -22,21 +22,16 @@ func _ready() -> void:
 
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
 		entered = true
 		player = body
-		print(player ," entered")
+		print(player, " entered")
 		await get_tree().create_timer(hide_timer).timeout
 		if not entered or player == null:
 			return
 		player.player_inside_stealth_zone = true
-		player.is_hidden = true
-
 
 func _on_body_exited(body):
 	if body == player:
-		print(player ," exited")
 		entered = false
 		player.player_inside_stealth_zone = false
-		player.is_hidden = false
 		player = null

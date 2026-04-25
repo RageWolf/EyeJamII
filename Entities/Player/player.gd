@@ -80,7 +80,7 @@ func _process(_delta: float) -> void:
 			is_hidden = true
 		else:
 			is_hidden = false
-
+	pass
 
 
 #region INPUT & MOVEMENT :=========================================================================
@@ -292,7 +292,6 @@ func cleanup_feed_ui():
 func update_stealth():
 	var is_moving = velocity.length() > 0.1
 	var is_airborne = not is_on_floor()
-	
 	if player_inside_stealth_zone and not is_moving and not is_airborne:
 		set_hidden(true)
 	else:
