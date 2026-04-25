@@ -31,12 +31,6 @@ animation = &"Idle1_001"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lub02"]
 animation = &"Idle1_002"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a8wow"]
-animation = &"JumpDown"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v7p16"]
-animation = &"JumpUp"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x1y6q"]
 animation = &"Neutral"
 
@@ -237,9 +231,9 @@ states/End/position = Vector2(695.2001, 227.99997)
 states/Hide/node = SubResource("AnimationNodeAnimation_4wf4l")
 states/Hide/position = Vector2(478.51846, 275.16803)
 states/Idle1/node = SubResource("AnimationNodeAnimation_01a4e")
-states/Idle1/position = Vector2(254.8794, 239.35487)
+states/Idle1/position = Vector2(186.87941, 135.65436)
 states/Idle2/node = SubResource("AnimationNodeAnimation_7a1se")
-states/Idle2/position = Vector2(115.83412, 357.4129)
+states/Idle2/position = Vector2(291.48767, 347.0041)
 states/Idle3/node = SubResource("AnimationNodeAnimation_lub02")
 states/Idle3/position = Vector2(2.2671356, 325.54572)
 states/JumpDown/node = SubResource("AnimationNodeAnimation_a8wow")
@@ -352,23 +346,6 @@ material_overlay = SubResource("ShaderMaterial_5c2io")
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0.42780018, 0)
 shape = SubResource("CapsuleShape3D_lu8i8")
 
-[node name="AnimationTree" type="AnimationTree" parent="." unique_id=34989488]
-root_node = NodePath("../Monster")
-tree_root = SubResource("AnimationNodeStateMachine_v27kq")
-advance_expression_base_node = NodePath("..")
-anim_player = NodePath("../Monster/AnimationPlayer")
-parameters/conditions/is_draining = false
-parameters/conditions/is_falling = false
-parameters/conditions/is_hiding = false
-parameters/conditions/is_idle = false
-parameters/conditions/is_jumping = false
-parameters/conditions/is_landing = false
-parameters/conditions/is_moving = false
-parameters/conditions/is_not_hiding = false
-parameters/conditions/is_running = false
-parameters/conditions/stop_draining = false
-parameters/Run/blend_position = Vector2(-0.8827392, 0.004672885)
-
 [node name="SpringArmPivot" type="Node3D" parent="." unique_id=1653273090]
 script = ExtResource("3_y660y")
 
@@ -479,9 +456,6 @@ offset_top = -96.0
 offset_right = 104.0
 offset_bottom = -24.0
 grow_vertical = 0
-
-[node name="AudioController" type="Node" parent="." unique_id=1560394815]
-script = ExtResource("10_ap3xn")
 
 [node name="AnimationController" type="Node" parent="." unique_id=1433920750]
 script = ExtResource("5_5c2io")

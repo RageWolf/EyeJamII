@@ -11,3 +11,7 @@ signal feed_started
 signal feed_cancelled
 @warning_ignore("unused_signal")
 signal screen_shake(intensity: float)
+@warning_ignore("unused_signal")
+signal player_spotted()
+@warning_ignore("unused_signal")
+signal in_capture_range

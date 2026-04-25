@@ -1,10 +1,8 @@
 extends Node
 
-
 @onready var anim_tree: AnimationTree = $"../AnimationTree"
 @onready var state_machine = anim_tree.get("parameters/playback")
 @onready var player: Player = $".."
-
 
 var was_hidden : bool = false
 var is_jumping : bool = false
@@ -13,7 +11,6 @@ var was_airborne : bool = false
 var idle_anims = ["Idle1", "Idle2", "Idle3"]
 var idle_timer := 0.0
 var idle_duration := randf_range(3.0, 8.0)
-
 
 func update(delta: float, velocity: Vector3, direction: Vector3):
 	var target = Vector2(direction.x, -direction.z)
@@ -67,13 +64,12 @@ func update(delta: float, velocity: Vector3, direction: Vector3):
 	if player.is_hidden:
 		idle_timer = 0.0
 		return
-
+	
 	# conditions
 	anim_tree.set("parameters/conditions/is_running", bool(is_moving and not player.is_feeding))
 	anim_tree.set("parameters/conditions/is_idle", bool(not is_moving and not player.is_feeding))
 	anim_tree.set("parameters/conditions/is_draining", bool(player.is_feeding))
 	anim_tree.set("parameters/conditions/stop_draining", bool(not player.is_feeding))
-	
 	
 	# blend position relative to mesh facing
 	if is_moving:
@@ -102,8 +98,6 @@ func update(delta: float, velocity: Vector3, direction: Vector3):
 	else:
 		idle_timer = 0.0
 
-
-# Feeding anim
 func play_feeding():
 	state_machine.travel("Drain")
 func stop_feeding():

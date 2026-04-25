@@ -45,9 +45,8 @@ var is_hidden: bool = false
 var player_inside_stealth_zone : bool = false
 #endregion
 
-# Animation and audio
+#animation
 @onready var anim_controller = $AnimationController
-@onready var audio_controller: Node = $AudioController
 
 
 func _ready():
@@ -120,11 +119,12 @@ func get_input_direction() -> Vector3:
 	return (right * input_dir.x + forward * input_dir.y).normalized()
 
 
+
 func apply_movement(direction: Vector3, delta):
 	if is_feeding:
 		velocity = Vector3.ZERO
-		return
-
+		return 
+	
 	if direction != Vector3.ZERO:
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION * delta)
 		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCELERATION * delta)
