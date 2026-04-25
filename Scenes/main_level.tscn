@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cs0nqj3x48uy7" path="res://Assets/Models and Textures/Props/shelves.tscn" id="13_o0i6v"]
 [ext_resource type="PackedScene" uid="uid://b1sjb1xfh8ypx" path="res://Assets/Models and Textures/Props/weird_storage_shelf.tscn" id="14_1ubp3"]
 [ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="15_jf8f8"]
+[ext_resource type="PackedScene" uid="uid://8f5tq2eojo3m" path="res://Assets/Ui/TitleScene.blend" id="20_d4dc6"]
+[ext_resource type="PackedScene" uid="uid://cxjoy0stg6pss" path="res://Assets/Models and Textures/Monster/Monster.blend" id="21_7wxy1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbrl8"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -613,6 +615,68 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.57183, 0, -63.262993)
 
 [node name="PauseMenu" parent="World/Hud" unique_id=940368734 instance=ExtResource("6_236hc")]
 
+[node name="TitleScene" parent="." unique_id=1945630454 instance=ExtResource("20_d4dc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.148804, 0, 0)
+
+[node name="Armature" parent="TitleScene" index="0" unique_id=1655024884]
+visible = false
+
+[node name="Point" parent="TitleScene" index="5" unique_id=652751660]
+transform = Transform3D(3.2617297, 0, 0, 0, 0, 3.2617297, 0, -3.2617297, 0, -21.944138, 3.8075886, 7.522725)
+
+[node name="Monster" parent="." unique_id=349639319 instance=ExtResource("21_7wxy1")]
+transform = Transform3D(2.3777866, 0, -1.8488579, 0, 3.012, 0, 1.8488579, 0, 2.3777866, -56.76795, 1.9631319, 3.7938433)
+
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1031120330) index="0" unique_id=1549460287]
+bones/0/position = Vector3(0, 0.2989174, 0)
+bones/1/rotation = Quaternion(0.034691084, -7.972578e-09, -2.0354246e-08, 0.9993982)
+bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
+bones/2/rotation = Quaternion(0.8581865, 4.0068253e-16, 3.001893e-15, 0.513338)
+bones/2/scale = Vector3(1.0049798, 1.0049797, 1.00498)
+bones/4/rotation = Quaternion(0.008338619, 0.0063896915, 0.49808136, 0.86706674)
+bones/6/rotation = Quaternion(0.0083386265, -0.0063897036, -0.49808148, 0.8670666)
+bones/7/rotation = Quaternion(0.19184355, -0.08857341, -0.5527251, 0.8061301)
+bones/8/rotation = Quaternion(-0.7303607, -1.8994791e-05, -0.11790492, 0.6728089)
+bones/9/rotation = Quaternion(0.1411616, -0.13180898, -0.64202523, 0.7419592)
+bones/10/rotation = Quaternion(-0.7056179, -1.9889789e-05, -0.113911286, 0.6993766)
+bones/11/rotation = Quaternion(0.11094462, 0.2709916, 0.765302, -0.5732082)
+bones/12/rotation = Quaternion(-0.6354397, 3.0743886e-05, 0.1144629, 0.7636194)
+bones/13/rotation = Quaternion(0.20570827, 0.07478863, 0.5273627, 0.8209625)
+bones/14/rotation = Quaternion(-0.7407689, 1.8667895e-05, 0.1195851, 0.6610301)
+bones/15/rotation = Quaternion(0.10698841, 0.105137825, 0.6549292, 0.7406533)
+bones/16/rotation = Quaternion(-0.612003, 2.231356e-05, 0.098798625, 0.78466)
+bones/17/rotation = Quaternion(-0.019470286, 0.15737227, 0.84113085, 0.5170628)
+bones/18/rotation = Quaternion(-0.6331138, -3.0829568e-05, -0.11404399, 0.7656115)
+bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
+bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
+bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
+bones/21/position = Vector3(0.059081748, -0.0011327908, 0.043199554)
+bones/22/position = Vector3(-0.11572996, 0.5400001, -0.08295589)
+bones/22/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
+bones/23/position = Vector3(0.00021523591, -0.0011328509, 0.11635933)
+bones/24/position = Vector3(-0.19323504, 0.5400001, -0.0575444)
+bones/24/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
+bones/25/position = Vector3(-0.018843388, -0.0011328316, 0.03504251)
+bones/26/position = Vector3(-0.08015384, 0.54, -0.12933186)
+bones/26/rotation = Quaternion(0, -1.6414365e-24, 2.0679515e-25, 1)
+bones/27/position = Vector3(0.11329641, -0.0011328574, 0.0013722987)
+bones/28/position = Vector3(-0.5528199, 0.086959206, -0.291232)
+bones/29/position = Vector3(-0.7396916, 0.086959206, 0.0036403267)
+bones/30/position = Vector3(-0.61906683, 0.047763694, 0.3245159)
+bones/31/position = Vector3(0.47806722, 0.30242702, -0.22658046)
+bones/32/position = Vector3(0.56656265, 0.30242702, 0.00052658573)
+bones/33/position = Vector3(0.5290366, 0.30242702, 0.19312194)
+bones/34/position = Vector3(-0.4685824, 0.30242702, -0.24396928)
+bones/35/position = Vector3(-0.56656265, 0.30242702, 0.00052658573)
+bones/36/position = Vector3(-0.49553853, 0.30338466, 0.22846803)
+bones/37/position = Vector3(0.57114553, 0.086959206, -0.2643584)
+bones/38/position = Vector3(0.6758156, 0.086959206, 0.0036403267)
+bones/39/position = Vector3(0.6345073, 0.086959206, 0.33494675)
+bones/40/position = Vector3(0.060377706, 0.97284025, -0.17231596)
+bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
+bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
+bones/43/position = Vector3(0, 0.06681984, -0.6037182)
+
 [editable path="World/Props/Shelves"]
 [editable path="World/Props/Shelves2"]
 [editable path="World/Props/Shelves4"]
@@ -622,3 +686,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.57183, 0, -63.262993)
 [editable path="World/HideSpaces/Crate4"]
 [editable path="World/HideSpaces/Crate5"]
 [editable path="World/HideSpaces/Crate6"]
+[editable path="TitleScene"]
+[editable path="Monster"]

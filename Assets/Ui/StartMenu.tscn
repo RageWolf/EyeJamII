@@ -3,6 +3,25 @@
 [ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="1_7ksrw"]
 [ext_resource type="Script" uid="uid://c15x010a5th5a" path="res://Assets/Ui/start_menu.gd" id="1_bleff"]
 [ext_resource type="FontFile" uid="uid://c6wq1qhg8bd15" path="res://Assets/Fonts/Metal Lord.otf" id="2_7ksrw"]
+[ext_resource type="PackedScene" uid="uid://8f5tq2eojo3m" path="res://Assets/Ui/TitleScene.blend" id="4_jl35j"]
+[ext_resource type="PackedScene" uid="uid://cxjoy0stg6pss" path="res://Assets/Models and Textures/Monster/Monster.blend" id="5_ix1ab"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_367es"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_5bd1f"]
+sky_material = SubResource("ProceduralSkyMaterial_367es")
+
+[sub_resource type="Environment" id="Environment_vnhqk"]
+background_mode = 2
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_5bd1f")
+ambient_light_source = 1
+tonemap_mode = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12n2q"]
 
@@ -16,6 +35,14 @@ grow_vertical = 2
 theme = ExtResource("1_7ksrw")
 script = ExtResource("1_bleff")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2119421614]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_energy = 0.0
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2146506730]
+environment = SubResource("Environment_vnhqk")
+
 [node name="BG" type="Panel" parent="." unique_id=1402879495]
 layout_mode = 0
 offset_right = 1280.0
@@ -24,6 +51,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_12n2q")
 
 [node name="Title" type="Label" parent="." unique_id=555464939]
+modulate = Color(1, 0, 0, 1)
 layout_mode = 0
 offset_left = 33.0
 offset_top = 28.0
@@ -36,20 +64,23 @@ text = "Thermal Runaway"
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300817257]
 custom_minimum_size = Vector2(300, 200)
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 50.0
+offset_left = -357.64
 offset_top = -287.0
-offset_right = 350.0
-offset_bottom = -87.0
+offset_right = -57.639404
+offset_bottom = -86.99994
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 20
 
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=1773023380]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.6873571, 0.7025804, 0.6576216, 1)
 text = "START"
@@ -57,7 +88,7 @@ text = "START"
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=742477069]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
 text = "CREDITS"
@@ -65,11 +96,122 @@ text = "CREDITS"
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1989367505]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
 text = "QUIT"
 
+[node name="Node3D" type="Node3D" parent="." unique_id=104562478]
+
+[node name="TitleScene" parent="Node3D" unique_id=1945630454 instance=ExtResource("4_jl35j")]
+
+[node name="Armature" parent="Node3D/TitleScene" index="0" unique_id=1655024884]
+visible = false
+
+[node name="Skeleton3D" parent="Node3D/TitleScene/Armature" index="0" unique_id=1567553948]
+bones/11/rotation = Quaternion(-0.013235304, 0.02640597, 0.89359975, -0.4478919)
+
+[node name="Skeleton3D" parent="Node3D/TitleScene/Armature_001" parent_id_path=PackedInt32Array(1945630454, 1562011865) index="0" unique_id=389059885]
+bones/0/position = Vector3(0, -0.065603256, 0)
+bones/0/rotation = Quaternion(-0.037862565, 0, 0, 0.99928296)
+bones/1/rotation = Quaternion(0.08592899, 0, 0, 0.99630123)
+bones/2/rotation = Quaternion(0.09191617, -7.4190405e-09, -6.848288e-10, 0.99576676)
+bones/4/rotation = Quaternion(0.0013476015, -0.25464112, -0.000118908436, 0.9670347)
+bones/5/rotation = Quaternion(0.5003104, 0.49999994, 0.49999994, -0.4996897)
+bones/6/rotation = Quaternion(-0.5875708, 0.016019467, -0.06339248, 0.80652684)
+bones/7/rotation = Quaternion(-1.4567618e-08, 3.4337193e-09, -0.40685982, 0.9134906)
+bones/8/rotation = Quaternion(4.471861e-09, 1.7090667e-08, -0.16010268, 0.9871004)
+bones/9/rotation = Quaternion(2.1424412e-08, 0.541228, 3.9456913e-09, 0.84087586)
+bones/10/rotation = Quaternion(0.5003104, -0.4999999, -0.49999988, -0.4996897)
+bones/11/rotation = Quaternion(-0.17763057, -0.057637803, 0.17960529, 0.96585053)
+bones/12/rotation = Quaternion(9.536618e-09, 2.395133e-10, 0.5076299, 0.86157525)
+bones/13/rotation = Quaternion(1.0531484e-08, -2.0741944e-09, 0.22841677, 0.9735635)
+bones/15/rotation = Quaternion(0.9764737, -6.4924954e-09, -8.595858e-08, 0.21563654)
+bones/16/rotation = Quaternion(0.46514186, 6.4691106e-09, 3.668057e-09, 0.8852362)
+bones/18/rotation = Quaternion(0.9865443, 6.67519e-08, -6.911323e-08, -0.16349398)
+bones/19/rotation = Quaternion(0.0015455969, 7.451811e-09, 1.4589621e-10, 0.9999988)
+bones/22/position = Vector3(0.90123284, -3.8368113, 0.61577773)
+bones/23/position = Vector3(3.2440777, 0.64677, -1.7105824)
+bones/24/position = Vector3(2.5866249, 0.70096636, 1.6337258)
+bones/26/position = Vector3(-0.90123284, -4.333068, -1.1864172)
+bones/28/position = Vector3(-3.4289727, 2.4489326, 2.942895)
+bones/29/position = Vector3(0, 5.0379004, 0.513669)
+
+[node name="Hand_L" parent="Node3D/TitleScene/Armature_001/Skeleton3D" index="0" unique_id=78507594]
+transform = Transform3D(-0.9952732, 0.009304179, 0.0966692, 0.07320659, -0.58219707, 0.80974513, 0.063814566, 0.81299436, 0.57876384, 2.5866532, 0.7008176, 1.6338036)
+
+[node name="Point" parent="Node3D/TitleScene" index="5" unique_id=652751660]
+transform = Transform3D(3.2617297, 0, 0, 0, 0, 3.2617297, 0, -3.2617297, 0, -21.944138, 3.8075886, 7.522725)
+omni_range = 3.746
+
+[node name="Point_001" parent="Node3D/TitleScene" index="6" unique_id=415537613]
+omni_range = 5.838
+
+[node name="Empty Lab Table" parent="Node3D/TitleScene" index="8" unique_id=910369101]
+transform = Transform3D(0.6826725, 0, -1.0162438, 0, 1.2242521, 0, 1.0162438, 0, 0.6826725, -19.719, 1.217, 0)
+
+[node name="AnimationPlayer" parent="Node3D/TitleScene" index="10" unique_id=735759406]
+autoplay = &"Armature_001Action"
+
+[node name="Monster" parent="Node3D" unique_id=349639319 instance=ExtResource("5_ix1ab")]
+transform = Transform3D(2.3777866, 0, -1.8488579, 0, 3.012, 0, 1.8488579, 0, 2.3777866, -19.393, 2.708, 4.604)
+
+[node name="Skeleton3D" parent="Node3D/Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1031120330) index="0" unique_id=1549460287]
+bones/0/position = Vector3(0, 0.2989174, 0)
+bones/1/rotation = Quaternion(0.034691084, -7.972578e-09, -2.0354246e-08, 0.9993982)
+bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
+bones/2/rotation = Quaternion(0.8581865, 4.0068253e-16, 3.001893e-15, 0.513338)
+bones/2/scale = Vector3(1.0049798, 1.0049797, 1.00498)
+bones/4/rotation = Quaternion(0.008338619, 0.0063896915, 0.49808136, 0.86706674)
+bones/6/rotation = Quaternion(0.0083386265, -0.0063897036, -0.49808148, 0.8670666)
+bones/7/rotation = Quaternion(0.19184355, -0.08857341, -0.5527251, 0.8061301)
+bones/8/rotation = Quaternion(-0.7303607, -1.8994791e-05, -0.11790492, 0.6728089)
+bones/9/rotation = Quaternion(0.1411616, -0.13180898, -0.64202523, 0.7419592)
+bones/10/rotation = Quaternion(-0.7056179, -1.9889789e-05, -0.113911286, 0.6993766)
+bones/11/rotation = Quaternion(0.11094462, 0.2709916, 0.765302, -0.5732082)
+bones/12/rotation = Quaternion(-0.6354397, 3.0743886e-05, 0.1144629, 0.7636194)
+bones/13/rotation = Quaternion(0.20570827, 0.07478863, 0.5273627, 0.8209625)
+bones/14/rotation = Quaternion(-0.7407689, 1.8667895e-05, 0.1195851, 0.6610301)
+bones/15/rotation = Quaternion(0.10698841, 0.105137825, 0.6549292, 0.7406533)
+bones/16/rotation = Quaternion(-0.612003, 2.231356e-05, 0.098798625, 0.78466)
+bones/17/rotation = Quaternion(-0.019470286, 0.15737227, 0.84113085, 0.5170628)
+bones/18/rotation = Quaternion(-0.6331138, -3.0829568e-05, -0.11404399, 0.7656115)
+bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
+bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
+bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
+bones/21/position = Vector3(0.059081748, -0.0011327908, 0.043199554)
+bones/22/position = Vector3(-0.11572996, 0.5400001, -0.08295589)
+bones/22/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
+bones/23/position = Vector3(0.00021523591, -0.0011328509, 0.11635933)
+bones/24/position = Vector3(-0.19323504, 0.5400001, -0.0575444)
+bones/24/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
+bones/25/position = Vector3(-0.018843388, -0.0011328316, 0.03504251)
+bones/26/position = Vector3(-0.08015384, 0.54, -0.12933186)
+bones/26/rotation = Quaternion(0, -1.6414365e-24, 2.0679515e-25, 1)
+bones/27/position = Vector3(0.11329641, -0.0011328574, 0.0013722987)
+bones/28/position = Vector3(-0.5528199, 0.086959206, -0.291232)
+bones/29/position = Vector3(-0.7396916, 0.086959206, 0.0036403267)
+bones/30/position = Vector3(-0.61906683, 0.047763694, 0.3245159)
+bones/31/position = Vector3(0.47806722, 0.30242702, -0.22658046)
+bones/32/position = Vector3(0.56656265, 0.30242702, 0.00052658573)
+bones/33/position = Vector3(0.5290366, 0.30242702, 0.19312194)
+bones/34/position = Vector3(-0.4685824, 0.30242702, -0.24396928)
+bones/35/position = Vector3(-0.56656265, 0.30242702, 0.00052658573)
+bones/36/position = Vector3(-0.49553853, 0.30338466, 0.22846803)
+bones/37/position = Vector3(0.57114553, 0.086959206, -0.2643584)
+bones/38/position = Vector3(0.6758156, 0.086959206, 0.0036403267)
+bones/39/position = Vector3(0.6345073, 0.086959206, 0.33494675)
+bones/40/position = Vector3(0.060377706, 0.97284025, -0.17231596)
+bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
+bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
+bones/43/position = Vector3(0, 0.06681984, -0.6037182)
+
+[node name="AnimationPlayer" parent="Node3D/Monster" index="1" unique_id=1264080572]
+autoplay = &"Idle1"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+
+[editable path="Node3D/TitleScene"]
+[editable path="Node3D/Monster"]
