@@ -1,7 +1,5 @@
 [gd_scene format=4 uid="uid://blok8pxcu7hr2"]
 
-[ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="1_4ih1n"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpc08"]
 resource_name = "DarkMetal"
 cull_mode = 2
@@ -247,6 +245,3 @@ mesh = SubResource("ArrayMesh_agbwq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crate2/StaticBody3D" unique_id=1513385833]
 shape = SubResource("ConcavePolygonShape3D_4ih1n")
-
-[node name="StealthZone" parent="." unique_id=1559430008 instance=ExtResource("1_4ih1n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4018877, 0)
