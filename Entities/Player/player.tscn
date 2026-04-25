@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://c52oj03kb5t71" path="res://Entities/Player/animation_controller.gd" id="5_5c2io"]
 [ext_resource type="AudioStream" uid="uid://bsa58cakafxkk" path="res://Audio/jump/JUMP 2.mp3" id="7_ap3xn"]
 [ext_resource type="AudioStream" uid="uid://dfaolw12qerh5" path="res://Audio/jump/JUMP 3.mp3" id="8_iplt1"]
-[ext_resource type="Script" uid="uid://bffhknagp4x7j" path="res://Entities/Player/audio_controller.gd" id="10_ap3xn"]
+[ext_resource type="Script" path="res://Entities/Player/audio_controller.gd" id="10_ap3xn"]
 [ext_resource type="AudioStream" uid="uid://cnyb52h5dhtdj" path="res://Audio/jump/JUMP 5.mp3" id="10_xr8lj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
@@ -297,25 +297,25 @@ camera = NodePath("SpringArmPivot/SpringArm3D/Camera3D")
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
 [node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.30880308, 0)
-bones/1/rotation = Quaternion(0.017945124, -7.847839e-09, -2.040268e-08, 0.999839)
+bones/0/position = Vector3(0, 0.31454897, 0)
+bones/1/rotation = Quaternion(0.008060271, -7.778254e-09, -2.0429322e-08, 0.9999675)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8671396, -6.144675e-17, 2.008955e-15, 0.4980654)
-bones/2/scale = Vector3(1.0046564, 1.0046563, 1.0046566)
-bones/4/rotation = Quaternion(0.007251122, 0.0055563403, 0.49799836, 0.8671299)
-bones/6/rotation = Quaternion(0.0072512217, -0.0055564414, -0.49799845, 0.86712986)
-bones/7/rotation = Quaternion(0.18110807, -0.079144455, -0.5557601, 0.8075065)
-bones/8/rotation = Quaternion(-0.72418106, -1.9200628e-05, -0.1169073, 0.67962825)
-bones/9/rotation = Quaternion(0.13142775, -0.12173949, -0.6444154, 0.74339443)
-bones/10/rotation = Quaternion(-0.6992367, -2.0079322e-05, -0.11288116, 0.705922)
-bones/11/rotation = Quaternion(0.12278314, 0.26229182, 0.7627074, -0.57827747)
-bones/12/rotation = Quaternion(-0.62800795, 3.100979e-05, 0.113124214, 0.76994085)
-bones/13/rotation = Quaternion(0.19464533, 0.065521985, 0.5306251, 0.8223485)
-bones/14/rotation = Quaternion(-0.7346913, 1.8848576e-05, 0.118603945, 0.6679535)
-bones/15/rotation = Quaternion(0.09748457, 0.09563684, 0.6567819, 0.7416117)
-bones/16/rotation = Quaternion(-0.6045727, 2.2478407e-05, 0.09759908, 0.790548)
-bones/17/rotation = Quaternion(-0.02931414, 0.14633608, 0.8407174, 0.52050054)
-bones/18/rotation = Quaternion(-0.6242975, -3.1123884e-05, -0.11245585, 0.77305007)
+bones/2/rotation = Quaternion(0.872167, 1.0540359e-15, 1.061786e-17, 0.48920846)
+bones/2/scale = Vector3(1.004642, 1.004642, 1.004642)
+bones/4/rotation = Quaternion(0.007852469, 0.006017144, 0.49793667, 0.86715704)
+bones/6/rotation = Quaternion(0.007852461, -0.0060171685, -0.4979367, 0.867157)
+bones/7/rotation = Quaternion(0.17484324, -0.07364532, -0.55748606, 0.80821747)
+bones/8/rotation = Quaternion(-0.72045064, -1.9338468e-05, -0.11630506, 0.6836842)
+bones/9/rotation = Quaternion(0.12572704, -0.11587241, -0.64575166, 0.744158)
+bones/10/rotation = Quaternion(-0.69536656, -2.0193875e-05, -0.112256385, 0.70983374)
+bones/11/rotation = Quaternion(0.12977444, 0.25724202, 0.7610453, -0.5812016)
+bones/12/rotation = Quaternion(-0.62349075, 3.112993e-05, 0.11231052, 0.7737219)
+bones/13/rotation = Quaternion(0.18819627, 0.06011652, 0.53248733, 0.82305866)
+bones/14/rotation = Quaternion(-0.7310077, 1.8963132e-05, 0.11800931, 0.67208743)
+bones/15/rotation = Quaternion(0.09191722, 0.09010133, 0.6578077, 0.7421065)
+bones/16/rotation = Quaternion(-0.6000934, 2.2584118e-05, 0.09687598, 0.79404217)
+bones/17/rotation = Quaternion(-0.035102975, 0.13989598, 0.8403625, 0.52248234)
+bones/18/rotation = Quaternion(-0.61894476, -3.1305997e-05, -0.11149166, 0.7774812)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)

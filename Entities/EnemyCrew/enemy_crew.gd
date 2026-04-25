@@ -90,7 +90,7 @@ func _physics_process(_delta: float) -> void:
 
 	match state:
 		State.PATROLLING:
-			patrol(_delta)
+			#patrol(_delta)
 			move_and_slide()
 		State.CHASING:
 			chase_player()
@@ -122,14 +122,14 @@ func chase_player():
 		SignalBus.emit_signal("in_capture_range")
 	
 
-func patrol(delta):
-	speed = 1.5
-	var waypoint =  patrol_points[index]
-	move_to_waypoint(waypoint)
-	look_at_target(waypoint)
-	if nav_agent.is_navigation_finished():
-		index = (index + 1) % patrol_points.size()
-		start_search(2.0)
+#func patrol(delta):
+	#speed = 1.5
+	#var waypoint =  patrol_points[index]
+	#move_to_waypoint(waypoint)
+	#look_at_target(waypoint)
+	#if nav_agent.is_navigation_finished():
+		#index = (index + 1) % patrol_points.size()
+		#start_search(2.0)
 
 func search(delta):
 	velocity = Vector3.ZERO
