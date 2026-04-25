@@ -30,22 +30,28 @@ func update(delta: float, velocity: Vector3, direction: Vector3):
 	
 	was_hidden = player.is_hidden
 	
-	# JUMP LANDING
+# JUMP LANDING
 	if is_jumping and player.is_on_floor() and player.velocity.y <= 0:
 		is_jumping = false
-	
-	
-	# hidden : stop everything else except jump
+
+	var is_falling = player.velocity.y < 0 and not player.is_on_floor()
+
+	anim_tree.set("parameters/conditions/is_jumping", is_jumping)
+	anim_tree.set("parameters/conditions/is_falling", is_falling)
+	anim_tree.set("parameters/conditions/is_landing", not is_jumping and player.is_on_floor())
+
+	if is_jumping:
+		return
+
+	# hidden : stop everything else
 	if player.is_hidden:
 		return
-	
-# conditions
+
+	# conditions
 	anim_tree.set("parameters/conditions/is_running", is_moving and not player.is_feeding)
 	anim_tree.set("parameters/conditions/is_idle", not is_moving and not player.is_feeding)
 	anim_tree.set("parameters/conditions/is_draining", player.is_feeding)
 	anim_tree.set("parameters/conditions/stop_draining", not player.is_feeding)
-	anim_tree.set("parameters/conditions/is_jumping", is_jumping)        
-	anim_tree.set("parameters/conditions/is_landing", not is_jumping and player.is_on_floor())  
 	
 	
 	# blend position relative to mesh facing
