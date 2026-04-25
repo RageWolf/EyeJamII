@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://gwul7osjfe"]
 
 [ext_resource type="Script" uid="uid://cc5o257dquwde" path="res://Entities/PowerSystems/power_system.gd" id="1_twkmc"]
-[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://Shaders/outline.gdshader" id="2_j2a3l"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="2_j2a3l"]
 [ext_resource type="Texture2D" uid="uid://ng3lhunn328a" path="res://Assets/Sprites/ProtoWall1.png" id="2_q51ab"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="3_g63cs"]
 [ext_resource type="Texture2D" uid="uid://balrbwlhegmd" path="res://Assets/Ui/Circle bar.png" id="4_q51ab"]
