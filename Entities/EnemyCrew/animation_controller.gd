@@ -8,8 +8,7 @@ extends Node
 @onready var enemy = $".."
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.connect("player_spotted", _on_player_spotted)
-	SignalBus.connect("in_capture_range", _on_enter_capture_range)
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,13 +17,21 @@ func _process(delta: float) -> void:
 	anim_tree.set("parameters/conditions/stationary", enemy.stationary)
 	anim_tree.set("parameters/conditions/patrolling", enemy.patrolling)
 	
-	anim_tree.set("parameters/conditions/at_target", enemy.at_target)
+	anim_tree.set("parameters/conditions/at_target", enemy.at_target_fix)
+	
+	# SignalBus.connect("update_anim", _on_update_anim)
+	
+	if enemy.state != enemy.prev_state:
+		update_anim()
 
 
 func update_anim():
 	match enemy.state:
 		enemy.State.PATROLLING:
-			state_machine.travel("Walk")
+			if enemy.at_target_patrol:
+				state_machine.travel("Search")
+			else:
+				state_machine.travel("Walk")
 		enemy.State.CHASING:
 			state_machine.travel("Walk")
 		enemy.State.IDLE:
@@ -36,9 +43,8 @@ func update_anim():
 				state_machine.travel("Walk")
 			else:
 				state_machine.travel("Fix")
-
-func _on_player_spotted():
-	state_machine.travel("Alert")
-
-func _on_enter_capture_range():
-	state_machine.travel("Catch")
+		enemy.State.ALERT:
+			state_machine.travel("Alert")
+		enemy.State.LUNGING:
+			state_machine.travel("Catch")
+			
