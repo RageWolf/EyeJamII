@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
 [ext_resource type="PackedScene" uid="uid://gwul7osjfe" path="res://Entities/PowerSystems/power_system.tscn" id="5_gbhdq"]
-[ext_resource type="PackedScene" uid="uid://c1de71pi0yqwb" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
+[ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="6_gbhdq"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="6_y646j"]
 [ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="7_lnbra"]
@@ -138,5 +138,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.60
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
 
-[node name="StealthZone" parent="." unique_id=676040015 instance=ExtResource("5_lnbra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.885109, 0, -3.895065)
+[node name="StealthZone" parent="." unique_id=1559430008 instance=ExtResource("5_lnbra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9408047, -0.27832204, -6.091355)
