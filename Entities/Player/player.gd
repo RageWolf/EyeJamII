@@ -34,7 +34,6 @@ var current_light_level : float = 0.0
 @export var GRAVITY = -9.8
 @export var ACCELERATION = 15.0
 @export var FRICTION = 12.0
-@export var JUMP_VELOCITY = 4.5 
 #endregion
 
 #region HIDING VARIABLES
@@ -42,9 +41,8 @@ var is_hidden: bool = false
 var player_inside_stealth_zone : bool = false
 #endregion
 
-# Animation and audio
+#animation
 @onready var anim_controller = $AnimationController
-@onready var audio_controller: Node = $AudioController
 
 
 func _ready():
@@ -111,11 +109,12 @@ func get_input_direction() -> Vector3:
 	return (right * input_dir.x + forward * input_dir.y).normalized()
 
 
+
 func apply_movement(direction: Vector3, delta):
 	if is_feeding:
 		velocity = Vector3.ZERO
-		return
-
+		return 
+	
 	if direction != Vector3.ZERO:
 		velocity.x = move_toward(velocity.x, direction.x * SPEED, ACCELERATION * delta)
 		velocity.z = move_toward(velocity.z, direction.z * SPEED, ACCELERATION * delta)
@@ -127,15 +126,6 @@ func apply_movement(direction: Vector3, delta):
 func apply_gravity(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
-	elif Input.is_action_just_pressed("jump") and not is_feeding:
-		jump()
-
-
-func jump():
-	velocity.y = JUMP_VELOCITY
-	anim_controller.is_jumping = true
-	audio_controller.play_jump()
- 
 #endregion
 
 

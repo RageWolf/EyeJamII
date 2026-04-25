@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://pexximum6rf2"]
 
+[ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="1_4ptq8"]
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
-[ext_resource type="MeshLibrary" uid="uid://d1kdsf2t8r3ip" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.tres" id="4_6emce"]
 [ext_resource type="PackedScene" uid="uid://gwul7osjfe" path="res://Entities/PowerSystems/power_system.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://c1de71pi0yqwb" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="6_gbhdq"]
@@ -102,7 +102,7 @@ navigation_mesh = SubResource("NavigationMesh_4ptq8")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=1800168978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.677399, -2.6551628, -12.143063)
-mesh_library = ExtResource("4_6emce")
+mesh_library = ExtResource("1_4ptq8")
 physics_material = SubResource("PhysicsMaterial_1bvp3")
 cell_size = Vector3(1, 1, 1)
 collision_mask = 0
