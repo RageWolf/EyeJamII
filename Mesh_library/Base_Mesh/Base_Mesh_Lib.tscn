@@ -716,7 +716,6 @@ size = Vector3(4, 0.3, 4)
 [node name="BaseMeshLib" type="Node3D" unique_id=1832632403]
 
 [node name="Floor" type="MeshInstance3D" parent="." unique_id=808765764]
-visible = false
 mesh = SubResource("ArrayMesh_6jst7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=247050100]
@@ -725,6 +724,7 @@ mesh = SubResource("ArrayMesh_6jst7")
 shape = SubResource("ConcavePolygonShape3D_d8ame")
 
 [node name="CornerWall" type="MeshInstance3D" parent="." unique_id=1705409005]
+visible = false
 mesh = SubResource("ArrayMesh_0bfcg")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="CornerWall" unique_id=279828503]
@@ -756,8 +756,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3533568, 1.8493652)
 shape = SubResource("BoxShape3D_s7dud")
 
 [node name="ConvexCornerWall" type="MeshInstance3D" parent="." unique_id=229971414]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049999997, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.054944515, 0)
 mesh = SubResource("ArrayMesh_w30m6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="ConvexCornerWall" unique_id=1968518801]
