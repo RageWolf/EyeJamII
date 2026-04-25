@@ -140,42 +140,28 @@ debug_shape_custom_color = Color(1, 1, 1, 1)
 [node name="Scientist" parent="." unique_id=1354796236 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(1354796236, 1060654339) index="0" unique_id=1452090339]
-bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/1/rotation = Quaternion(0, 0, 0, 1)
-bones/2/rotation = Quaternion(0, 0, 0, 1)
-bones/4/rotation = Quaternion(0, 0, 0, 1)
-bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999994, -0.49968964)
-bones/6/rotation = Quaternion(0.00031390926, 0.00030672774, 0.011601208, 0.9999326)
-bones/7/rotation = Quaternion(-2.815785e-11, 3.4249666e-11, -0.026701896, 0.99964345)
-bones/8/rotation = Quaternion(-9.789493e-13, -5.2596083e-12, 0.015102911, 0.999886)
-bones/9/rotation = Quaternion(5.4210105e-20, 1.3010426e-18, 8.881836e-16, 1)
-bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999994, -0.49968964)
-bones/11/rotation = Quaternion(0.00031390926, -0.00030672774, -0.011601208, 0.9999326)
-bones/12/rotation = Quaternion(-2.815785e-11, -3.4249666e-11, 0.026701896, 0.99964345)
-bones/13/rotation = Quaternion(-9.789493e-13, 5.2596083e-12, -0.015102911, 0.999886)
-bones/15/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
-bones/16/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
-bones/18/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
-bones/19/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
-bones/23/position = Vector3(3.8303065, 4.4447837, -1.3309567)
-bones/24/position = Vector3(6.3118515, 4.4447837, -9.051077e-08)
-bones/28/position = Vector3(-6.3118515, 4.4447837, -9.051077e-08)
-bones/29/position = Vector3(0, 5.1184335, 0)
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(1354796236, 423547870) index="0" unique_id=819520453]
+bones/0/rotation = Quaternion(-0.021243049, -4.270975e-17, -1.12939e-17, 0.99977434)
+bones/1/rotation = Quaternion(0.0643647, -5.705192e-19, 7.592058e-18, 0.9979265)
+bones/2/rotation = Quaternion(0.065550946, 2.952698e-20, 4.234553e-18, 0.9978492)
+bones/4/rotation = Quaternion(-0.015878307, 0.005916172, -0.0025857612, 0.9998531)
+bones/5/rotation = Quaternion(0.4980202, 0.5022785, 0.49714813, -0.5025297)
+bones/6/rotation = Quaternion(-0.56324446, -0.0979475, -0.05506134, 0.8186149)
+bones/7/rotation = Quaternion(1.2806515e-08, 1.3965407e-09, -0.5458025, 0.8379139)
+bones/8/rotation = Quaternion(8.336176e-09, -7.43772e-09, -0.25580662, 0.96672803)
+bones/10/rotation = Quaternion(0.4977709, -0.502525, -0.49683782, -0.50283694)
+bones/11/rotation = Quaternion(-0.40605804, -0.39581835, 0.065892376, 0.82103777)
+bones/12/rotation = Quaternion(-1.7144348e-08, -3.0078386e-08, 0.37581632, 0.9266943)
+bones/13/rotation = Quaternion(-2.279501e-08, -1.0964926e-08, 0.14045237, 0.9900875)
+bones/15/rotation = Quaternion(0.99999636, -6.4751284e-09, -1.3966866e-08, -0.002705018)
+bones/16/rotation = Quaternion(0.05375645, 2.387509e-16, 3.6836907e-16, 0.99855405)
+bones/18/rotation = Quaternion(0.99999636, 8.225339e-09, -2.971927e-08, -0.002705018)
+bones/19/rotation = Quaternion(0.05375645, 1.566195e-15, 1.03312595e-16, 0.99855405)
+bones/28/position = Vector3(-3.4139745, 0.7005148, -5.935864e-07)
+bones/29/position = Vector3(0, 5.0696783, 0.4485172)
 
-[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1168296809]
-transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08, -1.8251797e-07, 1, 0.9999998, 3.72529e-08, 9.42382e-08, 6.3118525, 4.444783, 1.9051036e-07)
-
-[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=897421293]
-transform = Transform3D(-6.7055225e-08, -0.99999976, -1.232256e-07, 3.4658765e-08, -1.8251797e-07, 1, -0.9999998, 3.72529e-08, 9.42382e-08, -6.3118525, 4.444783, 1.9051036e-07)
-
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=1335644271]
-transform = Transform3D(-0.8654989, 0.38258263, -0.32333022, 0.034413476, 0.6893745, 0.72358763, 0.49972737, 0.6151376, -0.6098187, 0.028973378, 1.1959596, 0.010000229)
-
-[node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" unique_id=2050404155]
-shape = SubResource("SphereShape3D_c5e76")
+[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1106768109]
+transform = Transform3D(-0.9986067, -0.018207027, 0.049525946, 0.04743141, 0.10153165, 0.99370086, -0.0231208, 0.9946656, -0.100526616, 2.7857828, 2.0467625, 2.6484196)
 
 [node name="AnimationController" type="Node" parent="." unique_id=2034868810]
 script = ExtResource("4_c5e76")
