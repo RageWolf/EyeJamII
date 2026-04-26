@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6c2wnmufwna8"
+path="res://.godot/imported/START 1.mp3-40519de29001f1641ec6bffc31fd35e2.mp3str"
+
+[deps]
+
+source_file="res://Audio/COSMIC SFX/START 1.mp3"
+dest_files=["res://.godot/imported/START 1.mp3-40519de29001f1641ec6bffc31fd35e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

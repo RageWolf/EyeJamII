@@ -231,8 +231,14 @@ bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 [node name="AnimationPlayer" parent="Node3D/Monster" index="1" unique_id=1052755342]
 autoplay = &"Idle1"
 
+[connection signal="focus_entered" from="VBoxContainer/Start" to="." method="_on_start_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Start" to="." method="_on_start_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Credits" to="." method="_on_credits_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Credits" to="." method="_on_credits_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="focus_entered" from="VBoxContainer/Quit" to="." method="_on_quit_focus_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 
 [editable path="Node3D/TitleScene"]

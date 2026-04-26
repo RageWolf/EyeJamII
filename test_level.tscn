@@ -2,9 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
+[ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_b7ax5"]
+[ext_resource type="PackedScene" uid="uid://s6q33parw8mj" path="res://Assets/Models and Textures/Drainables/fridge_drainable.tscn" id="4_4bgwg"]
 [ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="4_6emce"]
+[ext_resource type="PackedScene" uid="uid://skimmd2bcho0" path="res://Assets/Models and Textures/Drainables/generic_drainable.tscn" id="5_2hfll"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
+[ext_resource type="PackedScene" uid="uid://bg5favivvppvq" path="res://Assets/Models and Textures/Drainables/reactor_drainable.tscn" id="6_7fqlb"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="6_y646j"]
+[ext_resource type="PackedScene" uid="uid://cxyx1sria225j" path="res://Assets/Models and Textures/Drainables/server_drainable.tscn" id="7_e8hb2"]
 [ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="7_lnbra"]
 [ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="8_6emce"]
 [ext_resource type="PackedScene" uid="uid://dca7t7cwdkvgt" path="res://Assets/Models and Textures/Drainables/sat_dish_drainable.tscn" id="8_b7ax5"]
@@ -82,8 +87,23 @@ omni_range = 8.091701
 [node name="PowerSystems" type="Node3D" parent="World" unique_id=80075407]
 metadata/_edit_lock_ = true
 
+[node name="EKGDrainable" parent="World/PowerSystems" unique_id=553580125 instance=ExtResource("3_b7ax5")]
+transform = Transform3D(0.262, 0, 0, 0, 0.262, 0, 0, 0, 0.262, -5.4214935, 0, 0)
+
+[node name="FridgeDrainable" parent="World/PowerSystems" unique_id=229899834 instance=ExtResource("4_4bgwg")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 7.500969, 0, -7.0553656)
+
+[node name="GenericDrainable" parent="World/PowerSystems" unique_id=1324652657 instance=ExtResource("5_2hfll")]
+transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 13.665127, 0, 11.659919)
+
+[node name="ReactorDrainable" parent="World/PowerSystems" unique_id=658268384 instance=ExtResource("6_7fqlb")]
+transform = Transform3D(0.61, 0, 0, 0, 0.61, 0, 0, 0, 0.61, -5.1986923, 0, 12.773926)
+
+[node name="ServerDrainable" parent="World/PowerSystems" unique_id=851727678 instance=ExtResource("7_e8hb2")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.4612274, 0, 11.808453)
+
 [node name="SatDishDrainable" parent="World/PowerSystems" unique_id=160848368 instance=ExtResource("8_b7ax5")]
-transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 3.2990642, -0.95327324, 0)
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 2.5563922, -0.95327324, -6.7582984)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=488627294]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9604645e-08, 0)

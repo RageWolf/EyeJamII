@@ -7,6 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dmm3x66a7l1t0" path="res://Mesh_library/Drainables_Mesh/SatDishDrainableOn.tres" id="3_kmv8h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wbv4u"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_61r5a")
 shader_parameter/outline_color = Color(1, 1, 1, 1)

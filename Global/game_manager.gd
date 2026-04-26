@@ -32,6 +32,9 @@ signal time_changed(value)
 # NARRATIVE
 var tutorial_completed : bool = false
 
+# PLAYER DEATH
+var player_caught: bool = false
+
 func _process(delta):
 	if not tutorial_completed:
 		return
@@ -81,12 +84,18 @@ func check_decay_reward(old_decay):
 func check_game_state():
 	if player_energy <= 0:
 		print("LOSE: Player died")
+		LoadManager.load_scene("res://death_screen.tscn")
 
 	if time_left <= 0:
 		print("LOSE: Crew arrived")
+		LoadManager.load_scene("res://death_screen.tscn")
 
 	if ship_decay <= 0:
 		print("WIN: Ship fully decayed")
+		LoadManager.load_scene("res://death_screen.tscn")
+		
+	if player_caught:
+		LoadManager.load_scene("res://death_screen.tscn")
 
 #-----------------------------------------------------
 func show_dialog(text: String, duration := 2.5):
