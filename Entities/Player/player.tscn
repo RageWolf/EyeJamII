@@ -303,25 +303,25 @@ SPEED = 15.0
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
 [node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.34145153, 0)
-bones/1/rotation = Quaternion(-0.040195663, -7.480234e-09, -2.0540295e-08, 0.9991919)
+bones/0/position = Vector3(0, 0.30904248, 0)
+bones/1/rotation = Quaternion(0.0175358, -7.844891e-09, -2.0403814e-08, 0.99984634)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8941359, -5.5918373e-16, -3.4091162e-16, 0.447796)
-bones/2/scale = Vector3(1.0040623, 1.0040623, 1.0040623)
-bones/4/rotation = Quaternion(0.00837749, 0.0064194594, 0.49776644, 0.8672469)
-bones/6/rotation = Quaternion(0.008377417, -0.006419436, -0.49776646, 0.867247)
-bones/7/rotation = Quaternion(0.1452882, -0.04772127, -0.5651902, 0.8106627)
-bones/8/rotation = Quaternion(-0.701375, -1.9904232e-05, -0.11322559, 0.7037423)
-bones/9/rotation = Quaternion(0.09857089, -0.088233426, -0.6514907, 0.7470332)
-bones/10/rotation = Quaternion(-0.67551666, -2.0733109e-05, -0.10905192, 0.7292358)
-bones/11/rotation = Quaternion(0.16369261, 0.2336566, 0.75167805, -0.59463394)
-bones/12/rotation = Quaternion(-0.60027313, 3.1891752e-05, 0.10812829, 0.7924522)
-bones/13/rotation = Quaternion(0.15777682, 0.034567945, 0.5408833, 0.8254434)
-bones/14/rotation = Quaternion(-0.71220416, 1.9541012e-05, 0.114973806, 0.6924927)
-bones/15/rotation = Quaternion(0.06517587, 0.063845165, 0.6621584, 0.7437891)
-bones/16/rotation = Quaternion(-0.57703906, 2.3073057e-05, 0.09315422, 0.8113866)
-bones/17/rotation = Quaternion(-0.06301343, 0.10938358, 0.83752745, 0.53161305)
-bones/18/rotation = Quaternion(-0.5916311, -3.2152988e-05, -0.10657158, 0.799134)
+bones/2/rotation = Quaternion(0.8673516, -1.5372655e-15, 4.715779e-16, 0.49769592)
+bones/2/scale = Vector3(1.004729, 1.004729, 1.004729)
+bones/4/rotation = Quaternion(0.007964264, 0.006102817, 0.4979741, 0.8671339)
+bones/6/rotation = Quaternion(0.007964258, -0.0061028376, -0.4979741, 0.8671339)
+bones/7/rotation = Quaternion(0.18084744, -0.078915626, -0.55583256, 0.80753756)
+bones/8/rotation = Quaternion(-0.72402173, -1.9221121e-05, -0.116881594, 0.6798024)
+bones/9/rotation = Quaternion(0.1311909, -0.12149524, -0.64447176, 0.7434273)
+bones/10/rotation = Quaternion(-0.6990781, -2.0078389e-05, -0.11285556, 0.7060833)
+bones/11/rotation = Quaternion(0.12307261, 0.26208127, 0.76264054, -0.5783996)
+bones/12/rotation = Quaternion(-0.62782294, 3.0993953e-05, 0.11309091, 0.77009666)
+bones/13/rotation = Quaternion(0.19437686, 0.06529705, 0.5307032, 0.8223796)
+bones/14/rotation = Quaternion(-0.7345404, 1.8849041e-05, 0.11857961, 0.66812384)
+bones/15/rotation = Quaternion(0.097254045, 0.0954071, 0.6568251, 0.74163324)
+bones/16/rotation = Quaternion(-0.60438985, 2.248632e-05, 0.09756959, 0.79069155)
+bones/17/rotation = Quaternion(-0.029554214, 0.14606814, 0.8407043, 0.5205833)
+bones/18/rotation = Quaternion(-0.6240784, -3.1126667e-05, -0.11241637, 0.77323264)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -351,10 +351,10 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1579180523]
+[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1044937437]
 material_overlay = SubResource("ShaderMaterial_5c2io")
 
-[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=1830843111]
+[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=2028625622]
 surface_material_override/0 = SubResource("StandardMaterial3D_lub02")
 script = ExtResource("3_x1y6q")
 
