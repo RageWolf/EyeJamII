@@ -92,9 +92,9 @@ func check_game_state():
 
 	if ship_decay <= 0:
 		print("WIN: Ship fully decayed")
-		LoadManager.load_scene("res://death_screen.tscn")
 		
-	if player_caught:
+	if player_caught == true:
+		print("LOSE: Player Caught")
 		LoadManager.load_scene("res://death_screen.tscn")
 
 #-----------------------------------------------------
@@ -132,3 +132,4 @@ func reset():
 	player_energy = 100.0
 	ship_decay = 100.0
 	time_left = 120.0
+	player_caught = false

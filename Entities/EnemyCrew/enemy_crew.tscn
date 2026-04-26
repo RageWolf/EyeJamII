@@ -127,7 +127,7 @@ shape = SubResource("CapsuleShape3D_6wp80")
 [node name="Scientist" parent="." unique_id=2141029336 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2555697, 0)
 
-[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(2141029336, 365296131) index="0" unique_id=2111662594]
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(2141029336, 1060654339) index="0" unique_id=1452090339]
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
@@ -153,16 +153,16 @@ bones/27/position = Vector3(-3.8303065, 4.4447837, -1.3309567)
 bones/28/position = Vector3(-6.3118515, 4.4447837, -9.051077e-08)
 bones/29/position = Vector3(0, 5.1184335, 0)
 
-[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1253468380]
+[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1168296809]
 transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08, -1.8251797e-07, 1, 0.9999998, 3.72529e-08, 9.42382e-08, 6.3118525, 4.444783, 1.9051036e-07)
 
-[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(2141029336, 2082922367) index="0" unique_id=1816640182]
+[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(2141029336, 259314560) index="0" unique_id=1816640182]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.015816689, 0.002682209, -0.73840237)
 
-[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=1911717153]
+[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=897421293]
 transform = Transform3D(-6.7055225e-08, -0.99999976, -1.232256e-07, 3.4658765e-08, -1.8251797e-07, 1, -0.9999998, 3.72529e-08, 9.42382e-08, -6.3118525, 4.444783, 1.9051036e-07)
 
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=534618679]
+[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=1335644271]
 transform = Transform3D(-0.86549884, 0.38258266, -0.32333022, 0.03441347, 0.6893744, 0.72358763, 0.49972746, 0.6151375, -0.6098186, 0.028973378, 1.1959596, 0.010000229)
 
 [node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]
