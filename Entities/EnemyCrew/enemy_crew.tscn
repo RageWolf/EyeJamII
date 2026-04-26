@@ -24,6 +24,10 @@ height = 10.219
 transparency = 1
 albedo_color = Color(1, 1, 0.6627451, 0.6039216)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l5xqq"]
+height = 8.452759
+radius = 3.5048828
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5e76"]
 animation = &"Alert"
 
@@ -139,6 +143,7 @@ transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08
 
 [node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(1354796236, 259314560) index="0" unique_id=1816640182]
 light_energy = 30.0
+shadow_enabled = true
 spot_angle = 20.339556
 
 [node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=897421293]
@@ -173,6 +178,14 @@ transform = Transform3D(-2, 0, 1.7484555e-07, 0, 2, 0, -1.7484555e-07, 0, -2, 0,
 collision_mask = 3
 debug_shape_custom_color = Color(1, 1, 1, 1)
 
+[node name="DetectionArea" type="Area3D" parent="Scientist" unique_id=1944140216]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/DetectionArea" unique_id=1739172669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0205307, 0)
+shape = SubResource("CylinderShape3D_l5xqq")
+
 [node name="AnimationController" type="Node" parent="." unique_id=2034868810]
 script = ExtResource("4_c5e76")
 
@@ -192,5 +205,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.059497833, 0.
 [connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Scientist/Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_shape_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_entered" from="Scientist/DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="Scientist/DetectionArea" to="." method="_on_detection_area_body_exited"]
 
 [editable path="Scientist"]
