@@ -38,7 +38,7 @@ bones/29/position = Vector3(-1.2082355e-17, 5.064019, 0.43531272)
 transform = Transform3D(-0.9986593, -0.020882409, 0.047362685, 0.04480043, 0.10961281, 0.992964, -0.025926998, 0.99375474, -0.10853026, 2.785783, 2.046766, 2.6484203)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(2082922367) index="0" unique_id=1816640182]
-transform = Transform3D(-0.98162717, 0, 0.19080901, 0, 1, 0, -0.19080901, 0, -0.98162717, -0.015816689, 0.002682209, -0.73840237)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.015816689, 0.002682209, -0.73840237)
 layers = 3
 light_energy = 30.0
 spot_range = 12.0

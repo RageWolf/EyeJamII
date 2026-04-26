@@ -13,10 +13,12 @@ var player = null
 @onready var vision_area: Area3D = $Scientist/Area3D
 @onready var ray: RayCast3D = $Scientist/RayCast3D
 @onready var anim_controller = $AnimationController
-@onready var patrol_points = $PatrolRoute.get_children()
 @onready var player_capture_point = $Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea/CollisionShape3D
 @onready var player_vis = $Scientist
 @onready var debug_vision_cone = $Scientist/Area3D/debug
+@export var patrol_route: Node3D
+@onready var patrol_points: Array = []
+
 
 var speed = 1.5
 
@@ -58,6 +60,8 @@ var turn = false
 
 
 func _ready() -> void:
+	if patrol_route:
+		patrol_points = patrol_route.get_children()
 	player = get_tree().get_first_node_in_group("player")
 	SignalBus.connect("system_broken", _on_system_broken)
 	SignalBus.connect("system_fixed", _on_system_fixed)
@@ -369,7 +373,8 @@ func move_to_waypoint(waypoint):
 		var look_pos = global_position - direction
 		look_pos.y = global_position.y
 		player_vis.look_at(look_pos, Vector3.UP)
-
+		player_vis.rotation.x = 0.0  
+		player_vis.rotation.z = 0.0  
 
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
