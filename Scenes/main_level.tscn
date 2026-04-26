@@ -570,6 +570,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 72.31828, 0.2, 64.97733
 
 [node name="EnemyCrew" parent="EnemyCrew" unique_id=1420940884 instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.6788301)
+num = 1
 
 [node name="Area3D" parent="EnemyCrew/EnemyCrew/Scientist" parent_id_path=PackedInt32Array(1420940884, 1354796236) index="2" unique_id=546376362]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 2.7028093, 0)

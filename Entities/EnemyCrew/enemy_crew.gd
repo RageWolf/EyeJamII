@@ -26,6 +26,9 @@ var player_in_area: bool = false
 var lighting_check: bool = false
 var vision_cone_check: bool = false
 var ray_check: bool = false
+var player_spotted = false
+var detection = false
+var in_detection_area = false
 
 #endregion
 
@@ -35,6 +38,7 @@ var prev_state = null
 
 @export var patrolling: bool = true
 @export var stationary: bool = false
+@export var num: int
 
 var broken_power_systems = []
 var current_target = null
@@ -44,12 +48,12 @@ var at_target_patrol = false
 
 var search_timer = 0.0
 var fix_timer = 2.0
+var lunge_timer = 1.5
+var alert_timer = 0.5
 
 var index = 0
 
 var player_caught = false
-var player_spotted = false
-var detection = false
 var turn = false
 
 func _ready() -> void:
@@ -60,7 +64,7 @@ func _ready() -> void:
 		state = State.PATROLLING
 	else:
 		state = State.IDLE
-	debug_vision_cone.active = false
+	debug_vision_cone.visible = false
 	
 	
 
@@ -69,7 +73,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	can_see_player = check_can_see_player()
-	print(can_see_player)
+	# print(can_see_player)
 	# print(state)
 	match state:
 		State.PATROLLING:
@@ -127,19 +131,27 @@ func _physics_process(_delta: float) -> void:
 			if player_caught:
 				pass
 				# death screen
-			else:
+			elif lunge_timer <= 0:
+				lunge_timer = 1.5
 				prev_state = state
 				state = State.CHASING
+			else:
+				lunge_timer -= _delta
 			
 		State.ALERT:
 			detection = false
-			if can_see_player:
-				prev_state = state
-				state = State.CHASING
+			if alert_timer <= 0:
+				alert_timer = 0.5
+				if can_see_player:
+					prev_state = state
+					state = State.CHASING
+				else:
+					start_search(5.0)
 			else:
-				start_search(5.0)
+				alert_timer -= _delta
 			
 
+	
 	match state:
 		State.PATROLLING:
 			patrol(_delta)
@@ -155,6 +167,7 @@ func _physics_process(_delta: float) -> void:
 			search(_delta)
 		State.REPAIRING:
 			fix_system(_delta)
+
 	move_and_slide()
 	
 
@@ -188,6 +201,8 @@ func chase_player():
 func patrol(delta):
 	speed = 1.0
 	var waypoint =  patrol_points[index]
+	if num == 1:
+		print(index)
 	move_to_waypoint(waypoint.global_position)
 	if nav_agent.is_navigation_finished():
 		start_search(5.0)
@@ -211,7 +226,6 @@ func fix_system(delta):
 		SignalBus.emit_signal("update_anim")
 		fix_timer -= delta
 		if fix_timer <= 0:
-			print("fixed")
 			current_target.fix_system()
 			at_target_fix = false
 			SignalBus.emit_signal("update_anim")
@@ -280,7 +294,7 @@ func check_can_see_player() -> bool:
 		else:
 			player_spotted = false
 			return false
-	elif vision_cone_check and lighting_check and ray_check and player_in_range:
+	elif (vision_cone_check and lighting_check and ray_check and player_in_range) or in_detection_area:
 		# print("true")
 		# print()
 		player_spotted = true
@@ -324,3 +338,13 @@ func _on_capture_area_body_entered(body: Node3D) -> void:
 	
 
 	
+
+
+func _on_detection_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		in_detection_area = true
+
+
+func _on_detection_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		in_detection_area = false
