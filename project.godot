@@ -18,6 +18,7 @@ config/name="EyeJamII"
 run/main_scene="uid://bbcnr3piagp1t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=4
 boot_splash/use_filter=false
 boot_splash/image="uid://dfw0mlycbsxiq"
