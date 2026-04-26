@@ -2,7 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="1_4ptq8"]
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_4ptq8"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
 [ext_resource type="PackedScene" uid="uid://gwul7osjfe" path="res://Entities/PowerSystems/power_system.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="6_gbhdq"]
@@ -145,7 +145,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.967833, 0.5215962, -4.1640
 [node name="PauseMenu" parent="CanvasLayer" unique_id=940368734 instance=ExtResource("8_6emce")]
 
 [node name="StealthZone" parent="." unique_id=676040015 instance=ExtResource("5_lnbra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.885109, 0, -3.895065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.885109, 0.115608454, -3.895065)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1351671777]
 transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 12.123579, 6.7102733, -5.051491)

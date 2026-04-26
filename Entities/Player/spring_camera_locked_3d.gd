@@ -27,7 +27,7 @@ func _input(event):
 
 func _process(delta):
 	rotation.y = lerp_angle(rotation.y, deg_to_rad(orbit_angle), 10.0 * delta)
-	#print("player ref: ", player, " | is_hidden: ", player.is_hidden if player else "NULL")
+	
 	# zoom out when hidden
 	var target_length = hidden_length if player.is_hidden else normal_length
 	spring_arm.spring_length = lerp(spring_arm.spring_length, target_length, zoom_speed * delta)

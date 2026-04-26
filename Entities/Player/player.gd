@@ -66,7 +66,7 @@ func _physics_process(delta):
 	apply_gravity(delta)
 	apply_movement(direction, delta)
 	update_feeding(delta)
-	update_stealth()
+	update_stealth(delta)
 
 	anim_controller.update(delta, velocity, direction)
 
@@ -74,13 +74,6 @@ func _physics_process(delta):
 	var cam_y = spring_arm_pivot.rotation.y
 	monster.rotation.y = lerp_angle(monster.rotation.y, cam_y , 10.0 * delta)
 
-func _process(_delta: float) -> void:
-	if OS.is_debug_build():
-		if Input.is_action_pressed("hide"):
-			is_hidden = true
-		else:
-			is_hidden = false
-	pass
 
 
 #region INPUT & MOVEMENT :=========================================================================
@@ -289,13 +282,16 @@ func cleanup_feed_ui():
 
 
 #region HIDING MECHANISM :=========================================================================
-func update_stealth():
+func update_stealth(delta):
 	var is_moving = velocity.length() > 0.1
 	var is_airborne = not is_on_floor()
 	if player_inside_stealth_zone and not is_moving and not is_airborne:
 		set_hidden(true)
 	else:
 		set_hidden(false)
+	
+	var target_alpha = 0.0 if is_hidden else 1.0
+	light_level.modulate.a = lerp(light_level.modulate.a, target_alpha, 6.0 * delta)
 
 func set_hidden(state: bool):
 	if is_hidden == state:
