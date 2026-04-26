@@ -11,7 +11,7 @@
 render_priority = 0
 shader = ExtResource("2_ktfyn")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_width = 0.0
+shader_parameter/outline_width = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rylj"]
 size = Vector3(3.5532227, 7.871277, 2.6173096)
@@ -30,6 +30,7 @@ material_overlay = SubResource("ShaderMaterial_biwj7")
 mesh = ExtResource("3_o6ro4")
 
 [node name="DrainableOff" type="MeshInstance3D" parent="." unique_id=784155975]
+visible = false
 mesh = ExtResource("4_6kom8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=834341189]

@@ -7,6 +7,11 @@ var PHASE_1 : bool = false
 var PHASE_2 : bool = false
 var PHASE_3 : bool = false
 
+#TUTORIAL
+var tutorial_drain_done := false
+var tutorial_stealth_done := false
+var dialog_busy := false
+
 # PLAYER ENERGY
 var player_energy: float = 100.0
 var max_energy: float = 100.0
@@ -46,11 +51,10 @@ func _process(delta):
 # ------------------------
 
 func add_energy(amount):
-	if not tutorial_completed:
-		tutorial_completed = true
-		dialog.text = "Conrats, Now run before they catch you lil critter!"
-	else:
-		pass
+	if not tutorial_drain_done:
+		tutorial_drain_done = true
+		show_dialog("Good... now try hiding on that dark area.")
+		check_tutorial_complete()
 	
 	player_energy += amount
 	player_energy = clamp(player_energy, 0, max_energy)
@@ -83,6 +87,34 @@ func check_game_state():
 
 	if ship_decay <= 0:
 		print("WIN: Ship fully decayed")
+
+#-----------------------------------------------------
+func show_dialog(text: String, duration := 2.5):
+	if dialog_busy:
+		return
+	
+	dialog_busy = true
+	dialog.text = text
+	
+	await get_tree().create_timer(duration).timeout
+	
+	dialog.text = ""
+	dialog_busy = false
+
+#------------------------------------------------------------
+
+func check_tutorial_complete():
+	if tutorial_completed:
+		return
+	
+	if tutorial_drain_done \
+	and tutorial_stealth_done:
+		
+		tutorial_completed = true
+		
+		show_dialog("Tutorial Completed. Now look for all feedable sources of energy and decay the ship before they catch you!")
+		
+
 
 func reset():
 	PHASE_1 = false

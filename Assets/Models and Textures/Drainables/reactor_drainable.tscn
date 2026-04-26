@@ -11,13 +11,16 @@
 render_priority = 0
 shader = ExtResource("2_17voc")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_width = 0.0
+shader_parameter/outline_width = 5.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_17voc"]
-size = Vector3(10.8396, 7.216919, 6.0096436)
+size = Vector3(9.92, 7.217, 6.505)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_kq4he"]
 viewport_path = NodePath("Sprite3D/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4qtp"]
+size = Vector3(1.5439453, 1, 1.2784424)
 
 [node name="ReactorDrainable" type="StaticBody3D" unique_id=658268384 groups=["power_system"]]
 transform = Transform3D(0.61, 0, 0, 0, 0.61, 0, 0, 0, 0.61, 0, 0, 0)
@@ -78,3 +81,11 @@ layers = 3
 light_energy = 8.0
 spot_range = 12.159482
 spot_angle = 62.070133
+
+[node name="Area3D" type="Area3D" parent="." unique_id=53158440]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 3.0546873, 1.2574868)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=389798817]
+transform = Transform3D(7.755, 0, 0, 0, 7.755, 0, 0, 0, 7.755, 1.0488942, 0, 1.0796604)
+shape = SubResource("BoxShape3D_y4qtp")
+debug_color = Color(0.86104685, 0.0006672847, 0.87445873, 0.41960785)

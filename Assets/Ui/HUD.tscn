@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://db08kow5k4r65" path="res://Assets/Ui/hud.gd" id="1_m7eov"]
 [ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="2_oy4wi"]
+[ext_resource type="FontFile" uid="uid://c7dajt33s651i" path="res://Assets/Fonts/UnicaOne-Regular.ttf" id="3_d1gda"]
+[ext_resource type="Texture2D" uid="uid://dspuu0x3ou3ou" path="res://Assets/Ui/clock.png" id="4_ii41d"]
+[ext_resource type="Texture2D" uid="uid://dhpu7utletiy5" path="res://Assets/Ui/monster_icon.png" id="5_vvua7"]
+[ext_resource type="Texture2D" uid="uid://vvrdcm7hvfjb" path="res://Assets/Ui/spaceship.png" id="6_bjxyw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oy4wi"]
 bg_color = Color(0.5971498, 0.74695176, 0.699148, 1)
@@ -50,6 +54,7 @@ offset_bottom = 55.0
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0)
 theme = ExtResource("2_oy4wi")
+theme_override_fonts/font = ExtResource("3_d1gda")
 theme_override_font_sizes/font_size = 30
 text = "Timer: 0000"
 horizontal_alignment = 3
@@ -57,10 +62,12 @@ vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="TimerLabel" unique_id=282838746]
 layout_mode = 0
-offset_left = -30.0
-offset_top = -11.0
-offset_right = 10.0
-offset_bottom = 29.0
+offset_left = -41.0
+offset_top = -2.0
+offset_right = -1.0
+offset_bottom = 38.0
+texture = ExtResource("4_ii41d")
+expand_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1275274845]
 anchors_preset = 10
@@ -77,6 +84,7 @@ alignment = 1
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_d1gda")
 theme_override_styles/background = SubResource("StyleBoxFlat_oy4wi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4a4p4")
 value = 50.0
@@ -86,15 +94,18 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -20.0
-offset_right = -8.0
-offset_bottom = 20.0
+offset_left = -68.0
+offset_top = -35.5
+offset_right = -1.0
+offset_bottom = 28.5
 grow_vertical = 2
+texture = ExtResource("5_vvua7")
+expand_mode = 2
 
 [node name="DecayBar" type="ProgressBar" parent="HBoxContainer" unique_id=353804969]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_d1gda")
 theme_override_styles/background = SubResource("StyleBoxFlat_36tgk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qecht")
 value = 100.0
@@ -106,9 +117,11 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 8.0
-offset_top = -20.0
-offset_right = 48.0
-offset_bottom = 20.0
+offset_left = -8.0
+offset_top = -25.5
+offset_right = 53.0
+offset_bottom = 31.5
 grow_horizontal = 0
 grow_vertical = 2
+texture = ExtResource("6_bjxyw")
+expand_mode = 2

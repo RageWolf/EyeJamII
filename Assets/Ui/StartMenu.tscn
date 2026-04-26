@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="1_7ksrw"]
 [ext_resource type="Script" uid="uid://c15x010a5th5a" path="res://Assets/Ui/start_menu.gd" id="1_bleff"]
 [ext_resource type="FontFile" uid="uid://c6wq1qhg8bd15" path="res://Assets/Fonts/Metal Lord.otf" id="2_7ksrw"]
+[ext_resource type="FontFile" uid="uid://c7dajt33s651i" path="res://Assets/Fonts/UnicaOne-Regular.ttf" id="4_367es"]
 [ext_resource type="PackedScene" uid="uid://8f5tq2eojo3m" path="res://Assets/Ui/TitleScene.blend" id="4_jl35j"]
 [ext_resource type="PackedScene" uid="uid://cxjoy0stg6pss" path="res://Assets/Models and Textures/Monster/Monster.blend" id="5_ix1ab"]
 
@@ -23,7 +24,8 @@ sky = SubResource("Sky_5bd1f")
 ambient_light_source = 1
 tonemap_mode = 2
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12n2q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix1ab"]
+bg_color = Color(0, 0, 0, 0.5803922)
 
 [node name="StartMenu" type="Control" unique_id=831940314]
 layout_mode = 3
@@ -44,22 +46,35 @@ shadow_enabled = true
 environment = SubResource("Environment_vnhqk")
 
 [node name="BG" type="Panel" parent="." unique_id=1402879495]
-layout_mode = 0
-offset_right = 1280.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_12n2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ix1ab")
 
 [node name="Title" type="Label" parent="." unique_id=555464939]
-modulate = Color(0.13019109, 0.5136457, 0.527822, 1)
+modulate = Color(0.80118024, 0, 0.14577985, 1)
 layout_mode = 0
 offset_left = 33.0
 offset_top = 28.0
-offset_right = 1051.0
+offset_right = 517.0
 offset_bottom = 173.0
 theme_override_fonts/font = ExtResource("2_7ksrw")
 theme_override_font_sizes/font_size = 120
-text = "Thermal Runaway"
+text = "Thermal "
+
+[node name="Title2" type="Label" parent="." unique_id=826525092]
+modulate = Color(0.92352146, 0.9000352, 0.66951805, 1)
+layout_mode = 0
+offset_left = 544.0
+offset_top = 28.0
+offset_right = 1079.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("2_7ksrw")
+theme_override_font_sizes/font_size = 120
+text = "RUNAWAY"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1300817257]
 custom_minimum_size = Vector2(300, 200)
@@ -80,38 +95,45 @@ theme_override_constants/separation = 20
 [node name="Start" type="Button" parent="VBoxContainer" unique_id=1773023380]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.6873571, 0.7025804, 0.6576216, 1)
-text = "START"
+theme_override_fonts/font = ExtResource("4_367es")
+theme_override_font_sizes/font_size = 50
+text = "start"
 
 [node name="Credits" type="Button" parent="VBoxContainer" unique_id=742477069]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
-text = "CREDITS"
+theme_override_fonts/font = ExtResource("4_367es")
+theme_override_font_sizes/font_size = 50
+text = "credits"
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1989367505]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
-text = "QUIT"
+theme_override_fonts/font = ExtResource("4_367es")
+theme_override_font_sizes/font_size = 50
+text = "quit
+"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=104562478]
 
 [node name="TitleScene" parent="Node3D" unique_id=1945630454 instance=ExtResource("4_jl35j")]
 
-[node name="Armature" parent="Node3D/TitleScene" index="0" unique_id=1421521916]
+[node name="Armature" parent="Node3D/TitleScene" index="0" unique_id=1451899718]
 visible = false
 
-[node name="Skeleton3D" parent="Node3D/TitleScene/Armature" index="0" unique_id=1244221573]
+[node name="Skeleton3D" parent="Node3D/TitleScene/Armature" index="0" unique_id=2005036016]
 bones/11/rotation = Quaternion(-0.013235304, 0.02640597, 0.89359975, -0.4478919)
 
-[node name="Skeleton3D" parent="Node3D/TitleScene/Armature_001" parent_id_path=PackedInt32Array(1945630454, 356388864) index="0" unique_id=849115344]
+[node name="Skeleton3D" parent="Node3D/TitleScene/Armature_001" parent_id_path=PackedInt32Array(1945630454, 453073732) index="0" unique_id=1431435813]
 bones/0/position = Vector3(0, -0.065603256, 0)
 bones/0/rotation = Quaternion(-0.029147532, 0, -1.3877788e-17, 0.9995752)
 bones/1/rotation = Quaternion(0.070078254, 0, 0, 0.9975415)
@@ -137,26 +159,26 @@ bones/26/position = Vector3(-0.90123284, -4.333068, -0.08942902)
 bones/28/position = Vector3(-3.3517249, 0.5269706, -6.1690366e-07)
 bones/29/position = Vector3(0, 5.064019, 0.43531272)
 
-[node name="Hand_L" parent="Node3D/TitleScene/Armature_001/Skeleton3D" index="0" unique_id=1717550499]
+[node name="Hand_L" parent="Node3D/TitleScene/Armature_001/Skeleton3D" index="0" unique_id=1704264807]
 transform = Transform3D(-0.9986595, -0.020882748, 0.047362506, 0.04480028, 0.10961348, 0.99296397, -0.025927301, 0.99375474, -0.10853114, 2.7857828, 2.0467668, 2.6484222)
 
-[node name="Point" parent="Node3D/TitleScene" index="5" unique_id=352031931]
+[node name="Point" parent="Node3D/TitleScene" index="5" unique_id=969103792]
 transform = Transform3D(3.2617297, 0, 0, 0, 0, 3.2617297, 0, -3.2617297, 0, -21.944138, 3.8075886, 7.522725)
 omni_range = 3.746
 
-[node name="Point_001" parent="Node3D/TitleScene" index="6" unique_id=1027071855]
+[node name="Point_001" parent="Node3D/TitleScene" index="6" unique_id=972558928]
 omni_range = 5.838
 
-[node name="Empty Lab Table" parent="Node3D/TitleScene" index="8" unique_id=2027673406]
+[node name="Empty Lab Table" parent="Node3D/TitleScene" index="8" unique_id=249470849]
 transform = Transform3D(0.6826725, 0, -1.0162438, 0, 1.2242521, 0, 1.0162438, 0, 0.6826725, -19.719, 1.217, 0)
 
-[node name="AnimationPlayer" parent="Node3D/TitleScene" index="10" unique_id=1016514636]
+[node name="AnimationPlayer" parent="Node3D/TitleScene" index="10" unique_id=31053072]
 autoplay = &"Armature_001Action"
 
 [node name="Monster" parent="Node3D" unique_id=349639319 instance=ExtResource("5_ix1ab")]
 transform = Transform3D(2.3777866, 0, -1.8488579, 0, 3.012, 0, 1.8488579, 0, 2.3777866, -19.393, 2.708, 4.604)
 
-[node name="Skeleton3D" parent="Node3D/Monster/Armature" parent_id_path=PackedInt32Array(349639319, 205688135) index="0" unique_id=1253121812]
+[node name="Skeleton3D" parent="Node3D/Monster/Armature" parent_id_path=PackedInt32Array(349639319, 133039995) index="0" unique_id=2074112381]
 bones/0/position = Vector3(0, 0.2989174, 0)
 bones/1/rotation = Quaternion(0.034691084, -7.972578e-09, -2.0354246e-08, 0.9993982)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
@@ -206,7 +228,7 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="AnimationPlayer" parent="Node3D/Monster" index="1" unique_id=1108636832]
+[node name="AnimationPlayer" parent="Node3D/Monster" index="1" unique_id=1052755342]
 autoplay = &"Idle1"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]

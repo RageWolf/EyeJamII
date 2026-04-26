@@ -15,7 +15,7 @@ radius = 1.1279297
 render_priority = 0
 shader = ExtResource("2_4xgv8")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
-shader_parameter/outline_width = 0.0
+shader_parameter/outline_width = 5.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jsotb"]
 viewport_path = NodePath("Sprite3D/SubViewport")

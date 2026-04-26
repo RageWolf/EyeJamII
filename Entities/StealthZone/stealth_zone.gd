@@ -22,6 +22,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body):
+	if body.is_in_group("player"):
 		entered = true
 		player = body
 		print(player, " entered")
@@ -29,6 +30,7 @@ func _on_body_entered(body):
 		if not entered or player == null:
 			return
 		player.player_inside_stealth_zone = true
+		GameManager.tutorial_stealth_done = true
 
 func _on_body_exited(body):
 	if body == player:

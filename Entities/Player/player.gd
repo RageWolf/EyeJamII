@@ -303,4 +303,8 @@ func set_hidden(state: bool):
 	if is_hidden == state:
 		return
 	is_hidden = state
+	
+	if is_hidden:
+		GameManager.tutorial_stealth_done = true
+		GameManager.check_tutorial_complete()
 #endregion
