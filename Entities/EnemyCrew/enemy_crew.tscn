@@ -140,7 +140,7 @@ debug_shape_custom_color = Color(1, 1, 1, 1)
 [node name="Scientist" parent="." unique_id=1354796236 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(1354796236, 667172370) index="0" unique_id=1259765969]
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(1354796236, 1060654339) index="0" unique_id=1452090339]
 bones/0/rotation = Quaternion(0, 0, 0, 1)
 bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
@@ -163,13 +163,13 @@ bones/24/position = Vector3(6.3118515, 4.4447837, -9.051077e-08)
 bones/28/position = Vector3(-6.3118515, 4.4447837, -9.051077e-08)
 bones/29/position = Vector3(0, 5.1184335, 0)
 
-[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=699462173]
+[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1168296809]
 transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08, -1.8251797e-07, 1, 0.9999998, 3.72529e-08, 9.42382e-08, 6.3118525, 4.444783, 1.9051036e-07)
 
-[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=1685025970]
+[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=897421293]
 transform = Transform3D(-6.7055225e-08, -0.99999976, -1.232256e-07, 3.4658765e-08, -1.8251797e-07, 1, -0.9999998, 3.72529e-08, 9.42382e-08, -6.3118525, 4.444783, 1.9051036e-07)
 
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=223320605]
+[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=1335644271]
 transform = Transform3D(-0.8654989, 0.38258263, -0.32333022, 0.034413476, 0.6893745, 0.72358763, 0.49972737, 0.6151376, -0.6098187, 0.028973378, 1.1959596, 0.010000229)
 
 [node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]

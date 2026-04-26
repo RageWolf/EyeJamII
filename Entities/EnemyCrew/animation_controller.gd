@@ -39,7 +39,7 @@ func update_anim():
 		enemy.State.SEARCHING:
 			state_machine.travel("Search")
 		enemy.State.REPAIRING:
-			if !enemy.at_target:
+			if !enemy.at_target_fix:
 				state_machine.travel("Walk")
 			else:
 				state_machine.travel("Fix")
