@@ -32,8 +32,8 @@ func _on_quit_mouse_entered() -> void:
 
 
 func _on_restart_focus_entered() -> void:
-	pass # Replace with function body.
+	Audio.ui_focus_change()
 
 
 func _on_quit_focus_entered() -> void:
-	pass # Replace with function body.
+	Audio.ui_focus_change()

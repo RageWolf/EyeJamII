@@ -76,7 +76,9 @@ theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.137254
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
 text = "QUIT"
 
+[connection signal="focus_entered" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_focus_entered"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="focus_entered" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_focus_entered"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
