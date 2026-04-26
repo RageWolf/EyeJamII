@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cc5aprwsdyv36" path="res://Mesh_library/Drainables_Mesh/EKGDrainableOff.tres" id="4_6kom8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_biwj7"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_ktfyn")
 shader_parameter/outline_color = Color(1, 1, 1, 1)

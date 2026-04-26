@@ -3,7 +3,12 @@ extends Node
 
 enum REVERB_TYPE { NONE, SMALL, MEDIUM, LARGE }
 
+# Audio pool for 3D spatial sounds
+const POOL_SIZE = 8
+var pool_3d: Array[AudioStreamPlayer3D] = []
+
 @export var ui_focus_audio : AudioStream
+@export var ui_hover_audio : AudioStream
 @export var ui_select_audio : AudioStream
 @export var ui_cancel_audio : AudioStream
 @export var ui_success_audio : AudioStream
@@ -20,8 +25,9 @@ var ui_audio_player : AudioStreamPlaybackPolyphonic
 func _ready() -> void:
 	ui.play()
 	ui_audio_player = ui.get_stream_playback()
-	pass
+	_init_pool_3d()
 
+#region AMBIENCE:
 func play_ambience( audio : AudioStream ) -> void:
 	
 	# Determine the current ambience player 
@@ -56,7 +62,10 @@ func get_ambience_player( i : int ) -> AudioStreamPlayer:
 		return ambience_1
 	else:
 		return ambience_2
+#endregion
 
+
+#region GENERAL:
 func fade_track_out(player : AudioStreamPlayer) -> void:
 	var tween : Tween = create_tween()
 	ambience_tweens.append( tween )
@@ -86,36 +95,32 @@ func set_reverb( type : REVERB_TYPE ) -> void:
 		REVERB_TYPE.LARGE:
 			reverb_fx.room_size = 0.8
 	pass
+#endregion
 
-func play_spatial_sound( audio : AudioStream, pos : Vector2) -> void:
-	var ap : AudioStreamPlayer2D = AudioStreamPlayer2D.new() 
-	add_child( ap )
-	ap.bus = "SFX"
+
+#region 3D POOL:
+func _init_pool_3d() -> void:
+	for i in POOL_SIZE:
+		var ap := AudioStreamPlayer3D.new()
+		ap.bus = "SFX"
+		add_child(ap)
+		pool_3d.append(ap)
+
+func get_free_player_3d() -> AudioStreamPlayer3D:
+	for ap in pool_3d:
+		if not ap.playing:
+			return ap
+	return pool_3d[0]
+
+func play_sound_3d(audio: AudioStream, pos: Vector3) -> void:
+	var ap := get_free_player_3d()
 	ap.global_position = pos
 	ap.stream = audio
-	ap.finished.connect ( ap .queue_free )
 	ap.play()
-	pass
+#endregion
 
 
-var can_play := true
-func play_sound( audio : AudioStream ) -> void:
-	if not can_play:
-		return
-	
-	can_play = false
-	
-	var ap : AudioStreamPlayer = AudioStreamPlayer.new() 
-	add_child( ap )
-	ap.bus = "SFX"
-	ap.stream = audio
-	ap.finished.connect ( ap .queue_free )
-	ap.play()
-	await get_tree().create_timer(0.2).timeout
-	can_play = true
-	pass
-
-#region UI function:
+#region UI FUNCTION:
 func play_ui_audio( audio : AudioStream ) -> void:
 	if ui_audio_player:
 		ui_audio_player.play_stream( audio )
@@ -127,6 +132,9 @@ func setup_button_audio( node : Node ) -> void:
 
 func ui_focus_change() -> void:
 	play_ui_audio(ui_focus_audio)
+
+func ui_hover() -> void:
+	play_ui_audio(ui_hover_audio)
 
 func ui_select() -> void:
 	play_ui_audio(ui_select_audio)

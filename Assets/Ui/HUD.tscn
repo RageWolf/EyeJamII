@@ -43,14 +43,14 @@ custom_minimum_size = Vector2(150, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -75.0
+offset_left = -114.5
 offset_top = 24.0
-offset_right = 75.0
-offset_bottom = 55.0
+offset_right = 114.5
+offset_bottom = 71.0
 grow_horizontal = 2
 pivot_offset_ratio = Vector2(0.5, 0)
 theme = ExtResource("2_oy4wi")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 text = "Timer: 0000"
 horizontal_alignment = 3
 vertical_alignment = 1
@@ -74,12 +74,13 @@ theme_override_constants/separation = 500
 alignment = 1
 
 [node name="EnergyBar" type="ProgressBar" parent="HBoxContainer" unique_id=1414888401]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_styles/background = SubResource("StyleBoxFlat_oy4wi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_4a4p4")
 value = 50.0
+show_percentage = false
 
 [node name="Icon" type="TextureRect" parent="HBoxContainer/EnergyBar" unique_id=1847088323]
 layout_mode = 1
@@ -93,11 +94,12 @@ offset_bottom = 20.0
 grow_vertical = 2
 
 [node name="DecayBar" type="ProgressBar" parent="HBoxContainer" unique_id=353804969]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_36tgk")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qecht")
 value = 100.0
+show_percentage = false
 
 [node name="Icon" type="TextureRect" parent="HBoxContainer/DecayBar" unique_id=1875404257]
 layout_mode = 1

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://baqxn432oxoqc"]
 
-[ext_resource type="Script" path="res://Global/audio.gd" id="1_uo5lp"]
+[ext_resource type="Script" uid="uid://c1c1gy5gl2qc6" path="res://Global/audio.gd" id="1_uo5lp"]
+[ext_resource type="AudioStream" uid="uid://dimhfju3fycej" path="res://Audio/UiAudio/START 1.mp3" id="2_4qwh6"]
+[ext_resource type="AudioStream" uid="uid://c1y26xog4f0nu" path="res://Audio/UiAudio/PAUSE 1.mp3" id="4_7nuq5"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_dwr6l"]
 polyphony = 16
@@ -8,6 +10,10 @@ polyphony = 16
 [node name="Audio" type="Node" unique_id=1467223168]
 process_mode = 3
 script = ExtResource("1_uo5lp")
+ui_focus_audio = ExtResource("2_4qwh6")
+ui_hover_audio = ExtResource("2_4qwh6")
+ui_select_audio = ExtResource("4_7nuq5")
+ui_cancel_audio = ExtResource("4_7nuq5")
 
 [node name="Ambience1" type="AudioStreamPlayer" parent="." unique_id=1541862854]
 unique_name_in_owner = true

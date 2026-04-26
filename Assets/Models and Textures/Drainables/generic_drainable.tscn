@@ -7,15 +7,15 @@
 [ext_resource type="ArrayMesh" uid="uid://d5u6f8hn8w8o" path="res://Mesh_library/Drainables_Mesh/GenericDrainableOn.tres" id="3_dt37d"]
 [ext_resource type="ArrayMesh" uid="uid://c4338nyolpaho" path="res://Mesh_library/Drainables_Mesh/GenericDrainableOff.tres" id="4_eia3t"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_cw4it"]
-height = 6.071411
-radius = 1.1279297
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jsotb"]
 render_priority = 0
 shader = ExtResource("2_4xgv8")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
 shader_parameter/outline_width = 0.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cw4it"]
+height = 6.071411
+radius = 1.1279297
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jsotb"]
 viewport_path = NodePath("Sprite3D/SubViewport")
@@ -28,10 +28,6 @@ script = ExtResource("1_t642s")
 energy_value = 5.0
 decay_value = 2.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2101760369]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.034851, 0)
-shape = SubResource("CylinderShape3D_cw4it")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=483753508]
 material_overlay = SubResource("ShaderMaterial_jsotb")
 mesh = ExtResource("3_dt37d")
@@ -39,6 +35,10 @@ mesh = ExtResource("3_dt37d")
 [node name="DrainableOff" type="MeshInstance3D" parent="." unique_id=412620976]
 visible = false
 mesh = ExtResource("4_eia3t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2101760369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.034851, 0)
+shape = SubResource("CylinderShape3D_cw4it")
 
 [node name="InteractUi" type="Label3D" parent="." unique_id=1414099218]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.9421406, 0)

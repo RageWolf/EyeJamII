@@ -74,6 +74,7 @@ border_width_bottom = 3
 border_color = Color(1, 1, 1, 1)
 
 [node name="LoadManager" type="CanvasLayer" unique_id=684294159]
+layer = 2
 script = ExtResource("1_g8wfe")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=443535008]

@@ -25,12 +25,12 @@
 sky_top_color = Color(0, 0, 0, 1)
 sky_horizon_color = Color(0, 0, 0, 1)
 
-[sub_resource type="Sky" id="Sky_5erdv"]
+[sub_resource type="Sky" id="Sky_qx7ya"]
 sky_material = SubResource("ProceduralSkyMaterial_qbrl8")
 
 [sub_resource type="Environment" id="Environment_qbrl8"]
 background_mode = 1
-sky = SubResource("Sky_5erdv")
+sky = SubResource("Sky_qx7ya")
 ambient_light_source = 2
 ambient_light_color = Color(0.65420735, 0.4227344, 0.37818453, 1)
 ambient_light_sky_contribution = 0.0
@@ -389,7 +389,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 47.449886, 0.2, 65.3503
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 72.31828, 0.2, 64.97733)
 
 [node name="Hud" parent="World" unique_id=798686351 instance=ExtResource("5_a2ia3")]
-process_mode = 3
 
 [node name="PauseMenu" parent="World/Hud" unique_id=940368734 instance=ExtResource("6_236hc")]
 
@@ -651,24 +650,24 @@ ACCELERATION = 30.0
 FRICTION = 50.0
 
 [node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.3403344, 0)
-bones/1/rotation = Quaternion(-0.03814976, -7.491289e-09, -2.0536264e-08, 0.9992721)
-bones/2/rotation = Quaternion(0.89328486, 5.91048e-16, -5.2754165e-16, 0.44949105)
-bones/2/scale = Vector3(1.0041035, 1.0041035, 1.0041035)
-bones/4/rotation = Quaternion(0.008278252, 0.006343407, 0.4977705, 0.8672461)
-bones/6/rotation = Quaternion(0.008278181, -0.006343386, -0.49777058, 0.86724603)
-bones/7/rotation = Quaternion(0.14645329, -0.048742983, -0.5649001, 0.81059456)
-bones/8/rotation = Quaternion(-0.70220023, -1.9855332e-05, -0.11335885, 0.70289725)
-bones/9/rotation = Quaternion(0.09965913, -0.089330256, -0.65127945, 0.7469426)
-bones/10/rotation = Quaternion(-0.6763869, -2.0710751e-05, -0.109192416, 0.7284078)
-bones/11/rotation = Quaternion(0.16225743, 0.2346244, 0.75211656, -0.5940915)
-bones/12/rotation = Quaternion(-0.6012828, 3.1873118e-05, 0.10831017, 0.79166156)
-bones/13/rotation = Quaternion(0.15903533, 0.035627075, 0.54054856, 0.82537615)
-bones/14/rotation = Quaternion(-0.7130171, 1.951447e-05, 0.11510505, 0.69163394)
-bones/15/rotation = Quaternion(0.06624568, 0.06488485, 0.6620025, 0.7437434)
-bones/16/rotation = Quaternion(-0.57804203, 2.3066536e-05, 0.09331613, 0.81065387)
-bones/17/rotation = Quaternion(-0.061842114, 0.11064303, 0.8376838, 0.5312435)
-bones/18/rotation = Quaternion(-0.59276783, -3.2119453e-05, -0.10677632, 0.7982638)
+bones/0/position = Vector3(0, 0.3341653, 0)
+bones/1/rotation = Quaternion(-0.026782682, -7.555127e-09, -2.0512864e-08, 0.99964136)
+bones/2/rotation = Quaternion(0.88842946, 2.6591875e-15, 2.1412292e-15, 0.4590132)
+bones/2/scale = Vector3(1.004248, 1.0042479, 1.004248)
+bones/4/rotation = Quaternion(0.007516501, 0.0057596546, 0.4978099, 0.86723447)
+bones/6/rotation = Quaternion(0.007516451, -0.005759659, -0.49781, 0.8672344)
+bones/7/rotation = Quaternion(0.1533275, -0.054771177, -0.5631657, 0.81014526)
+bones/8/rotation = Quaternion(-0.70682025, -1.9747766e-05, -0.114104666, 0.6981299)
+bones/9/rotation = Quaternion(0.10602901, -0.09577053, -0.6500139, 0.7463697)
+bones/10/rotation = Quaternion(-0.68122876, -2.0601323e-05, -0.109974064, 0.7237632)
+bones/11/rotation = Quaternion(0.15426823, 0.24005933, 0.75449145, -0.59102935)
+bones/12/rotation = Quaternion(-0.6069242, 3.1690575e-05, 0.109326325, 0.78720444)
+bones/13/rotation = Quaternion(0.16608632, 0.041557178, 0.5386527, 0.82494944)
+bones/14/rotation = Quaternion(-0.71756786, 1.935754e-05, 0.115839675, 0.6867878)
+bones/15/rotation = Quaternion(0.07253007, 0.07101062, 0.6610564, 0.74343884)
+bones/16/rotation = Quaternion(-0.5836463, 2.2946857e-05, 0.09422084, 0.8065231)
+bones/17/rotation = Quaternion(-0.055264533, 0.11777022, 0.8384952, 0.5291522)
+bones/18/rotation = Quaternion(-0.5994667, -3.193086e-05, -0.10798301, 0.7930823)
 
 [node name="SpringArmPivot" parent="Player" index="3" unique_id=1653273090]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 6, 0)

@@ -2,62 +2,152 @@
 
 [ext_resource type="Script" uid="uid://j2ul76dps6gt" path="res://Assets/Ui/credits.gd" id="1_rg2as"]
 [ext_resource type="Texture2D" uid="uid://wwq7b5eq73dq" path="res://Assets/Sprites/qwantani_moonrise_puresky_2k.hdr" id="2_meo2p"]
+[ext_resource type="FontFile" uid="uid://wo8tymasvgch" path="res://Assets/Ui/AICON-Bold.otf" id="3_anspf"]
 [ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_meo2p"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_anspf"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_meo2p"]
 panorama = ExtResource("2_meo2p")
 
-[sub_resource type="Sky" id="Sky_eeugp"]
-sky_material = SubResource("PanoramaSkyMaterial_anspf")
-radiance_size = 1
+[sub_resource type="Sky" id="Sky_5erdv"]
+sky_material = SubResource("PanoramaSkyMaterial_meo2p")
 
-[sub_resource type="Environment" id="Environment_4gpbn"]
+[sub_resource type="Environment" id="Environment_anspf"]
 background_mode = 2
-sky = SubResource("Sky_eeugp")
+sky = SubResource("Sky_5erdv")
 ambient_light_source = 2
-tonemap_mode = 3
+ambient_light_color = Color(0.65420735, 0.4227344, 0.37818453, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.2
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+adjustment_enabled = true
 
 [sub_resource type="Animation" id="Animation_meo2p"]
 resource_name = "Credits"
-length = 35.0
-step = 1.0
+length = 45.0
+step = 0.33
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 30),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.6666667, 4.3333335, 6, 8, 8.425525, 11, 13, 16, 17, 19, 22.333332, 23.666666, 25.666666, 28.333334, 29.666666, 31.39762, 33.11532, 35.333336, 39.8404, 41, 44.333332),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.5235988, 0)]
+"values": [Vector3(-5.477, 6.129, 8.246), Vector3(0.358, 6.129, 3.871), Vector3(2.722, 6.129, 2.923), Vector3(3.368, 6.129, 3.946), Vector3(3.368, 10.169, 4.101), Vector3(-0.167, -3.866, 3.751), Vector3(0.138, 6.159, 3.751), Vector3(2.313, 6.159, 2.856), Vector3(7.618, 6.159, 2.856), Vector3(-11.627, 6.129, 4.691), Vector3(3.748, 6.129, 3.226), Vector3(4.743, 6.129, 3.171), Vector3(4.743, 6.129, 3.1710005), Vector3(4.743, 6.129, 8.771), Vector3(5.888, 7.449, 10.881), Vector3(6.623, 7.449, 10.881), Vector3(21.273, 5.494, 16.226), Vector3(29.288, 5.944, 17.391), Vector3(31.148, 5.954, 17.931), Vector3(31.148, 5.954, 17.931), Vector3(53.488, 5.954, 14.781), Vector3(56.468, 5.954, 14.781)]
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
+tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 10, 15, 20, 25, 30, 35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-21.40762, 6.290531, -13.771945), Vector3(-7.498995, 6.290531, -20.846191), Vector3(-7.498995, 6.290531, -9.744322), Vector3(1.951067, 6.290531, -9.744322), Vector3(13.8698845, 6.290531, -13.693502), Vector3(1.8187733, 6.290531, -38.44394), Vector3(-2.8538008, 6.290531, -39.72061)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(35),
+"times": PackedFloat32Array(45),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"credits_finished"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boudicca:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Muntz:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(8.666667, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("InfiniVerse:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(17, 23.666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(22.333332, 23.666666, 25.698143, 28.333334, 29.333334, 31.39762, 33.11532, 35.333332, 37.77764, 40.99759, 42.666668),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.8413223, 0), Vector3(0, -2.5272367, 0), Vector3(0, -2.115339, 0), Vector3(0, -2.115339, 0), Vector3(0, -2.115339, 0), Vector3(0, -0.10995574, 0), Vector3(0, 0.5969026, 0), Vector3(0, 0.980875, 0), Vector3(0, 4.6460667, 0), Vector3(0, 4.6460667, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Edward:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(23.59563, 30.969265),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Nikki:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(17.666666, 39.333332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Dominic and Rage:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(39.333332, 46.333332),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 44.326668, 45),
+"transitions": PackedFloat32Array(2, 2, 2, 2),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_anspf"]
@@ -65,26 +155,110 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WorldEnvironment:environment:sky_rotation")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(-21.40762, 6.290531, -13.771945)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
+tracks/1/path = NodePath("Boudicca:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Muntz:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InfiniVerse:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-21.40762, 6.290531, -13.771945)]
+"values": [Vector3(0, -1.855285, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Edward:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Nikki:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Dominic and Rage:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eeugp"]
@@ -103,39 +277,117 @@ light_energy = 0.5
 light_bake_mode = 1
 shadow_enabled = true
 
-[node name="FrontLight" type="DirectionalLight3D" parent="." unique_id=1273612020]
-transform = Transform3D(0.9659259, -0.22414386, 0.12940946, 2.7805948e-08, 0.49999994, 0.86602545, -0.258819, -0.8365164, 0.48296285, -3.5922852, 23.711842, 94.54695)
-light_energy = 4.266
-light_bake_mode = 1
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=310869527]
-environment = SubResource("Environment_4gpbn")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=708728288]
+environment = SubResource("Environment_anspf")
 
 [node name="Boudicca" parent="." unique_id=76047387 instance=ExtResource("3_meo2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13.219635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="Label3D" type="Label3D" parent="Boudicca" unique_id=1971202974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2708836, 6.040572, 0.33220005)
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "3D art and designing:
+Boudicca"
+font = ExtResource("3_anspf")
+font_size = 40
+horizontal_alignment = 0
 
 [node name="Muntz" parent="." unique_id=1354796236 instance=ExtResource("3_meo2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -27.1074)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+metadata/_edit_group_ = true
 
-[node name="Tanmay" parent="." unique_id=1017362349 instance=ExtResource("3_meo2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -41.74061)
+[node name="Label3D2" type="Label3D" parent="Muntz" unique_id=1397471449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2708836, 6.040572, 0.33220005)
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Programming:
+Muntz Studio"
+font = ExtResource("3_anspf")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="InfiniVerse" parent="." unique_id=1017362349 instance=ExtResource("3_meo2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="Label3D3" type="Label3D" parent="InfiniVerse" unique_id=1002466465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2708836, 6.040572, 0.33220005)
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Programming/ level designing:
+InfiniVerse Studio"
+font = ExtResource("3_anspf")
+font_size = 40
+horizontal_alignment = 0
 
 [node name="Edward" parent="." unique_id=1364989209 instance=ExtResource("3_meo2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.994431, 0, -28.546736)
+transform = Transform3D(-0.95401055, 0, -0.29977354, 0, 1, 0, 0.29977354, 0, -0.95401055, 5.97011, 1.6012616, 14.50433)
+metadata/_edit_group_ = true
+
+[node name="Label3D4" type="Label3D" parent="Edward" unique_id=1094996390]
+transform = Transform3D(0.93801606, 0, 0.3465919, 0, 1, 0, -0.3465919, 0, 0.93801606, -0.91607976, 6.040572, 1.3934622)
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Sound and Music composing:
+Granularbiomes"
+font = ExtResource("3_anspf")
+font_size = 40
+horizontal_alignment = 2
 
 [node name="Nikki" parent="." unique_id=2109260781 instance=ExtResource("3_meo2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.069748, 0, -20.630417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.105927, 0, 15.330398)
+metadata/_edit_group_ = true
 
-[node name="Dominic" parent="." unique_id=2036565269 instance=ExtResource("3_meo2p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.832642, 0, -18.951193)
+[node name="Label3D5" type="Label3D" parent="Nikki" unique_id=1879210253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2708836, 6.040572, 0.33220005)
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Programming:
+StarrySkies"
+font = ExtResource("3_anspf")
+font_size = 40
+horizontal_alignment = 0
+
+[node name="Dominic and Rage" parent="." unique_id=2036565269 instance=ExtResource("3_meo2p")]
+transform = Transform3D(-0.27520102, 0, -0.96138674, 0, 1, 0, 0.96138674, 0, -0.27520102, 59.36062, 0, 13.336702)
+metadata/_edit_group_ = true
+
+[node name="Label3D2" type="Label3D" parent="Dominic and Rage" unique_id=153515529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2708836, 6.040572, 0.33220005)
+shaded = true
+modulate = Color(0, 0, 0, 1)
+outline_modulate = Color(0, 0, 0, 0)
+text = "3D art:
+Dominic
+Design:
+RageWolf"
+font = ExtResource("3_anspf")
+font_size = 40
+horizontal_alignment = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1697375017]
 libraries/ = SubResource("AnimationLibrary_eeugp")
-autoplay = &"Credits"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=369160359]
-transform = Transform3D(0.65619075, 0, -0.75459504, 0, 1, 0, 0.75459504, 0, 0.65619075, -21.40762, 6.290531, -13.771945)
+transform = Transform3D(-0.28066674, 0, -0.95980513, 0, 1, 0, 0.95980513, 0, -0.28066674, -21.40762, 6.290531, -13.771945)
 cull_mask = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1638980342]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1297262865]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=466131824]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
