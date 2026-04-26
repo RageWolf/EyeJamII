@@ -41,6 +41,7 @@ func break_system():
 	interact_ui.visible = true 
 	interact_ui.text = "[ BROKEN ]"
 	
+	
 	# trigger visuals
 	VfxManager.emit_zap(position)
 	blink_and_turn_off()
@@ -65,7 +66,7 @@ func blink_and_turn_off():
 	light.light_energy = 0
 
 func fix_system():
-	
+	interact_ui.text = "[ E ] Feed"
 	light.visible = true
 	is_broken = false
 	SignalBus.system_fixed.emit(self)

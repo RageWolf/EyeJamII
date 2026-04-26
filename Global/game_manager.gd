@@ -17,12 +17,18 @@ var max_decay: float = 100.0
 # TIMER
 var time_left: float = 120.0  # seconds
 
+# NARRATIVE
+var tutorial_completed : bool = false
+
 # SIGNALS
 signal energy_changed(value)
 signal decay_changed(value)
 signal time_changed(value)
 
 func _process(delta):
+	if not tutorial_completed:
+		return
+	
 	# 1. ENERGY DECAY
 	player_energy -= energy_decay_rate * delta
 	player_energy = clamp(player_energy, 0, max_energy)
@@ -69,3 +75,11 @@ func check_game_state():
 
 	if ship_decay <= 0:
 		print("WIN: Ship fully decayed")
+
+func reset():
+	PHASE_1 = false
+	PHASE_2 = false
+	PHASE_3 = false
+	player_energy = 100.0
+	ship_decay = 100.0
+	time_left = 120.0

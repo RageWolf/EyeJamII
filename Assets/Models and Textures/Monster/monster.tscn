@@ -8,7 +8,7 @@ albedo_color = Color(1, 1, 1, 0.3137255)
 
 [node name="Monster" unique_id=629061867 instance=ExtResource("1_8peyg")]
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(2021558003) index="0" unique_id=883497647]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(205688135) index="0" unique_id=1253121812]
 bones/0/position = Vector3(0.0425681, 0.2989174, 0)
 bones/1/rotation = Quaternion(0.041722063, -0.14544146, 0.23165753, 0.9609583)
 bones/1/scale = Vector3(0.9325017, 0.93250144, 0.9325016)
@@ -57,8 +57,8 @@ bones/40/position = Vector3(0.066490754, 0.97284025, -0.17231596)
 bones/41/position = Vector3(-0.05426466, 0.97284025, -0.17231596)
 bones/42/position = Vector3(-0.1168101, 0.5991388, -0.4057352)
 
-[node name="Body" parent="Armature/Skeleton3D" index="0" unique_id=1140484387]
+[node name="Body" parent="Armature/Skeleton3D" index="0" unique_id=1044937437]
 surface_material_override/0 = SubResource("StandardMaterial3D_8peyg")
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1564001910]
+[node name="AnimationPlayer" parent="." index="1" unique_id=1108636832]
 autoplay = &"Idle1"
