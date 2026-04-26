@@ -2,12 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://co7lu7rvhdawp" path="res://Assets/Models and Textures/Scientist/Scientist.blend" id="1_jteoy"]
 
-[node name="Scientist" unique_id=1354796236 instance=ExtResource("1_jteoy")]
+[node name="Scientist" unique_id=1513447271 instance=ExtResource("1_jteoy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
-[node name="Armature" parent="." index="0" unique_id=1092878744]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 2.895, 0)
+[node name="Armature" parent="." index="0" unique_id=365296131]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 2.4037068, 0)
 
-[node name="Skeleton3D" parent="Armature" index="0" unique_id=489276951]
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=2111662594]
 bones/0/rotation = Quaternion(-0.029146763, 4.370021e-17, -1.3128483e-17, 0.99957514)
 bones/1/rotation = Quaternion(0.070077546, -3.8939995e-19, 2.1597194e-17, 0.99754155)
 bones/2/rotation = Quaternion(0.07411849, -4.2848044e-19, 1.4603111e-17, 0.9972495)
@@ -21,26 +22,29 @@ bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999988, -0.4996897)
 bones/11/rotation = Quaternion(-0.4199623, -0.3793031, 0.10577452, 0.8176629)
 bones/12/rotation = Quaternion(-9.969836e-09, 5.5803837e-09, 0.3303823, 0.94384724)
 bones/13/rotation = Quaternion(-4.7876334e-09, 9.468648e-09, 0.11255492, 0.99364555)
-bones/15/rotation = Quaternion(0.9999643, -6.33536e-09, -1.4027655e-08, -0.008458438)
-bones/16/rotation = Quaternion(0.06010586, -5.889551e-17, 1.093268e-16, 0.998192)
+bones/14/rotation = Quaternion(6.693881e-09, -1.3969839e-09, 3.2596281e-09, 1)
+bones/15/rotation = Quaternion(0.9999643, -6.33536e-09, -1.4027656e-08, -0.008458438)
+bones/16/rotation = Quaternion(0.06010586, -4.4083906e-17, -3.7638383e-16, 0.998192)
 bones/18/rotation = Quaternion(0.9999643, 8.52952e-09, -2.9638436e-08, -0.008458438)
 bones/19/rotation = Quaternion(0.06010586, 1.8434958e-15, 5.8405013e-16, 0.998192)
+bones/20/rotation = Quaternion(-0.5833862, 1.1379135e-15, 8.2298536e-16, 0.8121949)
 bones/23/position = Vector3(3.2440777, 0.64677, -1.7105824)
 bones/24/position = Vector3(2.7857077, 2.0469372, 2.6481519)
+bones/27/position = Vector3(-3.8303065, 4.444784, -1.3309567)
 bones/28/position = Vector3(-3.3517249, 0.5269706, -6.1690366e-07)
 bones/29/position = Vector3(-1.2082355e-17, 5.064019, 0.43531272)
 
-[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=731486839]
+[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=1253468380]
 transform = Transform3D(-0.9986593, -0.020882409, 0.047362685, 0.04480043, 0.10961281, 0.992964, -0.025926998, 0.99375474, -0.10853026, 2.785783, 2.046766, 2.6484203)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(154944271) index="0" unique_id=1816640182]
+[node name="SpotLight3D" type="SpotLight3D" parent="Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(2082922367) index="0" unique_id=1816640182]
 transform = Transform3D(-0.9375435, -1.1152594e-05, 0.34786895, 2.3795663e-05, 0.9999999, 9.591594e-05, -0.3478688, 9.814341e-05, -0.937543, -0.015816689, 0.002682209, -0.73840237)
 layers = 3
 spot_range = 10.308962
 spot_angle = 19.687498
 
-[node name="Hand_R" parent="Armature/Skeleton3D" index="1" unique_id=27563320]
-transform = Transform3D(-0.7948787, -0.0036191598, -0.6067572, -0.13926195, -0.9721996, 0.18823835, -0.5905705, 0.2341249, 0.77227706, -3.3517532, 0.52688175, -1.2516975e-06)
+[node name="Hand_R" parent="Armature/Skeleton3D" index="1" unique_id=1911717153]
+transform = Transform3D(-0.7948787, -0.0036191628, -0.6067572, -0.13926195, -0.9721996, 0.18823837, -0.5905705, 0.23412491, 0.77227706, -3.3517532, 0.52688175, -1.2516975e-06)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=849335475]
+[node name="AnimationPlayer" parent="." index="1" unique_id=533653922]
 autoplay = &"Idle1"

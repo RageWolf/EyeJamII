@@ -46,7 +46,6 @@ func break_system():
 	
 	# trigger visuals
 	VfxManager.emit_zap(position)
-	blink_and_turn_off()
 	mesh.visible = false
 	drainable_off.visible = true
 	
@@ -70,17 +69,12 @@ func blink_and_turn_off():
 	light.light_energy = 0
 
 func fix_system():
-	
-	interact_ui.text = "[ E ] Feed"
-	light.visible = true
-	is_broken = false
-	SignalBus.system_fixed.emit(self)
 	interact_ui.text = "[ E ] Feed"
 	light.visible = true
 	is_broken = false
 	drainable_off.visible = false
 	mesh.visible = true
-	SignalBus.system_fixed.emit(self)
+	SignalBus.system_fixed.emit(self)  
 
 func alert_crew():
 	SignalBus.system_broken.emit(global_position, self)

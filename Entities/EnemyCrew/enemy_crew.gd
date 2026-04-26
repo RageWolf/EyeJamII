@@ -1,8 +1,9 @@
+class_name Enemy
 extends CharacterBody3D
 
-const LIGHT_THRESHOLD = 0.3
+const LIGHT_THRESHOLD = 0.4
 const VISION_ANGLE = 45.0
-const VISION_DISTANCE = 10
+const VISION_DISTANCE = 30
 const DETECTION_RANGE = 15
 
 
@@ -29,7 +30,6 @@ var ray_check: bool = false
 var player_spotted = false
 var detection = false
 var in_detection_area = false
-
 #endregion
 
 enum State {PATROLLING, CHASING, REPAIRING, SEARCHING, IDLE, ALERT, LUNGING}
@@ -56,6 +56,7 @@ var index = 0
 var player_caught = false
 var turn = false
 
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	SignalBus.connect("system_broken", _on_system_broken)
@@ -65,12 +66,14 @@ func _ready() -> void:
 	else:
 		state = State.IDLE
 	debug_vision_cone.visible = false
-	
-	
+
 
 func _physics_process(_delta: float) -> void:
 	if player == null:
 		return
+	
+	if not is_on_floor():
+		velocity.y += -9.8 * _delta
 	
 	can_see_player = check_can_see_player()
 	# print(can_see_player)
@@ -93,6 +96,7 @@ func _physics_process(_delta: float) -> void:
 			else:
 				prev_state = state
 				state = State.CHASING
+
 		State.IDLE:
 			if can_see_player:
 				if detection:
@@ -101,6 +105,7 @@ func _physics_process(_delta: float) -> void:
 				else:
 					prev_state = state
 					state = State.CHASING
+
 		State.SEARCHING:
 			if can_see_player:
 				if detection:
@@ -116,6 +121,7 @@ func _physics_process(_delta: float) -> void:
 				else:
 					prev_state = state
 					state = State.PATROLLING
+
 		State.REPAIRING:
 			if can_see_player:
 				if detection:
@@ -137,7 +143,7 @@ func _physics_process(_delta: float) -> void:
 				state = State.CHASING
 			else:
 				lunge_timer -= _delta
-			
+
 		State.ALERT:
 			detection = false
 			if alert_timer <= 0:
@@ -151,7 +157,6 @@ func _physics_process(_delta: float) -> void:
 				alert_timer -= _delta
 			
 
-	
 	match state:
 		State.PATROLLING:
 			patrol(_delta)
@@ -169,44 +174,53 @@ func _physics_process(_delta: float) -> void:
 			fix_system(_delta)
 
 	move_and_slide()
-	
+
 
 
 
 func _on_system_broken(_target: Vector3, power_system):
+	broken_power_systems.append(power_system)
 	if (_target - global_position).length() <= DETECTION_RANGE:
 		current_target = power_system
 		prev_state = state
 		state = State.REPAIRING
-	else:
-		broken_power_systems.append(power_system)
-	
+
+
 func _on_system_fixed(_power_system):
 	broken_power_systems.erase(_power_system)
 
+
 func chase_player():
 	speed = 3.5
-	# move_to_waypoint(player.global_position)
 	nav_agent.target_position = player.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	next_nav_point.y = 0
-	velocity = (next_nav_point - global_position).normalized() * speed
+	var direction = (next_nav_point - global_position).normalized()
+	velocity.x = direction.x * speed  
+	velocity.z = direction.z * speed
 	look_at_target(player)
 	if (player.global_position - global_position).length() < 2.0:
 		prev_state = state
-
 		state = State.LUNGING
-	
 
-func patrol(delta):
+
+func patrol(_delta):
+	if patrol_points.size() == 0:
+		return
 	speed = 1.0
-	var waypoint =  patrol_points[index]
+	var waypoint = patrol_points[index]
 	if num == 1:
 		print(index)
+	
+
+	nav_agent.target_position = waypoint.global_position
+	
 	move_to_waypoint(waypoint.global_position)
 	if nav_agent.is_navigation_finished():
-		start_search(5.0)
+		at_target_patrol = true
 		index = (index + 1) % patrol_points.size()
+		start_search(5.0)
+		at_target_patrol = false
 
 
 func search(delta):
@@ -216,7 +230,7 @@ func start_search(time):
 	search_timer = time
 	prev_state = state
 	state = State.SEARCHING
-	
+
 
 func fix_system(delta):
 	speed = 1.5
@@ -231,11 +245,12 @@ func fix_system(delta):
 			SignalBus.emit_signal("update_anim")
 			broken_power_systems.erase(current_target)
 			fix_timer = 2.0
+			current_target = null
 			for power_system in broken_power_systems:
 				if (power_system.global_position - global_position).length() <= DETECTION_RANGE:
 					current_target = power_system
+					break 
 			nav_agent.target_position = patrol_points[index].global_position
-			current_target = null
 
 
 
@@ -246,76 +261,94 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		player_in_area = false
-	
+
+
 
 func check_can_see_player() -> bool:
-	var player_in_range = false
-	# check vision cone
-	if (player_in_area):
-		# print("player out of range")
-		player_in_range = true
+	# check angle - if no then no see
 	var to_player = (player.global_position - global_position).normalized()
-	var forward = -global_transform.basis.z
+	var forward = player_vis.global_transform.basis.z
 	var angle = rad_to_deg(forward.angle_to(to_player))
-	# print(angle)
 	if angle < VISION_ANGLE:
 		vision_cone_check = true
-		# print("vision cone check")
 	else:
 		vision_cone_check = false
-	
-	# check lighting
-	var light = player.current_light_level
-	if light > LIGHT_THRESHOLD:
-		lighting_check = true
-		# print("lighting check")
-	else:
-		lighting_check = false
-	
-	# check line of sight
-	ray.target_position = ray.to_local(player.global_position) + Vector3(0,.5,0)
-	ray.force_raycast_update()
-	if ray.is_colliding():
-		# print(ray.get_collider())
-		if ray.get_collider() == player:
-			ray_check = true
-			# print("ray check")
+
+	# check distance 
+	var dist = global_position.distance_to(player.global_position)
+	var in_vision_range = dist <= VISION_DISTANCE
+
+	# check line of sight 
+	if vision_cone_check and in_vision_range:
+		ray.target_position = ray.to_local(player.global_position) + Vector3(0, .5, 0)
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			if ray.get_collider() == player:
+				ray_check = true
+			else:
+				ray_check = false
 		else:
 			ray_check = false
 	else:
 		ray_check = false
-	
+
+	# check lighting
+	var light = player.current_light_level
+	if light > LIGHT_THRESHOLD:
+		lighting_check = true
+	else:
+		lighting_check = false
+
+
 	if player_spotted:
 		if player.is_hidden:
 			player_spotted = false
 			return false
-		elif ray_check or player_in_range:
+		# must be in angle and range to keep tracking
+		elif ray_check and (vision_cone_check or in_vision_range):
 			return true
 		else:
 			player_spotted = false
 			return false
-	elif (vision_cone_check and lighting_check and ray_check and player_in_range) or in_detection_area:
-		# print("true")
-		# print()
+
+	# in vision cone (angle + range) + ray = sees, no light needed
+	elif vision_cone_check and in_vision_range and ray_check:
+		player_spotted = true
+		detection = false
+		return true
+
+	# in light + angle + ray = sees even at distance
+	elif vision_cone_check and lighting_check and ray_check:
 		player_spotted = true
 		detection = true
 		return true
+
+	# detection area 
+	elif in_detection_area:
+		player_spotted = true
+		detection = true
+		return true
+
 	else:
-		# print("false")
-		# print()
 		return false
-		
+
+
 func look_at_target(target):
 	var direction = null
 	if target is Vector3:
 		direction = target - global_position
 	else:
 		direction = target.global_position - global_position
-	direction.y = 0
+	direction.y = 0  
 	if direction.length() < 0.05:
 		return
-	player_vis.look_at(global_position - direction.normalized(), Vector3.UP)
-	
+	var look_pos = global_position - direction.normalized()
+	look_pos.y = global_position.y
+	player_vis.look_at(look_pos, Vector3.UP)
+	player_vis.rotation.x = 0.0 
+	player_vis.rotation.z = 0.0
+
+
 func move_to_waypoint(waypoint):
 	var target_position = null
 	if waypoint is Vector3:
@@ -324,20 +357,24 @@ func move_to_waypoint(waypoint):
 		nav_agent.target_position = waypoint.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	next_nav_point.y = 0
-	velocity = (next_nav_point - global_position).normalized() * speed
+	var my_pos_flat = Vector3(global_position.x, 0, global_position.z)
+	var direction = (next_nav_point - my_pos_flat).normalized()
+	
+	var target_velocity = Vector3(direction.x * speed, 0, direction.z * speed)
+	velocity.x = move_toward(velocity.x, target_velocity.x, speed * 0.25)
+	velocity.z = move_toward(velocity.z, target_velocity.z, speed * 0.25)
+	
 	# do 'direction = global_position - velocity' for moonwalking mode
-	var direction = global_position - velocity
-	direction.y = global_position.y
-	player_vis.look_at(direction, Vector3.UP)
+	if direction.length() > 0.05 and abs(direction.y) < 0.99:
+		var look_pos = global_position - direction
+		look_pos.y = global_position.y
+		player_vis.look_at(look_pos, Vector3.UP)
 
 
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		print("Player caught!")
 		player_caught = true
-	
-
-	
 
 
 func _on_detection_area_body_entered(body: Node3D) -> void:

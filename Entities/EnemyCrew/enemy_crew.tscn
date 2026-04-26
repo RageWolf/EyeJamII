@@ -50,36 +50,49 @@ animation = &"Walk"
 animation = &"WalkStart"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o60q4"]
+xfade_time = 0.1
 advance_condition = &"player_spotted"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bkfbr"]
+xfade_time = 0.1
 advance_mode = 2
 advance_condition = &"stationary"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ac3r"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kjisb"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gdxau"]
+xfade_time = 0.1
 advance_mode = 2
 advance_condition = &"patrolling"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5suk1"]
+xfade_time = 0.1
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_24o63"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4hjyj"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l4qle"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ps5sk"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2vihl"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8n326"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c5e76"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c5e76"]
 states/Alert/node = SubResource("AnimationNodeAnimation_c5e76")
@@ -103,8 +116,6 @@ graph_offset = Vector2(109.95779, -43.004013)
 [node name="EnemyCrew" type="CharacterBody3D" unique_id=1420940884]
 collision_layer = 8
 collision_mask = 13
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 script = ExtResource("1_j7mom")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=403976829]
@@ -113,63 +124,65 @@ shape = SubResource("CapsuleShape3D_6wp80")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1070251394]
 
-[node name="Scientist" parent="." unique_id=1354796236 instance=ExtResource("3_l5xqq")]
-transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
+[node name="Scientist" parent="." unique_id=2141029336 instance=ExtResource("3_l5xqq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2555697, 0)
 
-[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(1354796236, 1092878744) index="0" unique_id=489276951]
-bones/0/position = Vector3(0, -0.16223098, 0)
-bones/0/rotation = Quaternion(-0.05722052, -2.0724605e-17, -3.51471e-17, 0.9983616)
-bones/1/rotation = Quaternion(0.102929406, -6.1003645e-19, 2.68906e-17, 0.9946887)
-bones/2/rotation = Quaternion(0.116753414, -2.8897394e-19, 2.686054e-17, 0.993161)
-bones/4/rotation = Quaternion(0, -1.0339758e-24, -4.135903e-25, 1)
-bones/6/rotation = Quaternion(-0.55190504, -0.1371855, -0.09566215, 0.81696373)
-bones/7/rotation = Quaternion(-2.5373466e-09, 4.9509103e-09, -0.52731794, 0.849668)
-bones/8/rotation = Quaternion(2.7320732e-10, -2.929146e-10, -0.24231704, 0.9701972)
-bones/9/rotation = Quaternion(2.1999826e-08, 0.541228, 1.0902567e-08, 0.84087586)
-bones/11/rotation = Quaternion(-0.3506859, -0.36909735, 0.016914126, 0.86052346)
-bones/12/rotation = Quaternion(-6.2231766e-09, -2.329209e-08, 0.4933523, 0.8698296)
-bones/13/rotation = Quaternion(-5.885099e-09, -1.7039e-08, 0.21815045, 0.9759152)
-bones/14/rotation = Quaternion(5.5879354e-09, -7.450581e-09, 7.4505815e-09, 1)
-bones/14/scale = Vector3(1, 0.99999994, 1)
-bones/15/rotation = Quaternion(0.99273854, 9.5114485e-09, -2.0050935e-08, -0.12029219)
-bones/16/rotation = Quaternion(0.43729472, 1.0837933e-15, -1.0836811e-16, 0.89931834)
-bones/18/rotation = Quaternion(0.9945144, 6.914519e-10, -2.1313193e-08, 0.104600556)
-bones/19/rotation = Quaternion(0.22165726, 6.647409e-16, 4.4220488e-16, 0.97512466)
-bones/20/rotation = Quaternion(-0.5833862, -6.197625e-16, -1.0161145e-16, 0.8121949)
-bones/22/position = Vector3(0.90123284, -3.7033565, -1.6974401)
-bones/24/position = Vector3(2.7857077, 1.7857494, 2.6481519)
-bones/26/position = Vector3(-0.90123284, -4.285305, 0.6201404)
-bones/27/position = Vector3(-3.8303065, 4.444784, -1.3309567)
-bones/28/position = Vector3(-3.3517249, 0.9187522, 0.18283077)
-bones/29/position = Vector3(-1.7881886e-17, 4.911541, 0.513669)
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(2141029336, 365296131) index="0" unique_id=2111662594]
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/1/rotation = Quaternion(0, 0, 0, 1)
+bones/2/rotation = Quaternion(0, 0, 0, 1)
+bones/4/rotation = Quaternion(0, 0, 0, 1)
+bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999994, -0.49968964)
+bones/6/rotation = Quaternion(0.00031390926, 0.00030672774, 0.011601208, 0.9999326)
+bones/7/rotation = Quaternion(-2.815785e-11, 3.4249666e-11, -0.026701896, 0.99964345)
+bones/8/rotation = Quaternion(-9.789493e-13, -5.2596083e-12, 0.015102911, 0.999886)
+bones/9/rotation = Quaternion(5.4210105e-20, 1.3010426e-18, 8.881836e-16, 1)
+bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999994, -0.49968964)
+bones/11/rotation = Quaternion(0.00031390926, -0.00030672774, -0.011601208, 0.9999326)
+bones/12/rotation = Quaternion(-2.815785e-11, -3.4249666e-11, 0.026701896, 0.99964345)
+bones/13/rotation = Quaternion(-9.789493e-13, 5.2596083e-12, -0.015102911, 0.999886)
+bones/14/rotation = Quaternion(5.4210105e-20, -1.3010426e-18, -8.881836e-16, 1)
+bones/15/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
+bones/16/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
+bones/18/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
+bones/19/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
+bones/20/rotation = Quaternion(-0.5833861, 0, 0, 0.81219494)
+bones/23/position = Vector3(3.8303065, 4.4447837, -1.3309567)
+bones/24/position = Vector3(6.3118515, 4.4447837, -9.051077e-08)
+bones/27/position = Vector3(-3.8303065, 4.4447837, -1.3309567)
+bones/28/position = Vector3(-6.3118515, 4.4447837, -9.051077e-08)
+bones/29/position = Vector3(0, 5.1184335, 0)
 
-[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=731486839]
-transform = Transform3D(-0.9988117, -0.015676456, 0.04614061, 0.045511514, 0.038356476, 0.9982271, -0.017418409, 0.999141, -0.0375974, 2.7867074, 1.7834678, 2.6491394)
+[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1253468380]
+transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08, -1.8251797e-07, 1, 0.9999998, 3.72529e-08, 9.42382e-08, 6.3118525, 4.444783, 1.9051036e-07)
 
-[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(1354796236, 154944271) index="0" unique_id=1816640182]
+[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(2141029336, 2082922367) index="0" unique_id=1816640182]
 light_energy = 30.0
 shadow_enabled = true
 spot_angle = 20.339556
 
-[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=27563320]
-transform = Transform3D(-0.7779155, 0.2124634, -0.5913598, -0.42691183, -0.8692544, 0.24928422, -0.46107858, 0.44638062, 0.76690984, -3.3505573, 0.9182571, 0.185227)
+[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=1911717153]
+transform = Transform3D(-6.7055225e-08, -0.99999976, -1.232256e-07, 3.4658765e-08, -1.8251797e-07, 1, -0.9999998, 3.72529e-08, 9.42382e-08, -6.3118525, 4.444783, 1.9051036e-07)
 
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=1708112144]
+[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=534618679]
 transform = Transform3D(-0.8654989, 0.38258263, -0.32333022, 0.034413476, 0.6893745, 0.72358763, 0.49972737, 0.6151376, -0.6098187, 0.028973378, 1.1959596, 0.010000229)
 
 [node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" unique_id=2050404155]
 shape = SubResource("SphereShape3D_c5e76")
 
 [node name="Area3D" type="Area3D" parent="Scientist" unique_id=546376362]
-transform = Transform3D(-2, -3.0361612e-08, 1.7218925e-07, 0, 1.9696155, 0.34729636, -1.7484555e-07, 0.34729636, -1.9696155, 0, 5.4056187, 0)
-collision_layer = 3
-collision_mask = 3
+transform = Transform3D(-2, -3.0361612e-08, 1.7218925e-07, 0, 1.9696155, 0.34729636, -1.7484555e-07, 0.34729636, -1.9696155, 0, 4.8906164, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/Area3D" unique_id=1447121644]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.6775629, -5.003233)
-visible = false
 shape = SubResource("CylinderShape3D_tsq5w")
 debug_color = Color(0.6573322, 0.5201367, 1.92523e-07, 0.95686275)
 
@@ -179,15 +192,16 @@ mesh = SubResource("CylinderMesh_l5xqq")
 surface_material_override/0 = SubResource("StandardMaterial3D_c5e76")
 
 [node name="RayCast3D" type="RayCast3D" parent="Scientist" unique_id=1745231899]
-transform = Transform3D(-2, 0, 1.7484555e-07, 0, 2, 0, -1.7484555e-07, 0, -2, 0, 10.138638, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 9.623635, 0)
 collision_mask = 3
 debug_shape_custom_color = Color(1, 1, 1, 1)
 
-[node name="DetectionArea" type="Area3D" parent="Scientist" unique_id=1944140216]
-collision_layer = 3
-collision_mask = 3
+[node name="DetectionArea" type="Area3D" parent="." unique_id=1944140216]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.0019313097, 0)
+collision_layer = 0
+collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/DetectionArea" unique_id=1739172669]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1739172669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0205307, 0)
 shape = SubResource("CylinderShape3D_l5xqq")
 
@@ -204,13 +218,12 @@ parameters/conditions/player_spotted = false
 parameters/conditions/stationary = false
 
 [node name="PatrolRoute" type="Node3D" parent="." unique_id=650076924]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.059497833, 0.30826092)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.057566524, 0.30826092)
 
 [connection signal="body_entered" from="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" to="." method="_on_capture_area_body_entered"]
 [connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Scientist/Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="body_shape_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_shape_entered"]
-[connection signal="body_entered" from="Scientist/DetectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="Scientist/DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 
 [editable path="Scientist"]

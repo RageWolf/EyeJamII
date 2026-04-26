@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://pexximum6rf2"]
 
-[ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="1_4ptq8"]
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
+[ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="4_6emce"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="6_y646j"]
 [ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="7_lnbra"]
 [ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="8_6emce"]
 [ext_resource type="PackedScene" uid="uid://dca7t7cwdkvgt" path="res://Assets/Models and Textures/Drainables/sat_dish_drainable.tscn" id="8_b7ax5"]
+[ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="9_6emce"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gbhdq"]
 panorama = ExtResource("1_gbhdq")
@@ -26,8 +27,8 @@ glow_enabled = true
 glow_bloom = 0.3
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4ptq8"]
-vertices = PackedVector3Array(-9.6774, -0.75516284, -12.143064, -9.6774, -0.75516284, 16.856937, 19.322601, -0.75516284, 16.856937, 19.322601, -0.75516284, -12.143064)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(-9.4274, -0.75516284, 6.6069365, 4.0726004, -0.75516284, 6.6069365, 4.0726004, -0.75516284, 5.6069365, 4.8226004, -0.75516284, 4.8569365, 6.0726004, -0.75516284, -12.143064, -9.6774, -0.75516284, -12.143064, 6.0726004, -0.75516284, 4.8569365, 8.3226, -0.75516284, 5.6069365, 8.3226, -0.75516284, 6.8569365, 19.322601, -0.75516284, 6.8569365, 7.5726004, -0.75516284, 4.8569365, 19.322601, -0.75516284, -12.143064, 6.0726004, -0.75516284, 16.856937, 6.0726004, -0.75516284, 9.106936, 4.8226004, -0.75516284, 9.106936, 4.0726004, -0.75516284, 8.356936, -9.6774, -0.75516284, 16.856937, 7.5726004, -0.75516284, 9.106936, 8.3226, -0.75516284, 8.356936, 19.322601, -0.75516284, 16.856937)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 5), PackedInt32Array(3, 5, 4), PackedInt32Array(4, 6, 3), PackedInt32Array(9, 8, 7), PackedInt32Array(7, 10, 9), PackedInt32Array(9, 10, 11), PackedInt32Array(11, 10, 4), PackedInt32Array(10, 6, 4), PackedInt32Array(14, 13, 12), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 16), PackedInt32Array(15, 16, 0), PackedInt32Array(0, 1, 15), PackedInt32Array(12, 13, 17), PackedInt32Array(17, 18, 12), PackedInt32Array(12, 18, 19), PackedInt32Array(19, 18, 9), PackedInt32Array(18, 8, 9)]
 cell_height = 0.1
 agent_radius = 1.0
 
@@ -82,13 +83,15 @@ omni_range = 8.091701
 metadata/_edit_lock_ = true
 
 [node name="SatDishDrainable" parent="World/PowerSystems" unique_id=160848368 instance=ExtResource("8_b7ax5")]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 3.2990642, -0.95327324, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=488627294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.9604645e-08, 0)
 navigation_mesh = SubResource("NavigationMesh_4ptq8")
 
 [node name="GridMap" type="GridMap" parent="NavigationRegion3D" unique_id=1800168978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.677399, -2.6551628, -12.143063)
-mesh_library = ExtResource("1_4ptq8")
+mesh_library = ExtResource("4_6emce")
 physics_material = SubResource("PhysicsMaterial_1bvp3")
 cell_size = Vector3(1, 1, 1)
 collision_mask = 0
@@ -102,7 +105,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/RigidBody3D" unique_id=1268098250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2898626, 0.6503296, 7.077299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2898626, 0.044837236, 7.077299)
 shape = SubResource("BoxShape3D_6emce")
 debug_color = Color(0.8292853, 0.388263, 0.17439839, 0.5764706)
 
@@ -114,6 +117,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_58smv")
 [node name="Enemies" type="Node3D" parent="." unique_id=119893751]
 
 [node name="Player" parent="." unique_id=1944527734 instance=ExtResource("2_4ptq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3567038, -0.81428885, 0)
 
 [node name="Hud" parent="." unique_id=798686351 instance=ExtResource("7_lnbra")]
 
@@ -132,3 +136,14 @@ light_energy = 9.0
 spot_range = 10.0
 spot_angle = 30.0
 spot_angle_attenuation = 0.06037113
+
+[node name="EnemyCrew" parent="." unique_id=1420940884 instance=ExtResource("9_6emce")]
+
+[node name="Marker3D" type="Marker3D" parent="EnemyCrew/PatrolRoute" parent_id_path=PackedInt32Array(1420940884, 650076924) index="0" unique_id=15865375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.625389, 0, 11.291429)
+
+[node name="Marker3D2" type="Marker3D" parent="EnemyCrew/PatrolRoute" parent_id_path=PackedInt32Array(1420940884, 650076924) index="1" unique_id=1103070411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1334686, 0, -3.853119)
+
+[editable path="EnemyCrew"]
+[editable path="EnemyCrew/Scientist"]
