@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qyw0pu6jky8d"]
 
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="4_a2ia3"]
@@ -619,16 +619,16 @@ collision_mask = 0
 [node name="TitleScene" parent="." unique_id=1945630454 instance=ExtResource("20_d4dc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.148804, 0, 0)
 
-[node name="Armature" parent="TitleScene" index="0" unique_id=844918369]
+[node name="Armature" parent="TitleScene" index="0" unique_id=1807433356]
 visible = false
 
-[node name="Point" parent="TitleScene" index="5" unique_id=724989420]
+[node name="Point" parent="TitleScene" index="5" unique_id=1029245340]
 transform = Transform3D(3.2617297, 0, 0, 0, 0, 3.2617297, 0, -3.2617297, 0, -21.944138, 3.8075886, 7.522725)
 
 [node name="Monster" parent="." unique_id=349639319 instance=ExtResource("21_7wxy1")]
 transform = Transform3D(2.3777866, 0, -1.8488579, 0, 3.012, 0, 1.8488579, 0, 2.3777866, -56.76795, 1.9631319, 3.7938433)
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1694346084) index="0" unique_id=2119726303]
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1136194443) index="0" unique_id=558435890]
 bones/0/position = Vector3(0, 0.2989174, 0)
 bones/1/rotation = Quaternion(0.034691084, -7.972578e-09, -2.0354246e-08, 0.9993982)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
@@ -815,93 +815,93 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.44265, 0, -22.89159)
 [node name="Marker3D6" type="Marker3D" parent="EnemyCrew/EnemyCrew4/PatrolRoute" parent_id_path=PackedInt32Array(433447195, 650076924) index="5" unique_id=1444369080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4703445, 0, -14.836011)
 
-[node name="EnemyCrew5" parent="." unique_id=898986605 instance=ExtResource("22_7wxy1")]
+[node name="EnemyCrew5" parent="EnemyCrew" unique_id=898986605 instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.31403, 0, -48.735764)
 
-[node name="Marker3D" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="0" unique_id=644979886]
+[node name="Marker3D" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="0" unique_id=644979886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.657219, 0, 3.3423386)
 
-[node name="Marker3D2" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="1" unique_id=2043466142]
+[node name="Marker3D2" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="1" unique_id=2043466142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.664772, 0, 5.104454)
 
-[node name="Marker3D3" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="2" unique_id=1867311913]
+[node name="Marker3D3" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="2" unique_id=1867311913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.664772, 0, 18.953829)
 
-[node name="Marker3D4" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="3" unique_id=1299444664]
+[node name="Marker3D4" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="3" unique_id=1299444664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.041328, 0, 18.953829)
 
-[node name="Marker3D5" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="4" unique_id=1175186149]
+[node name="Marker3D5" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="4" unique_id=1175186149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.58302, 0, 18.953829)
 
-[node name="Marker3D6" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="5" unique_id=942909716]
+[node name="Marker3D6" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="5" unique_id=942909716]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.738701, 0, 18.953829)
 
-[node name="Marker3D7" type="Marker3D" parent="EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="6" unique_id=508058342]
+[node name="Marker3D7" type="Marker3D" parent="EnemyCrew/EnemyCrew5/PatrolRoute" parent_id_path=PackedInt32Array(898986605, 650076924) index="6" unique_id=508058342]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.738701, 0, 5.007393)
 
-[node name="EnemyCrew6" parent="." unique_id=1654864494 instance=ExtResource("22_7wxy1")]
+[node name="EnemyCrew6" parent="EnemyCrew" unique_id=1654864494 instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.11092, 0, 0)
 
-[node name="Marker3D" type="Marker3D" parent="EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="0" unique_id=1743453145]
+[node name="Marker3D" type="Marker3D" parent="EnemyCrew/EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="0" unique_id=1743453145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12285614, 0, -2.3314214)
 
-[node name="Marker3D2" type="Marker3D" parent="EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="1" unique_id=1186000354]
+[node name="Marker3D2" type="Marker3D" parent="EnemyCrew/EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="1" unique_id=1186000354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.767387, 0, 8.9468155)
 
-[node name="Marker3D3" type="Marker3D" parent="EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="2" unique_id=897450627]
+[node name="Marker3D3" type="Marker3D" parent="EnemyCrew/EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="2" unique_id=897450627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.885475, 0, 7.0239944)
 
-[node name="Marker3D4" type="Marker3D" parent="EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="3" unique_id=1075563282]
+[node name="Marker3D4" type="Marker3D" parent="EnemyCrew/EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="3" unique_id=1075563282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7875443, 0, -13.772803)
 
-[node name="Marker3D5" type="Marker3D" parent="EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="4" unique_id=93644233]
+[node name="Marker3D5" type="Marker3D" parent="EnemyCrew/EnemyCrew6/PatrolRoute" parent_id_path=PackedInt32Array(1654864494, 650076924) index="4" unique_id=93644233]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8411407, 0, -13.772803)
 
-[node name="EnemyCrew7" parent="." unique_id=510763074 instance=ExtResource("22_7wxy1")]
+[node name="EnemyCrew7" parent="EnemyCrew" unique_id=510763074 instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.085163, 0, -26.180382)
 
-[node name="Marker3D" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="0" unique_id=218333576]
+[node name="Marker3D" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="0" unique_id=218333576]
 
-[node name="Marker3D2" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="1" unique_id=1032752287]
+[node name="Marker3D2" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="1" unique_id=1032752287]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24.312511)
 
-[node name="Marker3D3" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="2" unique_id=661914120]
+[node name="Marker3D3" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="2" unique_id=661914120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 52.35016)
 
-[node name="Marker3D4" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="3" unique_id=1661609131]
+[node name="Marker3D4" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="3" unique_id=1661609131]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.34766, 0, 53.266216)
 
-[node name="Marker3D5" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="4" unique_id=211340477]
+[node name="Marker3D5" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="4" unique_id=211340477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.371475, 0, 50.28185)
 
-[node name="Marker3D6" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="5" unique_id=1469479832]
+[node name="Marker3D6" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="5" unique_id=1469479832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.480335, 0, 51.639343)
 
-[node name="Marker3D7" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="6" unique_id=1563794259]
+[node name="Marker3D7" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="6" unique_id=1563794259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.844883, 0, 38.10606)
 
-[node name="Marker3D8" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="7" unique_id=91562150]
+[node name="Marker3D8" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="7" unique_id=91562150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.592457, 0, 23.944815)
 
-[node name="Marker3D9" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="8" unique_id=1379395293]
+[node name="Marker3D9" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="8" unique_id=1379395293]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.138065, 0, 4.37167)
 
-[node name="Marker3D10" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="9" unique_id=900580057]
+[node name="Marker3D10" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="9" unique_id=900580057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.464176, 0, 37.491337)
 
-[node name="Marker3D11" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="10" unique_id=1357562794]
+[node name="Marker3D11" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="10" unique_id=1357562794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.309513, 0, 52.67653)
 
-[node name="Marker3D12" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="11" unique_id=300429550]
+[node name="Marker3D12" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="11" unique_id=300429550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.618607, 0, 55.4667)
 
-[node name="Marker3D13" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="12" unique_id=759346484]
+[node name="Marker3D13" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="12" unique_id=759346484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3811264, 0, 51.909187)
 
-[node name="Marker3D14" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="13" unique_id=602264527]
+[node name="Marker3D14" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="13" unique_id=602264527]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2886086, 0, 28.288946)
 
-[node name="Marker3D15" type="Marker3D" parent="EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="14" unique_id=327943355]
+[node name="Marker3D15" type="Marker3D" parent="EnemyCrew/EnemyCrew7/PatrolRoute" parent_id_path=PackedInt32Array(510763074, 650076924) index="14" unique_id=327943355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32922363, 0, 12.253874)
 
 [editable path="World/NavigationRegion3D/Props/Shelves"]
@@ -923,9 +923,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32922363, 0, 12.253874)
 [editable path="EnemyCrew/EnemyCrew3/Scientist"]
 [editable path="EnemyCrew/EnemyCrew4"]
 [editable path="EnemyCrew/EnemyCrew4/Scientist"]
-[editable path="EnemyCrew5"]
-[editable path="EnemyCrew5/Scientist"]
-[editable path="EnemyCrew6"]
-[editable path="EnemyCrew6/Scientist"]
-[editable path="EnemyCrew7"]
-[editable path="EnemyCrew7/Scientist"]
+[editable path="EnemyCrew/EnemyCrew5"]
+[editable path="EnemyCrew/EnemyCrew5/Scientist"]
+[editable path="EnemyCrew/EnemyCrew6"]
+[editable path="EnemyCrew/EnemyCrew6/Scientist"]
+[editable path="EnemyCrew/EnemyCrew7"]
+[editable path="EnemyCrew/EnemyCrew7/Scientist"]

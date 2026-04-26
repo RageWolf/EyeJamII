@@ -170,8 +170,12 @@ func _on_system_fixed(_power_system):
 
 func chase_player():
 	speed = 2.5
-	move_to_waypoint(player.global_position)
-	#look_at_target(player)
+	# move_to_waypoint(player.global_position)
+	nav_agent.target_position = player.global_position
+	var next_nav_point = nav_agent.get_next_path_position()
+	next_nav_point.y = 0
+	velocity = (next_nav_point - global_position).normalized() * speed
+	look_at_target(player)
 	if (player.global_position - global_position).length() < 2.0:
 		prev_state = state
 		state = State.LUNGING
@@ -211,7 +215,7 @@ func fix_system(delta):
 			broken_power_systems.erase(current_target)
 			fix_timer = 2.0
 			for power_system in broken_power_systems:
-				if (power_system - global_position).length() <= DETECTION_RANGE:
+				if (power_system.global_position - global_position).length() <= DETECTION_RANGE:
 					current_target = power_system
 			nav_agent.target_position = patrol_points[index].global_position
 			current_target = null
@@ -293,7 +297,7 @@ func look_at_target(target):
 	direction.y = 0
 	if direction.length() < 0.05:
 		return
-	player_vis.look_at(global_position + direction.normalized(), Vector3.UP)
+	player_vis.look_at(global_position - direction.normalized(), Vector3.UP)
 	
 func move_to_waypoint(waypoint):
 	var target_position = null
@@ -304,7 +308,8 @@ func move_to_waypoint(waypoint):
 	var next_nav_point = nav_agent.get_next_path_position()
 	next_nav_point.y = 0
 	velocity = (next_nav_point - global_position).normalized() * speed
-	var direction = velocity
+	# do 'direction = global_position - velocity' for moonwalking mode
+	var direction = global_position - velocity
 	direction.y = global_position.y
 	player_vis.look_at(direction, Vector3.UP)
 
