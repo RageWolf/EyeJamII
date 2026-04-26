@@ -303,26 +303,26 @@ SPEED = 15.0
 
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.339059, 0)
-bones/1/rotation = Quaternion(-0.035694305, -7.504742e-09, -2.053136e-08, 0.9993628)
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 587869265) index="0" unique_id=1714600709]
+bones/0/position = Vector3(0, 0.31708816, 0)
+bones/1/rotation = Quaternion(0.003551649, -7.745672e-09, -2.0441682e-08, 0.9999937)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8922542, -1.3536955e-16, -1.0918874e-15, 0.4515336)
-bones/2/scale = Vector3(1.0042428, 1.0042428, 1.0042428)
-bones/4/rotation = Quaternion(0.007713693, 0.005910789, 0.4977956, 0.8672399)
-bones/6/rotation = Quaternion(0.0077136667, -0.0059108073, -0.49779576, 0.86723995)
-bones/7/rotation = Quaternion(0.14793077, -0.050038587, -0.56453055, 0.81050473)
-bones/8/rotation = Quaternion(-0.7031982, -1.984742e-05, -0.11351994, 0.701873)
-bones/9/rotation = Quaternion(0.101058096, -0.09073959, -0.6510038, 0.7468251)
-bones/10/rotation = Quaternion(-0.6774706, -2.0701906e-05, -0.10936735, 0.72737354)
-bones/11/rotation = Quaternion(0.16053368, 0.23579018, 0.7526386, -0.5934369)
-bones/12/rotation = Quaternion(-0.60250235, 3.181957e-05, 0.10852987, 0.7907037)
-bones/13/rotation = Quaternion(0.16055025, 0.036901698, 0.54014415, 0.82529163)
-bones/14/rotation = Quaternion(-0.714, 1.9489324e-05, 0.1152637, 0.69059265)
-bones/15/rotation = Quaternion(0.06760014, 0.06620256, 0.66180307, 0.7436829)
-bones/16/rotation = Quaternion(-0.5792539, 2.3029745e-05, 0.09351176, 0.80976564)
-bones/17/rotation = Quaternion(-0.060397156, 0.112216555, 0.83786637, 0.5307916)
-bones/18/rotation = Quaternion(-0.5942839, -3.208919e-05, -0.10704945, 0.79709923)
+bones/2/rotation = Quaternion(0.87437236, -8.078723e-16, -8.254268e-16, 0.48525554)
+bones/2/scale = Vector3(1.0046046, 1.0046046, 1.0046046)
+bones/4/rotation = Quaternion(0.0078043398, 0.005980261, 0.49792063, 0.86716694)
+bones/6/rotation = Quaternion(0.007804333, -0.0059802863, -0.49792063, 0.8671669)
+bones/7/rotation = Quaternion(0.17207657, -0.07121725, -0.55823845, 0.8085095)
+bones/8/rotation = Quaternion(-0.71878326, -1.9354746e-05, -0.1160359, 0.68548256)
+bones/9/rotation = Quaternion(0.123214856, -0.113293804, -0.6463259, 0.7444768)
+bones/10/rotation = Quaternion(-0.69363016, -2.023019e-05, -0.111976095, 0.7115747)
+bones/11/rotation = Quaternion(0.13288513, 0.2550197, 0.76027435, -0.58248556)
+bones/12/rotation = Quaternion(-0.62144816, 3.1207743e-05, 0.111942574, 0.7754167)
+bones/13/rotation = Quaternion(0.18536113, 0.057739325, 0.5332966, 0.8233482)
+bones/14/rotation = Quaternion(-0.72932976, 1.9013416e-05, 0.117738426, 0.6739553)
+bones/15/rotation = Quaternion(0.08945746, 0.087663025, 0.6582478, 0.74230886)
+bones/16/rotation = Quaternion(-0.5980661, 2.2630711e-05, 0.09654869, 0.7956101)
+bones/17/rotation = Quaternion(-0.037672453, 0.13705163, 0.84017813, 0.52335304)
+bones/18/rotation = Quaternion(-0.6165617, -3.1370208e-05, -0.1110624, 0.7794338)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -352,10 +352,10 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1044937437]
+[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1651144444]
 material_overlay = SubResource("ShaderMaterial_5c2io")
 
-[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=2028625622]
+[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=671965695]
 surface_material_override/0 = SubResource("StandardMaterial3D_lub02")
 script = ExtResource("3_x1y6q")
 

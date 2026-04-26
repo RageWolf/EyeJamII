@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnisafhte5caj" path="res://Entities/EnemyCrew/enemy_crew.gd" id="1_j7mom"]
 [ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_l5xqq"]
 [ext_resource type="Script" uid="uid://clwtukj8xvbou" path="res://Entities/EnemyCrew/animation_controller.gd" id="4_c5e76"]
+[ext_resource type="AudioStream" uid="uid://f7iaanqhlbrt" path="res://Audio/COSMIC SFX/BOOT CYCLE.mp3" id="4_kqbof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6wp80"]
 radius = 0.5629883
@@ -117,16 +118,16 @@ states/Alert/position = Vector2(430.80002, 217.50737)
 states/Catch/node = SubResource("AnimationNodeAnimation_o60q4")
 states/Catch/position = Vector2(587.6, 243.9074)
 states/Fix/node = SubResource("AnimationNodeAnimation_bkfbr")
-states/Fix/position = Vector2(631.32, 68.30739)
+states/Fix/position = Vector2(622.52, 70.867386)
 states/Idle1/node = SubResource("AnimationNodeAnimation_kqbof")
 states/Idle1/position = Vector2(342.4, 1.9073906)
 states/Run/node = SubResource("AnimationNodeAnimation_l5xqq")
 states/Run/position = Vector2(787.95776, 42.995987)
 states/Search/node = SubResource("AnimationNodeAnimation_ysqv1")
-states/Search/position = Vector2(619.4, 25.907394)
+states/Search/position = Vector2(648.936, -8.492603)
 states/Start/position = Vector2(195.20001, 50.399998)
 states/Walk/node = SubResource("AnimationNodeAnimation_5rxqc")
-states/Walk/position = Vector2(442.2, 84.30739)
+states/Walk/position = Vector2(451.80002, 69.90739)
 states/WalkStart/node = SubResource("AnimationNodeAnimation_6liv0")
 states/WalkStart/position = Vector2(319.4, 131.10739)
 transitions = ["Walk", "Alert", SubResource("AnimationNodeStateMachineTransition_o60q4"), "Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_bkfbr"), "Alert", "WalkStart", SubResource("AnimationNodeStateMachineTransition_8ac3r"), "Idle1", "Search", SubResource("AnimationNodeStateMachineTransition_kjisb"), "Start", "WalkStart", SubResource("AnimationNodeStateMachineTransition_gdxau"), "WalkStart", "Walk", SubResource("AnimationNodeStateMachineTransition_5suk1"), "Walk", "Search", SubResource("AnimationNodeStateMachineTransition_24o63"), "Walk", "Idle1", SubResource("AnimationNodeStateMachineTransition_4hjyj"), "Search", "Alert", SubResource("AnimationNodeStateMachineTransition_l4qle"), "Search", "Walk", SubResource("AnimationNodeStateMachineTransition_ps5sk"), "Search", "Idle1", SubResource("AnimationNodeStateMachineTransition_2vihl"), "Walk", "Catch", SubResource("AnimationNodeStateMachineTransition_8n326"), "Walk", "Fix", SubResource("AnimationNodeStateMachineTransition_c5e76"), "Alert", "Run", SubResource("AnimationNodeStateMachineTransition_kqbof"), "Run", "Search", SubResource("AnimationNodeStateMachineTransition_ysqv1"), "Run", "Catch", SubResource("AnimationNodeStateMachineTransition_l5xqq"), "Catch", "Walk", SubResource("AnimationNodeStateMachineTransition_5rxqc"), "Catch", "Run", SubResource("AnimationNodeStateMachineTransition_6liv0")]
@@ -146,13 +147,48 @@ shape = SubResource("CapsuleShape3D_6wp80")
 [node name="Scientist" parent="." unique_id=333564019 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2555697, 0)
 
-[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(333564019, 980590002) index="0" unique_id=13729050]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(333564019, 1839757038) index="0" unique_id=839372036]
+bones/0/position = Vector3(0, -0.07332009, 0)
+bones/0/rotation = Quaternion(-0.0698036, -5.428406e-17, -1.5161814e-17, 0.99756074)
+bones/1/rotation = Quaternion(0.11427111, 9.684336e-19, 7.744942e-19, 0.9934496)
+bones/2/rotation = Quaternion(0.1323139, 5.6653094e-19, 2.1336396e-17, 0.99120784)
+bones/4/rotation = Quaternion(0, -3.3087225e-24, 8.271806e-25, 1)
+bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999988, -0.4996897)
+bones/6/rotation = Quaternion(-0.5511662, -0.15643981, -0.11782118, 0.8110862)
+bones/7/rotation = Quaternion(-2.7656297e-08, 1.3450062e-09, -0.5062143, 0.86240774)
+bones/8/rotation = Quaternion(-9.599705e-09, 4.4985363e-10, -0.22741362, 0.97379833)
+bones/9/rotation = Quaternion(2.29127e-08, 0.541228, 8.306719e-09, 0.84087586)
+bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999988, -0.4996897)
+bones/11/rotation = Quaternion(-0.62662536, -0.053037427, -0.1929891, 0.7531819)
+bones/12/rotation = Quaternion(-1.6028162e-08, 1.5051986e-09, 0.49682075, 0.8678532)
+bones/13/rotation = Quaternion(-3.430838e-09, 5.5110166e-10, 0.22078817, 0.9753218)
+bones/14/rotation = Quaternion(3.7252903e-09, 4.458343e-09, 7.72843e-09, 1)
+bones/15/rotation = Quaternion(0.9723744, 7.0622144e-09, -2.178514e-08, -0.23342724)
+bones/16/rotation = Quaternion(0.033126056, 6.114817e-16, 8.83352e-17, 0.9994513)
+bones/17/rotation = Quaternion(-0.65810734, -0.04103133, 0.010130356, 0.751737)
+bones/18/rotation = Quaternion(0.9372155, -1.2403027e-09, -2.1936014e-08, 0.3487509)
+bones/19/rotation = Quaternion(0.53151983, 5.56527e-16, -4.2373998e-16, 0.8470459)
+bones/20/rotation = Quaternion(-0.65239996, 0.0017626768, -0.0014348037, 0.7578715)
+bones/21/position = Vector3(0.90123284, -2.4443657, 3.0562525)
+bones/22/position = Vector3(0.90123284, -4.090856, -1.5589247)
+bones/23/position = Vector3(3.2440777, 0.64677, -1.7105824)
+bones/24/position = Vector3(2.7857077, 1.7850375, 2.6841247)
+bones/25/position = Vector3(-0.90123284, -2.4695573, 2.9806776)
+bones/26/position = Vector3(-0.90123284, -3.342345, 1.6133455)
+bones/27/position = Vector3(-1.7090671, 3.4279335, -3.604245)
+bones/28/position = Vector3(-2.6987715, 0.7912035, 0.07451236)
+bones/29/position = Vector3(-1.7881886e-17, 4.9792666, 0.513669)
 
-[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 2067084535) index="0" unique_id=1816640182]
+[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=666011150]
+transform = Transform3D(-0.99855316, -7.980282e-05, 0.0537706, 0.053769648, -0.0071914885, 0.99852747, 0.00030698953, 0.99997425, 0.0071853297, 2.785785, 1.7849407, 2.6842666)
+
+[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 1464910905) index="0" unique_id=1816640182]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.015816689, 0.002682209, -0.73840237)
 
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" parent_id_path=PackedInt32Array(333564019, 1745767072) index="0" unique_id=450308004]
+[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=1757705069]
+transform = Transform3D(-0.11993165, -0.23517022, -0.96452636, -0.6865254, -0.6821556, 0.2516872, -0.7171467, 0.6923571, -0.0796383, -2.703152, 0.7793904, 0.07032949)
+
+[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=1321426557]
 transform = Transform3D(-0.86549884, 0.38258266, -0.32333022, 0.03441347, 0.6893744, 0.72358763, 0.49972746, 0.6151375, -0.6098186, 0.028973378, 1.1959596, 0.010000229)
 
 [node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]
@@ -208,6 +244,9 @@ parameters/conditions/stationary = false
 
 [node name="PatrolRoute" type="Node3D" parent="." unique_id=650076924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.057566524, 0.30826092)
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=388775149]
+stream = ExtResource("4_kqbof")
 
 [connection signal="body_entered" from="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" to="." method="_on_capture_area_body_entered"]
 [connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]
