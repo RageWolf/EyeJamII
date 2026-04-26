@@ -81,7 +81,8 @@ func _physics_process(_delta: float) -> void:
 	
 	can_see_player = check_can_see_player()
 	# print(can_see_player)
-	# print(state)
+	if num == 1:
+		print(state)
 	match state:
 		State.PATROLLING:
 			if can_see_player:
@@ -210,7 +211,7 @@ func chase_player():
 func patrol(_delta):
 	if patrol_points.size() == 0:
 		return
-	speed = 1.0
+	speed = 1.5
 	var waypoint = patrol_points[index]
 	#if num == 1:
 		#print(index)
