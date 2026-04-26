@@ -44,7 +44,7 @@ var at_target_patrol = false
 var search_timer = 0.0
 var fix_timer = 2.0
 
-var index = 1
+var index = 0
 
 var player_caught = false
 var player_spotted = false
@@ -153,6 +153,8 @@ func _physics_process(_delta: float) -> void:
 		State.REPAIRING:
 			fix_system(_delta)
 	move_and_slide()
+	
+
 
 
 func _on_system_broken(_target: Vector3, power_system):
@@ -301,7 +303,9 @@ func move_to_waypoint(waypoint):
 		nav_agent.target_position = waypoint.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	velocity = (next_nav_point - global_position).normalized() * speed
-	look_at(velocity, Vector3.UP)
+	var direction = velocity
+	direction.y = 0
+	look_at(direction, Vector3.UP)
 
 
 func _on_capture_area_body_entered(body: Node3D) -> void:

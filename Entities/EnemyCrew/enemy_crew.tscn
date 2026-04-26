@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ds4hvsy7cyvbb"]
 
 [ext_resource type="Script" uid="uid://cnisafhte5caj" path="res://Entities/EnemyCrew/enemy_crew.gd" id="1_j7mom"]
-[ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="2_tsq5w"]
 [ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_l5xqq"]
 [ext_resource type="Script" uid="uid://clwtukj8xvbou" path="res://Entities/EnemyCrew/animation_controller.gd" id="4_c5e76"]
 
@@ -99,6 +98,8 @@ graph_offset = Vector2(0, -43.004013)
 [node name="EnemyCrew" type="CharacterBody3D" unique_id=1420940884]
 collision_layer = 8
 collision_mask = 13
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 script = ExtResource("1_j7mom")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=403976829]
@@ -106,15 +107,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9194355, 0)
 shape = SubResource("CapsuleShape3D_6wp80")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1070251394]
-
-[node name="StateLabel" type="Label3D" parent="." unique_id=1880972450]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0779946, 0)
-pixel_size = 0.01
-billboard = 2
-render_priority = 1
-outline_render_priority = 0
-text = "PatrolState"
-font = ExtResource("2_tsq5w")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=546376362]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 2.7028093, 0)
