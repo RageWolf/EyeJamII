@@ -194,7 +194,7 @@ func _on_system_fixed(_power_system):
 
 
 func chase_player():
-	speed = 3.5
+	speed = 6.0
 	nav_agent.target_position = player.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	next_nav_point.y = 0
@@ -202,7 +202,7 @@ func chase_player():
 	velocity.x = direction.x * speed  
 	velocity.z = direction.z * speed
 	look_at_target(player)
-	if (player.global_position - global_position).length() < 2.0:
+	if (player.global_position - global_position).length() < 3.5:
 		prev_state = state
 		state = State.LUNGING
 

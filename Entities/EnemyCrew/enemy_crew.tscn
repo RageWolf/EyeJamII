@@ -9,7 +9,7 @@ radius = 0.5629883
 height = 3.831482
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c5e76"]
-radius = 1.0055892
+radius = 1.2497226
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tsq5w"]
 height = 10.0
@@ -40,6 +40,9 @@ animation = &"Fix"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kqbof"]
 animation = &"Idle1"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l5xqq"]
+animation = &"Walk_001"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ysqv1"]
 animation = &"Idle2"
 
@@ -60,6 +63,7 @@ advance_condition = &"stationary"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ac3r"]
 xfade_time = 0.1
+switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kjisb"]
 xfade_time = 0.1
@@ -71,6 +75,7 @@ advance_condition = &"patrolling"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5suk1"]
 xfade_time = 0.1
+switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_24o63"]
@@ -94,23 +99,37 @@ xfade_time = 0.1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c5e76"]
 xfade_time = 0.1
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqbof"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ysqv1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l5xqq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5rxqc"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6liv0"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c5e76"]
 states/Alert/node = SubResource("AnimationNodeAnimation_c5e76")
 states/Alert/position = Vector2(430.80002, 217.50737)
 states/Catch/node = SubResource("AnimationNodeAnimation_o60q4")
-states/Catch/position = Vector2(575.6, 197.9074)
+states/Catch/position = Vector2(587.6, 243.9074)
 states/Fix/node = SubResource("AnimationNodeAnimation_bkfbr")
-states/Fix/position = Vector2(646.32, 113.17938)
+states/Fix/position = Vector2(631.32, 68.30739)
 states/Idle1/node = SubResource("AnimationNodeAnimation_kqbof")
 states/Idle1/position = Vector2(342.4, 1.9073906)
+states/Run/node = SubResource("AnimationNodeAnimation_l5xqq")
+states/Run/position = Vector2(787.95776, 42.995987)
 states/Search/node = SubResource("AnimationNodeAnimation_ysqv1")
 states/Search/position = Vector2(619.4, 25.907394)
 states/Start/position = Vector2(195.20001, 50.399998)
 states/Walk/node = SubResource("AnimationNodeAnimation_5rxqc")
-states/Walk/position = Vector2(452.2, 112.30739)
+states/Walk/position = Vector2(442.2, 84.30739)
 states/WalkStart/node = SubResource("AnimationNodeAnimation_6liv0")
 states/WalkStart/position = Vector2(319.4, 131.10739)
-transitions = ["Walk", "Alert", SubResource("AnimationNodeStateMachineTransition_o60q4"), "Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_bkfbr"), "Alert", "WalkStart", SubResource("AnimationNodeStateMachineTransition_8ac3r"), "Idle1", "Search", SubResource("AnimationNodeStateMachineTransition_kjisb"), "Start", "WalkStart", SubResource("AnimationNodeStateMachineTransition_gdxau"), "WalkStart", "Walk", SubResource("AnimationNodeStateMachineTransition_5suk1"), "Walk", "Search", SubResource("AnimationNodeStateMachineTransition_24o63"), "Walk", "Idle1", SubResource("AnimationNodeStateMachineTransition_4hjyj"), "Search", "Alert", SubResource("AnimationNodeStateMachineTransition_l4qle"), "Search", "Walk", SubResource("AnimationNodeStateMachineTransition_ps5sk"), "Search", "Idle1", SubResource("AnimationNodeStateMachineTransition_2vihl"), "Walk", "Catch", SubResource("AnimationNodeStateMachineTransition_8n326"), "Walk", "Fix", SubResource("AnimationNodeStateMachineTransition_c5e76")]
+transitions = ["Walk", "Alert", SubResource("AnimationNodeStateMachineTransition_o60q4"), "Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_bkfbr"), "Alert", "WalkStart", SubResource("AnimationNodeStateMachineTransition_8ac3r"), "Idle1", "Search", SubResource("AnimationNodeStateMachineTransition_kjisb"), "Start", "WalkStart", SubResource("AnimationNodeStateMachineTransition_gdxau"), "WalkStart", "Walk", SubResource("AnimationNodeStateMachineTransition_5suk1"), "Walk", "Search", SubResource("AnimationNodeStateMachineTransition_24o63"), "Walk", "Idle1", SubResource("AnimationNodeStateMachineTransition_4hjyj"), "Search", "Alert", SubResource("AnimationNodeStateMachineTransition_l4qle"), "Search", "Walk", SubResource("AnimationNodeStateMachineTransition_ps5sk"), "Search", "Idle1", SubResource("AnimationNodeStateMachineTransition_2vihl"), "Walk", "Catch", SubResource("AnimationNodeStateMachineTransition_8n326"), "Walk", "Fix", SubResource("AnimationNodeStateMachineTransition_c5e76"), "Alert", "Run", SubResource("AnimationNodeStateMachineTransition_kqbof"), "Run", "Search", SubResource("AnimationNodeStateMachineTransition_ysqv1"), "Run", "Catch", SubResource("AnimationNodeStateMachineTransition_l5xqq"), "Catch", "Walk", SubResource("AnimationNodeStateMachineTransition_5rxqc"), "Catch", "Run", SubResource("AnimationNodeStateMachineTransition_6liv0")]
 graph_offset = Vector2(109.95779, -43.004013)
 
 [node name="EnemyCrew" type="CharacterBody3D" unique_id=1420940884]
@@ -124,45 +143,16 @@ shape = SubResource("CapsuleShape3D_6wp80")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1070251394]
 
-[node name="Scientist" parent="." unique_id=2141029336 instance=ExtResource("3_l5xqq")]
+[node name="Scientist" parent="." unique_id=333564019 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2555697, 0)
 
-[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(2141029336, 1060654339) index="0" unique_id=1452090339]
-bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/1/rotation = Quaternion(0, 0, 0, 1)
-bones/2/rotation = Quaternion(0, 0, 0, 1)
-bones/4/rotation = Quaternion(0, 0, 0, 1)
-bones/5/rotation = Quaternion(0.50031036, 0.49999988, 0.49999994, -0.49968964)
-bones/6/rotation = Quaternion(0.00031390926, 0.00030672774, 0.011601208, 0.9999326)
-bones/7/rotation = Quaternion(-2.815785e-11, 3.4249666e-11, -0.026701896, 0.99964345)
-bones/8/rotation = Quaternion(-9.789493e-13, -5.2596083e-12, 0.015102911, 0.999886)
-bones/9/rotation = Quaternion(5.4210105e-20, 1.3010426e-18, 8.881836e-16, 1)
-bones/10/rotation = Quaternion(0.50031036, -0.49999988, -0.49999994, -0.49968964)
-bones/11/rotation = Quaternion(0.00031390926, -0.00030672774, -0.011601208, 0.9999326)
-bones/12/rotation = Quaternion(-2.815785e-11, -3.4249666e-11, 0.026701896, 0.99964345)
-bones/13/rotation = Quaternion(-9.789493e-13, 5.2596083e-12, -0.015102911, 0.999886)
-bones/14/rotation = Quaternion(5.4210105e-20, -1.3010426e-18, -8.881836e-16, 1)
-bones/15/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
-bones/16/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
-bones/18/rotation = Quaternion(0.999944, 0, 0, 0.010584303)
-bones/19/rotation = Quaternion(0.03048054, 0, 0, 0.9995354)
-bones/20/rotation = Quaternion(-0.5833861, 0, 0, 0.81219494)
-bones/23/position = Vector3(3.8303065, 4.4447837, -1.3309567)
-bones/24/position = Vector3(6.3118515, 4.4447837, -9.051077e-08)
-bones/27/position = Vector3(-3.8303065, 4.4447837, -1.3309567)
-bones/28/position = Vector3(-6.3118515, 4.4447837, -9.051077e-08)
-bones/29/position = Vector3(0, 5.1184335, 0)
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(333564019, 980590002) index="0" unique_id=13729050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=1168296809]
-transform = Transform3D(-6.7055225e-08, 0.99999976, 1.232256e-07, -3.4658765e-08, -1.8251797e-07, 1, 0.9999998, 3.72529e-08, 9.42382e-08, 6.3118525, 4.444783, 1.9051036e-07)
-
-[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(2141029336, 259314560) index="0" unique_id=1816640182]
+[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 2067084535) index="0" unique_id=1816640182]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.015816689, 0.002682209, -0.73840237)
 
-[node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=897421293]
-transform = Transform3D(-6.7055225e-08, -0.99999976, -1.232256e-07, 3.4658765e-08, -1.8251797e-07, 1, -0.9999998, 3.72529e-08, 9.42382e-08, -6.3118525, 4.444783, 1.9051036e-07)
-
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" index="0" unique_id=1335644271]
+[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" parent_id_path=PackedInt32Array(333564019, 1745767072) index="0" unique_id=450308004]
 transform = Transform3D(-0.86549884, 0.38258266, -0.32333022, 0.03441347, 0.6893744, 0.72358763, 0.49972746, 0.6151375, -0.6098186, 0.028973378, 1.1959596, 0.010000229)
 
 [node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]
