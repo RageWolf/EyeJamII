@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2nbas6nh3f36"
+path="res://.godot/imported/BOOT 3.mp3-08303c4d6186a464fe1fc35b07d696e2.mp3str"
+
+[deps]
+
+source_file="res://Audio/COSMIC SFX/BOOT 3.mp3"
+dest_files=["res://.godot/imported/BOOT 3.mp3-08303c4d6186a464fe1fc35b07d696e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

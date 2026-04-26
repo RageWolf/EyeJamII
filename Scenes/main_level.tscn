@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qyw0pu6jky8d"]
 
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="4_a2ia3"]

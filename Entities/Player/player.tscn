@@ -7,10 +7,10 @@
 [ext_resource type="Script" uid="uid://dtl8xlm4jhee7" path="res://Entities/Player/interaction_area.gd" id="4_y660y"]
 [ext_resource type="Script" uid="uid://c52oj03kb5t71" path="res://Entities/Player/animation_controller.gd" id="5_5c2io"]
 [ext_resource type="Texture2D" uid="uid://c50et8iavj1p1" path="res://Assets/Ui/Eye_bar.png" id="6_ap3xn"]
-[ext_resource type="AudioStream" uid="uid://bsa58cakafxkk" path="res://Audio/jump/JUMP 2.mp3" id="7_ap3xn"]
-[ext_resource type="AudioStream" uid="uid://dfaolw12qerh5" path="res://Audio/jump/JUMP 3.mp3" id="8_iplt1"]
+[ext_resource type="AudioStream" uid="uid://lalq577s31ys" path="res://Audio/COSMIC SFX/JUMP 2.mp3" id="9_ap3xn"]
 [ext_resource type="Script" uid="uid://bffhknagp4x7j" path="res://Entities/Player/audio_controller.gd" id="10_ap3xn"]
-[ext_resource type="AudioStream" uid="uid://cnyb52h5dhtdj" path="res://Audio/jump/JUMP 5.mp3" id="10_xr8lj"]
+[ext_resource type="AudioStream" uid="uid://dd1xotlwqo8vl" path="res://Audio/COSMIC SFX/JUMP 3.mp3" id="10_iplt1"]
+[ext_resource type="AudioStream" uid="uid://da3fljyeaxf3m" path="res://Audio/COSMIC SFX/JUMP 5.mp3" id="11_owvpp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
 
@@ -286,9 +286,9 @@ rings = 1
 playback_mode = 1
 random_pitch = 1.0594631
 streams_count = 3
-stream_0/stream = ExtResource("7_ap3xn")
-stream_1/stream = ExtResource("8_iplt1")
-stream_2/stream = ExtResource("10_xr8lj")
+stream_0/stream = ExtResource("9_ap3xn")
+stream_1/stream = ExtResource("10_iplt1")
+stream_2/stream = ExtResource("11_owvpp")
 
 [node name="Player" type="CharacterBody3D" unique_id=1944527734 groups=["player"]]
 collision_layer = 2
@@ -300,25 +300,25 @@ SPEED = 15.0
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
 [node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.30215096, 0)
-bones/1/rotation = Quaternion(0.029248202, -7.9310984e-09, -2.037045e-08, 0.9995723)
+bones/0/position = Vector3(0, 0.30829412, 0)
+bones/1/rotation = Quaternion(0.01881546, -7.854101e-09, -2.0400268e-08, 0.99982303)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.86115766, 1.1888452e-16, -1.288662e-15, 0.50833786)
-bones/2/scale = Vector3(1.0047977, 1.0047976, 1.0047977)
-bones/4/rotation = Quaternion(0.007734542, 0.0059267813, 0.4980499, 0.8670936)
-bones/6/rotation = Quaternion(0.0077346307, -0.005926864, -0.4980501, 0.86709356)
-bones/7/rotation = Quaternion(0.1883382, -0.0854938, -0.55372685, 0.8066016)
-bones/8/rotation = Quaternion(-0.72838074, -1.9056257e-05, -0.11758529, 0.6750076)
-bones/9/rotation = Quaternion(0.13798809, -0.12851886, -0.64281964, 0.74244547)
-bones/10/rotation = Quaternion(-0.7035687, -1.994986e-05, -0.113580495, 0.70149165)
-bones/11/rotation = Quaternion(0.11479075, 0.2681447, 0.76448977, -0.57487136)
-bones/12/rotation = Quaternion(-0.6330554, 3.0830968e-05, 0.11403343, 0.7656613)
-bones/13/rotation = Quaternion(0.20209436, 0.071762264, 0.52843785, 0.8214386)
-bones/14/rotation = Quaternion(-0.7388168, 1.8707013e-05, 0.11926997, 0.66326797)
-bones/15/rotation = Quaternion(0.10390785, 0.102049835, 0.6555418, 0.7409817)
-bones/16/rotation = Quaternion(-0.60964, 2.236711e-05, 0.09841713, 0.78654516)
-bones/17/rotation = Quaternion(-0.022674391, 0.15376852, 0.84102273, 0.518191)
-bones/18/rotation = Quaternion(-0.6302806, -3.093435e-05, -0.113533646, 0.76802117)
+bones/2/rotation = Quaternion(0.8666882, -5.2766214e-16, 2.0915924e-15, 0.49885046)
+bones/2/scale = Vector3(1.0046655, 1.0046655, 1.0046656)
+bones/4/rotation = Quaternion(0.0072832354, 0.0055809477, 0.4980034, 0.86712664)
+bones/6/rotation = Quaternion(0.0072833374, -0.0055810506, -0.49800366, 0.86712646)
+bones/7/rotation = Quaternion(0.18166216, -0.07963093, -0.5556057, 0.8074405)
+bones/8/rotation = Quaternion(-0.72449726, -1.9193647e-05, -0.116958335, 0.6792824)
+bones/9/rotation = Quaternion(0.13193126, -0.12225868, -0.6442951, 0.74332416)
+bones/10/rotation = Quaternion(-0.6995741, -2.0071866e-05, -0.11293562, 0.7055789)
+bones/11/rotation = Quaternion(0.12216752, 0.2627393, 0.76284933, -0.5780175)
+bones/12/rotation = Quaternion(-0.62840134, 3.0985568e-05, 0.11319508, 0.7696094)
+bones/13/rotation = Quaternion(0.19521591, 0.066000134, 0.53045887, 0.8222823)
+bones/14/rotation = Quaternion(-0.7350125, 1.8838795e-05, 0.11865581, 0.66759074)
+bones/15/rotation = Quaternion(0.097974606, 0.09612516, 0.65668964, 0.7415657)
+bones/16/rotation = Quaternion(-0.6049612, 2.2470953e-05, 0.0976618, 0.7902432)
+bones/17/rotation = Quaternion(-0.028803656, 0.14690569, 0.8407447, 0.5203244)
+bones/18/rotation = Quaternion(-0.62476295, -3.110106e-05, -0.11253971, 0.7726617)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -385,7 +385,7 @@ parameters/Run/blend_position = Vector2(-0.8827392, 0.004672885)
 script = ExtResource("3_y660y")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot" unique_id=797107794]
-transform = Transform3D(1, 0, 0, 0, 0.98480767, 0.17364816, 0, -0.17364816, 0.98480767, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99619466, 0.08715573, 0, -0.08715573, 0.99619466, 0, 0.5, 0)
 shape = SubResource("SphereShape3D_y660y")
 spring_length = 3.0
 margin = 0.02

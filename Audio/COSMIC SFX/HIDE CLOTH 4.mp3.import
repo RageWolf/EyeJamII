@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwcpnc80ntdpn"
+path="res://.godot/imported/HIDE CLOTH 4.mp3-e1e8172db0afbab005f7b82b61a50f9b.mp3str"
+
+[deps]
+
+source_file="res://Audio/COSMIC SFX/HIDE CLOTH 4.mp3"
+dest_files=["res://.godot/imported/HIDE CLOTH 4.mp3-e1e8172db0afbab005f7b82b61a50f9b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

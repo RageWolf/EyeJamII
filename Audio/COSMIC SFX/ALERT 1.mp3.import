@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3gactoyyj8jt"
+path="res://.godot/imported/ALERT 1.mp3-8918f90c051f457513a27592f2f784da.mp3str"
+
+[deps]
+
+source_file="res://Audio/COSMIC SFX/ALERT 1.mp3"
+dest_files=["res://.godot/imported/ALERT 1.mp3-8918f90c051f457513a27592f2f784da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

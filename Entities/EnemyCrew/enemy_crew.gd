@@ -181,6 +181,7 @@ func chase_player():
 	look_at_target(player)
 	if (player.global_position - global_position).length() < 2.0:
 		prev_state = state
+
 		state = State.LUNGING
 	
 

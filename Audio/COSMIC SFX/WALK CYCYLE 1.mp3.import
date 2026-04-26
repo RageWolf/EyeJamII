@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbay4hvcac2fa"
+path="res://.godot/imported/WALK CYCYLE 1.mp3-0f6ac77589fb847a952b9d240aca2689.mp3str"
+
+[deps]
+
+source_file="res://Audio/COSMIC SFX/WALK CYCYLE 1.mp3"
+dest_files=["res://.godot/imported/WALK CYCYLE 1.mp3-0f6ac77589fb847a952b9d240aca2689.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

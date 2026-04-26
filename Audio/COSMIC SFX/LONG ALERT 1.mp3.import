@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct6icp3qvyat8"
+path="res://.godot/imported/LONG ALERT 1.mp3-5152f63af289e2e5fa471b28ba14dbcb.mp3str"
+
+[deps]
+
+source_file="res://Audio/COSMIC SFX/LONG ALERT 1.mp3"
+dest_files=["res://.godot/imported/LONG ALERT 1.mp3-5152f63af289e2e5fa471b28ba14dbcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

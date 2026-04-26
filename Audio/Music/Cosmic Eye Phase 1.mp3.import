@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b54w5uii3lolc"
+path="res://.godot/imported/Cosmic Eye Phase 1.mp3-3fe84ee17f6182151374f9edf7016544.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Cosmic Eye Phase 1.mp3"
+dest_files=["res://.godot/imported/Cosmic Eye Phase 1.mp3-3fe84ee17f6182151374f9edf7016544.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

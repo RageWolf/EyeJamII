@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cvs3t0c1o4bm"
+path="res://.godot/imported/PAUSE 3.mp3-cfd26c8e7f0e28eb1dad5308a3528ec3.mp3str"
+
+[deps]
+
+source_file="res://Audio/UiAudio/PAUSE 3.mp3"
+dest_files=["res://.godot/imported/PAUSE 3.mp3-cfd26c8e7f0e28eb1dad5308a3528ec3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
