@@ -10,7 +10,7 @@ func play_track() -> void:
 
 func _on_start_pressed() -> void:
 	Audio.ui_select()
-	LoadManager.load_scene("res://Scenes/main_level.tscn")
+	LoadManager.load_scene("res://opening_cutscene.tscn")
 
 func _on_credits_pressed() -> void:
 	Audio.ui_select()

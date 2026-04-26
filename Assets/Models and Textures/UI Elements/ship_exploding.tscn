@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://o1bsna8fhoff"]
+
+[ext_resource type="PackedScene" uid="uid://dfkmxft6ublng" path="res://Assets/Models and Textures/UI Elements/ShipExploding.blend" id="1_4rslb"]
+[ext_resource type="PackedScene" uid="uid://3ag0duuc5jru" path="res://Assets/Models and Textures/UI Elements/ShipExploding.glb" id="2_fcqoo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sffno"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.060977858, 0.060977872, 0.060977865, 1)
+ground_bottom_color = Color(0.05629155, 0.05629161, 0.056291573, 1)
+ground_horizon_color = Color(0.060977858, 0.060977872, 0.060977865, 1)
+
+[sub_resource type="Sky" id="Sky_33oio"]
+sky_material = SubResource("ProceduralSkyMaterial_sffno")
+
+[sub_resource type="Environment" id="Environment_4iph0"]
+background_mode = 2
+sky = SubResource("Sky_33oio")
+tonemap_mode = 2
+
+[node name="ShipExploding" unique_id=1501746417 instance=ExtResource("1_4rslb")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0" unique_id=1729577504]
+environment = SubResource("Environment_4iph0")
+
+[node name="Camera" parent="." index="3" unique_id=955909732]
+current = true
+
+[node name="Face" parent="." index="4" unique_id=474670588]
+transform = Transform3D(0.18901911, -0.09582763, 0.17516774, -0.0072511877, 0.23775639, 0.13789208, -0.19953465, -0.09941767, 0.16092525, -28.668041, -1.6441774, -3.2193499)
+
+[node name="Sphere" parent="." index="5" unique_id=1982970855]
+transform = Transform3D(0.7915451, 0, 0, 0, 0.7915451, 0, 0, 0, 0.7915451, 0, 0, 0)
+
+[node name="ShipExploding" parent="." index="7" unique_id=1629327311 instance=ExtResource("2_fcqoo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31173134, 0, 0.0260849)

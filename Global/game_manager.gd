@@ -7,6 +7,11 @@ var PHASE_1 : bool = false
 var PHASE_2 : bool = false
 var PHASE_3 : bool = false
 
+#TUTORIAL
+var tutorial_drain_done := false
+var tutorial_stealth_done := false
+var dialog_busy := false
+
 # PLAYER ENERGY
 var player_energy: float = 100.0
 var max_energy: float = 100.0
@@ -27,6 +32,10 @@ signal time_changed(value)
 # NARRATIVE
 var tutorial_completed : bool = false
 
+# PLAYER DEATH
+var player_caught: bool = false
+var game_over: bool = false
+
 func _process(delta):
 	if not tutorial_completed:
 		return
@@ -42,15 +51,16 @@ func _process(delta):
 	emit_signal("time_changed", time_left)
 
 	check_game_state()
+	
+	
 
 # ------------------------
 
 func add_energy(amount):
-	if not tutorial_completed:
-		tutorial_completed = true
-		dialog.text = "Conrats, Now run before they catch you lil critter!"
-	else:
-		pass
+	if not tutorial_drain_done:
+		tutorial_drain_done = true
+		show_dialog("Good... now try hiding on that dark area.")
+		check_tutorial_complete()
 	
 	player_energy += amount
 	player_energy = clamp(player_energy, 0, max_energy)
@@ -75,14 +85,57 @@ func check_decay_reward(old_decay):
 # ------------------------
 
 func check_game_state():
-	if player_energy <= 0:
-		print("LOSE: Player died")
+	
+	if game_over:
+		return
+	else:
+		if player_energy <= 0:
+			print("LOSE: Player died")
+			game_over = true
+			LoadManager.load_scene("res://death_screen.tscn")
 
-	if time_left <= 0:
-		print("LOSE: Crew arrived")
+		if time_left <= 0:
+			print("LOSE: Crew arrived")
+			game_over = true
+			LoadManager.load_scene("res://death_screen.tscn")
 
-	if ship_decay <= 0:
-		print("WIN: Ship fully decayed")
+		if ship_decay <= 0:
+			print("WIN: Ship fully decayed")
+			game_over = true
+			
+
+		if player_caught == true:
+			print("LOSE: Player Caught")
+			game_over = true
+			LoadManager.load_scene("res://death_screen.tscn")
+
+#-----------------------------------------------------
+func show_dialog(text: String, duration := 2.5):
+	if dialog_busy:
+		return
+	
+	dialog_busy = true
+	dialog.text = text
+	
+	await get_tree().create_timer(duration).timeout
+	
+	dialog.text = ""
+	dialog_busy = false
+
+#------------------------------------------------------------
+
+func check_tutorial_complete():
+	if tutorial_completed:
+		return
+	
+	if tutorial_drain_done \
+	and tutorial_stealth_done:
+		
+		tutorial_completed = true
+		
+		show_dialog("Tutorial Completed. Now look for all feedable sources of energy and decay the ship before they catch you!")
+		
+
 
 func reset():
 	PHASE_1 = false
@@ -91,3 +144,5 @@ func reset():
 	player_energy = 100.0
 	ship_decay = 100.0
 	time_left = 120.0
+	player_caught = false
+	game_over = false

@@ -332,4 +332,8 @@ func set_hidden(state: bool):
 	is_hidden = state
 	if state:
 		audio_controller.play_hide()
+	
+	if is_hidden:
+		GameManager.tutorial_stealth_done = true
+		GameManager.check_tutorial_complete()
 #endregion
