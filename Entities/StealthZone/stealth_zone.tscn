@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://br3l0b14ujltr"]
 
 [ext_resource type="Script" uid="uid://cfta5cp6r6u88" path="res://Entities/StealthZone/stealth_zone.gd" id="1_mc10i"]
+[ext_resource type="Texture2D" uid="uid://c50et8iavj1p1" path="res://Assets/Ui/Eye_bar.png" id="2_0fdaa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oey48"]
 size = Vector3(5, 5, 5)
@@ -47,3 +48,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7158527, 5.9767613, 0)
 light_energy = 8.0
 omni_range = 8.0
 omni_attenuation = 2.0
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=909948683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8928709, 0)
+modulate = Color(1, 1, 1, 0.6862745)
+pixel_size = 0.001
+billboard = 2
+texture = ExtResource("2_0fdaa")

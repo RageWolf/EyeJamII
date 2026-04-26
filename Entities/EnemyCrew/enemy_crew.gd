@@ -139,8 +139,7 @@ func _physics_process(_delta: float) -> void:
 				state = State.PATROLLING
 		State.LUNGING:
 			if player_caught:
-				pass
-				# death screen
+				GameManager.player_caught = true
 			elif lunge_timer <= 0:
 				lunge_timer = 1.5
 				prev_state = state
@@ -165,7 +164,7 @@ func _physics_process(_delta: float) -> void:
 		State.PATROLLING:
 			patrol(_delta)
 		State.CHASING:
-			print("chasing")
+			# print("chasing")
 			chase_player()
 		State.IDLE:
 			velocity = Vector3.ZERO
@@ -195,7 +194,7 @@ func _on_system_fixed(_power_system):
 
 
 func chase_player():
-	speed = 3.5
+	speed = 6.0
 	nav_agent.target_position = player.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	next_nav_point.y = 0
@@ -203,7 +202,7 @@ func chase_player():
 	velocity.x = direction.x * speed  
 	velocity.z = direction.z * speed
 	look_at_target(player)
-	if (player.global_position - global_position).length() < 2.0:
+	if (player.global_position - global_position).length() < 3.5:
 		prev_state = state
 		state = State.LUNGING
 
@@ -213,8 +212,8 @@ func patrol(_delta):
 		return
 	speed = 1.0
 	var waypoint = patrol_points[index]
-	if num == 1:
-		print(index)
+	#if num == 1:
+		#print(index)
 	
 
 	nav_agent.target_position = waypoint.global_position
@@ -303,13 +302,12 @@ func check_can_see_player() -> bool:
 	else:
 		lighting_check = false
 
-
-	if player_spotted:
-		if player.is_hidden:
+	if player.is_hidden:
 			player_spotted = false
 			return false
+	if player_spotted:
 		# must be in angle and range to keep tracking
-		elif ray_check and (vision_cone_check or in_vision_range):
+		if ray_check and (vision_cone_check or in_vision_range):
 			return true
 		else:
 			player_spotted = false

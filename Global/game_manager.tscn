@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dop3s3kpcfm8t" path="res://Global/game_manager.gd" id="1_es8qg"]
 [ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="2_0ke1m"]
+[ext_resource type="FontFile" uid="uid://c7dajt33s651i" path="res://Assets/Fonts/UnicaOne-Regular.ttf" id="3_avqtn"]
 
 [node name="GameManager" type="CanvasLayer" unique_id=944261036]
 script = ExtResource("1_es8qg")
@@ -16,14 +17,15 @@ theme = ExtResource("2_0ke1m")
 text = "Objectives:"
 
 [node name="Dialog" type="Label" parent="." unique_id=1455011621]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 theme = ExtResource("2_0ke1m")
+theme_override_fonts/font = ExtResource("3_avqtn")
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 2
+clip_text = true
