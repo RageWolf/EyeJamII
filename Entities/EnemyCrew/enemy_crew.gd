@@ -302,13 +302,12 @@ func check_can_see_player() -> bool:
 	else:
 		lighting_check = false
 
-
-	if player_spotted:
-		if player.is_hidden:
+	if player.is_hidden:
 			player_spotted = false
 			return false
+	if player_spotted:
 		# must be in angle and range to keep tracking
-		elif ray_check and (vision_cone_check or in_vision_range):
+		if ray_check and (vision_cone_check or in_vision_range):
 			return true
 		else:
 			player_spotted = false
