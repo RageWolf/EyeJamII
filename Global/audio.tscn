@@ -17,9 +17,11 @@ ui_cancel_audio = ExtResource("4_7nuq5")
 
 [node name="Ambience1" type="AudioStreamPlayer" parent="." unique_id=1541862854]
 unique_name_in_owner = true
+bus = &"Music"
 
 [node name="Ambience2" type="AudioStreamPlayer" parent="." unique_id=383446508]
 unique_name_in_owner = true
+bus = &"Music"
 
 [node name="Ui" type="AudioStreamPlayer" parent="." unique_id=1863537698]
 unique_name_in_owner = true

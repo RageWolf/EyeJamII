@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c6wq1qhg8bd15" path="res://Assets/Fonts/Metal Lord.otf" id="2_7ksrw"]
 [ext_resource type="PackedScene" uid="uid://8f5tq2eojo3m" path="res://Assets/Ui/TitleScene.blend" id="4_jl35j"]
 [ext_resource type="PackedScene" uid="uid://cxjoy0stg6pss" path="res://Assets/Models and Textures/Monster/Monster.blend" id="5_ix1ab"]
+[ext_resource type="AudioStream" uid="uid://bh4xc1tcfemw0" path="res://Audio/Music/Gesafflestein INTENSE.mp3" id="6_367es"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_367es"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -34,6 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7ksrw")
 script = ExtResource("1_bleff")
+track = ExtResource("6_367es")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2119421614]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)

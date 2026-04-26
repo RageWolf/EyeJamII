@@ -28,34 +28,35 @@ func _ready() -> void:
 	_init_pool_3d()
 
 #region AMBIENCE:
-func play_ambience( audio : AudioStream ) -> void:
-	
-	# Determine the current ambience player 
+func fade_in_first_track(audio: AudioStream, volume: float = 0.0) -> void:
+	var player: AudioStreamPlayer = get_ambience_player(current_track)
+	player.stream = audio
+	player.volume_db = volume  # set target volume
+	player.play()
+	fade_track_in(player)  # fade_track_in will set to -80 then fade up to target
+
+
+func play_ambience(audio: AudioStream, volume: float = 0.0) -> void:
 	var current_player: AudioStreamPlayer = get_ambience_player(current_track)
 	if current_player.stream == audio:
 		return
 		
-	# Determine next ambience player
-	var next_track :  int = wrapi(current_track + 1, 0, 2)
-	var next_player : AudioStreamPlayer = get_ambience_player(next_track)
+	var next_track: int = wrapi(current_track + 1, 0, 2)
+	var next_player: AudioStreamPlayer = get_ambience_player(next_track)
 	
-	# Set audio on next ambience player
 	next_player.stream = audio
+	next_player.volume_db = volume  
 	next_player.play()
 	
-	# HANDLE AUDIO FADES
-	# Kill tweens
 	for t in ambience_tweens:
 		t.kill()
 	ambience_tweens.clear()
 	
-	# Create new tweens
-	fade_track_out( current_player )
-	fade_track_in( next_player )
+	fade_track_out(current_player)
+	fade_track_in(next_player)
 	
-	# Store/set current ambience track
 	current_track = next_track
-	pass
+
 
 func get_ambience_player( i : int ) -> AudioStreamPlayer:
 	if i == 0:
@@ -66,19 +67,19 @@ func get_ambience_player( i : int ) -> AudioStreamPlayer:
 
 
 #region GENERAL:
-func fade_track_out(player : AudioStreamPlayer) -> void:
-	var tween : Tween = create_tween()
-	ambience_tweens.append( tween )
-	tween.tween_property( player, "volume_linear", 0.0, 1.5)
+func fade_track_in(player: AudioStreamPlayer) -> void:
+	var target_db = player.volume_db  # already set before this is called
+	player.volume_db = -80.0          # start silent
+	var tween: Tween = create_tween()
+	ambience_tweens.append(tween)
+	tween.tween_property(player, "volume_db", target_db, 1.0)
+
+func fade_track_out(player: AudioStreamPlayer) -> void:
+	var tween: Tween = create_tween()
+	ambience_tweens.append(tween)
+	tween.tween_property(player, "volume_db", -80.0, 1.5)
 	tween.tween_callback(player.stop)
-	pass
 
-
-func fade_track_in(player : AudioStreamPlayer) -> void:
-	var tween : Tween = create_tween()
-	ambience_tweens.append( tween )
-	tween.tween_property( player, "volume_linear", 1.0, 1.0)
-	pass
 
 func set_reverb( type : REVERB_TYPE ) -> void:
 	var reverb_fx : AudioEffectReverb = AudioServer.get_bus_effect(1,0)
@@ -112,10 +113,11 @@ func get_free_player_3d() -> AudioStreamPlayer3D:
 			return ap
 	return pool_3d[0]
 
-func play_sound_3d(audio: AudioStream, pos: Vector3) -> void:
+func play_sound_3d(audio: AudioStream, pos: Vector3, volume: float = 0.0) -> void:
 	var ap := get_free_player_3d()
 	ap.global_position = pos
 	ap.stream = audio
+	ap.volume_db = volume
 	ap.play()
 #endregion
 

@@ -48,7 +48,9 @@ var player_inside_stealth_zone : bool = false
 # Animation and audio
 @onready var anim_controller = $AnimationController
 @onready var audio_controller: Node = $AudioController
-
+var footstep_timer := 0.0
+var footstep_interval := 0.5
+var trill_timer := 0.0
 
 func _ready():
 	if camera:
@@ -68,12 +70,36 @@ func _physics_process(delta):
 	update_feeding(delta)
 	update_stealth(delta)
 
+	handle_trill(delta)
+	handle_footsteps()
 	anim_controller.update(delta, velocity, direction)
 
 	move_and_slide()
 	var cam_y = spring_arm_pivot.rotation.y
 	monster.rotation.y = lerp_angle(monster.rotation.y, cam_y , 10.0 * delta)
 
+
+func handle_footsteps():
+	var is_moving = velocity.length() > 0.1
+	var on_floor = is_on_floor()
+	if is_moving and on_floor and not is_feeding:
+		audio_controller.play_walk()
+	else:
+		audio_controller.stop_walk()
+
+func handle_trill(delta):
+	var is_moving = velocity.length() > 0.1
+	var is_airborne = not is_on_floor()
+	
+	# trill idle on ground
+	if is_moving or is_airborne or is_feeding:
+		trill_timer = randf_range(5.0, 8.0) 
+		return
+	
+	trill_timer -= delta
+	if trill_timer <= 0:
+		audio_controller.play_trill()
+		trill_timer = randf_range(5.0, 10.0) 
 
 
 #region INPUT & MOVEMENT :=========================================================================
@@ -203,6 +229,7 @@ func try_start_feeding(target):
 	
 	current_target.set_feeding_active(true, can_feed)
 	anim_controller.play_feeding()
+	audio_controller.play_drain() 
 
 func update_feeding(delta):
 	if not is_feeding:
@@ -249,10 +276,9 @@ func is_still_attached() -> bool:
 func cancel_feeding():
 	is_feeding = false
 	feed_timer = 0.0
-	
 	cleanup_feed_ui()
+	audio_controller.stop_drain()
 	
-	# TODO: play cancel sound / effect
 	
 	var target = current_target
 	current_target = null
@@ -268,6 +294,7 @@ func cancel_feeding():
 func finish_feeding():
 	is_feeding = false
 	cleanup_feed_ui()
+	audio_controller.stop_drain()
 	
 	if current_target:
 		current_target.break_system()
@@ -303,4 +330,6 @@ func set_hidden(state: bool):
 	if is_hidden == state:
 		return
 	is_hidden = state
+	if state:
+		audio_controller.play_hide()
 #endregion

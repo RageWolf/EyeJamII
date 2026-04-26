@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwul3lfw5ycly"]
 
 [ext_resource type="Script" uid="uid://j2ul76dps6gt" path="res://Assets/Ui/credits.gd" id="1_rg2as"]
+[ext_resource type="AudioStream" uid="uid://cm6x5qmw8w3ut" path="res://Audio/Music/Gesafflestein short.mp3" id="2_eeugp"]
 [ext_resource type="Texture2D" uid="uid://wwq7b5eq73dq" path="res://Assets/Sprites/qwantani_moonrise_puresky_2k.hdr" id="2_meo2p"]
 [ext_resource type="FontFile" uid="uid://wo8tymasvgch" path="res://Assets/Ui/AICON-Bold.otf" id="3_anspf"]
 [ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_meo2p"]
@@ -269,6 +270,7 @@ _data = {
 
 [node name="Credits" type="Node3D" unique_id=412557589]
 script = ExtResource("1_rg2as")
+credit_track = ExtResource("2_eeugp")
 
 [node name="BackLight" type="DirectionalLight3D" parent="." unique_id=457436477]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, -41.369682)
@@ -376,7 +378,7 @@ horizontal_alignment = 0
 libraries/ = SubResource("AnimationLibrary_eeugp")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=369160359]
-transform = Transform3D(-0.28066674, 0, -0.95980513, 0, 1, 0, 0.95980513, 0, -0.28066674, -21.40762, 6.290531, -13.771945)
+transform = Transform3D(-0.2806667, 0, -0.9598051, 0, 1, 0, 0.9598051, 0, -0.2806667, -21.40762, 6.290531, -13.771945)
 cull_mask = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1638980342]

@@ -134,13 +134,22 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 30.0
-offset_top = 110.0
+offset_top = 59.0
 offset_right = -30.0
-offset_bottom = -10.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_constants/separation = 70
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Mute" type="CheckButton" parent="Panel/VBoxContainer" unique_id=546731275]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Mute"
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=1078191254]
 custom_minimum_size = Vector2(100, 50)
@@ -188,6 +197,7 @@ vertical_alignment = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=317769351]
 libraries/ = SubResource("AnimationLibrary_nnywj")
 
+[connection signal="pressed" from="Panel/VBoxContainer/Mute" to="." method="_on_mute_pressed"]
 [connection signal="focus_entered" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_focus_entered"]
 [connection signal="mouse_entered" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

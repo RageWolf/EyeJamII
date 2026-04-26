@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var credit_track: AudioStream
+
 func _ready() -> void:
 	$Boudicca.visible = false
 	$Muntz.visible = false
@@ -8,6 +10,7 @@ func _ready() -> void:
 	$Nikki.visible = false
 	$"Dominic and Rage".visible = false
 	$AnimationPlayer.play("Credits")
+	Audio.fade_in_first_track(credit_track)
 
 
 func _unhandled_input(event):

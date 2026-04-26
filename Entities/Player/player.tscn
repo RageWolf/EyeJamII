@@ -7,7 +7,22 @@
 [ext_resource type="Script" uid="uid://dtl8xlm4jhee7" path="res://Entities/Player/interaction_area.gd" id="4_y660y"]
 [ext_resource type="Script" uid="uid://c52oj03kb5t71" path="res://Entities/Player/animation_controller.gd" id="5_5c2io"]
 [ext_resource type="Texture2D" uid="uid://c50et8iavj1p1" path="res://Assets/Ui/Eye_bar.png" id="6_ap3xn"]
+[ext_resource type="AudioStream" uid="uid://lalq577s31ys" path="res://Audio/COSMIC SFX/JUMP 2.mp3" id="8_avsg8"]
+[ext_resource type="AudioStream" uid="uid://dd1xotlwqo8vl" path="res://Audio/COSMIC SFX/JUMP 3.mp3" id="8_r8fok"]
+[ext_resource type="AudioStream" uid="uid://bbay4hvcac2fa" path="res://Audio/COSMIC SFX/WALK CYCYLE 1.mp3" id="9_nhbkt"]
 [ext_resource type="Script" uid="uid://bffhknagp4x7j" path="res://Entities/Player/audio_controller.gd" id="10_ap3xn"]
+[ext_resource type="AudioStream" uid="uid://da3fljyeaxf3m" path="res://Audio/COSMIC SFX/JUMP 5.mp3" id="10_dv6dp"]
+[ext_resource type="AudioStream" uid="uid://ckl1pxtmvwn73" path="res://Audio/COSMIC SFX/Trill 5.mp3" id="10_vskfa"]
+[ext_resource type="AudioStream" uid="uid://cyxk4xp17qnos" path="res://Audio/COSMIC SFX/ENERGY DRAIN V2.mp3" id="12_0poeq"]
+[ext_resource type="AudioStream" uid="uid://nwtpo5gq2ft7" path="res://Audio/COSMIC SFX/Trill 1.mp3" id="12_dv6dp"]
+[ext_resource type="AudioStream" uid="uid://dkfdfh4n14ee8" path="res://Audio/COSMIC SFX/Trill 2.mp3" id="13_01ng6"]
+[ext_resource type="AudioStream" uid="uid://c2u8il6q5lrvp" path="res://Audio/COSMIC SFX/HIDE CLOTH 2.mp3" id="13_ppdlg"]
+[ext_resource type="AudioStream" uid="uid://cpd18jblnom6t" path="res://Audio/COSMIC SFX/Trill 3.mp3" id="14_ui1ln"]
+[ext_resource type="AudioStream" uid="uid://cwguq8viooiml" path="res://Audio/COSMIC SFX/Trill 4.mp3" id="15_og23y"]
+[ext_resource type="AudioStream" uid="uid://dv8s4rx634bb2" path="res://Audio/COSMIC SFX/Trill 6.mp3" id="17_u86q5"]
+[ext_resource type="AudioStream" uid="uid://c2v44hmiqceap" path="res://Audio/COSMIC SFX/Trill 7.mp3" id="18_80ryp"]
+[ext_resource type="AudioStream" uid="uid://br07aw4fs000x" path="res://Audio/COSMIC SFX/HIDE CLOTH 5.mp3" id="19_v7p16"]
+[ext_resource type="AudioStream" uid="uid://da546or50n7ll" path="res://Audio/COSMIC SFX/Trill 8.mp3" id="19_v27kq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5c2io"]
 
@@ -289,25 +304,25 @@ SPEED = 15.0
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
 [node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.3162531, 0)
-bones/1/rotation = Quaternion(0.005052653, -7.756754e-09, -2.0437495e-08, 0.99998724)
+bones/0/position = Vector3(0, 0.339059, 0)
+bones/1/rotation = Quaternion(-0.035694305, -7.504742e-09, -2.053136e-08, 0.9993628)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8736458, -2.438187e-16, -8.253514e-16, 0.48656246)
-bones/2/scale = Vector3(1.0046167, 1.0046167, 1.0046167)
-bones/4/rotation = Quaternion(0.00782001, 0.005992271, 0.4979259, 0.86716366)
-bones/6/rotation = Quaternion(0.007820003, -0.0059922948, -0.49792585, 0.86716366)
-bones/7/rotation = Quaternion(0.17298566, -0.07201505, -0.55799186, 0.8084151)
-bones/8/rotation = Quaternion(-0.71933466, -1.9356616e-05, -0.116124906, 0.6848888)
-bones/9/rotation = Quaternion(0.12403891, -0.11413931, -0.6461384, 0.74437344)
-bones/10/rotation = Quaternion(-0.6942014, -2.0225076e-05, -0.112068295, 0.71100295)
-bones/11/rotation = Quaternion(0.13186155, 0.25574943, 0.7605301, -0.58206415)
-bones/12/rotation = Quaternion(-0.6221224, 3.1181182e-05, 0.11206401, 0.77485824)
-bones/13/rotation = Quaternion(0.18629083, 0.058518834, 0.5330319, 0.82325476)
-bones/14/rotation = Quaternion(-0.7298859, 1.899479e-05, 0.11782819, 0.67333734)
-bones/15/rotation = Quaternion(0.090264626, 0.08846277, 0.65810436, 0.74224347)
-bones/16/rotation = Quaternion(-0.5987354, 2.2614404e-05, 0.09665674, 0.7950934)
-bones/17/rotation = Quaternion(-0.03682735, 0.13798626, 0.8402406, 0.5230673)
-bones/18/rotation = Quaternion(-0.61733824, -3.134837e-05, -0.11120226, 0.7787988)
+bones/2/rotation = Quaternion(0.8922542, -1.3536955e-16, -1.0918874e-15, 0.4515336)
+bones/2/scale = Vector3(1.0042428, 1.0042428, 1.0042428)
+bones/4/rotation = Quaternion(0.007713693, 0.005910789, 0.4977956, 0.8672399)
+bones/6/rotation = Quaternion(0.0077136667, -0.0059108073, -0.49779576, 0.86723995)
+bones/7/rotation = Quaternion(0.14793077, -0.050038587, -0.56453055, 0.81050473)
+bones/8/rotation = Quaternion(-0.7031982, -1.984742e-05, -0.11351994, 0.701873)
+bones/9/rotation = Quaternion(0.101058096, -0.09073959, -0.6510038, 0.7468251)
+bones/10/rotation = Quaternion(-0.6774706, -2.0701906e-05, -0.10936735, 0.72737354)
+bones/11/rotation = Quaternion(0.16053368, 0.23579018, 0.7526386, -0.5934369)
+bones/12/rotation = Quaternion(-0.60250235, 3.181957e-05, 0.10852987, 0.7907037)
+bones/13/rotation = Quaternion(0.16055025, 0.036901698, 0.54014415, 0.82529163)
+bones/14/rotation = Quaternion(-0.714, 1.9489324e-05, 0.1152637, 0.69059265)
+bones/15/rotation = Quaternion(0.06760014, 0.06620256, 0.66180307, 0.7436829)
+bones/16/rotation = Quaternion(-0.5792539, 2.3029745e-05, 0.09351176, 0.80976564)
+bones/17/rotation = Quaternion(-0.060397156, 0.112216555, 0.83786637, 0.5307916)
+bones/18/rotation = Quaternion(-0.5942839, -3.208919e-05, -0.10704945, 0.79709923)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -468,7 +483,6 @@ fill_mode = 7
 texture_under = ExtResource("6_ap3xn")
 texture_progress = ExtResource("6_ap3xn")
 tint_under = Color(0, 0, 0, 0.19607843)
-tint_progress = Color(0.67058825, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=2054157167]
 visible = false
@@ -484,6 +498,18 @@ grow_vertical = 0
 
 [node name="AudioController" type="Node" parent="." unique_id=1560394815]
 script = ExtResource("10_ap3xn")
+jump_sounds = Array[AudioStream]([ExtResource("8_avsg8"), ExtResource("8_r8fok"), ExtResource("10_dv6dp")])
+trill_sounds = Array[AudioStream]([ExtResource("12_dv6dp"), ExtResource("13_01ng6"), ExtResource("14_ui1ln"), ExtResource("15_og23y"), ExtResource("10_vskfa"), ExtResource("17_u86q5"), ExtResource("18_80ryp"), ExtResource("19_v27kq")])
+drain_sounds = Array[AudioStream]([ExtResource("12_0poeq")])
+hide_sounds = Array[AudioStream]([ExtResource("13_ppdlg"), ExtResource("19_v7p16")])
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="AudioController" unique_id=1908805737]
+stream = ExtResource("9_nhbkt")
+pitch_scale = 0.8
+
+[node name="DrainPlayer" type="AudioStreamPlayer" parent="AudioController" unique_id=677403421]
+stream = ExtResource("12_0poeq")
+volume_db = 5.0
 
 [node name="AnimationController" type="Node" parent="." unique_id=1433920750]
 script = ExtResource("5_5c2io")

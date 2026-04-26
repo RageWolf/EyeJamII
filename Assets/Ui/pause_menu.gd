@@ -3,8 +3,12 @@ extends Control
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS  
 	$AnimationPlayer.play("RESET")
+	hide() 
+
+
 
 func pause():
+	show()
 	get_tree().paused = true
 	$AnimationPlayer.play("pause_blur")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -13,8 +17,9 @@ func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("pause_blur")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	hide()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("esc"):
 		Audio.ui_cancel()
 		if get_tree().paused:
@@ -36,7 +41,9 @@ func _on_quit_pressed() -> void:
 	Audio.ui_select()
 	get_tree().quit()
 
-
+func _on_mute_pressed() -> void:
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), !AudioServer.is_bus_mute(AudioServer.get_bus_index("Music")))
+	pass
 
 
 func _on_resume_focus_entered() -> void:

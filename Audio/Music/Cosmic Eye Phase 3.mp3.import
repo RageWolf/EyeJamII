@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Cosmic Eye Phase 3.mp3-671eeed960cebf7cfe7049
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

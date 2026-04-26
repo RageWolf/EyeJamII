@@ -3,6 +3,11 @@ extends Control
 @onready var start: Button = $VBoxContainer/Start
 var has_focused := false
 
+@export var track : AudioStream
+
+func play_track() -> void:
+	Audio.fade_in_first_track(track, -2.0)
+
 func _on_start_pressed() -> void:
 	Audio.ui_select()
 	LoadManager.load_scene("res://Scenes/main_level.tscn")
