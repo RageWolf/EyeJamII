@@ -51,7 +51,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_12n2q")
 
 [node name="Title" type="Label" parent="." unique_id=555464939]
-modulate = Color(1, 0, 0, 1)
+modulate = Color(0.13019109, 0.5136457, 0.527822, 1)
 layout_mode = 0
 offset_left = 33.0
 offset_top = 28.0

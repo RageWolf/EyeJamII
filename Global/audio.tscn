@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://baqxn432oxoqc"]
+
+[ext_resource type="Script" path="res://Global/audio.gd" id="1_uo5lp"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_dwr6l"]
+polyphony = 16
+
+[node name="Audio" type="Node" unique_id=1467223168]
+process_mode = 3
+script = ExtResource("1_uo5lp")
+
+[node name="Ambience1" type="AudioStreamPlayer" parent="." unique_id=1541862854]
+unique_name_in_owner = true
+
+[node name="Ambience2" type="AudioStreamPlayer" parent="." unique_id=383446508]
+unique_name_in_owner = true
+
+[node name="Ui" type="AudioStreamPlayer" parent="." unique_id=1863537698]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamPolyphonic_dwr6l")

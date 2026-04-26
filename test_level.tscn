@@ -3,12 +3,12 @@
 [ext_resource type="MeshLibrary" uid="uid://s2t1shqpj5yw" path="res://Mesh_library/Base_Mesh/Base_Mesh_Library.meshlib" id="1_4ptq8"]
 [ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
-[ext_resource type="PackedScene" uid="uid://gwul7osjfe" path="res://Entities/PowerSystems/power_system.tscn" id="5_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="6_gbhdq"]
 [ext_resource type="FontFile" uid="uid://bs7hgjslht6h5" path="res://Assets/Fonts/Born2bSportyFS.otf" id="6_y646j"]
 [ext_resource type="PackedScene" uid="uid://beifm2ytfdcmt" path="res://Assets/Ui/HUD.tscn" id="7_lnbra"]
 [ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="8_6emce"]
+[ext_resource type="PackedScene" uid="uid://dca7t7cwdkvgt" path="res://Assets/Models and Textures/Drainables/sat_dish_drainable.tscn" id="8_b7ax5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gbhdq"]
 panorama = ExtResource("1_gbhdq")
@@ -82,20 +82,7 @@ omni_range = 8.091701
 [node name="PowerSystems" type="Node3D" parent="World" unique_id=80075407]
 metadata/_edit_lock_ = true
 
-[node name="PowerSystem" parent="World/PowerSystems" unique_id=1985336906 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5203204, -0.61567914, 11.092918)
-
-[node name="PowerSystem2" parent="World/PowerSystems" unique_id=1025333880 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8419824, -0.53546345, -1.1085663)
-
-[node name="PowerSystem3" parent="World/PowerSystems" unique_id=309561354 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5259075, -0.55455375, -1.0679313)
-
-[node name="PowerSystem4" parent="World/PowerSystems" unique_id=2038983926 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.091208, -0.6527698, -4.377482)
-
-[node name="PowerSystem5" parent="World/PowerSystems" unique_id=157458999 instance=ExtResource("5_gbhdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6293616, -0.6715262, -3.087397)
+[node name="SatDishDrainable" parent="World/PowerSystems" unique_id=160848368 instance=ExtResource("8_b7ax5")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=488627294]
 navigation_mesh = SubResource("NavigationMesh_4ptq8")
@@ -129,6 +116,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_58smv")
 
 [node name="EnemyCrew" parent="Enemies" unique_id=1420940884 instance=ExtResource("6_gbhdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5747943, -0.92420214, 17.603893)
+
+[node name="Area3D" parent="Enemies/EnemyCrew/Scientist" parent_id_path=PackedInt32Array(1420940884, 1354796236) index="2" unique_id=546376362]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 2.7028093, 0)
+
+[node name="RayCast3D" parent="Enemies/EnemyCrew/Scientist" parent_id_path=PackedInt32Array(1420940884, 1354796236) index="3" unique_id=1745231899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.069319, 0)
 
 [node name="Marker3D" type="Marker3D" parent="Enemies/EnemyCrew/PatrolRoute" parent_id_path=PackedInt32Array(1420940884, 650076924) index="0" unique_id=253404438]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.06761, 0.78714097, -5.9403667)

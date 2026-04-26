@@ -6,6 +6,7 @@ var is_broken := false
 var player_in_range := false
 
 
+@onready var drainable_off: MeshInstance3D = $DrainableOff
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var interact_ui: Label3D = $InteractUi
@@ -41,10 +42,11 @@ func break_system():
 	interact_ui.visible = true 
 	interact_ui.text = "[ BROKEN ]"
 	
-	
 	# trigger visuals
 	VfxManager.emit_zap(position)
 	blink_and_turn_off()
+	mesh.visible = false
+	drainable_off.visible = true
 	
 	# screen shake
 	SignalBus.screen_shake.emit(0.1)
@@ -66,6 +68,7 @@ func blink_and_turn_off():
 	light.light_energy = 0
 
 func fix_system():
+	
 	interact_ui.text = "[ E ] Feed"
 	light.visible = true
 	is_broken = false
@@ -73,6 +76,8 @@ func fix_system():
 	interact_ui.text = "[ E ] Feed"
 	light.visible = true
 	is_broken = false
+	drainable_off.visible = false
+	mesh.visible = true
 	SignalBus.system_fixed.emit(self)
 
 func alert_crew():

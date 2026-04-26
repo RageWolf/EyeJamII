@@ -26,9 +26,10 @@ boot_splash/minimum_display_time=1000
 [autoload]
 
 SignalBus="*uid://c5yy67oum68yf"
-GameManager="*uid://dop3s3kpcfm8t"
 VfxManager="*uid://bffq5co48ltws"
 LoadManager="*uid://dfsnfpg2e1445"
+GameManager="*uid://7nyx4evlbnx7"
+Audio="*uid://baqxn432oxoqc"
 
 [display]
 

@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://cmbxpd4mqu31j" path="res://Effects/zap.gd" id="1_lewni"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6c3d"]
-albedo_color = Color(0.89499336, 0.5342921, 1.347661e-06, 1)
+albedo_color = Color(0.8936353, 0.52822405, 0.16528374, 1)
 emission_enabled = true
-emission = Color(0.89411765, 0.53333336, 0, 1)
-emission_energy_multiplier = 1.5
+emission = Color(0.73148143, 0.62696344, 0.14818925, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ix25d"]
 material = SubResource("StandardMaterial3D_c6c3d")
-top_radius = 0.01
+top_radius = 0.005
 bottom_radius = 0.0
 height = 0.1
 radial_segments = 4
@@ -22,14 +22,14 @@ point_count = 3
 metadata/_snap_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lewni"]
-albedo_color = Color(0, 0.64173055, 0.6064939, 1)
+albedo_color = Color(0.7674081, 0.37461245, 0.80073255, 1)
 emission_enabled = true
-emission = Color(0, 0.6400395, 0.61911565, 1)
+emission = Color(9.62615e-07, 0.66396147, 0.37323028, 1)
 emission_energy_multiplier = 1.5
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_c2aei"]
 material = SubResource("StandardMaterial3D_lewni")
-top_radius = 0.01
+top_radius = 0.005
 bottom_radius = 0.0
 height = 0.1
 radial_segments = 4
@@ -39,20 +39,19 @@ rings = 0
 script = ExtResource("1_lewni")
 
 [node name="OrgZap" type="CPUParticles3D" parent="." unique_id=507610274]
-emitting = false
-amount = 20
+amount = 10
 lifetime = 0.3
-one_shot = true
 explosiveness = 1.0
 use_fixed_seed = true
 seed = 1871584333
+fixed_fps = 30
 mesh = SubResource("CylinderMesh_ix25d")
-emission_shape = 3
-emission_box_extents = Vector3(0.2, 0.2, 0.2)
+emission_shape = 1
+emission_sphere_radius = 1.0
 particle_flag_align_y = true
 spread = 180.0
-initial_velocity_min = 2.0
-initial_velocity_max = 4.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
 radial_accel_min = 0.1
 radial_accel_max = 0.1
 scale_amount_min = 1.5
@@ -60,19 +59,19 @@ scale_amount_max = 1.5
 scale_amount_curve = SubResource("Curve_0owcj")
 
 [node name="BluZap" type="CPUParticles3D" parent="." unique_id=1307800306]
-emitting = false
-lifetime = 0.2
-one_shot = true
+amount = 10
+lifetime = 0.3
 explosiveness = 1.0
 use_fixed_seed = true
 seed = 1871584333
+fixed_fps = 30
 mesh = SubResource("CylinderMesh_c2aei")
-emission_shape = 3
-emission_box_extents = Vector3(0.2, 0.2, 0.2)
+emission_shape = 1
+emission_sphere_radius = 1.0
 particle_flag_align_y = true
 spread = 180.0
-initial_velocity_min = 2.0
-initial_velocity_max = 4.0
+initial_velocity_min = 3.0
+initial_velocity_max = 6.0
 radial_accel_min = 0.1
 radial_accel_max = 0.1
 scale_amount_min = 1.5

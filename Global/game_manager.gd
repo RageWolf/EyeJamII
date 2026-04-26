@@ -1,5 +1,7 @@
 # SAVEMANAGER
 extends Node
+@onready var objective: Label = $Objective
+@onready var dialog: Label = $Dialog
 
 var PHASE_1 : bool = false
 var PHASE_2 : bool = false
@@ -17,13 +19,13 @@ var max_decay: float = 100.0
 # TIMER
 var time_left: float = 120.0  # seconds
 
-# NARRATIVE
-var tutorial_completed : bool = false
-
 # SIGNALS
 signal energy_changed(value)
 signal decay_changed(value)
 signal time_changed(value)
+
+# NARRATIVE
+var tutorial_completed : bool = false
 
 func _process(delta):
 	if not tutorial_completed:
@@ -44,6 +46,12 @@ func _process(delta):
 # ------------------------
 
 func add_energy(amount):
+	if not tutorial_completed:
+		tutorial_completed = true
+		dialog.text = "Conrats, Now run before they catch you lil critter!"
+	else:
+		pass
+	
 	player_energy += amount
 	player_energy = clamp(player_energy, 0, max_energy)
 	emit_signal("energy_changed", player_energy)

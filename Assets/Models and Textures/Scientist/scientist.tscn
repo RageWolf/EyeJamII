@@ -4,10 +4,10 @@
 
 [node name="Scientist" unique_id=1354796236 instance=ExtResource("1_jteoy")]
 
-[node name="Armature" parent="." index="0" unique_id=1060654339]
+[node name="Armature" parent="." index="0" unique_id=1092878744]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 2.895, 0)
 
-[node name="Skeleton3D" parent="Armature" index="0" unique_id=1452090339]
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=489276951]
 bones/0/rotation = Quaternion(-0.029146763, 4.370021e-17, -1.3128483e-17, 0.99957514)
 bones/1/rotation = Quaternion(0.070077546, -3.8939995e-19, 2.1597194e-17, 0.99754155)
 bones/2/rotation = Quaternion(0.07411849, -4.2848044e-19, 1.4603111e-17, 0.9972495)
@@ -30,17 +30,17 @@ bones/24/position = Vector3(2.7857077, 2.0469372, 2.6481519)
 bones/28/position = Vector3(-3.3517249, 0.5269706, -6.1690366e-07)
 bones/29/position = Vector3(-1.2082355e-17, 5.064019, 0.43531272)
 
-[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=1168296809]
+[node name="Hand_L" parent="Armature/Skeleton3D" index="0" unique_id=731486839]
 transform = Transform3D(-0.9986593, -0.020882409, 0.047362685, 0.04480043, 0.10961281, 0.992964, -0.025926998, 0.99375474, -0.10853026, 2.785783, 2.046766, 2.6484203)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(259314560) index="0" unique_id=1816640182]
+[node name="SpotLight3D" type="SpotLight3D" parent="Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(154944271) index="0" unique_id=1816640182]
 transform = Transform3D(-0.9375435, -1.1152594e-05, 0.34786895, 2.3795663e-05, 0.9999999, 9.591594e-05, -0.3478688, 9.814341e-05, -0.937543, -0.015816689, 0.002682209, -0.73840237)
 layers = 3
 spot_range = 10.308962
 spot_angle = 19.687498
 
-[node name="Hand_R" parent="Armature/Skeleton3D" index="1" unique_id=897421293]
+[node name="Hand_R" parent="Armature/Skeleton3D" index="1" unique_id=27563320]
 transform = Transform3D(-0.7948787, -0.0036191598, -0.6067572, -0.13926195, -0.9721996, 0.18823835, -0.5905705, 0.2341249, 0.77227706, -3.3517532, 0.52688175, -1.2516975e-06)
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=935308055]
+[node name="AnimationPlayer" parent="." index="1" unique_id=849335475]
 autoplay = &"Idle1"
