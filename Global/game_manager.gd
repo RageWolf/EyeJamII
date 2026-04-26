@@ -102,6 +102,7 @@ func check_game_state():
 		if ship_decay <= 0:
 			print("WIN: Ship fully decayed")
 			game_over = true
+			LoadManager.load_scene("res://ship_explosion.tscn")
 			
 
 		if player_caught == true:
