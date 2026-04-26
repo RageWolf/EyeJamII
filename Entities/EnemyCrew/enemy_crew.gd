@@ -15,6 +15,7 @@ var player = null
 @onready var patrol_points = $PatrolRoute.get_children()
 @onready var player_capture_point = $Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea/CollisionShape3D
 @onready var player_vis = $Scientist
+@onready var debug_vision_cone = $Scientist/Area3D/debug
 
 var speed = 1.5
 
@@ -59,6 +60,7 @@ func _ready() -> void:
 		state = State.PATROLLING
 	else:
 		state = State.IDLE
+	debug_vision_cone.active = false
 	
 	
 
@@ -67,7 +69,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	can_see_player = check_can_see_player()
-	# print(can_see_player)
+	print(can_see_player)
 	# print(state)
 	match state:
 		State.PATROLLING:
@@ -142,6 +144,7 @@ func _physics_process(_delta: float) -> void:
 		State.PATROLLING:
 			patrol(_delta)
 		State.CHASING:
+			print("chasing")
 			chase_player()
 		State.IDLE:
 			velocity = Vector3.ZERO
@@ -169,7 +172,7 @@ func _on_system_fixed(_power_system):
 	broken_power_systems.erase(_power_system)
 
 func chase_player():
-	speed = 2.5
+	speed = 3.5
 	# move_to_waypoint(player.global_position)
 	nav_agent.target_position = player.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
@@ -271,7 +274,7 @@ func check_can_see_player() -> bool:
 		if player.is_hidden:
 			player_spotted = false
 			return false
-		elif ray_check:
+		elif ray_check or player_in_range:
 			return true
 		else:
 			player_spotted = false
