@@ -304,7 +304,7 @@ func move_to_waypoint(waypoint):
 	var next_nav_point = nav_agent.get_next_path_position()
 	velocity = (next_nav_point - global_position).normalized() * speed
 	var direction = velocity
-	direction.y = 0
+	direction.y = global_position.y
 	look_at(direction, Vector3.UP)
 
 
