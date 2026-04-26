@@ -79,6 +79,8 @@ _data = {
 
 [node name="StartMenu3D" type="Node3D" unique_id=193790239]
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1492074787]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=71711907]
 
 [node name="StartMenu" parent="CanvasLayer" unique_id=831940314 instance=ExtResource("1_qdnn0")]
