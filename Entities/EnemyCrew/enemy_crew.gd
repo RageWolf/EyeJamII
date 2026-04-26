@@ -30,7 +30,6 @@ var ray_check: bool = false
 var player_spotted = false
 var detection = false
 var in_detection_area = false
-
 #endregion
 
 enum State {PATROLLING, CHASING, REPAIRING, SEARCHING, IDLE, ALERT, LUNGING}
@@ -56,6 +55,7 @@ var index = 0
 
 var player_caught = false
 var turn = false
+
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -96,6 +96,7 @@ func _physics_process(_delta: float) -> void:
 			else:
 				prev_state = state
 				state = State.CHASING
+
 		State.IDLE:
 			if can_see_player:
 				if detection:
@@ -104,6 +105,7 @@ func _physics_process(_delta: float) -> void:
 				else:
 					prev_state = state
 					state = State.CHASING
+
 		State.SEARCHING:
 			if can_see_player:
 				if detection:
@@ -119,6 +121,7 @@ func _physics_process(_delta: float) -> void:
 				else:
 					prev_state = state
 					state = State.PATROLLING
+
 		State.REPAIRING:
 			if can_see_player:
 				if detection:
@@ -140,7 +143,7 @@ func _physics_process(_delta: float) -> void:
 				state = State.CHASING
 			else:
 				lunge_timer -= _delta
-			
+
 		State.ALERT:
 			detection = false
 			if alert_timer <= 0:
@@ -154,7 +157,6 @@ func _physics_process(_delta: float) -> void:
 				alert_timer -= _delta
 			
 
-	
 	match state:
 		State.PATROLLING:
 			patrol(_delta)
@@ -182,9 +184,11 @@ func _on_system_broken(_target: Vector3, power_system):
 		current_target = power_system
 		prev_state = state
 		state = State.REPAIRING
-	
+
+
 func _on_system_fixed(_power_system):
 	broken_power_systems.erase(_power_system)
+
 
 func chase_player():
 	speed = 3.5
@@ -226,7 +230,7 @@ func start_search(time):
 	search_timer = time
 	prev_state = state
 	state = State.SEARCHING
-	
+
 
 func fix_system(delta):
 	speed = 1.5
@@ -367,14 +371,10 @@ func move_to_waypoint(waypoint):
 		player_vis.look_at(look_pos, Vector3.UP)
 
 
-
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		print("Player caught!")
 		player_caught = true
-	
-
-	
 
 
 func _on_detection_area_body_entered(body: Node3D) -> void:
