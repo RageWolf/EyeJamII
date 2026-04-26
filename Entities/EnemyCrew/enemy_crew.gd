@@ -139,8 +139,7 @@ func _physics_process(_delta: float) -> void:
 				state = State.PATROLLING
 		State.LUNGING:
 			if player_caught:
-				pass
-				# death screen
+				GameManager.player_caught = true
 			elif lunge_timer <= 0:
 				lunge_timer = 1.5
 				prev_state = state
@@ -165,7 +164,7 @@ func _physics_process(_delta: float) -> void:
 		State.PATROLLING:
 			patrol(_delta)
 		State.CHASING:
-			print("chasing")
+			# print("chasing")
 			chase_player()
 		State.IDLE:
 			velocity = Vector3.ZERO
@@ -213,8 +212,8 @@ func patrol(_delta):
 		return
 	speed = 1.0
 	var waypoint = patrol_points[index]
-	if num == 1:
-		print(index)
+	#if num == 1:
+		#print(index)
 	
 
 	nav_agent.target_position = waypoint.global_position
