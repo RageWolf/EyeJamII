@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qyw0pu6jky8d"]
 
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="4_a2ia3"]
@@ -215,6 +215,7 @@ omni_range = 60.0
 omni_attenuation = 1.7
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="World" unique_id=800796902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030164719, 0.0006713867, 0.0012836456)
 navigation_mesh = SubResource("NavigationMesh_ikcpc")
 
 [node name="GridMap" type="GridMap" parent="World/NavigationRegion3D" unique_id=2045210557]
@@ -619,16 +620,16 @@ collision_mask = 0
 [node name="TitleScene" parent="." unique_id=1945630454 instance=ExtResource("20_d4dc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.148804, 0, 0)
 
-[node name="Armature" parent="TitleScene" index="0" unique_id=1807433356]
+[node name="Armature" parent="TitleScene" index="0" unique_id=844918369]
 visible = false
 
-[node name="Point" parent="TitleScene" index="5" unique_id=1029245340]
+[node name="Point" parent="TitleScene" index="5" unique_id=724989420]
 transform = Transform3D(3.2617297, 0, 0, 0, 0, 3.2617297, 0, -3.2617297, 0, -21.944138, 3.8075886, 7.522725)
 
 [node name="Monster" parent="." unique_id=349639319 instance=ExtResource("21_7wxy1")]
 transform = Transform3D(2.3777866, 0, -1.8488579, 0, 3.012, 0, 1.8488579, 0, 2.3777866, -56.76795, 1.9631319, 3.7938433)
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1136194443) index="0" unique_id=558435890]
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1694346084) index="0" unique_id=2119726303]
 bones/0/position = Vector3(0, 0.2989174, 0)
 bones/1/rotation = Quaternion(0.034691084, -7.972578e-09, -2.0354246e-08, 0.9993982)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
