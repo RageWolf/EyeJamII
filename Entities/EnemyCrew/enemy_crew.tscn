@@ -8,6 +8,9 @@
 radius = 0.5629883
 height = 3.831482
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_c5e76"]
+radius = 1.0055892
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tsq5w"]
 height = 10.0
 radius = 5.0
@@ -20,9 +23,6 @@ height = 10.219
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5e76"]
 transparency = 1
 albedo_color = Color(1, 1, 0.6627451, 0.6039216)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_c5e76"]
-radius = 1.0055892
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c5e76"]
 animation = &"Alert"
@@ -108,27 +108,6 @@ shape = SubResource("CapsuleShape3D_6wp80")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1070251394]
 
-[node name="Area3D" type="Area3D" parent="." unique_id=546376362]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 2.7028093, 0)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1447121644]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.6775629, -5.003233)
-visible = false
-shape = SubResource("CylinderShape3D_tsq5w")
-debug_color = Color(0.6573322, 0.5201367, 1.92523e-07, 0.95686275)
-
-[node name="debug" type="MeshInstance3D" parent="Area3D" unique_id=504735111]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.01437521, 0.6879339, -4.8897862)
-mesh = SubResource("CylinderMesh_l5xqq")
-surface_material_override/0 = SubResource("StandardMaterial3D_c5e76")
-
-[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1745231899]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.069319, 0)
-collision_mask = 2
-debug_shape_custom_color = Color(1, 1, 1, 1)
-
 [node name="Scientist" parent="." unique_id=1354796236 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0, 0)
 
@@ -169,6 +148,27 @@ transform = Transform3D(-0.8654989, 0.38258263, -0.32333022, 0.034413476, 0.6893
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" unique_id=2050404155]
 shape = SubResource("SphereShape3D_c5e76")
 
+[node name="Area3D" type="Area3D" parent="Scientist" unique_id=546376362]
+transform = Transform3D(-2, -3.0361612e-08, 1.7218925e-07, 0, 1.9696155, 0.34729636, -1.7484555e-07, 0.34729636, -1.9696155, 0, 5.4056187, 0)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scientist/Area3D" unique_id=1447121644]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.6775629, -5.003233)
+visible = false
+shape = SubResource("CylinderShape3D_tsq5w")
+debug_color = Color(0.6573322, 0.5201367, 1.92523e-07, 0.95686275)
+
+[node name="debug" type="MeshInstance3D" parent="Scientist/Area3D" unique_id=504735111]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.01437521, 0.6879339, -4.8897862)
+mesh = SubResource("CylinderMesh_l5xqq")
+surface_material_override/0 = SubResource("StandardMaterial3D_c5e76")
+
+[node name="RayCast3D" type="RayCast3D" parent="Scientist" unique_id=1745231899]
+transform = Transform3D(-2, 0, 1.7484555e-07, 0, 2, 0, -1.7484555e-07, 0, -2, 0, 10.138638, 0)
+collision_mask = 2
+debug_shape_custom_color = Color(1, 1, 1, 1)
+
 [node name="AnimationController" type="Node" parent="." unique_id=2034868810]
 script = ExtResource("4_c5e76")
 
@@ -184,9 +184,9 @@ parameters/conditions/stationary = false
 [node name="PatrolRoute" type="Node3D" parent="." unique_id=650076924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.059497833, 0.30826092)
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
-[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
 [connection signal="body_entered" from="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" to="." method="_on_capture_area_body_entered"]
+[connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Scientist/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_shape_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_shape_entered"]
 
 [editable path="Scientist"]

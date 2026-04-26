@@ -9,12 +9,12 @@ const DETECTION_RANGE = 15
 var player = null
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var vision_area: Area3D = $Area3D
-@onready var ray: RayCast3D = $RayCast3D
+@onready var vision_area: Area3D = $Scientist/Area3D
+@onready var ray: RayCast3D = $Scientist/RayCast3D
 @onready var anim_controller = $AnimationController
 @onready var patrol_points = $PatrolRoute.get_children()
 @onready var player_capture_point = $Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea/CollisionShape3D
-
+@onready var player_vis = $Scientist
 
 var speed = 1.5
 
@@ -292,7 +292,7 @@ func look_at_target(target):
 	direction.y = 0
 	if direction.length() < 0.05:
 		return
-	look_at(global_position + direction.normalized(), Vector3.UP)
+	player_vis.look_at(global_position + direction.normalized(), Vector3.UP)
 	
 func move_to_waypoint(waypoint):
 	var target_position = null
@@ -301,10 +301,11 @@ func move_to_waypoint(waypoint):
 	else:
 		nav_agent.target_position = waypoint.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
+	next_nav_point.y = 0
 	velocity = (next_nav_point - global_position).normalized() * speed
 	var direction = velocity
 	direction.y = global_position.y
-	look_at(direction, Vector3.UP)
+	player_vis.look_at(direction, Vector3.UP)
 
 
 func _on_capture_area_body_entered(body: Node3D) -> void:
