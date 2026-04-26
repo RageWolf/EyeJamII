@@ -5,7 +5,7 @@ var has_focused := false
 
 func _on_start_pressed() -> void:
 	Audio.ui_select()
-	LoadManager.load_scene("res://Scenes/opening_cutscene.tscn")
+	LoadManager.load_scene("res://opening_cutscene.tscn")
 
 func _on_credits_pressed() -> void:
 	Audio.ui_select()
