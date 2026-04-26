@@ -282,6 +282,16 @@ func check_can_see_player() -> bool:
 		# print()
 		return false
 		
+func look_at_target(target):
+	var direction = null
+	if target is Vector3:
+		direction = target - global_position
+	else:
+		direction = target.global_position - global_position
+	direction.y = 0
+	if direction.length() < 0.05:
+		return
+	look_at(global_position + direction.normalized(), Vector3.UP)
 	
 func move_to_waypoint(waypoint):
 	var target_position = null
@@ -291,7 +301,7 @@ func move_to_waypoint(waypoint):
 		nav_agent.target_position = waypoint.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
 	velocity = (next_nav_point - global_position).normalized() * speed
-	look_at(next_nav_point, Vector3.UP)
+	look_at(velocity, Vector3.UP)
 
 
 func _on_capture_area_body_entered(body: Node3D) -> void:
