@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://3konwrv7phdd"]
+
+[ext_resource type="Script" uid="uid://dk73c8k6o3tvx" path="res://ship_explosion.gd" id="1_cthis"]
+[ext_resource type="VideoStream" uid="uid://cg37ek2pgu1fd" path="res://Assets/Models and Textures/UI Elements/Ship Exploding Background.ogv" id="2_cthis"]
+
+[node name="Control" type="Control" unique_id=2117335581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cthis")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1973859191]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+stream = ExtResource("2_cthis")
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

@@ -31,7 +31,7 @@ func update_anim():
 			if enemy.at_target_patrol:
 				state_machine.travel("Search")
 			else:
-				state_machine.travel("WalkStart")
+				state_machine.travel("Walk")
 		enemy.State.CHASING:
 			state_machine.travel("Run")
 		enemy.State.IDLE:
@@ -40,7 +40,7 @@ func update_anim():
 			state_machine.travel("Search")
 		enemy.State.REPAIRING:
 			if !enemy.at_target_fix:
-				state_machine.travel("WalkStart")
+				state_machine.travel("Walk")
 			else:
 				state_machine.travel("Fix")
 		enemy.State.ALERT:
