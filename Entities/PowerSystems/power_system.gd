@@ -7,7 +7,7 @@ var player_in_range := false
 
 
 @onready var drainable_off: MeshInstance3D = $DrainableOff
-@onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var mesh = get_node_or_null("MeshInstance3D")
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var interact_ui: Label3D = $InteractUi
 @onready var progress_bar: TextureProgressBar = %ProgressBar
@@ -19,10 +19,12 @@ func _ready():
 
 func set_player_in_range(value: bool):
 	player_in_range = value
-	interact_ui.visible = value
-	#shader
-	mesh.material_overlay.set_shader_parameter("outline_width", 5.0 if value else 0.0)
-	# print(value)
+	
+	if interact_ui:
+		interact_ui.visible = value
+	
+	if mesh and mesh.material_overlay:
+		mesh.material_overlay.set_shader_parameter("outline_width", 5.0 if value else 0.0)
 
 func set_feeding_active(value: bool, can_feed: bool):
 	if is_broken:

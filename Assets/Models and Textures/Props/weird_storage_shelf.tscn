@@ -11,9 +11,11 @@ size = Vector3(9.342529, 16.350586, 2.9423828)
 transform = Transform3D(0.409, 0, 0, 0, 0.409, 0, 0, 0, 0.409, 0, 0, 0)
 
 [node name="Weird Empty Storage Shelf" type="MeshInstance3D" parent="." unique_id=508308858]
+visible = false
 mesh = ExtResource("1_x50an")
 
 [node name="Science Storage Shelf" type="MeshInstance3D" parent="." unique_id=1465834116]
+visible = false
 mesh = ExtResource("2_ywhrk")
 
 [node name="Computer Storage Shelf" type="MeshInstance3D" parent="." unique_id=2059240343]
@@ -24,3 +26,8 @@ mesh = ExtResource("3_e3wp0")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Shelf Collision" unique_id=848523997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004272461, 8.14209, -0.0014648438)
 shape = SubResource("BoxShape3D_opwuw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=745918092]
+transform = Transform3D(2.4449878, 0, 0, 0, 2.1120243, 1.231795, 0, -1.231795, 2.1120243, 0, 18.057014, 14.6899395)
+light_energy = 7.0
+spot_range = 14.785386

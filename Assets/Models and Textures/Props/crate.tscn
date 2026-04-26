@@ -17,9 +17,11 @@ visible = false
 mesh = ExtResource("1_3flaf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Crate1" unique_id=2040265983]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crate1/StaticBody3D" unique_id=1882026017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036463518, 3.0641544, 0.0011454765)
+visible = false
 shape = SubResource("BoxShape3D_62mfg")
 
 [node name="Crate2" type="MeshInstance3D" parent="." unique_id=1603963891]

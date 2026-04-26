@@ -124,6 +124,12 @@ func apply_movement(direction: Vector3, delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 		velocity.z = move_toward(velocity.z, 0, FRICTION * delta)
+		
+		#hard stop
+	if abs(velocity.x) < 0.05:
+		velocity.x = 0
+	if abs(velocity.z) < 0.05:
+		velocity.z = 0
 
 
 func apply_gravity(delta):

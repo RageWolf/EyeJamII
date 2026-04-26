@@ -18,7 +18,7 @@
 albedo_color = Color(0.007843138, 1, 1, 1)
 emission_enabled = true
 emission = Color(0, 1, 0.88235295, 1)
-emission_energy_multiplier = 5.0
+emission_energy_multiplier = 8.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lu8i8"]
 radius = 0.4189453
@@ -299,26 +299,26 @@ SPEED = 15.0
 
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 205688135) index="0" unique_id=1253121812]
-bones/0/position = Vector3(0, 0.30829412, 0)
-bones/1/rotation = Quaternion(0.01881546, -7.854101e-09, -2.0400268e-08, 0.99982303)
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 1814193042) index="0" unique_id=278030581]
+bones/0/position = Vector3(0, 0.34128514, 0)
+bones/1/rotation = Quaternion(-0.04038783, -7.4792e-09, -2.0540666e-08, 0.99918413)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8666882, -5.2766214e-16, 2.0915924e-15, 0.49885046)
-bones/2/scale = Vector3(1.0046655, 1.0046655, 1.0046656)
-bones/4/rotation = Quaternion(0.0072832354, 0.0055809477, 0.4980034, 0.86712664)
-bones/6/rotation = Quaternion(0.0072833374, -0.0055810506, -0.49800366, 0.86712646)
-bones/7/rotation = Quaternion(0.18166216, -0.07963093, -0.5556057, 0.8074405)
-bones/8/rotation = Quaternion(-0.72449726, -1.9193647e-05, -0.116958335, 0.6792824)
-bones/9/rotation = Quaternion(0.13193126, -0.12225868, -0.6442951, 0.74332416)
-bones/10/rotation = Quaternion(-0.6995741, -2.0071866e-05, -0.11293562, 0.7055789)
-bones/11/rotation = Quaternion(0.12216752, 0.2627393, 0.76284933, -0.5780175)
-bones/12/rotation = Quaternion(-0.62840134, 3.0985568e-05, 0.11319508, 0.7696094)
-bones/13/rotation = Quaternion(0.19521591, 0.066000134, 0.53045887, 0.8222823)
-bones/14/rotation = Quaternion(-0.7350125, 1.8838795e-05, 0.11865581, 0.66759074)
-bones/15/rotation = Quaternion(0.097974606, 0.09612516, 0.65668964, 0.7415657)
-bones/16/rotation = Quaternion(-0.6049612, 2.2470953e-05, 0.0976618, 0.7902432)
-bones/17/rotation = Quaternion(-0.028803656, 0.14690569, 0.8407447, 0.5203244)
-bones/18/rotation = Quaternion(-0.62476295, -3.110106e-05, -0.11253971, 0.7726617)
+bones/2/rotation = Quaternion(0.89421535, 3.387173e-16, 1.8493463e-15, 0.44763705)
+bones/2/scale = Vector3(1.0041625, 1.0041625, 1.0041625)
+bones/4/rotation = Quaternion(0.007921143, 0.00606976, 0.49778658, 0.8672421)
+bones/6/rotation = Quaternion(0.0079211015, -0.006069764, -0.49778667, 0.86724216)
+bones/7/rotation = Quaternion(0.1454721, -0.047882542, -0.5651445, 0.8106522)
+bones/8/rotation = Quaternion(-0.7019927, -1.9892124e-05, -0.113325335, 0.7031101)
+bones/9/rotation = Quaternion(0.09874058, -0.08840457, -0.651458, 0.747019)
+bones/10/rotation = Quaternion(-0.67614985, -2.0721463e-05, -0.10915413, 0.72863346)
+bones/11/rotation = Quaternion(0.16382739, 0.23356585, 0.7516367, -0.5946848)
+bones/12/rotation = Quaternion(-0.60016865, 3.1895008e-05, 0.10810943, 0.792534)
+bones/13/rotation = Quaternion(0.15765876, 0.03446857, 0.54091483, 0.82544947)
+bones/14/rotation = Quaternion(-0.7128126, 1.9525649e-05, 0.115072034, 0.6918502)
+bones/15/rotation = Quaternion(0.06534489, 0.064009316, 0.6621339, 0.743782)
+bones/16/rotation = Quaternion(-0.5770899, 2.3080042e-05, 0.09316241, 0.8113495)
+bones/17/rotation = Quaternion(-0.06312341, 0.109265424, 0.8375126, 0.53164774)
+bones/18/rotation = Quaternion(-0.5918112, -3.2128766e-05, -0.106604, 0.7989964)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -348,17 +348,17 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1044937437]
+[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=452695958]
 material_overlay = SubResource("ShaderMaterial_5c2io")
 
-[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=2028625622]
+[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=1177192160]
 surface_material_override/0 = SubResource("StandardMaterial3D_lub02")
 script = ExtResource("3_x1y6q")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Monster" unique_id=1139855159]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005, 0.52, 0.64)
-light_energy = 0.2
-light_cull_mask = 4294966273
+[node name="SpotLight3D" type="SpotLight3D" parent="Monster" unique_id=1820942834]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0.56, 1.015)
+spot_range = 0.7773483
+spot_angle = 37.50205
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=676041675]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0.42780018, 0)
@@ -382,6 +382,7 @@ parameters/conditions/stop_draining = false
 parameters/Run/blend_position = Vector2(-0.8827392, 0.004672885)
 
 [node name="SpringArmPivot" type="Node3D" parent="." unique_id=1653273090]
+transform = Transform3D(1, 0, 0, 0, 0.9961947, 0.08715574, 0, -0.08715574, 0.9961947, 0, 1, 0)
 script = ExtResource("3_y660y")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot" unique_id=797107794]
@@ -500,11 +501,5 @@ script = ExtResource("5_5c2io")
 
 [node name="Jump" type="AudioStreamPlayer3D" parent="." unique_id=2076209090]
 stream = SubResource("AudioStreamRandomizer_5c2io")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1692337420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.724354, 0)
-light_color = Color(0.88691235, 0.8879253, 0.77049017, 1)
-light_energy = 9.0
-omni_range = 10.0
 
 [editable path="Monster"]

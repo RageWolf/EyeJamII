@@ -27,10 +27,10 @@ size = Vector3(0.3959961, 3.7334595, 6.254059)
 transform = Transform3D(0.461, 0, 0, 0, 0.461, 0, 0, 0, 0.461, 0, 0, 0)
 
 [node name="Empty Lab Table" type="MeshInstance3D" parent="." unique_id=1077402646]
+visible = false
 mesh = ExtResource("1_xgweb")
 
 [node name="Working Lab Table 1" type="MeshInstance3D" parent="." unique_id=746607931]
-visible = false
 mesh = ExtResource("2_ywhtl")
 
 [node name="TVCollision" type="StaticBody3D" parent="Working Lab Table 1" unique_id=1875594379]
@@ -95,3 +95,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.025984, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeskCollision/StaticBody3D4" unique_id=553240624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5021973, 1.8652649, -0.124679565)
 shape = SubResource("BoxShape3D_ywhtl")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1733445317]
+transform = Transform3D(2.1691973, 0, 0, 0, -9.4818624e-08, 2.1691973, 0, -2.1691973, -9.4818624e-08, 0, 13.979987, 0)
+light_energy = 6.0
+spot_range = 10.405094
+spot_angle = 51.24543
