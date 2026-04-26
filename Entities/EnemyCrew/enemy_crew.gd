@@ -302,6 +302,7 @@ func move_to_waypoint(waypoint):
 	else:
 		nav_agent.target_position = waypoint.global_position
 	var next_nav_point = nav_agent.get_next_path_position()
+	next_nav_point.y = 0
 	velocity = (next_nav_point - global_position).normalized() * speed
 	var direction = velocity
 	direction.y = global_position.y
