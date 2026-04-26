@@ -127,13 +127,13 @@ text = "quit
 
 [node name="TitleScene" parent="Node3D" unique_id=1945630454 instance=ExtResource("4_jl35j")]
 
-[node name="Armature" parent="Node3D/TitleScene" index="0" unique_id=1451899718]
+[node name="Armature" parent="Node3D/TitleScene" index="0" unique_id=844918369]
 visible = false
 
-[node name="Skeleton3D" parent="Node3D/TitleScene/Armature" index="0" unique_id=2005036016]
+[node name="Skeleton3D" parent="Node3D/TitleScene/Armature" index="0" unique_id=1221408167]
 bones/11/rotation = Quaternion(-0.013235304, 0.02640597, 0.89359975, -0.4478919)
 
-[node name="Skeleton3D" parent="Node3D/TitleScene/Armature_001" parent_id_path=PackedInt32Array(1945630454, 453073732) index="0" unique_id=1431435813]
+[node name="Skeleton3D" parent="Node3D/TitleScene/Armature_001" parent_id_path=PackedInt32Array(1945630454, 1264177290) index="0" unique_id=1813052235]
 bones/0/position = Vector3(0, -0.065603256, 0)
 bones/0/rotation = Quaternion(-0.029147532, 0, -1.3877788e-17, 0.9995752)
 bones/1/rotation = Quaternion(0.070078254, 0, 0, 0.9975415)
@@ -159,26 +159,26 @@ bones/26/position = Vector3(-0.90123284, -4.333068, -0.08942902)
 bones/28/position = Vector3(-3.3517249, 0.5269706, -6.1690366e-07)
 bones/29/position = Vector3(0, 5.064019, 0.43531272)
 
-[node name="Hand_L" parent="Node3D/TitleScene/Armature_001/Skeleton3D" index="0" unique_id=1704264807]
+[node name="Hand_L" parent="Node3D/TitleScene/Armature_001/Skeleton3D" index="0" unique_id=1694536788]
 transform = Transform3D(-0.9986595, -0.020882748, 0.047362506, 0.04480028, 0.10961348, 0.99296397, -0.025927301, 0.99375474, -0.10853114, 2.7857828, 2.0467668, 2.6484222)
 
-[node name="Point" parent="Node3D/TitleScene" index="5" unique_id=969103792]
+[node name="Point" parent="Node3D/TitleScene" index="5" unique_id=724989420]
 transform = Transform3D(3.2617297, 0, 0, 0, 0, 3.2617297, 0, -3.2617297, 0, -21.944138, 3.8075886, 7.522725)
 omni_range = 3.746
 
-[node name="Point_001" parent="Node3D/TitleScene" index="6" unique_id=972558928]
+[node name="Point_001" parent="Node3D/TitleScene" index="6" unique_id=1433982445]
 omni_range = 5.838
 
-[node name="Empty Lab Table" parent="Node3D/TitleScene" index="8" unique_id=249470849]
+[node name="Empty Lab Table" parent="Node3D/TitleScene" index="8" unique_id=1005847287]
 transform = Transform3D(0.6826725, 0, -1.0162438, 0, 1.2242521, 0, 1.0162438, 0, 0.6826725, -19.719, 1.217, 0)
 
-[node name="AnimationPlayer" parent="Node3D/TitleScene" index="10" unique_id=31053072]
+[node name="AnimationPlayer" parent="Node3D/TitleScene" index="10" unique_id=2125959634]
 autoplay = &"Armature_001Action"
 
 [node name="Monster" parent="Node3D" unique_id=349639319 instance=ExtResource("5_ix1ab")]
 transform = Transform3D(2.3777866, 0, -1.8488579, 0, 3.012, 0, 1.8488579, 0, 2.3777866, -19.393, 2.708, 4.604)
 
-[node name="Skeleton3D" parent="Node3D/Monster/Armature" parent_id_path=PackedInt32Array(349639319, 133039995) index="0" unique_id=2074112381]
+[node name="Skeleton3D" parent="Node3D/Monster/Armature" parent_id_path=PackedInt32Array(349639319, 1694346084) index="0" unique_id=2119726303]
 bones/0/position = Vector3(0, 0.2989174, 0)
 bones/1/rotation = Quaternion(0.034691084, -7.972578e-09, -2.0354246e-08, 0.9993982)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
@@ -228,7 +228,7 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="AnimationPlayer" parent="Node3D/Monster" index="1" unique_id=1052755342]
+[node name="AnimationPlayer" parent="Node3D/Monster" index="1" unique_id=965439297]
 autoplay = &"Idle1"
 
 [connection signal="focus_entered" from="VBoxContainer/Start" to="." method="_on_start_focus_entered"]

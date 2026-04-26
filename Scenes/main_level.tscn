@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://qyw0pu6jky8d"]
 
-[ext_resource type="Script" uid="uid://drr56nvc56bbp" path="res://Scenes/tut_start.gd" id="1_7wxy1"]
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
+[ext_resource type="Script" path="res://Scenes/tut_start.gd" id="1_7wxy1"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="4_a2ia3"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cs0nqj3x48uy7" path="res://Assets/Models and Textures/Props/shelves.tscn" id="13_o0i6v"]
 [ext_resource type="PackedScene" uid="uid://b1sjb1xfh8ypx" path="res://Assets/Models and Textures/Props/weird_storage_shelf.tscn" id="14_1ubp3"]
 [ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="15_jf8f8"]
-[ext_resource type="Script" uid="uid://bgonkax327ryy" path="res://Scenes/tutorial_lock.gd" id="19_d4dc6"]
+[ext_resource type="Script" path="res://Scenes/tutorial_lock.gd" id="19_d4dc6"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="22_7wxy1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qbrl8"]
@@ -707,25 +707,25 @@ GRAVITY = -10.0
 ACCELERATION = 30.0
 FRICTION = 50.0
 
-[node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 133039995) index="0" unique_id=2074112381]
-bones/0/position = Vector3(0, 0.2999825, 0)
-bones/1/rotation = Quaternion(0.033023864, -7.959774e-09, -2.0359256e-08, 0.99945456)
-bones/2/rotation = Quaternion(0.859103, 4.3346244e-16, 1.8483854e-16, 0.5118027)
-bones/2/scale = Vector3(1.0049407, 1.0049407, 1.0049407)
-bones/4/rotation = Quaternion(0.008236277, 0.0063112695, 0.49806502, 0.86707765)
-bones/6/rotation = Quaternion(0.008236276, -0.006311286, -0.49806505, 0.86707765)
-bones/7/rotation = Quaternion(0.19068961, -0.08755951, -0.55305606, 0.80628765)
-bones/8/rotation = Quaternion(-0.72974724, -1.9047411e-05, -0.11780587, 0.6734915)
-bones/9/rotation = Quaternion(0.14011738, -0.1307257, -0.6422884, 0.74212104)
-bones/10/rotation = Quaternion(-0.7049466, -1.9902365e-05, -0.11380294, 0.7000709)
-bones/11/rotation = Quaternion(0.112122536, 0.27011764, 0.76505643, -0.5737192)
-bones/12/rotation = Quaternion(-0.63465893, 3.0763917e-05, 0.11432225, 0.7642896)
-bones/13/rotation = Quaternion(0.20451847, 0.07379231, 0.52771777, 0.82112175)
-bones/14/rotation = Quaternion(-0.7401295, 1.866743e-05, 0.11948188, 0.6617646)
-bones/15/rotation = Quaternion(0.10597527, 0.104121536, 0.6551321, 0.740763)
-bones/16/rotation = Quaternion(-0.61122924, 2.2341033e-05, 0.0986737, 0.78527856)
-bones/17/rotation = Quaternion(-0.020524157, 0.15618587, 0.8410981, 0.5174348)
-bones/18/rotation = Quaternion(-0.63223577, -3.0837025e-05, -0.11388578, 0.76636034)
+[node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 1694346084) index="0" unique_id=2119726303]
+bones/0/position = Vector3(0, 0.33309138, 0)
+bones/1/rotation = Quaternion(-0.024842767, -7.566465e-09, -2.0508706e-08, 0.9996914)
+bones/2/rotation = Quaternion(0.8875782, 8.1200676e-16, 1.144195e-15, 0.46065715)
+bones/2/scale = Vector3(1.0042676, 1.0042675, 1.0042676)
+bones/4/rotation = Quaternion(0.0074537373, 0.0057115625, 0.49781772, 0.8672309)
+bones/6/rotation = Quaternion(0.007453695, -0.005711573, -0.49781787, 0.8672308)
+bones/7/rotation = Quaternion(0.15451027, -0.05580838, -0.5628635, 0.8100597)
+bones/8/rotation = Quaternion(-0.70760244, -1.9688167e-05, -0.11423093, 0.6973164)
+bones/9/rotation = Quaternion(0.107116655, -0.09687374, -0.6497929, 0.74626446)
+bones/10/rotation = Quaternion(-0.68204004, -2.0574786e-05, -0.11010502, 0.72297883)
+bones/11/rotation = Quaternion(0.15290245, 0.24099748, 0.7548858, -0.5904985)
+bones/12/rotation = Quaternion(-0.6078776, 3.1648207e-05, 0.109498076, 0.78644454)
+bones/13/rotation = Quaternion(0.16730022, 0.042577364, 0.538323, 0.82486737)
+bones/14/rotation = Quaternion(-0.71835506, 1.9340801e-05, 0.11596675, 0.685943)
+bones/15/rotation = Quaternion(0.073606476, 0.07206315, 0.6608892, 0.7433804)
+bones/16/rotation = Quaternion(-0.5845932, 2.2919388e-05, 0.09437371, 0.80581915)
+bones/17/rotation = Quaternion(-0.054144394, 0.118987076, 0.8386241, 0.5287912)
+bones/18/rotation = Quaternion(-0.6005853, -3.188477e-05, -0.10818447, 0.792208)
 
 [node name="SpringArmPivot" parent="Player" index="3" unique_id=1653273090]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 6, 0)

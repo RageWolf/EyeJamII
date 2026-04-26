@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_restart_pressed() -> void:
 	GameManager.reset()
+	get_tree().paused = false
 	LoadManager.load_scene("res://Scenes/main_level.tscn")
 
 
