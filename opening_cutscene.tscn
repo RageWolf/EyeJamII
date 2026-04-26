@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://us5f7tlpoo3m" path="res://opening_cutscene.gd" id="1_e8074"]
 [ext_resource type="Texture2D" uid="uid://cbta15x62lpmt" path="res://Assets/Models and Textures/UI Elements/cutscene1.png" id="2_ufc1a"]
+[ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="3_ufc1a"]
 
 [node name="OpeningCutscene" type="Control" unique_id=1589659677]
 layout_mode = 3
@@ -28,7 +29,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -631.0
-offset_top = -113.0
+offset_top = -98.0
 offset_right = 633.0
 offset_bottom = -13.0
 grow_horizontal = 2
@@ -40,8 +41,9 @@ offset_left = 9.0
 offset_top = 1.0
 offset_right = 1257.0
 offset_bottom = 100.0
+theme = ExtResource("3_ufc1a")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 17
 text = "opening cutscene dialogue"
 fit_content = true
 scroll_active = false
