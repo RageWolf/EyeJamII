@@ -483,51 +483,30 @@ debug_color = Color(0.25114828, 0.69931084, 0.8107886, 1)
 [node name="EnemyCrew" parent="EnemyCrew" unique_id=1420940884 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.141472, 0, -25.745998)
 patrol_route = NodePath("../PatrolRoute1")
-patrolling = null
-stationary = null
-num = null
 
 [node name="EnemyCrew2" parent="EnemyCrew" unique_id=839414706 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.395966, 0, 37.33595)
 patrol_route = NodePath("../PatrolRoute2")
-patrolling = null
-stationary = null
-num = null
 
 [node name="EnemyCrew3" parent="EnemyCrew" unique_id=2078997378 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.88275, 0, 46.921494)
 patrol_route = NodePath("../PatrolRoute3")
-patrolling = null
-stationary = null
-num = null
 
 [node name="EnemyCrew4" parent="EnemyCrew" unique_id=1067976958 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.75667, 0, 0)
 patrol_route = NodePath("../PatrolRoute4")
-patrolling = null
-stationary = null
-num = null
 
 [node name="EnemyCrew5" parent="EnemyCrew" unique_id=1831014570 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.31403, 0, -48.735764)
 patrol_route = NodePath("../PatrolRoute5")
-patrolling = null
-stationary = null
-num = null
 
 [node name="EnemyCrew6" parent="EnemyCrew" unique_id=1702522824 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.11092, 0, 0)
 patrol_route = NodePath("../PatrolRoute6")
-patrolling = null
-stationary = null
-num = null
 
 [node name="EnemyCrew7" parent="EnemyCrew" unique_id=595599425 node_paths=PackedStringArray("patrol_route") instance=ExtResource("22_7wxy1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.085163, 0, -26.180382)
 patrol_route = NodePath("../PatrolRoute7")
-patrolling = null
-stationary = null
-num = null
 
 [node name="PatrolRoute1" type="Node3D" parent="EnemyCrew" unique_id=1592383301]
 
@@ -758,24 +737,24 @@ ACCELERATION = 30.0
 FRICTION = 50.0
 
 [node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 587869265) index="0" unique_id=1714600709]
-bones/0/position = Vector3(0, 0.3034805, 0)
-bones/1/rotation = Quaternion(0.027000679, -7.91423e-09, -2.037701e-08, 0.9996355)
-bones/2/rotation = Quaternion(0.8623674, 7.335296e-16, 2.430237e-16, 0.50628316)
-bones/2/scale = Vector3(1.0047638, 1.0047637, 1.004764)
-bones/4/rotation = Quaternion(0.007622426, 0.005840866, 0.49804413, 0.86709857)
-bones/6/rotation = Quaternion(0.0076225298, -0.0058409614, -0.4980443, 0.8670985)
-bones/7/rotation = Quaternion(0.1868951, -0.08422625, -0.5541362, 0.8067895)
-bones/8/rotation = Quaternion(-0.72755647, -1.9122386e-05, -0.11745222, 0.6759192)
-bones/9/rotation = Quaternion(0.13668029, -0.12716503, -0.6431427, 0.7426407)
-bones/10/rotation = Quaternion(-0.70271546, -1.9978268e-05, -0.11344277, 0.7023686)
-bones/11/rotation = Quaternion(0.116379544, 0.26697442, 0.76414555, -0.5755537)
-bones/12/rotation = Quaternion(-0.6320621, 3.085658e-05, 0.11385445, 0.7665082)
-bones/13/rotation = Quaternion(0.2006071, 0.07051659, 0.5288777, 0.82162815)
-bones/14/rotation = Quaternion(-0.73800415, 1.8734489e-05, 0.1191388, 0.6641958)
-bones/15/rotation = Quaternion(0.10263683, 0.10077785, 0.6557909, 0.7411126)
-bones/16/rotation = Quaternion(-0.60865545, 2.2394119e-05, 0.09825818, 0.7873272)
-bones/17/rotation = Quaternion(-0.023996247, 0.15228504, 0.84097064, 0.5186539)
-bones/18/rotation = Quaternion(-0.6291016, -3.0962754e-05, -0.11332124, 0.7690186)
+bones/0/position = Vector3(0, 0.33737233, 0)
+bones/1/rotation = Quaternion(-0.032610856, -7.521905e-09, -2.0525084e-08, 0.9994682)
+bones/2/rotation = Quaternion(0.8909456, 3.01106e-16, -1.8794829e-15, 0.45410994)
+bones/2/scale = Vector3(1.0041826, 1.0041826, 1.0041826)
+bones/4/rotation = Quaternion(0.007822258, 0.00599396, 0.49778965, 0.86724186)
+bones/6/rotation = Quaternion(0.007822193, -0.00599395, -0.4977898, 0.8672418)
+bones/7/rotation = Quaternion(0.1497921, -0.0516708, -0.56406265, 0.8103863)
+bones/8/rotation = Quaternion(-0.7044564, -1.9808771e-05, -0.113723055, 0.7005772)
+bones/9/rotation = Quaternion(0.10277386, -0.092474245, -0.650666, 0.7466725)
+bones/10/rotation = Quaternion(-0.6787763, -2.0673504e-05, -0.10957816, 0.72612363)
+bones/11/rotation = Quaternion(0.15836748, 0.23726086, 0.75328696, -0.5926094)
+bones/12/rotation = Quaternion(-0.6040394, 3.1792097e-05, 0.10880674, 0.78949195)
+bones/13/rotation = Quaternion(0.1624592, 0.038507387, 0.5396323, 0.82517946)
+bones/14/rotation = Quaternion(-0.7152393, 1.9450212e-05, 0.11546376, 0.68927574)
+bones/15/rotation = Quaternion(0.06930345, 0.067861706, 0.6615487, 0.7436028)
+bones/16/rotation = Quaternion(-0.5807808, 2.2998085e-05, 0.09375825, 0.8086428)
+bones/17/rotation = Quaternion(-0.058623478, 0.114132226, 0.83809054, 0.5302278)
+bones/18/rotation = Quaternion(-0.5960847, -3.2020278e-05, -0.10737381, 0.7957098)
 
 [node name="SpringArmPivot" parent="Player" index="3" unique_id=1653273090]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 6, 0)
