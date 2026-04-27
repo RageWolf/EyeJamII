@@ -6,12 +6,12 @@ var timer = 0.0
 
 @onready var dialogue = $Panel/RichTextLabel
 @onready var index = 0
-@onready var lines = ["You were feeding off of the power supply belonging to a research outpost on a dead planet, when one of the scientists spotted and captured you.",
-"The scientists brought you back to their ship for further study and are now en route to their home planet.",
-"Fortunately for you, the crew was careless and you were able to escape containment. The crew is now patrolling the hallways in search of their missing specimen.",
-"Your goal is to decay the ship by draining as much power as you can without getting caught before the crew reaches their destination and takes you back to their lab.",
-"Feed off of the ship's systems to restore your own energy and do damage to the ship. But be careful, when a system breaks, any nearby crew members will be alerted and will go to repair the broken system.",
-"If you run out of energy or the ship reaches its destination before you are able to finish destroying the ship, you will be caught by the crew and taken back to their lab."]
+@onready var lines = ["Ripped from your home by lesser beings. Contained within a prison of plastics and metal. Taken from your home.",
+"The lesser beings study you, fascinated by powers beyond their control. They take you to their home. Far from yours.",
+"A slip through space and time and you are free of your bonds. The alarm sounds and the creatures stir, desperate to capture you once more.",
+"Even as they search you hunger. Hunger for susctinence. Hunger for power. Their machines run on power.",
+"The growing hunger inside you signals your coming change, these lesser beings will not stop you, though they may try.",
+"Your belly growls. They won't find ways to use your power. For you are swift, and silent."]
 
 func _ready() -> void:
 	dialogue.text = lines[0]
