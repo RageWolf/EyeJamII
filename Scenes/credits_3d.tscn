@@ -109,7 +109,7 @@ tracks/6/path = NodePath("Edward:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(23.59563, 30.969265),
+"times": PackedFloat32Array(23, 30.969265),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -378,7 +378,7 @@ horizontal_alignment = 0
 libraries/ = SubResource("AnimationLibrary_eeugp")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=369160359]
-transform = Transform3D(-0.2806667, 0, -0.9598051, 0, 1, 0, 0.9598051, 0, -0.2806667, -21.40762, 6.290531, -13.771945)
+transform = Transform3D(-0.2806667, 0, -0.959805, 0, 1, 0, 0.959805, 0, -0.2806667, -21.40762, 6.290531, -13.771945)
 cull_mask = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Camera3D" unique_id=1638980342]

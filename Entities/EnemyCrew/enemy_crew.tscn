@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cnisafhte5caj" path="res://Entities/EnemyCrew/enemy_crew.gd" id="1_j7mom"]
 [ext_resource type="PackedScene" uid="uid://1icinhlpc7l" path="res://Assets/Models and Textures/Scientist/scientist.tscn" id="3_l5xqq"]
 [ext_resource type="Script" uid="uid://clwtukj8xvbou" path="res://Entities/EnemyCrew/animation_controller.gd" id="4_c5e76"]
+[ext_resource type="AudioStream" uid="uid://f7iaanqhlbrt" path="res://Audio/COSMIC SFX/BOOT CYCLE.mp3" id="4_kqbof"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6wp80"]
 radius = 0.5629883
@@ -116,16 +117,16 @@ states/Alert/position = Vector2(430.80002, 217.50737)
 states/Catch/node = SubResource("AnimationNodeAnimation_o60q4")
 states/Catch/position = Vector2(587.6, 243.9074)
 states/Fix/node = SubResource("AnimationNodeAnimation_bkfbr")
-states/Fix/position = Vector2(631.32, 68.30739)
+states/Fix/position = Vector2(622.52, 70.867386)
 states/Idle1/node = SubResource("AnimationNodeAnimation_kqbof")
 states/Idle1/position = Vector2(342.4, 1.9073906)
 states/Run/node = SubResource("AnimationNodeAnimation_l5xqq")
 states/Run/position = Vector2(787.95776, 42.995987)
 states/Search/node = SubResource("AnimationNodeAnimation_ysqv1")
-states/Search/position = Vector2(619.4, 25.907394)
+states/Search/position = Vector2(648.936, -8.492603)
 states/Start/position = Vector2(195.20001, 50.399998)
 states/Walk/node = SubResource("AnimationNodeAnimation_5rxqc")
-states/Walk/position = Vector2(442.2, 84.30739)
+states/Walk/position = Vector2(451.80002, 69.90739)
 states/WalkStart/node = SubResource("AnimationNodeAnimation_6liv0")
 states/WalkStart/position = Vector2(319.4, 131.10739)
 transitions = ["Walk", "Alert", SubResource("AnimationNodeStateMachineTransition_o60q4"), "Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_bkfbr"), "Alert", "WalkStart", SubResource("AnimationNodeStateMachineTransition_8ac3r"), "Idle1", "Search", SubResource("AnimationNodeStateMachineTransition_kjisb"), "Start", "WalkStart", SubResource("AnimationNodeStateMachineTransition_gdxau"), "WalkStart", "Walk", SubResource("AnimationNodeStateMachineTransition_5suk1"), "Walk", "Search", SubResource("AnimationNodeStateMachineTransition_24o63"), "Walk", "Idle1", SubResource("AnimationNodeStateMachineTransition_4hjyj"), "Search", "Alert", SubResource("AnimationNodeStateMachineTransition_l4qle"), "Search", "Walk", SubResource("AnimationNodeStateMachineTransition_ps5sk"), "Search", "Idle1", SubResource("AnimationNodeStateMachineTransition_2vihl"), "Walk", "Catch", SubResource("AnimationNodeStateMachineTransition_8n326"), "Walk", "Fix", SubResource("AnimationNodeStateMachineTransition_c5e76"), "Alert", "Run", SubResource("AnimationNodeStateMachineTransition_kqbof"), "Run", "Search", SubResource("AnimationNodeStateMachineTransition_ysqv1"), "Run", "Catch", SubResource("AnimationNodeStateMachineTransition_l5xqq"), "Catch", "Walk", SubResource("AnimationNodeStateMachineTransition_5rxqc"), "Catch", "Run", SubResource("AnimationNodeStateMachineTransition_6liv0")]
@@ -180,7 +181,7 @@ bones/29/position = Vector3(-1.7881886e-17, 4.93828, 0.513669)
 [node name="Hand_L" parent="Scientist/Armature/Skeleton3D" index="0" unique_id=151345015]
 transform = Transform3D(-0.9987405, -0.012293024, 0.048640788, 0.048284233, 0.027802838, 0.99844664, -0.013626242, 0.9995379, -0.027174257, 2.7857888, 1.7855635, 2.6483583)
 
-[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 2067084535) index="0" unique_id=1816640182]
+[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 1464910905) index="0" unique_id=1816640182]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.015816689, 0.002682209, -0.73840237)
 
 [node name="Hand_R" parent="Scientist/Armature/Skeleton3D" index="1" unique_id=1745767072]
@@ -242,6 +243,9 @@ parameters/conditions/stationary = false
 
 [node name="PatrolRoute" type="Node3D" parent="." unique_id=650076924]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.057566524, 0.30826092)
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=388775149]
+stream = ExtResource("4_kqbof")
 
 [connection signal="body_entered" from="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" to="." method="_on_capture_area_body_entered"]
 [connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]

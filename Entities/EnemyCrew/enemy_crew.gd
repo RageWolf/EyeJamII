@@ -18,6 +18,7 @@ var player = null
 @onready var debug_vision_cone = $Scientist/Area3D/debug
 @export var patrol_route: Node3D
 @onready var patrol_points: Array = []
+@onready var footstep_player: AudioStreamPlayer3D = $FootstepPlayer
 
 
 var speed = 1.5
@@ -70,6 +71,8 @@ func _ready() -> void:
 	else:
 		state = State.IDLE
 	debug_vision_cone.visible = false
+	footstep_player.finished.connect(_on_footstep_finished)
+
 
 
 func _physics_process(_delta: float) -> void:
@@ -139,6 +142,7 @@ func _physics_process(_delta: float) -> void:
 				prev_state = state
 				state = State.PATROLLING
 		State.LUNGING:
+			stop_walk()
 			if player_caught:
 				GameManager.player_caught = true
 			elif lunge_timer <= 0:
@@ -149,6 +153,7 @@ func _physics_process(_delta: float) -> void:
 				lunge_timer -= _delta
 
 		State.ALERT:
+			stop_walk()
 			detection = false
 			if alert_timer <= 0:
 				alert_timer = 0.5
@@ -164,21 +169,39 @@ func _physics_process(_delta: float) -> void:
 	match state:
 		State.PATROLLING:
 			patrol(_delta)
+			play_walk()
 		State.CHASING:
+			play_walk()
 			# print("chasing")
 			chase_player()
 		State.IDLE:
+			stop_walk()
 			velocity = Vector3.ZERO
 			nav_agent.target_position = global_position
 		State.SEARCHING:
 			velocity = Vector3.ZERO
 			nav_agent.target_position = global_position
 			search(_delta)
+			stop_walk()
 		State.REPAIRING:
+			play_walk()
 			fix_system(_delta)
 
 	move_and_slide()
 
+
+#region AUDIO:
+func _on_footstep_finished() -> void:
+	if footstep_player.stream != null:
+		footstep_player.play(randf_range(0.0, footstep_player.stream.get_length()))
+
+func play_walk() -> void:
+	if footstep_player.playing: return
+	footstep_player.play(randf_range(0.0, footstep_player.stream.get_length()))
+
+func stop_walk() -> void:
+	footstep_player.stop()
+#endregion
 
 
 
