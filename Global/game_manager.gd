@@ -3,7 +3,6 @@ extends Node
 @onready var dialog: Label = $Dialog
 var PHASE_2 : bool = false
 var PHASE_3 : bool = false
-signal phase_changed(phase: int)
 
 #TUTORIAL
 var tutorial_drain_done := false
