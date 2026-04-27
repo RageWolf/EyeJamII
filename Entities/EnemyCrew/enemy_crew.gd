@@ -207,7 +207,7 @@ func stop_walk() -> void:
 
 func _on_system_broken(_target: Vector3, power_system):
 	broken_power_systems.append(power_system)
-	if (_target - global_position).length() <= DETECTION_RANGE:
+	if (_target - global_position).length() <= DETECTION_RANGE and current_target == null:
 		current_target = power_system
 		prev_state = state
 		state = State.REPAIRING

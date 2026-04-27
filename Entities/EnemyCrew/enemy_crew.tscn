@@ -64,7 +64,6 @@ advance_condition = &"stationary"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ac3r"]
 xfade_time = 0.1
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kjisb"]
 xfade_time = 0.1
@@ -147,10 +146,13 @@ shape = SubResource("CapsuleShape3D_6wp80")
 [node name="Scientist" parent="." unique_id=333564019 instance=ExtResource("3_l5xqq")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.2555697, 0)
 
-[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 1464910905) index="0" unique_id=1816640182]
+[node name="Skeleton3D" parent="Scientist/Armature" parent_id_path=PackedInt32Array(333564019, 980590002) index="0" unique_id=13729050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="SpotLight3D" parent="Scientist/Armature/Skeleton3D/Hand_L/SpotlightPlacement" parent_id_path=PackedInt32Array(333564019, 2067084535) index="0" unique_id=1816640182]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.015816689, 0.002682209, -0.73840237)
 
-[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" parent_id_path=PackedInt32Array(333564019, 1757705069) index="0" unique_id=1321426557]
+[node name="PlayerCapturePoint" parent="Scientist/Armature/Skeleton3D/Hand_R" parent_id_path=PackedInt32Array(333564019, 1745767072) index="0" unique_id=450308004]
 transform = Transform3D(-0.86549884, 0.38258266, -0.32333022, 0.03441347, 0.6893744, 0.72358763, 0.49972746, 0.6151375, -0.6098186, 0.028973378, 1.1959596, 0.010000229)
 
 [node name="CaptureArea" type="Area3D" parent="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint" index="0" unique_id=253291537]
@@ -209,8 +211,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.047319412, 0.057566524, 0.
 
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=388775149]
 stream = ExtResource("4_kqbof")
-volume_db = 5.0
-attenuation_filter_db = -30.0
 
 [connection signal="body_entered" from="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" to="." method="_on_capture_area_body_entered"]
 [connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]
