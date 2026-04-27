@@ -27,10 +27,10 @@ texture = ExtResource("3_6bi5g")
 [node name="GameOver2" type="Label" parent="." unique_id=1143604530]
 modulate = Color(1, 0, 0.0666666, 1)
 layout_mode = 0
-offset_left = -6.0
-offset_top = 3.0
-offset_right = 1286.0
-offset_bottom = 164.0
+offset_left = 17.0
+offset_top = 6.0
+offset_right = 1309.0
+offset_bottom = 167.0
 theme_override_fonts/font = ExtResource("1_if853")
 theme_override_font_sizes/font_size = 120
 text = "Game Over"
@@ -38,8 +38,10 @@ text = "Game Over"
 [node name="GameOver" type="Label" parent="." unique_id=151758182]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_right = 1277.0
-offset_bottom = 152.0
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 1300.0
+offset_bottom = 155.0
 theme_override_fonts/font = ExtResource("1_if853")
 theme_override_font_sizes/font_size = 120
 text = "Game Over"
