@@ -4,7 +4,7 @@ extends CharacterBody3D
 const LIGHT_THRESHOLD = 0.4
 const VISION_ANGLE = 45.0
 const VISION_DISTANCE = 30
-const DETECTION_RANGE = 15
+const DETECTION_RANGE = 40
 
 
 var player = null

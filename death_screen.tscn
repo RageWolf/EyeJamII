@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c6wq1qhg8bd15" path="res://Assets/Fonts/Metal Lord.otf" id="1_if853"]
 [ext_resource type="Texture2D" uid="uid://hlbfrfxtxk34" path="res://Assets/Models and Textures/UI Elements/caught_scene.png" id="3_6bi5g"]
 [ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="4_y0ggs"]
+[ext_resource type="FontFile" uid="uid://c7dajt33s651i" path="res://Assets/Fonts/UnicaOne-Regular.ttf" id="5_hhlqb"]
 
 [node name="DeathScreen" type="Control" unique_id=1369771253]
 layout_mode = 3
@@ -23,11 +24,24 @@ offset_bottom = 1028.5714
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_6bi5g")
 
-[node name="GameOver" type="Label" parent="." unique_id=151758182]
-modulate = Color(1, 0, 0, 1)
+[node name="GameOver2" type="Label" parent="." unique_id=1143604530]
+modulate = Color(1, 0, 0.0666666, 1)
 layout_mode = 0
-offset_right = 1277.0
-offset_bottom = 152.0
+offset_left = 17.0
+offset_top = 6.0
+offset_right = 1309.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("1_if853")
+theme_override_font_sizes/font_size = 120
+text = "Game Over"
+
+[node name="GameOver" type="Label" parent="." unique_id=151758182]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 3.0
+offset_right = 1300.0
+offset_bottom = 155.0
 theme_override_fonts/font = ExtResource("1_if853")
 theme_override_font_sizes/font_size = 120
 text = "Game Over"
@@ -40,10 +54,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -322.0
-offset_top = -151.0
-offset_right = -23.0
-offset_bottom = -26.0
+offset_left = -315.0
+offset_top = -186.0
+offset_right = -16.0
+offset_bottom = -61.0
 grow_horizontal = 0
 grow_vertical = 0
 
@@ -61,9 +75,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_y0ggs")
 theme_type_variation = &"FlatButton"
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
+theme_override_fonts/font = ExtResource("5_hhlqb")
+theme_override_font_sizes/font_size = 50
 text = "RESTART"
 
 [node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1644488]
@@ -71,9 +87,11 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_y0ggs")
 theme_type_variation = &"FlatButton"
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0.15294118, 0.15686275, 0.13725491, 1)
 theme_override_colors/icon_hover_color = Color(0.654902, 0.67058825, 0.62352943, 1)
+theme_override_fonts/font = ExtResource("5_hhlqb")
+theme_override_font_sizes/font_size = 50
 text = "QUIT"
 
 [connection signal="focus_entered" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_focus_entered"]
