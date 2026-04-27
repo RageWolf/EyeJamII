@@ -13,3 +13,7 @@ signal feed_cancelled
 signal screen_shake(intensity: float)
 @warning_ignore("unused_signal")
 signal update_anim
+@warning_ignore("unused_signal")
+signal phase_2_started
+@warning_ignore("unused_signal")
+signal phase_3_started

@@ -3,7 +3,6 @@ extends Node
 @onready var dialog: Label = $Dialog
 var PHASE_2 : bool = false
 var PHASE_3 : bool = false
-signal phase_changed(phase: int)
 
 #TUTORIAL
 var tutorial_drain_done := false
@@ -53,7 +52,7 @@ func _process(delta):
 func add_energy(amount):
 	if not tutorial_drain_done:
 		tutorial_drain_done = true
-		show_dialog("Good... now try hiding on that dark area.")
+		show_dialog("Good... now try hiding in that dark area.")
 		check_tutorial_complete()
 	
 	player_energy += amount
@@ -76,11 +75,11 @@ func check_phase() -> void:
 	
 	if percent <= 70.0 and not PHASE_2:
 		PHASE_2 = true
-		phase_changed.emit(2)
+		SignalBus.phase_2_started.emit()
 	
 	if percent <= 30.0 and not PHASE_3:
 		PHASE_3 = true
-		phase_changed.emit(3)
+		SignalBus.phase_3_started.emit()
 
 # ----------------------------------
 func check_decay_reward(old_decay):
