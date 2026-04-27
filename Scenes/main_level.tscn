@@ -559,7 +559,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.868309, 1.516065, -35.4004
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.484581, 1.516065, 2.6889496)
 
 [node name="Marker3D9" type="Marker3D" parent="EnemyCrew/PatrolRoute1" unique_id=991919890]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.448151, 1.516065, 2.4536247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.60765, 1.516065, 15.613129)
 
 [node name="Marker3D10" type="Marker3D" parent="EnemyCrew/PatrolRoute1" unique_id=690833761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.814613, 1.516065, 1.4019489)
@@ -758,24 +758,24 @@ ACCELERATION = 30.0
 FRICTION = 50.0
 
 [node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 587869265) index="0" unique_id=1714600709]
-bones/0/position = Vector3(0, 0.32834753, 0)
-bones/1/rotation = Quaternion(-0.016329337, -7.617496e-09, -2.0489814e-08, 0.9998667)
-bones/2/rotation = Quaternion(0.883768, 8.978858e-16, -1.9346877e-16, 0.46792534)
-bones/2/scale = Vector3(1.0043478, 1.0043478, 1.0043478)
-bones/4/rotation = Quaternion(0.007196212, 0.0055142394, 0.49784982, 0.86721593)
-bones/6/rotation = Quaternion(0.007196204, -0.005514275, -0.49784997, 0.8672159)
-bones/7/rotation = Quaternion(0.15972845, -0.060384832, -0.56151617, 0.8096544)
-bones/8/rotation = Quaternion(-0.71100956, -1.959038e-05, -0.114780955, 0.6937513)
-bones/9/rotation = Quaternion(0.1119088, -0.10174332, -0.6487988, 0.745778)
-bones/10/rotation = Quaternion(-0.6855733, -2.0471874e-05, -0.11067541, 0.71954167)
-bones/11/rotation = Quaternion(0.14690226, 0.24514481, 0.7565791, -0.5881427)
-bones/12/rotation = Quaternion(-0.6120263, 3.1516898e-05, 0.11024542, 0.7831155)
-bones/13/rotation = Quaternion(0.17265762, 0.04707832, 0.5368554, 0.82447517)
-bones/14/rotation = Quaternion(-0.7217082, 1.9255096e-05, 0.11650806, 0.6823219)
-bones/15/rotation = Quaternion(0.07834114, 0.07670261, 0.66013527, 0.74310225)
-bones/16/rotation = Quaternion(-0.58871955, 2.2823491e-05, 0.09503985, 0.80273086)
-bones/17/rotation = Quaternion(-0.049218543, 0.12435473, 0.83915657, 0.52719045)
-bones/18/rotation = Quaternion(-0.6054642, -3.174087e-05, -0.10906336, 0.7883643)
+bones/0/position = Vector3(0, 0.3034805, 0)
+bones/1/rotation = Quaternion(0.027000679, -7.91423e-09, -2.037701e-08, 0.9996355)
+bones/2/rotation = Quaternion(0.8623674, 7.335296e-16, 2.430237e-16, 0.50628316)
+bones/2/scale = Vector3(1.0047638, 1.0047637, 1.004764)
+bones/4/rotation = Quaternion(0.007622426, 0.005840866, 0.49804413, 0.86709857)
+bones/6/rotation = Quaternion(0.0076225298, -0.0058409614, -0.4980443, 0.8670985)
+bones/7/rotation = Quaternion(0.1868951, -0.08422625, -0.5541362, 0.8067895)
+bones/8/rotation = Quaternion(-0.72755647, -1.9122386e-05, -0.11745222, 0.6759192)
+bones/9/rotation = Quaternion(0.13668029, -0.12716503, -0.6431427, 0.7426407)
+bones/10/rotation = Quaternion(-0.70271546, -1.9978268e-05, -0.11344277, 0.7023686)
+bones/11/rotation = Quaternion(0.116379544, 0.26697442, 0.76414555, -0.5755537)
+bones/12/rotation = Quaternion(-0.6320621, 3.085658e-05, 0.11385445, 0.7665082)
+bones/13/rotation = Quaternion(0.2006071, 0.07051659, 0.5288777, 0.82162815)
+bones/14/rotation = Quaternion(-0.73800415, 1.8734489e-05, 0.1191388, 0.6641958)
+bones/15/rotation = Quaternion(0.10263683, 0.10077785, 0.6557909, 0.7411126)
+bones/16/rotation = Quaternion(-0.60865545, 2.2394119e-05, 0.09825818, 0.7873272)
+bones/17/rotation = Quaternion(-0.023996247, 0.15228504, 0.84097064, 0.5186539)
+bones/18/rotation = Quaternion(-0.6291016, -3.0962754e-05, -0.11332124, 0.7690186)
 
 [node name="SpringArmPivot" parent="Player" index="3" unique_id=1653273090]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 6, 0)
