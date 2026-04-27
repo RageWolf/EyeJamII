@@ -2,6 +2,7 @@ extends StaticBody3D
 
 @export var energy_value: float = 20.0
 @export var decay_value: float = 5.0
+@export var tutorial_system: bool = false
 var is_broken := false
 var player_in_range := false
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drr56nvc56bbp" path="res://Scenes/tut_start.gd" id="1_7wxy1"]
 [ext_resource type="AudioStream" uid="uid://hvi7gytfx2bb" path="res://Audio/Music/Cosmic Eye Healing Rest Phase.mp3" id="2_1ubp3"]
-[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_ikcpc"]
+[ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/player/player.tscn" id="2_ikcpc"]
 [ext_resource type="AudioStream" uid="uid://b54w5uii3lolc" path="res://Audio/Music/Cosmic Eye Phase 1.mp3" id="3_oi0bv"]
 [ext_resource type="PackedScene" uid="uid://blok8pxcu7hr2" path="res://Assets/Models and Textures/Props/crate.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_tqiex"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dca7t7cwdkvgt" path="res://Assets/Models and Textures/Drainables/sat_dish_drainable.tscn" id="11_2jcip"]
 [ext_resource type="PackedScene" uid="uid://b81jth6xp3d0t" path="res://Assets/Models and Textures/Props/lab_chair.tscn" id="11_7wxy1"]
 [ext_resource type="PackedScene" uid="uid://dtaf3lwurigxn" path="res://Assets/Models and Textures/Props/fabricator.tscn" id="12_8ce4n"]
-[ext_resource type="Shader" uid="uid://dvo4gp5x1x3fa" path="res://Shaders/outline.gdshader" id="13_d4dc6"]
+[ext_resource type="Shader" path="res://Shaders/outline.gdshader" id="13_d4dc6"]
 [ext_resource type="PackedScene" uid="uid://cs0nqj3x48uy7" path="res://Assets/Models and Textures/Props/shelves.tscn" id="13_o0i6v"]
 [ext_resource type="PackedScene" uid="uid://b1sjb1xfh8ypx" path="res://Assets/Models and Textures/Props/weird_storage_shelf.tscn" id="14_1ubp3"]
 [ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="15_jf8f8"]
@@ -380,6 +380,7 @@ metadata/_edit_lock_ = true
 
 [node name="GenericDrainable" parent="World/NavigationRegion3D/PowerSystems" unique_id=1324652657 instance=ExtResource("7_lwkuy")]
 transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 0.24458122, 0.20000076, -6.823887)
+tutorial_system = true
 
 [node name="GenericDrainable3" parent="World/NavigationRegion3D/PowerSystems" unique_id=874322887 instance=ExtResource("7_lwkuy")]
 transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 84.26735, 0.20000076, -50.958553)
@@ -736,25 +737,25 @@ GRAVITY = -10.0
 ACCELERATION = 30.0
 FRICTION = 50.0
 
-[node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 587869265) index="0" unique_id=1714600709]
-bones/0/position = Vector3(0, 0.33737233, 0)
-bones/1/rotation = Quaternion(-0.032610856, -7.521905e-09, -2.0525084e-08, 0.9994682)
-bones/2/rotation = Quaternion(0.8909456, 3.01106e-16, -1.8794829e-15, 0.45410994)
-bones/2/scale = Vector3(1.0041826, 1.0041826, 1.0041826)
-bones/4/rotation = Quaternion(0.007822258, 0.00599396, 0.49778965, 0.86724186)
-bones/6/rotation = Quaternion(0.007822193, -0.00599395, -0.4977898, 0.8672418)
-bones/7/rotation = Quaternion(0.1497921, -0.0516708, -0.56406265, 0.8103863)
-bones/8/rotation = Quaternion(-0.7044564, -1.9808771e-05, -0.113723055, 0.7005772)
-bones/9/rotation = Quaternion(0.10277386, -0.092474245, -0.650666, 0.7466725)
-bones/10/rotation = Quaternion(-0.6787763, -2.0673504e-05, -0.10957816, 0.72612363)
-bones/11/rotation = Quaternion(0.15836748, 0.23726086, 0.75328696, -0.5926094)
-bones/12/rotation = Quaternion(-0.6040394, 3.1792097e-05, 0.10880674, 0.78949195)
-bones/13/rotation = Quaternion(0.1624592, 0.038507387, 0.5396323, 0.82517946)
-bones/14/rotation = Quaternion(-0.7152393, 1.9450212e-05, 0.11546376, 0.68927574)
-bones/15/rotation = Quaternion(0.06930345, 0.067861706, 0.6615487, 0.7436028)
-bones/16/rotation = Quaternion(-0.5807808, 2.2998085e-05, 0.09375825, 0.8086428)
-bones/17/rotation = Quaternion(-0.058623478, 0.114132226, 0.83809054, 0.5302278)
-bones/18/rotation = Quaternion(-0.5960847, -3.2020278e-05, -0.10737381, 0.7957098)
+[node name="Skeleton3D" parent="Player/Monster/Armature" parent_id_path=PackedInt32Array(1944527734, 629061867, 608795841) index="0" unique_id=2122142292]
+bones/0/position = Vector3(0, 0.30521253, 0)
+bones/1/rotation = Quaternion(0.02406431, -7.8924245e-09, -2.0385473e-08, 0.9997105)
+bones/2/rotation = Quaternion(0.8639326, -3.8440888e-16, 1.037416e-15, 0.50360763)
+bones/2/scale = Vector3(1.0047987, 1.0047987, 1.0047987)
+bones/4/rotation = Quaternion(0.0080538355, 0.0061714584, 0.49800402, 0.8671154)
+bones/6/rotation = Quaternion(0.008053832, -0.0061714775, -0.498004, 0.8671154)
+bones/7/rotation = Quaternion(0.18501368, -0.08257388, -0.55466723, 0.80702895)
+bones/8/rotation = Quaternion(-0.7264518, -1.912938e-05, -0.11727387, 0.6771371)
+bones/9/rotation = Quaternion(0.13497409, -0.12540051, -0.64356047, 0.7428908)
+bones/10/rotation = Quaternion(-0.7015946, -2.0002946e-05, -0.11326183, 0.70351744)
+bones/11/rotation = Quaternion(0.11845564, 0.2654502, 0.7636882, -0.57644165)
+bones/12/rotation = Quaternion(-0.6307565, 3.087148e-05, 0.113619275, 0.7676177)
+bones/13/rotation = Quaternion(0.19866839, 0.06889262, 0.5294487, 0.82186913)
+bones/14/rotation = Quaternion(-0.73693657, 1.876196e-05, 0.11896646, 0.6654107)
+bones/15/rotation = Quaternion(0.10092241, 0.09906611, 0.6561258, 0.7412824)
+bones/16/rotation = Quaternion(-0.6073061, 2.2429975e-05, 0.09804035, 0.7883955)
+bones/17/rotation = Quaternion(-0.025722088, 0.15035097, 0.8408961, 0.5192559)
+bones/18/rotation = Quaternion(-0.6275532, -3.0996747e-05, -0.11304232, 0.77032363)
 
 [node name="SpringArmPivot" parent="Player" index="3" unique_id=1653273090]
 transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 6, 0)
