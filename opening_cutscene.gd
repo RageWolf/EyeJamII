@@ -4,7 +4,7 @@ var line_complete: bool = false
 var speed = 0.05
 var timer = 0.0
 
-@onready var dialogue = $Panel/RichTextLabel
+@onready var dialogue: RichTextLabel = $Panel/RichTextLabel
 @onready var index = 0
 @onready var lines = ["Ripped from your home by lesser beings. Contained within a prison of plastics and metal. Taken from your home.",
 "The lesser beings study you, fascinated by powers beyond their control. They take you to their home. Far from yours.",
@@ -18,6 +18,9 @@ func _ready() -> void:
 	dialogue.visible_characters = 0
 
 func _process(delta: float) -> void:
+	if index >= lines.size():  # safety guard
+		return
+	
 	var line = lines[index]
 	if dialogue.visible_characters < line.length():
 		timer += delta
@@ -28,10 +31,14 @@ func _process(delta: float) -> void:
 		timer = 0.0
 
 func _on_button_pressed() -> void:
+	if index >= lines.size():  # safety guard
+		LoadManager.load_scene("res://Scenes/main_level.tscn")
+		return
+	
 	var line = lines[index]
 	if line_complete:
 		index += 1
-		if index == lines.size() - 1:
+		if index == lines.size():
 			LoadManager.load_scene("res://Scenes/main_level.tscn")
 		else:
 			dialogue.visible_characters = 0

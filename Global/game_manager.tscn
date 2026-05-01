@@ -2,28 +2,33 @@
 
 [ext_resource type="Script" uid="uid://dop3s3kpcfm8t" path="res://Global/game_manager.gd" id="1_es8qg"]
 [ext_resource type="Theme" uid="uid://kgkrtpvr80cq" path="res://Shaders/MainTheme.tres" id="2_0ke1m"]
-[ext_resource type="FontFile" uid="uid://c7dajt33s651i" path="res://Assets/Fonts/UnicaOne-Regular.ttf" id="3_avqtn"]
 
 [node name="GameManager" type="CanvasLayer" unique_id=944261036]
 script = ExtResource("1_es8qg")
 
-[node name="Objective" type="Label" parent="." unique_id=1092036629]
-visible = false
-offset_left = 24.0
-offset_top = 96.0
-offset_right = 254.0
-offset_bottom = 127.0
-theme = ExtResource("2_0ke1m")
-text = "Objectives:"
-
-[node name="Dialog" type="Label" parent="." unique_id=1455011621]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2044139892]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Dialog" type="Label" parent="." unique_id=1455011621]
+custom_minimum_size = Vector2(800, 100)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -164.0
+offset_right = 400.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("2_0ke1m")
-theme_override_fonts/font = ExtResource("3_avqtn")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 2

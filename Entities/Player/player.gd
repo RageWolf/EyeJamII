@@ -53,6 +53,11 @@ var footstep_interval := 0.5
 var trill_timer := 0.0
 
 func _ready():
+	# debug only
+	if OS.is_debug_build():
+		SPEED = 15.0
+		pass
+
 	if camera:
 		cam = get_node(camera)
 	

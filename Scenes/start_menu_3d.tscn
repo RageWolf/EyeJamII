@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bfdsqjr15giwt" path="res://Assets/Ui/StartMenu.tscn" id="1_qdnn0"]
 [ext_resource type="Texture2D" uid="uid://srik0ed48nmm" path="res://Assets/Sprites/godot logo.svg" id="2_8b1rk"]
-[ext_resource type="AudioStream" uid="uid://bh4xc1tcfemw0" path="res://Audio/Music/Gesafflestein INTENSE.mp3" id="2_hf2gs"]
 
 [sub_resource type="Animation" id="Animation_poqv5"]
 resource_name = "fade_in"
@@ -121,7 +120,6 @@ _data = {
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=71711907]
 
 [node name="StartMenu" parent="CanvasLayer" unique_id=831940314 instance=ExtResource("1_qdnn0")]
-track = ExtResource("2_hf2gs")
 
 [node name="SplashScreen" type="CanvasLayer" parent="." unique_id=290471047]
 

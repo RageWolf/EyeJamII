@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dtl8xlm4jhee7" path="res://Entities/Player/interaction_area.gd" id="4_y660y"]
 [ext_resource type="Script" uid="uid://c52oj03kb5t71" path="res://Entities/Player/animation_controller.gd" id="5_5c2io"]
 [ext_resource type="Texture2D" uid="uid://c50et8iavj1p1" path="res://Assets/Ui/Eye_bar.png" id="6_ap3xn"]
+[ext_resource type="Shader" uid="uid://b36cfscytmq8e" path="res://Shaders/vignette.gdshader" id="7_dv6dp"]
 [ext_resource type="AudioStream" uid="uid://lalq577s31ys" path="res://Audio/COSMIC SFX/JUMP 2.mp3" id="8_avsg8"]
 [ext_resource type="AudioStream" uid="uid://dd1xotlwqo8vl" path="res://Audio/COSMIC SFX/JUMP 3.mp3" id="8_r8fok"]
 [ext_resource type="AudioStream" uid="uid://bbay4hvcac2fa" path="res://Audio/COSMIC SFX/WALK CYCYLE 1.mp3" id="9_nhbkt"]
@@ -278,7 +279,7 @@ graph_offset = Vector2(-58.153854, 36.077923)
 radius = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q6ntu"]
-radius = 1.0668373
+radius = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q6ntu"]
 size = Vector2(1, 1)
@@ -294,35 +295,41 @@ height = 0.6
 radial_segments = 4
 rings = 1
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01ng6"]
+shader = ExtResource("7_dv6dp")
+shader_parameter/strength = 0.50000002375
+shader_parameter/radius = 0.75
+shader_parameter/softness = 0.45
+shader_parameter/color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody3D" unique_id=1944527734 groups=["player"]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_nvxhs")
 camera = NodePath("SpringArmPivot/SpringArm3D/Camera3D")
-SPEED = 15.0
 
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
-[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 587869265) index="0" unique_id=1714600709]
-bones/0/position = Vector3(0, 0.31708816, 0)
-bones/1/rotation = Quaternion(0.003551649, -7.745672e-09, -2.0441682e-08, 0.9999937)
+[node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 1935302083) index="0" unique_id=1073636496]
+bones/0/position = Vector3(0, 0.32822293, 0)
+bones/1/rotation = Quaternion(-0.016106188, -7.618839e-09, -2.0489297e-08, 0.9998703)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.87437236, -8.078723e-16, -8.254268e-16, 0.48525554)
-bones/2/scale = Vector3(1.0046046, 1.0046046, 1.0046046)
-bones/4/rotation = Quaternion(0.0078043398, 0.005980261, 0.49792063, 0.86716694)
-bones/6/rotation = Quaternion(0.007804333, -0.0059802863, -0.49792063, 0.8671669)
-bones/7/rotation = Quaternion(0.17207657, -0.07121725, -0.55823845, 0.8085095)
-bones/8/rotation = Quaternion(-0.71878326, -1.9354746e-05, -0.1160359, 0.68548256)
-bones/9/rotation = Quaternion(0.123214856, -0.113293804, -0.6463259, 0.7444768)
-bones/10/rotation = Quaternion(-0.69363016, -2.023019e-05, -0.111976095, 0.7115747)
-bones/11/rotation = Quaternion(0.13288513, 0.2550197, 0.76027435, -0.58248556)
-bones/12/rotation = Quaternion(-0.62144816, 3.1207743e-05, 0.111942574, 0.7754167)
-bones/13/rotation = Quaternion(0.18536113, 0.057739325, 0.5332966, 0.8233482)
-bones/14/rotation = Quaternion(-0.72932976, 1.9013416e-05, 0.117738426, 0.6739553)
-bones/15/rotation = Quaternion(0.08945746, 0.087663025, 0.6582478, 0.74230886)
-bones/16/rotation = Quaternion(-0.5980661, 2.2630711e-05, 0.09654869, 0.7956101)
-bones/17/rotation = Quaternion(-0.037672453, 0.13705163, 0.84017813, 0.52335304)
-bones/18/rotation = Quaternion(-0.6165617, -3.1370208e-05, -0.1110624, 0.7794338)
+bones/2/rotation = Quaternion(0.88366705, 5.922913e-17, 3.3050117e-16, 0.46811616)
+bones/2/scale = Vector3(1.0044409, 1.0044409, 1.0044409)
+bones/4/rotation = Quaternion(0.0075940816, 0.0058191335, 0.4978503, 0.8672103)
+bones/6/rotation = Quaternion(0.007594072, -0.005819163, -0.4978503, 0.86721027)
+bones/7/rotation = Quaternion(0.15988554, -0.06052246, -0.5614755, 0.80964124)
+bones/8/rotation = Quaternion(-0.71110797, -1.959692e-05, -0.1147969, 0.6936477)
+bones/9/rotation = Quaternion(0.11203451, -0.10187116, -0.64877224, 0.74576473)
+bones/10/rotation = Quaternion(-0.68566555, -2.0463021e-05, -0.1106903, 0.71945155)
+bones/11/rotation = Quaternion(0.14674479, 0.24525358, 0.7566228, -0.5880805)
+bones/12/rotation = Quaternion(-0.6121643, 3.1489413e-05, 0.11027028, 0.7830041)
+bones/13/rotation = Quaternion(0.17279826, 0.04719647, 0.53681654, 0.82446426)
+bones/14/rotation = Quaternion(-0.7218, 1.9239262e-05, 0.11652289, 0.6822223)
+bones/15/rotation = Quaternion(0.078465305, 0.07682437, 0.6601151, 0.74309444)
+bones/16/rotation = Quaternion(-0.5888206, 2.282579e-05, 0.095056154, 0.8026548)
+bones/17/rotation = Quaternion(-0.049089294, 0.12449556, 0.83916986, 0.52714807)
+bones/18/rotation = Quaternion(-0.6055967, -3.1722244e-05, -0.10908722, 0.78825927)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -352,10 +359,10 @@ bones/41/position = Vector3(-0.060377706, 0.97284025, -0.17231596)
 bones/42/position = Vector3(1.1372672e-16, 0.5991388, -0.4057352)
 bones/43/position = Vector3(0, 0.06681984, -0.6037182)
 
-[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=1651144444]
+[node name="Body" parent="Monster/Armature/Skeleton3D" index="0" unique_id=978616966]
 material_overlay = SubResource("ShaderMaterial_5c2io")
 
-[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=671965695]
+[node name="Glowing Thingies" parent="Monster/Armature/Skeleton3D" index="2" unique_id=516714288]
 surface_material_override/0 = SubResource("StandardMaterial3D_lub02")
 script = ExtResource("3_x1y6q")
 
@@ -495,6 +502,16 @@ offset_top = -96.0
 offset_right = 104.0
 offset_bottom = -24.0
 grow_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control" unique_id=121013398]
+material = SubResource("ShaderMaterial_01ng6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="AudioController" type="Node" parent="." unique_id=1560394815]
 script = ExtResource("10_ap3xn")
