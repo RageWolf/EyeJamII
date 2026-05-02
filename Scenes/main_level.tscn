@@ -433,10 +433,6 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 0.24458122, 0.20000076, -6.823887)
 tutorial_system = true
 
-[node name="GenericDrainable2" parent="World/NavigationRegion3D/PowerSystems" unique_id=260602002 instance=ExtResource("7_lwkuy")]
-transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 0.24458122, 0.20000076, 2.531373)
-tutorial_system = true
-
 [node name="GenericDrainable3" parent="World/NavigationRegion3D/PowerSystems" unique_id=874322887 instance=ExtResource("7_lwkuy")]
 transform = Transform3D(0.273, 0, 0, 0, 0.273, 0, 0, 0, 0.273, 84.26735, 0.20000076, -50.958553)
 

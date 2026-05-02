@@ -139,7 +139,7 @@ func check_tutorial_complete():
 	if tutorial_drain_done \
 	and tutorial_stealth_done:
 		tutorial_completed = true
-		show_dialog("Tutorial Completed. Now look for all feedable sources of energy and decay the ship before they catch you!")
+		show_dialog("Tutorial Completed! \n Now look for all feedable sources of energy and decay the ship before they catch you!")
 		
 		var hud = get_tree().get_first_node_in_group("hud")
 		await get_tree().create_timer(4.0).timeout

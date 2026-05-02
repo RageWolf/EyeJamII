@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dp64ofcv8yic5" path="res://Mesh_library/Drainables_Mesh/ReactorDrainableOff.tres" id="4_mfm0n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kq4he"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_17voc")
 shader_parameter/outline_color = Color(1, 1, 1, 1)

@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cu087jicnff1i" path="res://Mesh_library/Drainables_Mesh/FridgeDrainableoff.tres" id="4_wjgy2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pxw5b"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_okbca")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
