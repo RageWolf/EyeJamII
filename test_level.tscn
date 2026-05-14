@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://pexximum6rf2"]
 
-[ext_resource type="Texture2D" uid="uid://braku2s6i55x3" path="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg" id="1_gbhdq"]
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_b7ax5"]
 [ext_resource type="PackedScene" uid="uid://s6q33parw8mj" path="res://Assets/Models and Textures/Drainables/fridge_drainable.tscn" id="4_4bgwg"]
@@ -14,22 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://d3vj3pvmlg0ol" path="res://Assets/Ui/PauseMenu.tscn" id="8_6emce"]
 [ext_resource type="PackedScene" uid="uid://dca7t7cwdkvgt" path="res://Assets/Models and Textures/Drainables/sat_dish_drainable.tscn" id="8_b7ax5"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="9_6emce"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gbhdq"]
-panorama = ExtResource("1_gbhdq")
-
-[sub_resource type="Sky" id="Sky_gbhdq"]
-sky_material = SubResource("PanoramaSkyMaterial_gbhdq")
-radiance_size = 1
-
-[sub_resource type="Environment" id="Environment_gbhdq"]
-background_mode = 2
-sky = SubResource("Sky_gbhdq")
-ambient_light_source = 2
-ambient_light_color = Color(0.27314225, 0.27314225, 0.27314222, 1)
-tonemap_mode = 2
-glow_enabled = true
-glow_bloom = 0.3
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4ptq8"]
 vertices = PackedVector3Array(-9.4274, -0.75516284, 6.6069365, 4.0726004, -0.75516284, 6.6069365, 4.0726004, -0.75516284, 5.6069365, 4.8226004, -0.75516284, 4.8569365, 6.0726004, -0.75516284, -12.143064, -9.6774, -0.75516284, -12.143064, 6.0726004, -0.75516284, 4.8569365, 8.3226, -0.75516284, 5.6069365, 8.3226, -0.75516284, 6.8569365, 19.322601, -0.75516284, 6.8569365, 7.5726004, -0.75516284, 4.8569365, 19.322601, -0.75516284, -12.143064, 6.0726004, -0.75516284, 16.856937, 6.0726004, -0.75516284, 9.106936, 4.8226004, -0.75516284, 9.106936, 4.0726004, -0.75516284, 8.356936, -9.6774, -0.75516284, 16.856937, 7.5726004, -0.75516284, 9.106936, 8.3226, -0.75516284, 8.356936, 19.322601, -0.75516284, 16.856937)
@@ -48,10 +31,20 @@ size = Vector3(2, 2, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58smv"]
 albedo_color = Color(0.9009268, 0.42040995, 0.17803985, 1)
 
-[node name="TestLevel" type="Node3D" unique_id=34594598]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_38et7"]
+sky_top_color = Color(0.033481117, 0.096377485, 0.1456675, 1)
+sky_horizon_color = Color(0.022936234, 0.16132718, 0.20314845, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1644379941]
-environment = SubResource("Environment_gbhdq")
+[sub_resource type="Sky" id="Sky_b7ax5"]
+sky_material = SubResource("ProceduralSkyMaterial_38et7")
+
+[sub_resource type="Environment" id="Environment_4bgwg"]
+background_mode = 2
+sky = SubResource("Sky_b7ax5")
+
+[node name="TestLevel" type="Node3D" unique_id=34594598]
 
 [node name="World" type="Node3D" parent="." unique_id=1270681935]
 metadata/_edit_lock_ = true
@@ -164,6 +157,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.625389, 0, 11.291429)
 
 [node name="Marker3D2" type="Marker3D" parent="EnemyCrew/PatrolRoute" parent_id_path=PackedInt32Array(1420940884, 650076924) index="1" unique_id=1103070411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1334686, 0, -3.853119)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2137851809]
+environment = SubResource("Environment_4bgwg")
 
 [editable path="EnemyCrew"]
 [editable path="EnemyCrew/Scientist"]

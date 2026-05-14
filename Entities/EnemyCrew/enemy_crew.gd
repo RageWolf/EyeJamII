@@ -3,9 +3,15 @@ extends CharacterBody3D
 
 const LIGHT_THRESHOLD = 0.4
 const VISION_ANGLE = 45.0
-const VISION_DISTANCE = 30
 const DETECTION_RANGE = 40
+const VISION_DISTANCE_CLOSE = 10       # always sees within this range (if in cone + raycast)
+const VISION_DISTANCE_FAR = 30         # only sees this far if player is lit
 
+# Squared versions
+const VISION_DISTANCE_CLOSE_SQ = VISION_DISTANCE_CLOSE * VISION_DISTANCE_CLOSE
+const VISION_DISTANCE_FAR_SQ = VISION_DISTANCE_FAR * VISION_DISTANCE_FAR
+const DETECTION_RANGE_SQ = DETECTION_RANGE * DETECTION_RANGE
+const LUNGE_DISTANCE_SQ = 3.5 * 3.5
 
 var player = null
 
@@ -59,6 +65,14 @@ var index = 0
 var player_caught = false
 var turn = false
 
+# Vision check throttle to avoid running the expensive check every physics frame
+var _vision_timer: float = 0.0
+const VISION_CHECK_INTERVAL: float = 0.2
+
+# Tracks whether stop_walk has already been called for the current state,
+# so we don't call it redundantly every frame
+var _walk_stopped: bool = false
+
 
 func _ready() -> void:
 	if patrol_route:
@@ -82,7 +96,11 @@ func _physics_process(_delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += -9.8 * _delta
 	
-	can_see_player = check_can_see_player()
+	# Throttle vision check: only update every VISION_CHECK_INTERVAL seconds
+	_vision_timer -= _delta
+	if _vision_timer <= 0.0:
+		_vision_timer = VISION_CHECK_INTERVAL
+		can_see_player = check_can_see_player()
 	# print(can_see_player)
 	if num == 1:
 		print(state)
@@ -142,7 +160,7 @@ func _physics_process(_delta: float) -> void:
 				prev_state = state
 				state = State.PATROLLING
 		State.LUNGING:
-			stop_walk()
+			_stop_walk_once()
 			if player_caught:
 				GameManager.player_caught = true
 			elif lunge_timer <= 0:
@@ -153,7 +171,7 @@ func _physics_process(_delta: float) -> void:
 				lunge_timer -= _delta
 
 		State.ALERT:
-			stop_walk()
+			_stop_walk_once()
 			detection = false
 			if alert_timer <= 0:
 				alert_timer = 0.5
@@ -168,22 +186,25 @@ func _physics_process(_delta: float) -> void:
 
 	match state:
 		State.PATROLLING:
+			_walk_stopped = false
 			patrol(_delta)
 			play_walk()
 		State.CHASING:
+			_walk_stopped = false
 			play_walk()
 			# print("chasing")
 			chase_player()
 		State.IDLE:
-			stop_walk()
+			_stop_walk_once()
 			velocity = Vector3.ZERO
 			nav_agent.target_position = global_position
 		State.SEARCHING:
+			_stop_walk_once()
 			velocity = Vector3.ZERO
 			nav_agent.target_position = global_position
 			search(_delta)
-			stop_walk()
 		State.REPAIRING:
+			_walk_stopped = false
 			play_walk()
 			fix_system(_delta)
 
@@ -201,6 +222,12 @@ func play_walk() -> void:
 
 func stop_walk() -> void:
 	footstep_player.stop()
+
+# Only calls stop_walk once per state entry, avoids stopping every frame
+func _stop_walk_once() -> void:
+	if not _walk_stopped:
+		stop_walk()
+		_walk_stopped = true
 #endregion
 
 
@@ -208,12 +235,11 @@ func stop_walk() -> void:
 func _on_system_broken(_target: Vector3, power_system):
 	if power_system.tutorial_system == false:
 		broken_power_systems.append(power_system)
-		if (_target - global_position).length() <= DETECTION_RANGE and current_target == null:
+		# Use squared distance to avoid sqrt
+		if (_target - global_position).length_squared() <= DETECTION_RANGE_SQ and current_target == null:
 			current_target = power_system
 			prev_state = state
 			state = State.REPAIRING
-	else:
-		return
 
 
 func _on_system_fixed(_power_system):
@@ -229,7 +255,8 @@ func chase_player():
 	velocity.x = direction.x * speed  
 	velocity.z = direction.z * speed
 	look_at_target(player)
-	if (player.global_position - global_position).length() < 3.5:
+	# Use squared distance to avoid sqrt
+	if global_position.distance_squared_to(player.global_position) < LUNGE_DISTANCE_SQ:
 		prev_state = state
 		state = State.LUNGING
 
@@ -277,7 +304,8 @@ func fix_system(delta):
 			fix_timer = 2.0
 			current_target = null
 			for power_system in broken_power_systems:
-				if (power_system.global_position - global_position).length() <= DETECTION_RANGE:
+				# Use squared distance to avoid sqrt
+				if (power_system.global_position - global_position).length_squared() <= DETECTION_RANGE_SQ:
 					current_target = power_system
 					break 
 			nav_agent.target_position = patrol_points[index].global_position
@@ -293,66 +321,57 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		player_in_area = false
 
 
-
 func check_can_see_player() -> bool:
 	# check angle - if no then no see
 	var to_player = (player.global_position - global_position).normalized()
 	var forward = player_vis.global_transform.basis.z
 	var angle = rad_to_deg(forward.angle_to(to_player))
-	if angle < VISION_ANGLE:
-		vision_cone_check = true
-	else:
-		vision_cone_check = false
+	vision_cone_check = angle < VISION_ANGLE
 
-	# check distance 
-	var dist = global_position.distance_to(player.global_position)
-	var in_vision_range = dist <= VISION_DISTANCE
+	# check distance - split into close and far ranges
+	var dist_sq = global_position.distance_squared_to(player.global_position)
+	var in_close_range = dist_sq <= VISION_DISTANCE_CLOSE_SQ
+	var in_far_range = dist_sq <= VISION_DISTANCE_FAR_SQ
 
-	# check line of sight 
-	if vision_cone_check and in_vision_range:
+	# check line of sight - only cast ray if in cone AND within far range
+	if vision_cone_check and in_far_range:
 		ray.target_position = ray.to_local(player.global_position) + Vector3(0, .5, 0)
 		ray.force_raycast_update()
 		if ray.is_colliding():
-			if ray.get_collider() == player:
-				ray_check = true
-			else:
-				ray_check = false
+			ray_check = ray.get_collider() == player
 		else:
 			ray_check = false
 	else:
 		ray_check = false
 
 	# check lighting
-	var light = player.current_light_level
-	if light > LIGHT_THRESHOLD:
-		lighting_check = true
-	else:
-		lighting_check = false
+	lighting_check = player.current_light_level > LIGHT_THRESHOLD
 
 	if player.is_hidden:
-			player_spotted = false
-			return false
+		player_spotted = false
+		return false
+
 	if player_spotted:
 		# must be in angle and range to keep tracking
-		if ray_check and (vision_cone_check or in_vision_range):
+		if ray_check and (vision_cone_check or in_far_range):
 			return true
 		else:
 			player_spotted = false
 			return false
 
-	# in vision cone (angle + range) + ray = sees, no light needed
-	elif vision_cone_check and in_vision_range and ray_check:
+	# close range: in cone + close distance + raycast - no light needed
+	elif vision_cone_check and in_close_range and ray_check:
 		player_spotted = true
 		detection = false
 		return true
 
-	# in light + angle + ray = sees even at distance
-	elif vision_cone_check and lighting_check and ray_check:
+	# far range: in cone + far distance + lit + raycast - light required
+	elif vision_cone_check and in_far_range and lighting_check and ray_check:
 		player_spotted = true
 		detection = true
 		return true
 
-	# detection area 
+	# detection area: always sees regardless of range or light
 	elif in_detection_area:
 		player_spotted = true
 		detection = true
@@ -360,6 +379,7 @@ func check_can_see_player() -> bool:
 
 	else:
 		return false
+
 
 
 func look_at_target(target):
@@ -379,7 +399,6 @@ func look_at_target(target):
 
 
 func move_to_waypoint(waypoint):
-	var target_position = null
 	if waypoint is Vector3:
 		nav_agent.target_position = waypoint
 	else:

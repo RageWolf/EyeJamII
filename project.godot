@@ -22,6 +22,8 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/stretch_mode=4
 boot_splash/use_filter=false
 boot_splash/image="uid://dfw0mlycbsxiq"
+config/icon="uid://d3a7omjv7srur"
+config/windows_native_icon="res://Assets/Sprites/icon.ico"
 boot_splash/minimum_display_time=1000
 
 [audio]
@@ -41,12 +43,13 @@ Debug="*uid://b5lr5kkg18wv5"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 
 [file_customization]
 
 folder_colors={
-"res://Assets/": "orange",
+"res://Assets/": "red",
 "res://Assets/Models and Textures/": "orange",
 "res://Debug/": "green",
 "res://Entities/": "orange",
@@ -154,8 +157,10 @@ debug={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 anti_aliasing/quality/msaa_3d=2
 anti_aliasing/quality/use_debanding=true
 textures/decals/filter=0
 textures/light_projectors/filter=0
+occlusion_culling/use_occlusion_culling=true
 textures/size/mode=3

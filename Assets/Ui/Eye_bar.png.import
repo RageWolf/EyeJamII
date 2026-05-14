@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c50et8iavj1p1"
 path.s3tc="res://.godot/imported/Eye_bar.png-fad4bd1a92738692f7f035834b96d460.s3tc.ctex"
+path.etc2="res://.godot/imported/Eye_bar.png-fad4bd1a92738692f7f035834b96d460.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Ui/Eye_bar.png"
-dest_files=["res://.godot/imported/Eye_bar.png-fad4bd1a92738692f7f035834b96d460.s3tc.ctex"]
+dest_files=["res://.godot/imported/Eye_bar.png-fad4bd1a92738692f7f035834b96d460.s3tc.ctex", "res://.godot/imported/Eye_bar.png-fad4bd1a92738692f7f035834b96d460.etc2.ctex"]
 
 [params]
 

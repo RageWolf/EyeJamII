@@ -22,8 +22,9 @@ light_energy = 16.0
 light_indirect_energy = 16.0
 light_negative = true
 spot_range = 24.422052
-spot_attenuation = 0.65
-spot_angle = 7.26098
+spot_attenuation = 1.1
+spot_angle = 12.0
+spot_angle_attenuation = 2.3784122
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=909948683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8928709, 0)

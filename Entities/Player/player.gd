@@ -55,7 +55,7 @@ var trill_timer := 0.0
 func _ready():
 	# debug only
 	if OS.is_debug_build():
-		SPEED = 15.0
+		#SPEED = 15.0
 		pass
 
 	if camera:

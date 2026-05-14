@@ -279,7 +279,7 @@ graph_offset = Vector2(-58.153854, 36.077923)
 radius = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_q6ntu"]
-radius = 1.5
+radius = 2.1700404
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q6ntu"]
 size = Vector2(1, 1)
@@ -311,25 +311,25 @@ camera = NodePath("SpringArmPivot/SpringArm3D/Camera3D")
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
 [node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 1935302083) index="0" unique_id=1073636496]
-bones/0/position = Vector3(0, 0.32528788, 0)
-bones/1/rotation = Quaternion(-0.010904533, -7.651193e-09, -2.0477248e-08, 0.9999406)
+bones/0/position = Vector3(0, 0.29916522, 0)
+bones/1/rotation = Quaternion(0.03427482, -7.969386e-09, -2.0355502e-08, 0.9994125)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.88127387, 1.8114564e-15, -2.9637302e-16, 0.47260597)
-bones/2/scale = Vector3(1.0044848, 1.0044848, 1.0044848)
-bones/4/rotation = Quaternion(0.0076504624, 0.00586234, 0.49786913, 0.8671986)
-bones/6/rotation = Quaternion(0.007650454, -0.0058623683, -0.4978691, 0.86719865)
-bones/7/rotation = Quaternion(0.16308996, -0.06333294, -0.560637, 0.8093682)
-bones/8/rotation = Quaternion(-0.7131589, -1.952241e-05, -0.11512797, 0.69148386)
-bones/9/rotation = Quaternion(0.1150059, -0.104900874, -0.6481393, 0.74544287)
-bones/10/rotation = Quaternion(-0.6878002, -2.0402027e-05, -0.11103493, 0.7173579)
-bones/11/rotation = Quaternion(0.14303353, 0.24786766, 0.75762975, -0.5866006)
-bones/12/rotation = Quaternion(-0.6146372, 3.142422e-05, 0.11071573, 0.78100145)
-bones/13/rotation = Quaternion(0.1760988, 0.049967702, 0.53590244, 0.82419723)
-bones/14/rotation = Quaternion(-0.72382057, 1.919735e-05, 0.116849065, 0.6800222)
-bones/15/rotation = Quaternion(0.081406675, 0.07972361, 0.65963143, 0.7429021)
-bones/16/rotation = Quaternion(-0.591316, 2.2773165e-05, 0.095459, 0.8007702)
-bones/17/rotation = Quaternion(-0.04606399, 0.1278115, 0.83946645, 0.52615446)
-bones/18/rotation = Quaternion(-0.60852623, -3.1623516e-05, -0.109614894, 0.78592646)
+bones/2/rotation = Quaternion(0.8583409, -7.333371e-16, 9.318425e-16, 0.5130798)
+bones/2/scale = Vector3(1.0049554, 1.0049553, 1.0049555)
+bones/4/rotation = Quaternion(0.008257483, 0.0063275164, 0.4980772, 0.8670704)
+bones/6/rotation = Quaternion(0.008257501, -0.0063275364, -0.49807733, 0.8670703)
+bones/7/rotation = Quaternion(0.19157512, -0.08833754, -0.55280226, 0.8061669)
+bones/8/rotation = Quaternion(-0.7302098, -1.900457e-05, -0.11788057, 0.6729768)
+bones/9/rotation = Quaternion(0.1409187, -0.13155699, -0.6420866, 0.741997)
+bones/10/rotation = Quaternion(-0.70546186, -1.9896775e-05, -0.11388609, 0.6995381)
+bones/11/rotation = Quaternion(0.11123877, 0.27077347, 0.7652409, -0.57333595)
+bones/12/rotation = Quaternion(-0.63525814, 3.0745756e-05, 0.11443023, 0.7637754)
+bones/13/rotation = Quaternion(0.20543146, 0.07455684, 0.5274454, 0.8209997)
+bones/14/rotation = Quaternion(-0.74062026, 1.8670225e-05, 0.119561106, 0.66120094)
+bones/15/rotation = Quaternion(0.10675273, 0.10490141, 0.6549765, 0.74067897)
+bones/16/rotation = Quaternion(-0.61182314, 2.231868e-05, 0.09876957, 0.7848038)
+bones/17/rotation = Quaternion(-0.019715441, 0.1570963, 0.84112346, 0.51714945)
+bones/18/rotation = Quaternion(-0.632898, -3.083702e-05, -0.114005096, 0.7657957)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -423,23 +423,26 @@ render_target_update_mode = 4
 [node name="LightDetection" type="Node3D" parent="SubViewport" unique_id=393045012]
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/LightDetection" unique_id=728303732]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.2270521, 0)
-cull_mask = 2
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.08330701, 0)
+cull_mask = 1
 current = true
-fov = 38.0
+fov = 135.44939
 
 [node name="MeshPlane" type="MeshInstance3D" parent="SubViewport/LightDetection" unique_id=1028955459]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.39519823, 0)
+visible = false
 layers = 2
 mesh = SubResource("PlaneMesh_q6ntu")
 
 [node name="MeshCone" type="MeshInstance3D" parent="SubViewport/LightDetection" unique_id=727494955]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.4513256, 0)
+visible = false
 layers = 2
 mesh = SubResource("CylinderMesh_y660y")
 
 [node name="MeshOctahedron" type="MeshInstance3D" parent="SubViewport/LightDetection" unique_id=1008898206]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.533636, 0)
+visible = false
 layers = 2
 mesh = SubResource("SphereMesh_q6ntu")
 
