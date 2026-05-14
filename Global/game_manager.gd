@@ -1,5 +1,6 @@
-# GAMEMANAGER
+## GameManager - Autoload Singleton
 extends Node
+
 @onready var dialog: Label = $Dialog
 @onready var color_rect: ColorRect = $ColorRect
 var PHASE_2 : bool = false
@@ -33,6 +34,10 @@ var tutorial_completed : bool = false
 # PLAYER DEATH
 var player_caught: bool = false
 var game_over: bool = false
+
+func _ready() -> void:
+	if !OS.is_debug_build():
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _process(delta):
 	if not tutorial_completed:
