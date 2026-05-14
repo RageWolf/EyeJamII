@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://braku2s6i55x3"
 path.s3tc="res://.godot/imported/beautiful-view-stars-night-sky.jpg-76ec01862d8154cccbe6be7fbdc113e6.s3tc.ctex"
+path.etc2="res://.godot/imported/beautiful-view-stars-night-sky.jpg-76ec01862d8154cccbe6be7fbdc113e6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/beautiful-view-stars-night-sky.jpg"
-dest_files=["res://.godot/imported/beautiful-view-stars-night-sky.jpg-76ec01862d8154cccbe6be7fbdc113e6.s3tc.ctex"]
+dest_files=["res://.godot/imported/beautiful-view-stars-night-sky.jpg-76ec01862d8154cccbe6be7fbdc113e6.s3tc.ctex", "res://.godot/imported/beautiful-view-stars-night-sky.jpg-76ec01862d8154cccbe6be7fbdc113e6.etc2.ctex"]
 
 [params]
 

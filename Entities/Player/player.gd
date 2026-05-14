@@ -21,10 +21,10 @@ var attach_position: Vector3
 #endregion 
 
 #region LIGHT DETECTION VRIABLES
+var _light_timer: float = 0.0
+const LIGHT_CHECK_INTERVAL: float = 0.15
 var current_light_level : float = 0.0
-@onready var sub_viewport: SubViewport = $SubViewport
-@onready var light_detection: Node3D = $SubViewport/LightDetection
-@onready var texture_rect: TextureRect = $CanvasLayer/Control/TextureRect
+var _nearby_lights: Array = []
 @onready var light_level: TextureProgressBar = $CanvasLayer/Control/LightLevel
 @onready var color_rect: ColorRect = $CanvasLayer/Control/ColorRect
 #endregion
@@ -45,22 +45,24 @@ var is_hidden: bool = false
 var player_inside_stealth_zone : bool = false
 #endregion
 
-# Animation and audio
+#region ANIMATION AND AUDIO VARIABLES
 @onready var anim_controller = $AnimationController
 @onready var audio_controller: Node = $AudioController
-var footstep_timer := 0.0
-var footstep_interval := 0.5
+var _footstep_timer: float = 0.0
+const FOOTSTEP_CHECK_INTERVAL: float = 0.05 
 var trill_timer := 0.0
+#endregion ANIMATION AND AUDIO
 
 func _ready():
+	# debug only
+	if OS.is_debug_build():
+		#SPEED = 15.0
+		pass
+
 	if camera:
 		cam = get_node(camera)
 	
-	sub_viewport.debug_draw = Viewport.DEBUG_DRAW_LIGHTING
-	update_light_loop()
-
-
-
+	_nearby_lights = get_tree().get_nodes_in_group("world_light")
 
 func _physics_process(delta):
 	var direction = get_input_direction()
@@ -71,17 +73,25 @@ func _physics_process(delta):
 	update_stealth(delta)
 
 	handle_trill(delta)
-	handle_footsteps()
 	anim_controller.update(delta, velocity, direction)
 
 	move_and_slide()
 	var cam_y = spring_arm_pivot.rotation.y
 	monster.rotation.y = lerp_angle(monster.rotation.y, cam_y , 10.0 * delta)
+	
+	_footstep_timer -= delta
+	if _footstep_timer <= 0.0:
+		_footstep_timer = FOOTSTEP_CHECK_INTERVAL
+		handle_footsteps()
+	
+	_light_timer -= delta
+	if _light_timer <= 0.0:
+		_light_timer = LIGHT_CHECK_INTERVAL
+		update_light()
 
-
-func handle_footsteps():
-	var is_moving = velocity.length() > 0.1
-	var on_floor = is_on_floor()
+func handle_footsteps() -> void:
+	var is_moving: bool = velocity.length_squared() > 0.01
+	var on_floor: bool = is_on_floor()
 	if is_moving and on_floor and not is_feeding:
 		audio_controller.play_walk()
 	else:
@@ -100,7 +110,6 @@ func handle_trill(delta):
 	if trill_timer <= 0:
 		audio_controller.play_trill()
 		trill_timer = randf_range(5.0, 10.0) 
-
 
 #region INPUT & MOVEMENT :=========================================================================
 func get_input_direction() -> Vector3:
@@ -178,39 +187,43 @@ func jump():
 #endregion
 
 
-
 #region LIGHT DETECTION :=========================================================================
-func update_light_loop():
-	while is_inside_tree():
-		update_light()
-		await get_tree().create_timer(0.1).timeout
-
-func update_light():
-	light_detection.global_position = global_position
-	
-	var texture := sub_viewport.get_texture()
-	texture_rect.texture = texture
-	
-	var color := get_average_color(texture)
-	color_rect.color = color
-	
-	var luminance := color.get_luminance()
-	
-	current_light_level = luminance 
-	light_level.value = luminance * 100
+func update_light() -> void:
+	var luminance: float = calculate_light_at_position(global_position)
+	current_light_level = luminance
+	light_level.value = luminance * 100.0
 	light_level.tint_progress.a = luminance
+	color_rect.color = Color(luminance, luminance, luminance)
 
+func calculate_light_at_position(pos: Vector3) -> float:
+	var total_light: float = 0.0
+	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+	if space_state == null:
+		return 0.0
 
-func get_average_color(texture: ViewportTexture) -> Color:
-	var image := texture.get_image()
-	if image.is_empty():
-		return Color.BLACK
-	
-	image.resize(1, 1)
-	return image.get_pixel(0, 0)
+	for light: Node in _nearby_lights:
+		if not light.visible:
+			continue
+
+		var dist: float = pos.distance_to(light.global_position)
+		var light_range: float = light.omni_range if light is OmniLight3D else light.spot_range
+		if dist >= light_range:
+			continue
+
+		# spotlight cone check
+		if light is SpotLight3D:
+			var to_player: Vector3 = (pos - light.global_position).normalized()
+			var light_dir: Vector3 = -light.global_transform.basis.z
+			var angle: float = rad_to_deg(light_dir.angle_to(to_player))
+			if angle > light.spot_angle:
+				continue
+
+		var contribution: float = (1.0 - (dist / light_range)) * light.light_energy
+		total_light += contribution
+
+	return clampf(total_light, 0.0, 1.0)
 
 #endregion
-
 
 
 #region FEEDING MECHANISM:=========================================================================
@@ -311,7 +324,6 @@ func cleanup_feed_ui():
 		current_target.set_feeding_active(false, can_feed)
 
 #endregion
-
 
 
 #region HIDING MECHANISM :=========================================================================

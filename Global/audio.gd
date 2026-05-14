@@ -1,4 +1,4 @@
-# AudioManager — Autoload Singleton
+## AudioManager - Autoload Singleton
 extends Node
 
 enum REVERB_TYPE { NONE, SMALL, MEDIUM, LARGE }

@@ -14,14 +14,19 @@ grow_vertical = 2
 script = ExtResource("1_e8074")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=570191922]
+z_index = -1
 layout_mode = 0
-offset_right = 1969.2308
-offset_bottom = 1107.6924
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 689.23083
+offset_bottom = 387.69238
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_ufc1a")
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=1844893873]
 self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(900, 200)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -35,23 +40,41 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=222448940]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 1.0
-offset_right = 1257.0
-offset_bottom = 100.0
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=695578372]
+custom_minimum_size = Vector2(900, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_right = -74.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_ufc1a")
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/normal_font_size = 17
 text = "opening cutscene dialogue"
-fit_content = true
-scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters_behavior = 1
+
+[node name="ColorRect" type="ColorRect" parent="Panel/RichTextLabel" unique_id=1682807057]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3372549)
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=353776093]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

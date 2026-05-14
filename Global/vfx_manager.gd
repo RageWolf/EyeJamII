@@ -1,3 +1,4 @@
+## VFXManager - Autoload Singleton
 extends Node
 
 const ZAP = preload("uid://cpey08dyw5hdl")

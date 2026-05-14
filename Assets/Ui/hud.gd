@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var timer_label: Label = $TimerLabel
 
 func _ready():
+	visible = false
 	GameManager.energy_changed.connect(update_energy)
 	GameManager.decay_changed.connect(update_decay)
 	GameManager.time_changed.connect(update_time)

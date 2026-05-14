@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dp64ofcv8yic5" path="res://Mesh_library/Drainables_Mesh/ReactorDrainableOff.tres" id="4_mfm0n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kq4he"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_17voc")
 shader_parameter/outline_color = Color(1, 1, 1, 1)
@@ -65,7 +66,6 @@ size = Vector2i(432, 432)
 
 [node name="ProgressBar" type="TextureProgressBar" parent="Sprite3D/SubViewport" unique_id=534706445]
 unique_name_in_owner = true
-visible = false
 offset_right = 432.0
 offset_bottom = 432.0
 fill_mode = 4
@@ -75,13 +75,6 @@ tint_under = Color(0, 0, 0, 0.19607843)
 tint_progress = Color(1, 1, 1, 0.78431374)
 metadata/_edit_use_anchors_ = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2091463997]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 11.284036, 0)
-layers = 3
-light_energy = 8.0
-spot_range = 12.159482
-spot_angle = 62.070133
-
 [node name="Area3D" type="Area3D" parent="." unique_id=53158440]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 3.0546873, 1.2574868)
 
@@ -89,3 +82,10 @@ transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 3.
 transform = Transform3D(7.755, 0, 0, 0, 7.755, 0, 0, 0, 7.755, 1.0488942, 0, 1.0796604)
 shape = SubResource("BoxShape3D_y4qtp")
 debug_color = Color(0.86104685, 0.0006672847, 0.87445873, 0.41960785)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2091463997 groups=["world_light"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.5287745, 15.125821, 2.7252166)
+layers = 3
+light_energy = 8.0
+spot_range = 12.159482
+spot_angle = 37.344124

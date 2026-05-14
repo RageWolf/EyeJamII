@@ -1,0 +1,221 @@
+[gd_scene format=3 uid="uid://b5lr5kkg18wv5"]
+
+[ext_resource type="Script" uid="uid://d2plgyvhyypyg" path="res://Debug/Debug.gd" id="1_tkgol"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1472695159]
+process_mode = 3
+layer = 10
+
+[node name="Debug" type="Control" parent="." unique_id=1025848202]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_tkgol")
+
+[node name="KeyStatus" type="Panel" parent="Debug" unique_id=927916443]
+self_modulate = Color(1, 1, 1, 0.23529412)
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -116.0
+offset_right = 266.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="W" type="ColorRect" parent="Debug/KeyStatus" unique_id=1821960409]
+layout_mode = 0
+anchor_left = 0.20857143
+anchor_top = 0.20666666
+anchor_right = 0.32285714
+anchor_bottom = 0.47333333
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debug/KeyStatus/W" unique_id=1286320173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S" type="ColorRect" parent="Debug/KeyStatus" unique_id=281101191]
+layout_mode = 0
+anchor_left = 0.20857143
+anchor_top = 0.52666664
+anchor_right = 0.32285714
+anchor_bottom = 0.79333335
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debug/KeyStatus/S" unique_id=1573560634]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="ColorRect" parent="Debug/KeyStatus" unique_id=1172914006]
+layout_mode = 0
+anchor_left = 0.071428575
+anchor_top = 0.52666664
+anchor_right = 0.18571429
+anchor_bottom = 0.79333335
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debug/KeyStatus/A" unique_id=528620773]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="ColorRect" parent="Debug/KeyStatus" unique_id=2088442579]
+layout_mode = 0
+anchor_left = 0.34571427
+anchor_top = 0.52666664
+anchor_right = 0.46
+anchor_bottom = 0.79333335
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debug/KeyStatus/D" unique_id=1976285047]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Space" type="ColorRect" parent="Debug/KeyStatus" unique_id=2094261881]
+layout_mode = 0
+anchor_left = 0.5314286
+anchor_top = 0.52666664
+anchor_right = 0.9028571
+anchor_bottom = 0.79333335
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debug/KeyStatus/Space" unique_id=1401140811]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Space"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shift" type="ColorRect" parent="Debug/KeyStatus" unique_id=1500472012]
+layout_mode = 0
+anchor_left = 0.5742857
+anchor_top = 0.20666666
+anchor_right = 0.86
+anchor_bottom = 0.47333333
+offset_left = 1.5258789e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Debug/KeyStatus/Shift" unique_id=91874804]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Shift"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HideDebug" type="Label" parent="Debug/KeyStatus" unique_id=1371457329]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011428571
+anchor_right = 0.5434286
+anchor_bottom = 0.17
+offset_right = -45.857155
+offset_bottom = -1.666666
+theme_override_font_sizes/font_size = 12
+text = "Press 'K' to hide Debug"
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverlay" type="Panel" parent="Debug" unique_id=1459718506]
+self_modulate = Color(1, 1, 1, 0.23529412)
+custom_minimum_size = Vector2(150, 220)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -228.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Debug/GameOverlay" unique_id=1209736604]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="FPS" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=1218372365]
+layout_mode = 2
+text = "Fps"
+
+[node name="FrameTime" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=1552907029]
+layout_mode = 2
+text = "Fps"
+
+[node name="DrawCalls" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=1746616226]
+layout_mode = 2
+text = "Fps"
+
+[node name="Objects" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=444158743]
+layout_mode = 2
+text = "Fps"
+
+[node name="RAM" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=580795566]
+layout_mode = 2
+text = "Fps"
+
+[node name="VRAM" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=1295918710]
+layout_mode = 2
+text = "Fps"
+
+[node name="PhysicsTime" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=1078113092]
+layout_mode = 2
+text = "Fps"
+
+[node name="ProcessTime" type="Label" parent="Debug/GameOverlay/VBoxContainer" unique_id=469535231]
+layout_mode = 2
+text = "Fps"

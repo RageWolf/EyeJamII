@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ng3lhunn328a"
 path.s3tc="res://.godot/imported/ProtoWall1.png-abc6adcf73e9f9327420e2d5c6089fd0.s3tc.ctex"
+path.etc2="res://.godot/imported/ProtoWall1.png-abc6adcf73e9f9327420e2d5c6089fd0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Sprites/ProtoWall1.png"
-dest_files=["res://.godot/imported/ProtoWall1.png-abc6adcf73e9f9327420e2d5c6089fd0.s3tc.ctex"]
+dest_files=["res://.godot/imported/ProtoWall1.png-abc6adcf73e9f9327420e2d5c6089fd0.s3tc.ctex", "res://.godot/imported/ProtoWall1.png-abc6adcf73e9f9327420e2d5c6089fd0.etc2.ctex"]
 
 [params]
 

@@ -7,21 +7,31 @@ extends Node
 
 @onready var footstep_player: AudioStreamPlayer = $FootstepPlayer
 @onready var drain_player: AudioStreamPlayer = $DrainPlayer
+var _stream_length: float = 0.0
+
 
 func _ready() -> void:
 	footstep_player.finished.connect(_on_footstep_finished)
+	_stream_length = footstep_player.stream.get_length()
+	
+	footstep_player.volume_db = -80.0
+	footstep_player.play(randf_range(0.0, _stream_length))
+	await get_tree().process_frame
+	_prewarm(jump_sounds)
+	_prewarm(hide_sounds)
+
+func _prewarm(sounds: Array[AudioStream]) -> void:
+	for sound: AudioStream in sounds:
+		Audio.play_sound_3d(sound, get_parent().global_position, -80.0)
 
 func _on_footstep_finished() -> void:
-	if footstep_player.stream != null:
-		footstep_player.play(randf_range(0.0, footstep_player.stream.get_length()))
-
+	footstep_player.play(randf_range(0.0, _stream_length))
 
 func play_walk() -> void:
-	if footstep_player.playing: return
-	footstep_player.play(randf_range(0.0, footstep_player.stream.get_length()))
+	footstep_player.volume_db = 0.0
 
 func stop_walk() -> void:
-	footstep_player.stop()
+	footstep_player.volume_db = -80.0
 
 func play_jump() -> void:
 	if jump_sounds.is_empty(): return
