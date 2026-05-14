@@ -1,7 +1,11 @@
 class_name Enemy
 extends CharacterBody3D
 
-const LIGHT_THRESHOLD = 0.4
+var _nav_timer: float = 0.0
+const NAV_UPDATE_INTERVAL: float = 0.1
+var _cached_next_nav_point: Vector3 = Vector3.ZERO
+
+const LIGHT_THRESHOLD = 0.8
 const VISION_ANGLE = 45.0
 const DETECTION_RANGE = 40
 const VISION_DISTANCE_CLOSE = 10       # always sees within this range (if in cone + raycast)
@@ -86,7 +90,9 @@ func _ready() -> void:
 		state = State.IDLE
 	debug_vision_cone.visible = false
 	footstep_player.finished.connect(_on_footstep_finished)
-
+	
+	# offsets each enemy's vision check so they don't all fire together
+	_vision_timer = randf_range(0.0, VISION_CHECK_INTERVAL)
 
 
 func _physics_process(_delta: float) -> void:
@@ -249,17 +255,18 @@ func _on_system_fixed(_power_system):
 func chase_player():
 	speed = 6.0
 	nav_agent.target_position = player.global_position
-	var next_nav_point = nav_agent.get_next_path_position()
-	next_nav_point.y = 0
-	var direction = (next_nav_point - global_position).normalized()
-	velocity.x = direction.x * speed  
+	_nav_timer -= get_physics_process_delta_time()
+	if _nav_timer <= 0.0:
+		_nav_timer = NAV_UPDATE_INTERVAL
+		_cached_next_nav_point = nav_agent.get_next_path_position()
+		_cached_next_nav_point.y = 0
+	var direction = (_cached_next_nav_point - global_position).normalized()
+	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
 	look_at_target(player)
-	# Use squared distance to avoid sqrt
 	if global_position.distance_squared_to(player.global_position) < LUNGE_DISTANCE_SQ:
 		prev_state = state
 		state = State.LUNGING
-
 
 func patrol(_delta):
 	if patrol_points.size() == 0:
@@ -403,10 +410,13 @@ func move_to_waypoint(waypoint):
 		nav_agent.target_position = waypoint
 	else:
 		nav_agent.target_position = waypoint.global_position
-	var next_nav_point = nav_agent.get_next_path_position()
-	next_nav_point.y = 0
+	_nav_timer -= get_physics_process_delta_time()
+	if _nav_timer <= 0.0:
+		_nav_timer = NAV_UPDATE_INTERVAL
+		_cached_next_nav_point = nav_agent.get_next_path_position()
+		_cached_next_nav_point.y = 0
 	var my_pos_flat = Vector3(global_position.x, 0, global_position.z)
-	var direction = (next_nav_point - my_pos_flat).normalized()
+	var direction = (_cached_next_nav_point - my_pos_flat).normalized()
 	
 	var target_velocity = Vector3(direction.x * speed, 0, direction.z * speed)
 	velocity.x = move_toward(velocity.x, target_velocity.x, speed * 0.25)
@@ -417,8 +427,9 @@ func move_to_waypoint(waypoint):
 		var look_pos = global_position - direction
 		look_pos.y = global_position.y
 		player_vis.look_at(look_pos, Vector3.UP)
-		player_vis.rotation.x = 0.0  
-		player_vis.rotation.z = 0.0  
+		player_vis.rotation.x = 0.0
+		player_vis.rotation.z = 0.0
+
 
 func _on_capture_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

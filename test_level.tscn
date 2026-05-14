@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dwvnjjgdkrdyg" path="res://Entities/Player/player.tscn" id="2_4ptq8"]
 [ext_resource type="PackedScene" uid="uid://b74tpd0slyld7" path="res://Assets/Models and Textures/Drainables/ekg_drainable.tscn" id="3_b7ax5"]
 [ext_resource type="PackedScene" uid="uid://s6q33parw8mj" path="res://Assets/Models and Textures/Drainables/fridge_drainable.tscn" id="4_4bgwg"]
-[ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="4_6emce"]
+[ext_resource type="MeshLibrary" uid="uid://deu1lolh2bbwg" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="4_6emce"]
 [ext_resource type="PackedScene" uid="uid://skimmd2bcho0" path="res://Assets/Models and Textures/Drainables/generic_drainable.tscn" id="5_2hfll"]
 [ext_resource type="PackedScene" uid="uid://br3l0b14ujltr" path="res://Entities/StealthZone/stealth_zone.tscn" id="5_lnbra"]
 [ext_resource type="PackedScene" uid="uid://bg5favivvppvq" path="res://Assets/Models and Textures/Drainables/reactor_drainable.tscn" id="6_7fqlb"]
@@ -46,6 +46,12 @@ sky = SubResource("Sky_b7ax5")
 
 [node name="TestLevel" type="Node3D" unique_id=34594598]
 
+[node name="EnemyCrew_PatrolRoute#Marker3D" type="Marker3D" parent="." unique_id=15865375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.625389, 0, 11.291429)
+
+[node name="EnemyCrew_PatrolRoute#Marker3D2" type="Marker3D" parent="." unique_id=1103070411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1334686, 0, -3.853119)
+
 [node name="World" type="Node3D" parent="." unique_id=1270681935]
 metadata/_edit_lock_ = true
 
@@ -71,11 +77,14 @@ font = ExtResource("6_y646j")
 [node name="Lights" type="Node3D" parent="World" unique_id=1692712899]
 metadata/_edit_lock_ = true
 
-[node name="OmniLight3D" type="OmniLight3D" parent="World/Lights" unique_id=145884072]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7146773, 3.099036, 7.0763993)
+[node name="SpotLight3D" type="SpotLight3D" parent="World/Lights" unique_id=1351671777 groups=["world_light"]]
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 12.123579, 6.7102733, -5.051491)
 layers = 3
-light_energy = 16.0
-omni_range = 8.091701
+light_color = Color(0.73630065, 0.309291, 0.010808049, 1)
+light_energy = 9.0
+spot_range = 10.0
+spot_angle = 30.0
+spot_angle_attenuation = 0.06037113
 
 [node name="PowerSystems" type="Node3D" parent="World" unique_id=80075407]
 metadata/_edit_lock_ = true
@@ -141,22 +150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3567038, -0.81428885, 0)
 [node name="StealthZone" parent="." unique_id=676040015 instance=ExtResource("5_lnbra")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.885109, 0.115608454, -3.895065)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1351671777]
-transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, 1, 0, -1, 2.9802322e-08, 12.123579, 6.7102733, -5.051491)
-layers = 3
-light_color = Color(0.73630065, 0.309291, 0.010808049, 1)
-light_energy = 9.0
-spot_range = 10.0
-spot_angle = 30.0
-spot_angle_attenuation = 0.06037113
-
 [node name="EnemyCrew" parent="." unique_id=1420940884 instance=ExtResource("9_6emce")]
-
-[node name="Marker3D" type="Marker3D" parent="EnemyCrew/PatrolRoute" parent_id_path=PackedInt32Array(1420940884, 650076924) index="0" unique_id=15865375]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.625389, 0, 11.291429)
-
-[node name="Marker3D2" type="Marker3D" parent="EnemyCrew/PatrolRoute" parent_id_path=PackedInt32Array(1420940884, 650076924) index="1" unique_id=1103070411]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1334686, 0, -3.853119)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2137851809]
 environment = SubResource("Environment_4bgwg")

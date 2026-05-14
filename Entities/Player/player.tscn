@@ -281,20 +281,6 @@ radius = 0.2
 [sub_resource type="SphereShape3D" id="SphereShape3D_q6ntu"]
 radius = 2.1700404
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_q6ntu"]
-size = Vector2(1, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_y660y"]
-top_radius = 0.0
-bottom_radius = 0.45
-height = 0.5
-
-[sub_resource type="SphereMesh" id="SphereMesh_q6ntu"]
-radius = 0.2
-height = 0.6
-radial_segments = 4
-rings = 1
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01ng6"]
 shader = ExtResource("7_dv6dp")
 shader_parameter/strength = 0.50000002375
@@ -311,25 +297,25 @@ camera = NodePath("SpringArmPivot/SpringArm3D/Camera3D")
 [node name="Monster" parent="." unique_id=629061867 instance=ExtResource("2_tekja")]
 
 [node name="Skeleton3D" parent="Monster/Armature" parent_id_path=PackedInt32Array(629061867, 1935302083) index="0" unique_id=1073636496]
-bones/0/position = Vector3(0, 0.29916522, 0)
-bones/1/rotation = Quaternion(0.03427482, -7.969386e-09, -2.0355502e-08, 0.9994125)
+bones/0/position = Vector3(0, 0.3415957, 0)
+bones/1/rotation = Quaternion(-0.041224506, -7.4747275e-09, -2.0542295e-08, 0.9991499)
 bones/1/scale = Vector3(0.9320761, 0.9320761, 0.93207616)
-bones/2/rotation = Quaternion(0.8583409, -7.333371e-16, 9.318425e-16, 0.5130798)
-bones/2/scale = Vector3(1.0049554, 1.0049553, 1.0049555)
-bones/4/rotation = Quaternion(0.008257483, 0.0063275164, 0.4980772, 0.8670704)
-bones/6/rotation = Quaternion(0.008257501, -0.0063275364, -0.49807733, 0.8670703)
-bones/7/rotation = Quaternion(0.19157512, -0.08833754, -0.55280226, 0.8061669)
-bones/8/rotation = Quaternion(-0.7302098, -1.900457e-05, -0.11788057, 0.6729768)
-bones/9/rotation = Quaternion(0.1409187, -0.13155699, -0.6420866, 0.741997)
-bones/10/rotation = Quaternion(-0.70546186, -1.9896775e-05, -0.11388609, 0.6995381)
-bones/11/rotation = Quaternion(0.11123877, 0.27077347, 0.7652409, -0.57333595)
-bones/12/rotation = Quaternion(-0.63525814, 3.0745756e-05, 0.11443023, 0.7637754)
-bones/13/rotation = Quaternion(0.20543146, 0.07455684, 0.5274454, 0.8209997)
-bones/14/rotation = Quaternion(-0.74062026, 1.8670225e-05, 0.119561106, 0.66120094)
-bones/15/rotation = Quaternion(0.10675273, 0.10490141, 0.6549765, 0.74067897)
-bones/16/rotation = Quaternion(-0.61182314, 2.231868e-05, 0.09876957, 0.7848038)
-bones/17/rotation = Quaternion(-0.019715441, 0.1570963, 0.84112346, 0.51714945)
-bones/18/rotation = Quaternion(-0.632898, -3.083702e-05, -0.114005096, 0.7657957)
+bones/2/rotation = Quaternion(0.8945611, -7.704404e-16, 7.971034e-16, 0.44694582)
+bones/2/scale = Vector3(1.0041177, 1.0041177, 1.0041177)
+bones/4/rotation = Quaternion(0.0080371, 0.006158617, 0.4977815, 0.86724347)
+bones/6/rotation = Quaternion(0.008037047, -0.006158612, -0.49778152, 0.86724335)
+bones/7/rotation = Quaternion(0.14512885, -0.04758154, -0.5652298, 0.81067187)
+bones/8/rotation = Quaternion(-0.70176536, -1.9899575e-05, -0.11328861, 0.7033429)
+bones/9/rotation = Quaternion(0.098423995, -0.08808525, -0.65151894, 0.7470454)
+bones/10/rotation = Quaternion(-0.67591506, -2.0726591e-05, -0.109116234, 0.728857)
+bones/11/rotation = Quaternion(0.16441406, 0.2331712, 0.7514562, -0.59490573)
+bones/12/rotation = Quaternion(-0.5995965, 3.1913165e-05, 0.10800639, 0.79298085)
+bones/13/rotation = Quaternion(0.15714522, 0.034036305, 0.54105103, 0.82547605)
+bones/14/rotation = Quaternion(-0.7125887, 1.953217e-05, 0.1150359, 0.6920868)
+bones/15/rotation = Quaternion(0.06502947, 0.06370297, 0.66217965, 0.74379516)
+bones/16/rotation = Quaternion(-0.5764982, 2.3087961e-05, 0.09306691, 0.81178105)
+bones/17/rotation = Quaternion(-0.06360203, 0.108751394, 0.8374476, 0.5317984)
+bones/18/rotation = Quaternion(-0.5914753, -3.2148797e-05, -0.1065435, 0.7992531)
 bones/19/rotation = Quaternion(-1.9927565e-17, 0.089745775, 0.9959647, 1.0381651e-25)
 bones/20/position = Vector3(-0.04129369, 0.54, -0.040023133)
 bones/20/rotation = Quaternion(0, -1.6414365e-24, 1.03397564e-25, 1)
@@ -367,7 +353,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_lub02")
 script = ExtResource("3_x1y6q")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Monster" unique_id=1820942834]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0.56, 1.015)
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.1736482, 0, -0.1736482, 0.9848077, 0, 0.56, 1.015)
 spot_range = 0.7773483
 spot_angle = 37.50205
 
@@ -415,36 +401,6 @@ script = ExtResource("4_y660y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1596038387]
 shape = SubResource("SphereShape3D_q6ntu")
 debug_color = Color(0.9446998, 7.9897045e-06, 0.59813666, 0.41960785)
-
-[node name="SubViewport" type="SubViewport" parent="." unique_id=167033196]
-size = Vector2i(128, 128)
-render_target_update_mode = 4
-
-[node name="LightDetection" type="Node3D" parent="SubViewport" unique_id=393045012]
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport/LightDetection" unique_id=728303732]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.08330701, 0)
-cull_mask = 1
-current = true
-fov = 135.44939
-
-[node name="MeshPlane" type="MeshInstance3D" parent="SubViewport/LightDetection" unique_id=1028955459]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.39519823, 0)
-visible = false
-layers = 2
-mesh = SubResource("PlaneMesh_q6ntu")
-
-[node name="MeshCone" type="MeshInstance3D" parent="SubViewport/LightDetection" unique_id=727494955]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.4513256, 0)
-visible = false
-layers = 2
-mesh = SubResource("CylinderMesh_y660y")
-
-[node name="MeshOctahedron" type="MeshInstance3D" parent="SubViewport/LightDetection" unique_id=1008898206]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.533636, 0)
-visible = false
-layers = 2
-mesh = SubResource("SphereMesh_q6ntu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1720999190]
 

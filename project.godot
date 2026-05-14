@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Thermal Runaway"
-run/main_scene="uid://qyw0pu6jky8d"
+run/main_scene="uid://bbcnr3piagp1t"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -43,7 +43,6 @@ Debug="*uid://b5lr5kkg18wv5"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/always_on_top=true
 window/stretch/mode="canvas_items"
 
 [file_customization]
@@ -55,6 +54,10 @@ folder_colors={
 "res://Entities/": "orange",
 "res://Scenes/": "orange"
 }
+
+[global_group]
+
+world_light=""
 
 [input]
 
@@ -162,5 +165,4 @@ anti_aliasing/quality/msaa_3d=2
 anti_aliasing/quality/use_debanding=true
 textures/decals/filter=0
 textures/light_projectors/filter=0
-occlusion_culling/use_occlusion_culling=true
 textures/size/mode=3

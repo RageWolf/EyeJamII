@@ -68,7 +68,7 @@ tint_under = Color(0, 0, 0, 0.19607843)
 tint_progress = Color(1, 1, 1, 0.78431374)
 metadata/_edit_use_anchors_ = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=241020638 groups=["power_system"]]
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=241020638 groups=["power_system", "world_light"]]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.04190343, 24.338966, 0)
 layers = 3
 light_energy = 16.0

@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dtaf3lwurigxn" path="res://Assets/Models and Textures/Props/fabricator.tscn" id="12_8ce4n"]
 [ext_resource type="PackedScene" uid="uid://cs0nqj3x48uy7" path="res://Assets/Models and Textures/Props/shelves.tscn" id="13_o0i6v"]
 [ext_resource type="PackedScene" uid="uid://b1sjb1xfh8ypx" path="res://Assets/Models and Textures/Props/weird_storage_shelf.tscn" id="14_1ubp3"]
-[ext_resource type="MeshLibrary" uid="uid://1h2fxhyoewnp" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="15_jf8f8"]
+[ext_resource type="MeshLibrary" uid="uid://deu1lolh2bbwg" path="res://Mesh_library/Base_Mesh/Base_Mesh_Tall_Library.meshlib" id="15_jf8f8"]
 [ext_resource type="Script" uid="uid://bgonkax327ryy" path="res://Scenes/tutorial_lock.gd" id="19_d4dc6"]
 [ext_resource type="PackedScene" uid="uid://ds4hvsy7cyvbb" path="res://Entities/EnemyCrew/enemy_crew.tscn" id="22_7wxy1"]
 

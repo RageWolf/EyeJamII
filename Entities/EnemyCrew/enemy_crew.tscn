@@ -206,6 +206,10 @@ parameters/conditions/stationary = false
 [node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=388775149]
 stream = ExtResource("4_kqbof")
 
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=1022000194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9120998, 0)
+aabb = AABB(-2.1669972, -2.6081595, -1, 4.3339944, 5.216319, 2)
+
 [connection signal="body_entered" from="Scientist/Armature/Skeleton3D/Hand_R/PlayerCapturePoint/CaptureArea" to="." method="_on_capture_area_body_entered"]
 [connection signal="body_entered" from="Scientist/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Scientist/Area3D" to="." method="_on_area_3d_body_exited"]

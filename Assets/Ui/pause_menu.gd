@@ -35,7 +35,7 @@ func _on_restart_pressed() -> void:
 	Audio.ui_select()
 	resume()
 	GameManager.reset()
-	get_tree().reload_current_scene()
+	LoadManager.load_scene(get_tree().current_scene.scene_file_path)
 
 func _on_quit_pressed() -> void:
 	Audio.ui_select()
